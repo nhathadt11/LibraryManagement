@@ -43,6 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DatabaseAccessObjects\BookDAO.cs" />
+    <Compile Include="DatabaseAccessObjects\CopyDAO.cs" />
+    <Compile Include="DatabaseAccessObjects\IDataAccessObject.cs" />
     <Compile Include="DataTransferObjects\Author.cs" />
     <Compile Include="DataTransferObjects\Book.cs" />
     <Compile Include="DataTransferObjects\Category.cs" />
@@ -54,6 +57,7 @@
     <Compile Include="DataTransferObjects\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReturnType.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -64,9 +68,7 @@
       <Name>DatabaseAccess</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DatabaseAccessObjects\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

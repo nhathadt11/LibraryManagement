@@ -5,11 +5,12 @@ using System.Data.SqlClient;
 
 namespace DatabaseAccess
 {
-    class DataProvider
+    public class DataProvider
     {
         private static readonly string CONNECTION_STRING
             = ConfigurationManager.ConnectionStrings["LibraryManagement"].ConnectionString;
         private static DataProvider _instance;
+        private DataProvider() { }
         public static DataProvider Instance
         {
             get
@@ -21,7 +22,7 @@ namespace DatabaseAccess
                 return _instance;
             }
         }
-        public DataTable ExecuteSelectQuery(string sql,
+        public DataTable ExecuteQuery(string sql,
                                           CommandType cmdType = CommandType.StoredProcedure,
                                           params SqlParameter[] sqlParameters)
         {
@@ -32,14 +33,38 @@ namespace DatabaseAccess
                 command.CommandType = cmdType;
                 command.Parameters.AddRange(sqlParameters);
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(command);
-                DataSet dataSet = new DataSet();
-                sqlDataAdapter.Fill(dataSet);
-                return dataSet.Tables[0];
+                DataTable dataTable = new DataTable();
+                sqlDataAdapter.Fill(dataTable);
+                return dataTable;
             }
         }
-        public int ExecuteNonSelectQuery(string sql,
+        public int ExecuteNonQuery(string sql,
                                          CommandType cmdType = CommandType.StoredProcedure,
                                          params SqlParameter[] sqlParameters)
+        {
+            using (SqlConnection connection = new SqlConnection(CONNECTION_STRING))
+            {
+                SqlCommand command = connection.CreateCommand();
+                command.CommandText = sql;
+                command.CommandType = cmdType;
+                command.Parameters.AddRange(sqlParameters);
+                command.Parameters.Add("@ReturnValue", SqlDbType.Int);
+                command.Parameters["@ReturnValue"].Direction = ParameterDirection.ReturnValue; 
+                try
+                {
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    return Convert.ToInt32(command.Parameters["@ReturnValue"].Value);
+                }
+                catch (Exception e)
+                {
+                    throw new Exception("DataProvider - error: " + e.Message);
+                }
+            }
+        }
+        public int ExecuteScalar(string sql,
+                                 CommandType cmdType = CommandType.StoredProcedure,
+                                 params SqlParameter[] sqlParameters)
         {
             using (SqlConnection connection = new SqlConnection(CONNECTION_STRING))
             {
@@ -50,7 +75,7 @@ namespace DatabaseAccess
                 try
                 {
                     connection.Open();
-                    return command.ExecuteNonQuery();
+                    return Convert.ToInt32(command.ExecuteScalar());
                 }
                 catch (Exception e)
                 {

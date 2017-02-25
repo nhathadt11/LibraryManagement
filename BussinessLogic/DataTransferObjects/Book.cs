@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BussinessLogic.DataTransferObjects
 {
@@ -15,6 +11,14 @@ namespace BussinessLogic.DataTransferObjects
             get { return _bookId; }
             set { _bookId = value; }
         }
+        private string _isbn;
+
+        public string Isbn
+        {
+            get { return _isbn; }
+            set { _isbn = value; }
+        }
+
         private string _title;
 
         public string Title
@@ -66,7 +70,7 @@ namespace BussinessLogic.DataTransferObjects
         }
         private int _categoryId;
 
-        public int Category
+        public int CategoryId
         {
             get { return _categoryId; }
             set { _categoryId = value; }

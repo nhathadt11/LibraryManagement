@@ -1,19 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BussinessLogic.DataTransferObjects
+﻿namespace BussinessLogic.DataTransferObjects
 {
     class Copy
     {
-        private string _copyId;
+        private string _copyCode;
 
-        public string CopyId
+        public string CopyCode
         {
-            get { return _copyId; }
-            set { _copyId = value; }
+            get { return _copyCode; }
+            set { _copyCode = value; }
         }
         private int _bookId;
 
