@@ -7,11 +7,11 @@ namespace BussinessLogic.DatabaseAccessObjects
 {
     class BookDAO : IDataAccessObject<Book>
     {
-        private static readonly string SQL_BOOK_SELECT = "";
-        private static readonly string SQL_BOOK_INSERT = "";
-        private static readonly string SQL_BOOK_UPDATE = "";
-        private static readonly string SQL_BOOK_DELETE = "";
-        private static DataProvider _dataProvider;
+        private readonly string SQL_STORE_PROC_BOOK_SELECT = "";
+        private readonly string SQL_STORE_PROC_BOOK_INSERT = "";
+        private readonly string SQL_STORE_PROC_BOOK_UPDATE = "";
+        private readonly string SQL_STORE_PROC_BOOK_DELETE = "";
+        private DataProvider _dataProvider;
         private static BookDAO _instance;
         private BookDAO()
         {
@@ -30,12 +30,12 @@ namespace BussinessLogic.DatabaseAccessObjects
         }
         public DataTable GetAll()
         {
-            return _dataProvider.ExecuteQuery(SQL_BOOK_SELECT,
+            return _dataProvider.ExecuteQuery(SQL_STORE_PROC_BOOK_SELECT,
                                               CommandType.StoredProcedure);
         }
         public int Add(Book book)
         {
-            return _dataProvider.ExecuteNonQuery(SQL_BOOK_INSERT,
+            return _dataProvider.ExecuteNonQuery(SQL_STORE_PROC_BOOK_INSERT,
                                                  CommandType.StoredProcedure,
                                                  new SqlParameter("@Isbn", book.Isbn),
                                                  new SqlParameter("@Title", book.Title),
@@ -50,7 +50,7 @@ namespace BussinessLogic.DatabaseAccessObjects
         }
         public int Update(Book book)
         {
-            return _dataProvider.ExecuteNonQuery(SQL_BOOK_UPDATE,
+            return _dataProvider.ExecuteNonQuery(SQL_STORE_PROC_BOOK_UPDATE,
                                                  CommandType.StoredProcedure,
                                                  new SqlParameter("@Isbn", book.Isbn),
                                                  new SqlParameter("@Title", book.Title),
@@ -66,9 +66,7 @@ namespace BussinessLogic.DatabaseAccessObjects
         }
         public int Delete(int bookId)
         {
-            DataProvider dataProvider = DataProvider.Instance;
-            string sql = ""; // store proc name
-            return dataProvider.ExecuteNonQuery(sql,
+            return _dataProvider.ExecuteNonQuery(SQL_STORE_PROC_BOOK_DELETE,
                                                 CommandType.StoredProcedure,
                                                 new SqlParameter("@BookId", bookId));
         }

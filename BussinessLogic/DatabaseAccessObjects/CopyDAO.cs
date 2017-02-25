@@ -8,11 +8,11 @@ namespace BussinessLogic.DatabaseAccessObjects
 {
     class CopyDAO : IDataAccessObject<Copy>
     {
-        private static readonly string SQL_COPY_SELECT = "";
-        private static readonly string SQL_COPY_INSERT = "";
-        private static readonly string SQL_COPY_UPDATE = "";
-        private static readonly string SQL_COPY_DELETE = "";
-        private static DataProvider _dataProvider;
+        private readonly string SQL_STORE_PROC_COPY_SELECT = "";
+        private readonly string SQL_STORE_PROC_COPY_INSERT = "";
+        private readonly string SQL_STORE_PROC_COPY_UPDATE = "";
+        private readonly string SQL_STORE_PROC_COPY_DELETE = "";
+        private DataProvider _dataProvider;
         private static CopyDAO _instance;
         private CopyDAO()
         {
@@ -31,12 +31,12 @@ namespace BussinessLogic.DatabaseAccessObjects
         }
         public DataTable GetAll()
         {
-            return _dataProvider.ExecuteQuery(SQL_COPY_SELECT,
+            return _dataProvider.ExecuteQuery(SQL_STORE_PROC_COPY_SELECT,
                                              CommandType.StoredProcedure);
         }
         public int Add(Copy copy)
         {
-            return _dataProvider.ExecuteNonQuery(SQL_COPY_INSERT,
+            return _dataProvider.ExecuteNonQuery(SQL_STORE_PROC_COPY_INSERT,
                                                 CommandType.StoredProcedure,
                                                 new SqlParameter("@CopyCode", copy.CopyCode),
                                                 new SqlParameter("@BookId", copy.BookId),
@@ -44,7 +44,7 @@ namespace BussinessLogic.DatabaseAccessObjects
         }
         public int Update(Copy copy)
         {
-            return _dataProvider.ExecuteNonQuery(SQL_COPY_UPDATE,
+            return _dataProvider.ExecuteNonQuery(SQL_STORE_PROC_COPY_UPDATE,
                                                 CommandType.StoredProcedure,
                                                 new SqlParameter("@BookId", copy.BookId),
                                                 new SqlParameter("@IsAvailable", copy.IsAvailable),
@@ -52,8 +52,9 @@ namespace BussinessLogic.DatabaseAccessObjects
         }
         public int Delete(int copyId)
         {
-            return _dataProvider.ExecuteNonQuery(SQL_COPY_DELETE,
+            return _dataProvider.ExecuteNonQuery(SQL_STORE_PROC_COPY_DELETE,
                                                 CommandType.StoredProcedure,
                                                 new SqlParameter("@BookId", copyId));
         }
+    }
 }

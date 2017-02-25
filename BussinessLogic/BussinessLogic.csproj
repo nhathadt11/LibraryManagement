@@ -43,9 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DatabaseAccessObjects\AuthorDAO.cs" />
     <Compile Include="DatabaseAccessObjects\BookDAO.cs" />
+    <Compile Include="DatabaseAccessObjects\CategoryDAO.cs" />
     <Compile Include="DatabaseAccessObjects\CopyDAO.cs" />
     <Compile Include="DatabaseAccessObjects\IDataAccessObject.cs" />
+    <Compile Include="DatabaseAccessObjects\LoanDAO.cs" />
+    <Compile Include="DatabaseAccessObjects\LoanDetailDAO.cs" />
+    <Compile Include="DatabaseAccessObjects\PublisherDAO.cs" />
+    <Compile Include="DatabaseAccessObjects\RoleDAO.cs" />
+    <Compile Include="DatabaseAccessObjects\UserDAO.cs" />
     <Compile Include="DataTransferObjects\Author.cs" />
     <Compile Include="DataTransferObjects\Book.cs" />
     <Compile Include="DataTransferObjects\Category.cs" />

@@ -8,12 +8,12 @@ namespace BussinessLogic.DataTransferObjects
 {
     class LoanDetail
     {
-        private int _copyId;
+        private int _copyCode;
 
-        public int CopyId
+        public int CopyCode
         {
-            get { return _copyId; }
-            set { _copyId = value; }
+            get { return _copyCode; }
+            set { _copyCode = value; }
         }
         private int _loanId;
 
