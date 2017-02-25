@@ -9,8 +9,8 @@ namespace DatabaseAccess
     {
         private static readonly string CONNECTION_STRING
             = ConfigurationManager.ConnectionStrings["LibraryManagement"].ConnectionString;
-        private DataProvider _instance;
-        public DataProvider Instance
+        private static DataProvider _instance;
+        public static DataProvider Instance
         {
             get
             {
@@ -21,7 +21,7 @@ namespace DatabaseAccess
                 return _instance;
             }
         }
-        public DataSet ExecuteSelectQuery(string sql,
+        public DataTable ExecuteSelectQuery(string sql,
                                           CommandType cmdType = CommandType.StoredProcedure,
                                           params SqlParameter[] sqlParameters)
         {
@@ -34,7 +34,7 @@ namespace DatabaseAccess
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(command);
                 DataSet dataSet = new DataSet();
                 sqlDataAdapter.Fill(dataSet);
-                return dataSet;
+                return dataSet.Tables[0];
             }
         }
         public int ExecuteNonSelectQuery(string sql,

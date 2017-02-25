@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL", "SQL", "{BE905280-B43
 		..\..\..\Desktop\Sql_LibraryManagementV2.sql = ..\..\..\Desktop\Sql_LibraryManagementV2.sql
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BussinessLogic", "BussinessLogic\BussinessLogic.csproj", "{71F01686-B9B3-4D8F-BA72-6EEB1960C891}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,10 @@ Global
 		{884B5806-9FE8-4D9C-80B5-E5EC4692F6F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{884B5806-9FE8-4D9C-80B5-E5EC4692F6F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{884B5806-9FE8-4D9C-80B5-E5EC4692F6F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71F01686-B9B3-4D8F-BA72-6EEB1960C891}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71F01686-B9B3-4D8F-BA72-6EEB1960C891}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71F01686-B9B3-4D8F-BA72-6EEB1960C891}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71F01686-B9B3-4D8F-BA72-6EEB1960C891}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
