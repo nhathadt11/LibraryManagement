@@ -1,6 +1,6 @@
 ﻿namespace BussinessLogic.DataTransferObjects
 {
-    class Copy
+    public class Copy
     {
         private string _copyCode;
 

@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 
 namespace BussinessLogic.DatabaseAccessObjects
 {
-    class PublisherDAO : IDataAccessObject<Publisher>
+    public class PublisherDAO : IDataAccessObject<Publisher>
     {
         private readonly string SQL_STORE_PROC_PUBLISHER_SELECT = "";
         private readonly string SQL_STORE_PROC_PUBLISHER_INSERT = "";

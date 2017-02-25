@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 
 namespace BussinessLogic.DatabaseAccessObjects
 {
-    class AuthorDAO : IDataAccessObject<Author>
+    public class AuthorDAO : IDataAccessObject<Author>
     {
         private readonly string SQL_STORE_PROC_AUTHOR_SELECT = "";
         private readonly string SQL_STORE_PROC_AUTHOR_INSERT = "";

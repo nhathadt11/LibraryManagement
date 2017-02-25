@@ -2,7 +2,7 @@
 
 namespace BussinessLogic.DataTransferObjects
 {
-    class Book
+    public class Book
     {
         private int _bookId;
 

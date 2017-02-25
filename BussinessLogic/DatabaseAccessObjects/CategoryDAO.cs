@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 
 namespace BussinessLogic.DatabaseAccessObjects
 {
-    class CategoryDAO : IDataAccessObject<Category>
+    public class CategoryDAO : IDataAccessObject<Category>
     {
         private readonly string SQL_STORE_PROC_CATEGORY_SELECT = "";
         private readonly string SQL_STORE_PROC_CATEGORY_INSERT = "";

@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 
 namespace BussinessLogic.DatabaseAccessObjects
 {
-    class RoleDAO : IDataAccessObject<Role>
+    public class RoleDAO : IDataAccessObject<Role>
     {
         private readonly string SQL_STORE_PROC_ROLE_SELECT = "";
         private readonly string SQL_STORE_PROC_ROLE_INSERT = "";

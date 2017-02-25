@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 
 namespace BussinessLogic.DatabaseAccessObjects
 {
-    class LoanDAO : IDataAccessObject<Loan>
+    public class LoanDAO : IDataAccessObject<Loan>
     {
         private readonly string SQL_STORE_PROC_LOAN_SELECT = "";
         private readonly string SQL_STORE_PROC_LOAN_INSERT = "";

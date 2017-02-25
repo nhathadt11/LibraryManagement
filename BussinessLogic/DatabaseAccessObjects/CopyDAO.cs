@@ -6,7 +6,7 @@ using System;
 
 namespace BussinessLogic.DatabaseAccessObjects
 {
-    class CopyDAO : IDataAccessObject<Copy>
+    public class CopyDAO : IDataAccessObject<Copy>
     {
         private readonly string SQL_STORE_PROC_COPY_SELECT = "";
         private readonly string SQL_STORE_PROC_COPY_INSERT = "";
@@ -50,11 +50,11 @@ namespace BussinessLogic.DatabaseAccessObjects
                                                 new SqlParameter("@IsAvailable", copy.IsAvailable),
                                                 new SqlParameter("@CopyCode", copy.CopyCode));
         }
-        public int Delete(int copyId)
+        public int Delete(int copyCode)
         {
             return _dataProvider.ExecuteNonQuery(SQL_STORE_PROC_COPY_DELETE,
                                                 CommandType.StoredProcedure,
-                                                new SqlParameter("@BookId", copyId));
+                                                new SqlParameter("@BookId", copyCode));
         }
     }
 }

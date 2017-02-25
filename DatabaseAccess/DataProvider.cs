@@ -7,7 +7,7 @@ namespace DatabaseAccess
 {
     public class DataProvider
     {
-        private static readonly string CONNECTION_STRING
+        private readonly string CONNECTION_STRING
             = ConfigurationManager.ConnectionStrings["LibraryManagement"].ConnectionString;
         private static DataProvider _instance;
         private DataProvider() { }
