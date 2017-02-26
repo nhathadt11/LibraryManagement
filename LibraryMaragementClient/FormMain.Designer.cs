@@ -124,6 +124,7 @@
             this.tsbtMember.Name = "tsbtMember";
             this.tsbtMember.Size = new System.Drawing.Size(72, 62);
             this.tsbtMember.Text = "Member";
+            this.tsbtMember.Click += new System.EventHandler(this.tsbtMember_Click);
             // 
             // FormMain
             // 

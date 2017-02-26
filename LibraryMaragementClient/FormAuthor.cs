@@ -17,7 +17,7 @@ namespace LibraryMaragementClient
         {
             get
             {
-                if (_instance == null)
+                if (_instance == null || _instance.IsDisposed)
                 {
                     _instance = new FormAuthor();
                 }
@@ -31,6 +31,8 @@ namespace LibraryMaragementClient
 
         private void FormAuthor_Load(object sender, EventArgs e)
         {
+            AuthorService authorService = new AuthorService();
+            dgvAuthors.DataSource = authorService.GetAll();
         }
     }
 }
