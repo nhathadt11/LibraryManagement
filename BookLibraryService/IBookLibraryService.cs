@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using BussinessLogic.DataTransferObjects;
+using System.Data;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 namespace BookLibraryService
