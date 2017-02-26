@@ -26,8 +26,7 @@ namespace DatabaseAccess.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=HADTNSE62079;Initial Catalog=LibraryManagementV2;User ID=sa;Password=" +
-            "123456")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=LibraryManagementV2;User ID=sa")]
         public string LibraryManagementConnectionString {
             get {
                 return ((string)(this["LibraryManagementConnectionString"]));
