@@ -23,7 +23,7 @@ namespace DatabaseAccess
             }
         }
         public DataTable ExecuteQuery(string sql,
-                                          CommandType cmdType = CommandType.StoredProcedure,
+                                          CommandType cmdType = CommandType.Text,
                                           params SqlParameter[] sqlParameters)
         {
             using (SqlConnection connection = new SqlConnection(CONNECTION_STRING))
