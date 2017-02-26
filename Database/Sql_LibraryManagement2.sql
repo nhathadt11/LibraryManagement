@@ -279,6 +279,25 @@ Contact nvarchar(1000) default N'N/A',
 Address nvarchar(300) default N'N/A',
 Bio nvarchar(MAX) default N'N/A',
 )
+drop procedure UpdateAuthorById
+create procedure UpdateAuthorById(
+@AuthorId int,
+@FullName nvarchar(300),
+@Contact nvarchar(1000),
+@Address nvarchar(300),
+@Bio nvarchar(MAX)
+) as
+begin
+	if not exists (select * from Authors where AuthorId = @AuthorId) return 0;
+	if exists (select * from Books where AuthorId = @AuthorId) return -1;
+	update Authors set
+					FullName = @FullName,
+					Contact = @Contact,
+					Address = @Address,
+					Bio = @Bio
+	where AuthorId = @AuthorId;
+	return @@ROWCOUNT;
+end
 --*procedure InsertAuthor*--
 --param @FullName required--
 --params @Contact, @address, @Bio are optional--
