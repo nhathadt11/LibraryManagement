@@ -9,14 +9,14 @@ namespace BookLibraryService
     public interface IBookLibraryService
     {
 
-        [OperationContract]
-        DataTable GetAll();
-        [OperationContract]
-        int Add(Book obj);
-        [OperationContract]
-        int Update(Book obj);
-        [OperationContract]
-        int Delete(int objId);
+        //[OperationContract]
+        //DataTable GetAll();
+        //[OperationContract]
+        //int Add(Book obj);
+        //[OperationContract]
+        //int Update(Book obj);
+        //[OperationContract]
+        //int Delete(int objId);
 
 
         // TODO: Add your service operations here
