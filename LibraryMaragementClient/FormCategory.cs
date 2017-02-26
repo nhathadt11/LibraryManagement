@@ -18,7 +18,7 @@ namespace LibraryMaragementClient
         {
             get
             {
-                if (_instance == null | _instance.IsDisposed)
+                if (_instance == null ||_instance.IsDisposed)
                 {
                     _instance = new FormCategory();
                 }

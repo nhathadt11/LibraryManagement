@@ -39,7 +39,7 @@ namespace BussinessLogic.DatabaseAccessObjects
         public DataTable GetAll()
         {
             return _dataProvider.ExecuteQuery(SQL_STORE_PROC_LOAN_DETAIL_SELECT,
-                                              CommandType.StoredProcedure);
+                                              CommandType.Text);
         }
 
         public int Add(LoanDetail loanDetail)

@@ -40,7 +40,7 @@ namespace BussinessLogic.DatabaseAccessObjects
         public DataTable GetAll()
         {
             return _dataProvider.ExecuteQuery(SQL_STORE_PROC_PUBLISHER_SELECT,
-                                                 CommandType.StoredProcedure);
+                                                 CommandType.FormUser);
         }
 
         public int Add(Publisher publisher)

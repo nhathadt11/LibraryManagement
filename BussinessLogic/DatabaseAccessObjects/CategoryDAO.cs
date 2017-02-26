@@ -53,7 +53,7 @@ namespace BussinessLogic.DatabaseAccessObjects
         public DataTable GetAll()
         {
             return _dataProvider.ExecuteQuery(SQL_STORE_PROC_CATEGORY_SELECT,
-                                              CommandType.StoredProcedure);
+                                              CommandType.Text);
         }
 
         public int Update(Category category)
