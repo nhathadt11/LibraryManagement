@@ -12,7 +12,9 @@ namespace BussinessLogic.DatabaseAccessObjects
         //required @Name
         private readonly string SQL_STORE_PROC_ROLE_INSERT = "InsertRole";//return -1 if this name already existed
                                                                           //return RoleId if insert successfully
-        private readonly string SQL_STORE_PROC_ROLE_UPDATE = "";
+
+        // required @RoleId, @Name
+        private readonly string SQL_STORE_PROC_ROLE_UPDATE = "UpdateRoleById";
 
         //required @RoleID
         private readonly string SQL_STORE_PROC_ROLE_DELETE = "DeleteRoleByID";//return -1 if this has already reference by the others

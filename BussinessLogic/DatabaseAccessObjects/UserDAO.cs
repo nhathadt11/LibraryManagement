@@ -17,10 +17,25 @@ namespace BussinessLogic.DatabaseAccessObjects
         //optional @Email nvarchar(50) = null
         private readonly string SQL_STORE_PROC_USER_INSERT = "InsertUser";//return 1 if insert successfully
                                                                           //return -1 if this user already exists
-        private readonly string SQL_STORE_PROC_USER_UPDATE = "";
 
+        //@UserId int,
+        //@Username nvarchar(300),
+        //@Password nvarchar(60),
+        //@PhoneNumber nvarchar(11),
+        //@Address nvarchar(600),
+        //@Email nvarchar(50),
+        //@RoleId int
+        //return 0 if user not eixts
+        //return -1 if new role not valid
+        //return 1 if successfully
+        private readonly string SQL_STORE_PROC_USER_UPDATE = "UpdateUserById";
 
-        private readonly string SQL_STORE_PROC_USER_DELETE = "";
+        //required @UserId int
+        //return 0 if user id not exists
+        //return -1 if has been reference as Member in Loans
+        //return -2 if has been reference as Libraryan in Loans
+        //return 1 if deleted successfully
+        private readonly string SQL_STORE_PROC_USER_DELETE = "DeleteUserById";
 
         private DataProvider _dataProvider;
         private static UserDAO _instance;

@@ -11,12 +11,13 @@ Name nvarchar(300) not null
 )
 create procedure UpdateRoleById(
 @RoleId int,
-@Name nvarchar(300) not null
+@Name nvarchar(300)
 ) as
 begin
 	update Roles set Name = @Name;
 	return @@ROWCOUNT;
 end
+select * from vCopies
 --* procedure accept 1 param as Role name and return role ID if insert transaction successfully*--
 --* else return -1 if this role already existed *--
 --param @Name required--
@@ -104,6 +105,44 @@ Address nvarchar(600) default N'N/A',
 Email nvarchar(50) default N'N/A',
 RoleId int foreign key references Roles(RoleId),
 )
+
+--procedure update users
+drop procedure UpdateUserById
+create procedure UpdateUserById(
+@UserId int,
+@Username nvarchar(300),
+@Password nvarchar(60),
+@PhoneNumber nvarchar(11),
+@Address nvarchar(600),
+@Email nvarchar(50),
+@RoleId int 
+) as
+begin
+	if not exists (select * from Users where UserId = @UserId) return 0;
+	if not exists (select * from Roles where RoleId = @RoleId ) return -1;
+	update Users set
+		Username = @Username,
+		Password = @Password,
+		PhoneNumber = @PhoneNumber,
+		Address = @Address,
+		Email = @Email,
+		RoleId = @RoleId
+	where UserId = @UserId
+	return @@ROWCOUNT;
+end
+
+create procedure DeleteUserById(
+@UserId int
+) as
+begin
+	if not exists (select * from Users where UserId = @UserId) return 0;
+	if exists (select * from Loans where MemberId = @UserId) return -1;
+	if exists (select * from Loans where LibrarianId = @UserId) return -2;
+	delete from Users where UserId = @UserId;
+	return @@ROWCOUNT;
+end
+
+select * from Loans
 --*procedure InsertUser return ID > 0 if insert successfully else return -1*--
 --params @UserId, @Username, @Password, @RoleId are required--
 --params @PhoneNumber, @Address, @Email are optional--
