@@ -49,7 +49,7 @@
     <Compile Include="AuthorService.cs" />
     <Compile Include="BookService.cs" />
     <Compile Include="CategoryService.cs" />
-    <Compile Include="CopyService.cs" />
+    <Compile Include="BookCopyService.cs" />
     <Compile Include="ICommonService.cs" />
     <Compile Include="LoanDetailService.cs" />
     <Compile Include="LoanService.cs" />
