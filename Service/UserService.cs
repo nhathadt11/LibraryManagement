@@ -4,7 +4,7 @@ using BussinessLogic.DatabaseAccessObjects;
 
 namespace Service
 {
-    class UserService : ICommonService<User>
+    public class UserService : ICommonService<User>
     {
         private UserDAO _userDAO;
         public UserService()

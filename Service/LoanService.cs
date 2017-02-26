@@ -4,7 +4,7 @@ using BussinessLogic.DataTransferObjects;
 
 namespace Service
 {
-    class LoanService : ICommonService<Loan>
+    public class LoanService : ICommonService<Loan>
     {
         private LoanDAO _loanDAO;
         public LoanService()

@@ -35,18 +35,20 @@
             // dgvUsers
             // 
             this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUsers.Location = new System.Drawing.Point(13, 13);
+            this.dgvUsers.Location = new System.Drawing.Point(11, 11);
+            this.dgvUsers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.RowTemplate.Height = 28;
-            this.dgvUsers.Size = new System.Drawing.Size(1179, 802);
+            this.dgvUsers.Size = new System.Drawing.Size(781, 454);
             this.dgvUsers.TabIndex = 0;
             // 
             // FormUser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1204, 827);
+            this.ClientSize = new System.Drawing.Size(803, 476);
             this.Controls.Add(this.dgvUsers);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormUser";
             this.Text = "FormUser";
             this.Load += new System.EventHandler(this.FormUser_Load);

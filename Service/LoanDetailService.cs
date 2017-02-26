@@ -4,7 +4,7 @@ using BussinessLogic.DatabaseAccessObjects;
 
 namespace Service
 {
-    class LoanDetailService : ICommonService<LoanDetail>
+    public class LoanDetailService : ICommonService<LoanDetail>
     {
         private LoanDetailDAO _loanDetailDAO;
         public LoanDetailService()

@@ -23,5 +23,10 @@ namespace LibraryMaragementClient
             frmBook.MdiParent = this;
             frmBook.Show();
         }
+
+        private void tsbtAuthor_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

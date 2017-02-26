@@ -7,19 +7,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Service;
 namespace LibraryMaragementClient
 {
     public partial class FormAuthor : Form
     {
-        public FormAuthor()
+        private static FormAuthor _instance;
+        public static FormAuthor Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new FormAuthor();
+                }
+                return _instance;
+            }
+        }
+        private FormAuthor()
         {
             InitializeComponent();
         }
 
         private void FormAuthor_Load(object sender, EventArgs e)
         {
-
         }
     }
 }
