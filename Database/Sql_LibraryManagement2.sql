@@ -122,6 +122,9 @@ begin
 			return -1;
 		end
 end
+
+--elete user by id--
+
 --*test InserUser procedure*--
 --**--
 declare @id int
@@ -450,6 +453,13 @@ CopyId int foreign key references Copies(CopyId),
 LoanId int foreign key references Loans(LoanId),
 ReturnDate date DEFAULT null
 )
+
+drop view vLoanDetails
+create view vLoanDetails as
+select *
+from LoanDetails l1,  Loans l2, Copies c
+where l1.LoanId = l2.LoanId and l1.CopyId = c.CopyId
+
 use [LibraryManagementV2]
 
 drop procedure InsertLoanDetail
@@ -457,7 +467,7 @@ drop procedure InsertLoanDetail
 create procedure InsertLoanDetail(
 @CopyId int,
 @LoanId int,
-@ReturnDate date
+@ReturnDate date = null
 ) as
 begin
 	if not exists (select * from Copies where CopyId = @LoanId ) return -1;
