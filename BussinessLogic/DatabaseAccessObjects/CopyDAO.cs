@@ -8,10 +8,17 @@ namespace BussinessLogic.DatabaseAccessObjects
 {
     public class CopyDAO : IDataAccessObject<Copy>
     {
-        private readonly string SQL_STORE_PROC_COPY_SELECT = "";
-        private readonly string SQL_STORE_PROC_COPY_INSERT = "";
+        private readonly string SQL_STORE_PROC_COPY_SELECT = "select * from vCopies";
+
+        //required @BookId
+        private readonly string SQL_STORE_PROC_COPY_INSERT = "InsertCopy";//return -1 if BookId not exists in Books
+                                                                          //return 1 if Insert Successfully
         private readonly string SQL_STORE_PROC_COPY_UPDATE = "";
-        private readonly string SQL_STORE_PROC_COPY_DELETE = "";
+
+        //required @CopyId
+        private readonly string SQL_STORE_PROC_COPY_DELETE = "DeleteCopiesById";//return -1 if this Copy adlready reference by the other
+                                                                                //return 0 if this Id not exists
+                                                                                //return 1 if delete successfully
         private DataProvider _dataProvider;
         private static CopyDAO _instance;
         private CopyDAO()

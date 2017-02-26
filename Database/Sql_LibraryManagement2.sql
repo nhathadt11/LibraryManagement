@@ -324,7 +324,7 @@ CategoryId int foreign key references Categories(CategoryId),
 PublisherId int foreign key references Publishers(PublisherId),
 Discontinued bit default 0
 )
-
+drop procedure InsertBook
 create procedure InsertBook(
 @Isbn nvarchar(MAX) = N'N/A',
 @Title nvarchar(MAX),
@@ -383,10 +383,12 @@ CopyId int primary key Identity(1,1),
 BookId int foreign key references Books(BookId),
 IsAvalable bit default 1
 )
+drop procedure InsertCopy
 create procedure InsertCopy(
 @BookId int
 ) as
 begin
+	if not exists (select * from Books where BookId = @BookId) return -1;
 	insert into Copies values(@BookId, 1);
 	return @@ROWCOUNT;
 end
@@ -401,6 +403,13 @@ begin
 	delete from Copies  where CopyId = @CopyId;
 	return @@ROWCOUNT;
 end
+
+create view vCopies as
+select * 
+from Copies c, vBooks b
+where c.BookId = b.Id
+
+select * from vCopies
 ------------------------------------------------
 drop table Loans
 create table Loans(
@@ -420,6 +429,17 @@ begin
 	if not exists (select * from Users where UserId = @MemberId) return -1;
 	if not exists (select * from Users where UserId = @LibrarianId) return -2;
 	insert into Loans values(@IssueDate, @Limit, @MemberId, @LibrarianId);
+	return @@ROWCOUNT;
+end
+
+drop procedure DeleteLoanById
+create procedure DeleteLoanById(
+@LoanId int
+) as
+begin
+	if exists (select * from LoanDetails where LoanId = @LoanId) return -1;
+	if not exists (select * from Loans) return 0;
+	delete from Loans where LoanId = @LoanId;
 	return @@ROWCOUNT;
 end
 ------------------------------------------------
