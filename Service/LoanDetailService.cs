@@ -1,6 +1,7 @@
 ﻿using System.Data;
 using BussinessLogic.DataTransferObjects;
 using BussinessLogic.DatabaseAccessObjects;
+using System;
 
 namespace Service
 {
@@ -18,7 +19,7 @@ namespace Service
 
         public int Delete(int loanDetailId)
         {
-            return _loanDetailDAO.Delete(loanDetailId);
+             return _loanDetailDAO.Delete(loanDetailId);
         }
 
         public DataTable GetAll()
