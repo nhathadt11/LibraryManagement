@@ -2,7 +2,7 @@
 
 namespace Service
 {
-    interface ICommonService<T>
+    public interface ICommonService<T>
     {
         DataTable GetAll();
         int Add(T obj);

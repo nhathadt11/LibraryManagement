@@ -3,21 +3,21 @@ using System.Windows.Forms;
 using Service;
 namespace LibraryMaragementClient
 {
-    public partial class FormBookCopy : Form
+    public partial class FormCopy : Form
     {
         private BookCopyService _service;
-        private static FormBookCopy _instance;
-        private FormBookCopy()
+        private static FormCopy _instance;
+        private FormCopy()
         {
             InitializeComponent();
             _service = new BookCopyService();
         }
-        public static FormBookCopy Instance {
+        public static FormCopy Instance {
             get
             {
                 if (_instance == null || _instance.IsDisposed)
                 {
-                    _instance = new FormBookCopy();
+                    _instance = new FormCopy();
                 }
                 return _instance;
             }
