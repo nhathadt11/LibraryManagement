@@ -8,7 +8,7 @@ namespace DatabaseAccess
     public class DataProvider
     {
         private readonly string CONNECTION_STRING
-            = "Data Source=HADTNSE62079;Initial Catalog=LibraryManagementV2;User ID=sa;Password=123456";
+            = Properties.Settings.Default.LibraryManagementConnectionString;
         private static DataProvider _instance;
         private DataProvider() { }
         public static DataProvider Instance

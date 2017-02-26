@@ -7,7 +7,7 @@ namespace BussinessLogic.DatabaseAccessObjects
 {
     public class BookDAO : IDataAccessObject<Book>
     {
-        private readonly string SQL_STORE_PROC_BOOK_SELECT = "SELECT vBooks";
+        private readonly string SQL_STORE_PROC_BOOK_SELECT = "SELECT * FROM vBooks";
         private readonly string SQL_STORE_PROC_BOOK_INSERT = "";
         private readonly string SQL_STORE_PROC_BOOK_UPDATE = "";
         private readonly string SQL_STORE_PROC_BOOK_DELETE = "";
