@@ -70,6 +70,7 @@
     <Content Include="db4.sql" />
     <Content Include="db5.sql" />
     <Content Include="db6.sql" />
+    <Content Include="db7.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

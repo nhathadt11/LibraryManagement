@@ -9,7 +9,14 @@ create table Roles(
 RoleId int primary key IDENTITY(1,1),
 Name nvarchar(300) not null
 )
-
+create procedure UpdateRoleById(
+@RoleId int,
+@Name nvarchar(300) not null
+) as
+begin
+	update Roles set Name = @Name;
+	return @@ROWCOUNT;
+end
 --* procedure accept 1 param as Role name and return role ID if insert transaction successfully*--
 --* else return -1 if this role already existed *--
 --param @Name required--
@@ -132,6 +139,8 @@ exec InsertUser @Username =N'test2', @Password = N'test2', @UserId = @id output,
 print @id
 select * from Roles
 select * from Users
+
+
 ------------------------------------------------
 create table Categories(
 CategoryId int primary key IDENTITY(1,1),
