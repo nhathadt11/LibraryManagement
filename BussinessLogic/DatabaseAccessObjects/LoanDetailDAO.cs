@@ -53,7 +53,7 @@ namespace BussinessLogic.DatabaseAccessObjects
                                                  new SqlParameter("@ReturnDate", loanDetail.ReturnDate));
         }
 
-        public int Delete(int objId)
+        public int Delete(int loanDetailId)
         {
             throw new NotImplementedException();
         }
