@@ -8,9 +8,28 @@ namespace BussinessLogic.DatabaseAccessObjects
     public class BookDAO : IDataAccessObject<Book>
     {
         private readonly string SQL_STORE_PROC_BOOK_SELECT = "SELECT * FROM vBooks";
-        private readonly string SQL_STORE_PROC_BOOK_INSERT = "";
+
+        //optional - @Isbn nvarchar(MAX) = N'N/A'
+        //required - @Title nvarchar(MAX) 
+        //optional - @Description nvarchar(MAX) = N'N/A',
+        //optional - @CoverImageUrl nvarchar(MAX) = N'DefaultCover.jpg',
+        //optional - @PageNumber int = 300,
+        //opntional - @PublishedDate date = getdate,
+        //required - @AuthorId int,
+        //required - @CategoryId int,
+        //required - @PublisherId int,
+        //opntional - @Discontinued bit = 0
+        private readonly string SQL_STORE_PROC_BOOK_INSERT = "InsertBook";//return -1 if AuthorId not valid
+                                                                        //return -2 if PublisherId not valid
+                                                                        //return -3 if CategoryId not valid
+                                                                        //return BookId if insert successfully
+
         private readonly string SQL_STORE_PROC_BOOK_UPDATE = "";
-        private readonly string SQL_STORE_PROC_BOOK_DELETE = "";
+
+        //required - @BookId
+        private readonly string SQL_STORE_PROC_BOOK_DELETE = "DeleteBookById";//return -1 if this Book already reference by the other
+                                                                              //return 0 if this BookId not exists in Database
+                                                                              //return 1 if delete successfully
         private DataProvider _dataProvider;
         private static BookDAO _instance;
         private BookDAO()

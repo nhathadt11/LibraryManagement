@@ -15,6 +15,9 @@ namespace BussinessLogic.DatabaseAccessObjects
                                                                                //@Bio - opntional
         private readonly string SQL_STORE_PROC_AUTHOR_UPDATE = "";
         private readonly string SQL_STORE_PROC_AUTHOR_DELETE = "DeleteAuthorByID";//accept @AuthorId and return -1|0|1
+                                                                                  // -1 if already reference by the others
+                                                                                  // 0 if this ID does not exist
+                                                                                  // 1 if successfully
         private DataProvider _dataProvider;
         private static AuthorDAO _instance;
         private AuthorDAO()

@@ -344,7 +344,7 @@ begin
 	else
 		begin
 			insert into Books values (@Isbn, @Title, @Description, @CoverImageUrl, @PageNumber, @PublishedDate, @AuthorId, @CategoryId, @PublisherId, @Discontinued);
-			return @@ROWCOUNT;
+			return SCOPE_IDENTITY();
 		end
 end
 drop procedure DeleteBookById
