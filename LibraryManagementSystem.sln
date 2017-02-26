@@ -9,6 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseAccess", "DatabaseA
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL", "SQL", "{BE905280-B434-44F2-BEF1-7C79CDC9E28C}"
 	ProjectSection(SolutionItems) = preProject
+		..\..\..\Desktop\db2.sql = ..\..\..\Desktop\db2.sql
 		..\..\..\Desktop\Sql_LibraryManagementV2.sql = ..\..\..\Desktop\Sql_LibraryManagementV2.sql
 	EndProjectSection
 EndProject
@@ -19,6 +20,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookLibraryService", "BookLibraryService\BookLibraryService.csproj", "{2FE0234F-77BF-44F8-806B-BEA5BF90E128}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryMaragementClient", "LibraryMaragementClient\LibraryMaragementClient.csproj", "{0BB5D6A1-E3DD-4269-96E4-5DC25CCD53E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "Database\Database.csproj", "{BE35939E-60FF-4789-B91C-23B85AD9FC2D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -50,6 +53,10 @@ Global
 		{0BB5D6A1-E3DD-4269-96E4-5DC25CCD53E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BB5D6A1-E3DD-4269-96E4-5DC25CCD53E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0BB5D6A1-E3DD-4269-96E4-5DC25CCD53E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE35939E-60FF-4789-B91C-23B85AD9FC2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE35939E-60FF-4789-B91C-23B85AD9FC2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE35939E-60FF-4789-B91C-23B85AD9FC2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE35939E-60FF-4789-B91C-23B85AD9FC2D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
