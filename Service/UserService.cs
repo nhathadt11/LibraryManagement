@@ -7,6 +7,10 @@ namespace Service
     class UserService : ICommonService<User>
     {
         private UserDAO _userDAO;
+        public UserService()
+        {
+            _userDAO = UserDAO.Instance;
+        }
         public int Add(User user)
         {
             return _userDAO.Add(user);
