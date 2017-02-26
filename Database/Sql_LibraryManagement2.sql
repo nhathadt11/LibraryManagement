@@ -362,7 +362,7 @@ end
 drop view vBooks
 create view vBooks as
 select 
-	b.BookId as Id, b.Title as Title, b.Isbn as ISBN, b.PageNumber as NumOfPage, b.PublishedDate as PublishDate, 
+	b.BookId as Id, b.Title as Title, b.Isbn as ISBN, (select count(CopyId) from Copies) as Copies,b.PageNumber as NumOfPage, b.PublishedDate as PublishDate, 
 	c.Name as Category, a.FullName as Author, p.Name as Publisher,
 	b.Discontinued as Discontinued, b.Description as Description, b.CoverImageUrl as Cover
 from
@@ -370,12 +370,12 @@ from
 	Categories c,
 	Authors a,
 	Publishers p
-where 
+where
 	b.CategoryId = c.CategoryId and
 	b.AuthorId = a.AuthorId and
 	b.PublisherId = p.PublisherId
-
 select * from vBooks
+
 ------------------------------------------------
 drop table Copies
 create table Copies(
@@ -384,11 +384,15 @@ BookId int foreign key references Books(BookId),
 IsAvalable bit default 1
 )
 create procedure InsertCopy(
-	
+@BookId int
 ) as
 begin
-	
+	insert into Copies values(@BookId, 1);
+	return @@ROWCOUNT;
 end
+create procedure DeleteCopies(
+
+) as
 ------------------------------------------------
 drop table Loans
 create table Loans(
