@@ -7,7 +7,7 @@ namespace BussinessLogic.DatabaseAccessObjects
 {
     public class UserDAO : IDataAccessObject<User>
     {
-        private readonly string SQL_STORE_PROC_USER_SELECT = "select * from Users";
+        private readonly string SQL_USER_SELECT = "SELECT * FROM Users";
 
         //required @Username nvarchar(300),
         //required @Password nvarchar(60),
@@ -15,7 +15,7 @@ namespace BussinessLogic.DatabaseAccessObjects
         //optional @PhoneNumber nvarchar(11) = null,
         //optional @Address nvarchar(600) = null,
         //optional @Email nvarchar(50) = null
-        private readonly string SQL_STORE_PROC_USER_INSERT = "InsertUser";//return 1 if insert successfully
+        private readonly string SQL_USER_INSERT = "InsertUser";//return 1 if insert successfully
                                                                           //return -1 if this user already exists
 
         //@UserId int,
@@ -57,13 +57,13 @@ namespace BussinessLogic.DatabaseAccessObjects
 
         public DataTable GetAll()
         {
-            return _dataProvider.ExecuteQuery(SQL_STORE_PROC_USER_SELECT,
+            return _dataProvider.ExecuteQuery(SQL_USER_SELECT,
                                               CommandType.Text);
         }
 
         public int Add(User user)
         {
-            return _dataProvider.ExecuteNonQuery(SQL_STORE_PROC_USER_INSERT,
+            return _dataProvider.ExecuteNonQuery(SQL_USER_INSERT,
                                               CommandType.StoredProcedure,
                                               new SqlParameter("@Username", user.Username),
                                               new SqlParameter("@Password", user.Password),
@@ -75,7 +75,7 @@ namespace BussinessLogic.DatabaseAccessObjects
 
         public int Update(User user)
         {
-            return _dataProvider.ExecuteNonQuery(SQL_STORE_PROC_USER_UPDATE,
+            return _dataProvider.ExecuteNonQuery(SQL_USER_UPDATE,
                                               CommandType.StoredProcedure,
                                               new SqlParameter("@Username", user.Username),
                                               new SqlParameter("@Password", user.Password),
@@ -88,7 +88,7 @@ namespace BussinessLogic.DatabaseAccessObjects
 
         public int Delete(int userId)
         {
-            return _dataProvider.ExecuteNonQuery(SQL_STORE_PROC_USER_SELECT,
+            return _dataProvider.ExecuteNonQuery(SQL_USER_SELECT,
                                                  CommandType.StoredProcedure,
                                                  new SqlParameter("@UserId", userId));
         }

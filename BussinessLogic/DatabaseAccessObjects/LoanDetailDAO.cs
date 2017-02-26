@@ -8,16 +8,16 @@ namespace BussinessLogic.DatabaseAccessObjects
 {
     public class LoanDetailDAO : IDataAccessObject<LoanDetail>
     {
-        private readonly string SQL_STORE_PROC_LOAN_DETAIL_SELECT = "select * from LoanDetails";
+        private readonly string SQL_LOAN_DETAILS_SELECT = "SELECT * FROM LoanDetails";
 
         //required - @CopyId
         //required - @LoanId
         //required - @ReturnDate
-        private readonly string SQL_STORE_PROC_LOAN_DETAIL_INSERT = "InsertLoanDetail";//return -1 if CopyId not valid
+        private readonly string SQL_LOAN_DETAILS_INSERT = "InsertLoanDetail";//return -1 if CopyId not valid
                                                                                        //return -2 if LoanId not valid
                                                                                        //return this Id if insert successfully
-        private readonly string SQL_STORE_PROC_LOAN_DETAIL_UPDATE = "";
-        private readonly string SQL_STORE_PROC_LOAN_DETAIL_DELETE = "";
+        private readonly string SQL_LOAN_DETAILS_UPDATE = "";
+        private readonly string SQL_LOAN_DETAILS_DELETE = "";
         private DataProvider _dataProvider;
         private static LoanDetailDAO _instance;
         private LoanDetailDAO()
@@ -38,13 +38,13 @@ namespace BussinessLogic.DatabaseAccessObjects
 
         public DataTable GetAll()
         {
-            return _dataProvider.ExecuteQuery(SQL_STORE_PROC_LOAN_DETAIL_SELECT,
+            return _dataProvider.ExecuteQuery(SQL_LOAN_DETAILS_SELECT,
                                               CommandType.Text);
         }
 
         public int Add(LoanDetail loanDetail)
         {
-            return _dataProvider.ExecuteNonQuery(SQL_STORE_PROC_LOAN_DETAIL_INSERT,
+            return _dataProvider.ExecuteNonQuery(SQL_LOAN_DETAILS_INSERT,
                                                  CommandType.StoredProcedure,
                                                  new SqlParameter("@CopyCode", loanDetail.CopyCode),
                                                  new SqlParameter("@LoanId", loanDetail.LoanId));
@@ -52,7 +52,7 @@ namespace BussinessLogic.DatabaseAccessObjects
 
         public int Update(LoanDetail loanDetail)
         {
-            return _dataProvider.ExecuteNonQuery(SQL_STORE_PROC_LOAN_DETAIL_UPDATE,
+            return _dataProvider.ExecuteNonQuery(SQL_LOAN_DETAILS_UPDATE,
                                                  CommandType.StoredProcedure,
                                                  new SqlParameter("@CopyCode", loanDetail.CopyCode),
                                                  new SqlParameter("@LoanId", loanDetail.LoanId),

@@ -15,6 +15,7 @@ namespace LibraryMaragementClient
             FormBook frmBook = FormBook.Instance;
             frmBook.MdiParent = this;
             frmBook.Show();
+            frmBook.Activate();
         }
 
         private void tsbtAuthor_Click(object sender, EventArgs e)
@@ -22,6 +23,7 @@ namespace LibraryMaragementClient
             FormAuthor frmAuthor = FormAuthor.Instance;
             frmAuthor.MdiParent = this;
             frmAuthor.Show();
+            frmAuthor.Activate();
         }
 
         private void tsbtCategory_Click(object sender, EventArgs e)
@@ -29,6 +31,7 @@ namespace LibraryMaragementClient
             FormCategory frmCategory = FormCategory.Instance;
             frmCategory.MdiParent = this;
             frmCategory.Show();
+            frmCategory.Activate();
         }
 
         private void tsbtCopy_Click(object sender, EventArgs e)
@@ -36,6 +39,7 @@ namespace LibraryMaragementClient
             FormCopy frmCopy = FormCopy.Instance;
             frmCopy.MdiParent = this;
             frmCopy.Show();
+            frmCopy.Activate();
         }
 
         private void tsbtPublisher_Click(object sender, EventArgs e)
@@ -43,6 +47,7 @@ namespace LibraryMaragementClient
             FormPublisher frmPublisher = FormPublisher.Instance;
             frmPublisher.MdiParent = this;
             frmPublisher.Show();
+            frmPublisher.Activate();
         }
 
         private void tsbtLoan_Click(object sender, EventArgs e)
@@ -50,6 +55,7 @@ namespace LibraryMaragementClient
             FormLoan frmLoan = FormLoan.Instance;
             frmLoan.MdiParent = this;
             frmLoan.Show();
+            frmLoan.Activate();
         }
 
         private void tsbtMember_Click(object sender, EventArgs e)
@@ -57,6 +63,7 @@ namespace LibraryMaragementClient
             FormUser frmUser = FormUser.Instance;
             frmUser.MdiParent = this;
             frmUser.Show();
+            frmUser.Activate();
         }
     }
 }
