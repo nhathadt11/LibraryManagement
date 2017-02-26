@@ -7,10 +7,21 @@ namespace BussinessLogic.DatabaseAccessObjects
 {
     public class UserDAO : IDataAccessObject<User>
     {
-        private readonly string SQL_STORE_PROC_USER_SELECT = "";
-        private readonly string SQL_STORE_PROC_USER_INSERT = "";
+        private readonly string SQL_STORE_PROC_USER_SELECT = "select * from Users";
+
+        //required @Username nvarchar(300),
+        //required @Password nvarchar(60),
+        //required @RoleId int,
+        //optional @PhoneNumber nvarchar(11) = null,
+        //optional @Address nvarchar(600) = null,
+        //optional @Email nvarchar(50) = null
+        private readonly string SQL_STORE_PROC_USER_INSERT = "InsertUser";//return 1 if insert successfully
+                                                                          //return -1 if this user already exists
         private readonly string SQL_STORE_PROC_USER_UPDATE = "";
+
+
         private readonly string SQL_STORE_PROC_USER_DELETE = "";
+
         private DataProvider _dataProvider;
         private static UserDAO _instance;
         private UserDAO()

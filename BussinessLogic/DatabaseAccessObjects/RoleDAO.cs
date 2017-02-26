@@ -7,10 +7,17 @@ namespace BussinessLogic.DatabaseAccessObjects
 {
     public class RoleDAO : IDataAccessObject<Role>
     {
-        private readonly string SQL_STORE_PROC_ROLE_SELECT = "";
-        private readonly string SQL_STORE_PROC_ROLE_INSERT = "";
+        private readonly string SQL_STORE_PROC_ROLE_SELECT = "select * from Roles";
+
+        //required @Name
+        private readonly string SQL_STORE_PROC_ROLE_INSERT = "InsertRole";//return -1 if this name already existed
+                                                                          //return RoleId if insert successfully
         private readonly string SQL_STORE_PROC_ROLE_UPDATE = "";
-        private readonly string SQL_STORE_PROC_ROLE_DELETE = "";
+
+        //required @RoleID
+        private readonly string SQL_STORE_PROC_ROLE_DELETE = "DeleteRoleByID";//return -1 if this has already reference by the others
+                                                                              //return 0 if this id not exist
+                                                                              //return 1 if delete successfully
         private DataProvider _dataProvider;
         private static RoleDAO _instance;
         private RoleDAO()

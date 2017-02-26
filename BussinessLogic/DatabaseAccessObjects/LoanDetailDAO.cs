@@ -8,8 +8,14 @@ namespace BussinessLogic.DatabaseAccessObjects
 {
     public class LoanDetailDAO : IDataAccessObject<LoanDetail>
     {
-        private readonly string SQL_STORE_PROC_LOAN_DETAIL_SELECT = "";
-        private readonly string SQL_STORE_PROC_LOAN_DETAIL_INSERT = "";
+        private readonly string SQL_STORE_PROC_LOAN_DETAIL_SELECT = "select * from LoanDetails";
+
+        //required - @CopyId
+        //required - @LoanId
+        //required - @ReturnDate
+        private readonly string SQL_STORE_PROC_LOAN_DETAIL_INSERT = "InsertLoanDetail";//return -1 if CopyId not valid
+                                                                                       //return -2 if LoanId not valid
+                                                                                       //return this Id if insert successfully
         private readonly string SQL_STORE_PROC_LOAN_DETAIL_UPDATE = "";
         private readonly string SQL_STORE_PROC_LOAN_DETAIL_DELETE = "";
         private DataProvider _dataProvider;
