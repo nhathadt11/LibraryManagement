@@ -23,7 +23,7 @@ namespace DatabaseAccess
             }
         }
         public DataTable ExecuteQuery(string sql,
-                                          CommandType cmdType = CommandType.StoredProcedure,
+                                          CommandType cmdType,
                                           params SqlParameter[] sqlParameters)
         {
             using (SqlConnection connection = new SqlConnection(CONNECTION_STRING))
@@ -39,7 +39,7 @@ namespace DatabaseAccess
             }
         }
         public int ExecuteNonQuery(string sql,
-                                         CommandType cmdType = CommandType.StoredProcedure,
+                                         CommandType cmdType,
                                          params SqlParameter[] sqlParameters)
         {
             using (SqlConnection connection = new SqlConnection(CONNECTION_STRING))

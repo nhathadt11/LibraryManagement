@@ -27,7 +27,7 @@ namespace LibraryMaragementClient
 
         private void FormUser_Load(object sender, EventArgs e)
         {
-
+            dgvUsers.DataSource = _service.GetAll();
         }
     }
 }
