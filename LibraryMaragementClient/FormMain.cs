@@ -30,5 +30,17 @@ namespace LibraryMaragementClient
             frmAuthor.MdiParent = this;
             frmAuthor.Show();
         }
+
+        private void tsbtCategory_Click(object sender, EventArgs e)
+        {
+            FormCategory frmCategory = FormCategory.Instance;
+            frmCategory.MdiParent = this;
+            frmCategory.Show();
+        }
+
+        private void tsbtCopy_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

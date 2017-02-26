@@ -1,6 +1,6 @@
 ﻿namespace LibraryMaragementClient
 {
-    partial class FormBookCopy
+    partial class FormCopy
     {
         /// <summary>
         /// Required designer variable.
