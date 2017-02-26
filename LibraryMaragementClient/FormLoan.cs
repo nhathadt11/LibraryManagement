@@ -1,25 +1,32 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Service;
 using System.Windows.Forms;
 
 namespace LibraryMaragementClient
 {
     public partial class FormLoan : Form
     {
-        public FormLoan()
+        private LoanService _service;
+        private FormLoan _instance;
+        private FormLoan()
         {
             InitializeComponent();
+            _service = new LoanService();
+        }
+        public FormLoan Instance
+        {
+            get{
+                if (_instance == null || _instance.IsDisposed)
+                {
+                    _instance = new FormLoan();
+                }
+                return _instance;
+            }
         }
 
         private void FormLoan_Load(object sender, EventArgs e)
         {
-
+            dgvLoans.DataSource = _service.GetAll();
         }
     }
 }

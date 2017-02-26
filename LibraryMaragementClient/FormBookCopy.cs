@@ -1,25 +1,31 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Service;
 namespace LibraryMaragementClient
 {
     public partial class FormBookCopy : Form
     {
-        public FormBookCopy()
+        private FormBookCopy _instance;
+        private BookCopyService _service;
+        private FormBookCopy()
         {
             InitializeComponent();
+            _service = new BookCopyService();
+        }
+        private FormBookCopy Instance {
+            get
+            {
+                if (_instance == null || _instance.IsDisposed)
+                {
+                    _instance = new FormBookCopy();
+                }
+                return _instance;
+            }
         }
 
         private void FormBookCopy_Load(object sender, EventArgs e)
         {
-
+            dgvBookCopys.DataSource = _service.GetAll();
         }
     }
 }

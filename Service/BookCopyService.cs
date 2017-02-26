@@ -4,10 +4,10 @@ using System.Data;
 
 namespace Service
 {
-    public class CopyService : ICommonService<Copy>
+    public class BookCopyService : ICommonService<Copy>
     {
         private CopyDAO _copyDAO;
-        public CopyService()
+        public BookCopyService()
         {
             _copyDAO = CopyDAO.Instance;
         }

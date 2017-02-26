@@ -1,24 +1,32 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Service;
 namespace LibraryMaragementClient
 {
     public partial class FormAuthor : Form
     {
-        public FormAuthor()
+        private AuthorService _service;
+        private FormAuthor _instance;
+        private FormAuthor()
         {
             InitializeComponent();
+            _service = new AuthorService();
+        }
+        public FormAuthor Instance
+        {
+            get
+            {
+                if (_instance == null || _instance.IsDisposed)
+                {
+                    _instance = new FormAuthor();
+                }
+                return _instance;
+            }
         }
 
         private void FormAuthor_Load(object sender, EventArgs e)
         {
+            dgvAuthors.DataSource = _service.GetAll();
         }
     }
 }
