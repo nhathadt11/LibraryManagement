@@ -19,7 +19,7 @@ namespace Service
 
         public int Delete(int loanDetailId)
         {
-            _loanDetailDAO.Delete(loanDetailId);
+             return _loanDetailDAO.Delete(loanDetailId);
         }
 
         public DataTable GetAll()

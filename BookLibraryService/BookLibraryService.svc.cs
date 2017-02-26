@@ -13,22 +13,24 @@ namespace BookLibraryService
     // NOTE: In order to launch WCF Test Client for testing this service, please select BookLibraryService.svc or BookLibraryService.svc.cs at the Solution Explorer and start debugging.
     public class BookLibraryService : IBookLibraryService
     {
-        public string GetData(int value)
+        public int Add(Book obj)
         {
-            return string.Format("You entered: {0}", value);
+            throw new NotImplementedException();
         }
 
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
+        public int Delete(int objId)
         {
-            if (composite == null)
-            {
-                throw new ArgumentNullException("composite");
-            }
-            if (composite.BoolValue)
-            {
-                composite.StringValue += "Suffix";
-            }
-            return composite;
+            throw new NotImplementedException();
+        }
+
+        public DataTable GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public int Update(Book obj)
+        {
+            throw new NotImplementedException();
         }
     }
 }
