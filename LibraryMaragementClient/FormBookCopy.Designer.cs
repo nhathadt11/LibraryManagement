@@ -35,18 +35,20 @@
             // dgvBookCopys
             // 
             this.dgvBookCopys.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBookCopys.Location = new System.Drawing.Point(13, 13);
+            this.dgvBookCopys.Location = new System.Drawing.Point(11, 11);
+            this.dgvBookCopys.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvBookCopys.Name = "dgvBookCopys";
             this.dgvBookCopys.RowTemplate.Height = 28;
-            this.dgvBookCopys.Size = new System.Drawing.Size(1166, 790);
+            this.dgvBookCopys.Size = new System.Drawing.Size(772, 454);
             this.dgvBookCopys.TabIndex = 0;
             // 
             // FormBookCopy
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1191, 815);
+            this.ClientSize = new System.Drawing.Size(794, 476);
             this.Controls.Add(this.dgvBookCopys);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormBookCopy";
             this.Text = "FormBookCopy";
             this.Load += new System.EventHandler(this.FormBookCopy_Load);
