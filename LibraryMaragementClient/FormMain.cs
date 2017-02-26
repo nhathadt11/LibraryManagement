@@ -26,7 +26,9 @@ namespace LibraryMaragementClient
 
         private void tsbtAuthor_Click(object sender, EventArgs e)
         {
-            FormAuthor frmAuthor=FormAuthor.Ins
+            FormAuthor frmAuthor = FormAuthor.Instance;
+            frmAuthor.MdiParent = this;
+            frmAuthor.Show();
         }
     }
 }
