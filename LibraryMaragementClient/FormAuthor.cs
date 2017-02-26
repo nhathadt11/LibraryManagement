@@ -12,7 +12,19 @@ namespace LibraryMaragementClient
 {
     public partial class FormAuthor : Form
     {
-        public FormAuthor()
+        private static FormAuthor _instance;
+        public static FormAuthor Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new FormAuthor();
+                }
+                return _instance;
+            }
+        }
+        private FormAuthor()
         {
             InitializeComponent();
         }
