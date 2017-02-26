@@ -9,6 +9,7 @@ create table Roles(
 RoleId int primary key IDENTITY(1,1),
 Name nvarchar(300) not null
 )
+drop procedure UpdateRoleById
 create procedure UpdateRoleById(
 @RoleId int,
 @Name nvarchar(300)
@@ -330,6 +331,23 @@ Contact nvarchar(1000) default N'N/A',
 Address nvarchar(300) default N'N/A',
 Description nvarchar(MAX) default N'N/A'
 )
+create procedure UpdatePublisherById(
+@PublisherId int,
+@Name nvarchar(300),
+@Contact nvarchar(1000),
+@Address nvarchar(300),
+@Description nvarchar(MAX)
+) as
+begin
+	if not exists (select * from Publishers where PublisherId = @PublisherId) return 0;
+	update Publishers set
+	Name = @Name,
+	Contact = @Contact,
+	Address = @Address,
+	Description = @Description
+	where PublisherId = @PublisherId;
+	return @@ROWCOUNT;
+end
 --*procedure InserPublisher*--
 --param @Name, @PublisherId required--
 --params @Contact, @Address, @Description are optional--

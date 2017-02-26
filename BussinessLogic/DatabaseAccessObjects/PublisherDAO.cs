@@ -14,7 +14,14 @@ namespace BussinessLogic.DatabaseAccessObjects
         //optional @Address nvarchar(300) = null,
         //opntinal @Description nvarchar(MAX) = null
         private readonly string SQL_PUBLISHER_INSERT = "InserPublisher";//return publisherId if insert successfully
-        private readonly string SQL_PUBLISHER_UPDATE = "";
+
+        //@PublisherId int,
+        //@Name nvarchar(300),
+        //@Contact nvarchar(1000),
+        //@Address nvarchar(300),
+        //@Description nvarchar(MAX)
+        private readonly string SQL_PUBLISHER_UPDATE = "UpdatePublisherById"; //return 0 if this Id does not exists
+                                                                              //return > 0 if Update Successfully
         //required @PublisherId
         private readonly string SQL_PUBLISHER_DELETE = "DeletePublisherByID";//return -1 if has been reference by the other
                                                                                         //return 0 if not exists this Id
