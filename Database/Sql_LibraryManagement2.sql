@@ -390,9 +390,17 @@ begin
 	insert into Copies values(@BookId, 1);
 	return @@ROWCOUNT;
 end
-create procedure DeleteCopies(
 
+
+create procedure DeleteCopiesById(
+@CopyId int
 ) as
+begin
+	if not exists (select * from Copies where CopyId = @CopyId) return 0;
+	if exists (select * from LoanDetails where CopyId = @CopyId) return -1;
+	delete from Copies  where CopyId = @CopyId;
+	return @@ROWCOUNT;
+end
 ------------------------------------------------
 drop table Loans
 create table Loans(
@@ -402,6 +410,7 @@ Limit int DEFAULT 5,
 MemberId int foreign key references Users(UserId) not null,
 LibrarianId int foreign key references Users(UserId) not null,
 )
+create procedure InsertLoan
 ------------------------------------------------
 drop table LoanDetails
 create table LoanDetails(
