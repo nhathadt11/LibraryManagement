@@ -7,10 +7,21 @@ namespace BussinessLogic.DatabaseAccessObjects
 {
     public class LoanDAO : IDataAccessObject<Loan>
     {
-        private readonly string SQL_STORE_PROC_LOAN_SELECT = "";
-        private readonly string SQL_STORE_PROC_LOAN_INSERT = "";
+        private readonly string SQL_STORE_PROC_LOAN_SELECT = "select * from Loans";
+
+        //optional @IssueDate
+        //optional @Limit
+        //required @MemberId
+        //required @LibrarianId
+        private readonly string SQL_STORE_PROC_LOAN_INSERT = "InsertLoan";//return -1 if member Id not valid
+                                                                          //return -2 if LibrarianId not valid
+                                                                          //return 1 if insert successfully
         private readonly string SQL_STORE_PROC_LOAN_UPDATE = "";
-        private readonly string SQL_STORE_PROC_LOAN_DELETE = "";
+
+        //requied @LoanId
+        private readonly string SQL_STORE_PROC_LOAN_DELETE = "";//return -1 if this has already reference by the others
+                                                                //return 0 if this Id does not exists
+                                                                //return 1 if deleted successfully
         private DataProvider _dataProvider;
         private static LoanDAO _instance;
         private LoanDAO()

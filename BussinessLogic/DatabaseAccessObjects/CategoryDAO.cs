@@ -7,10 +7,18 @@ namespace BussinessLogic.DatabaseAccessObjects
 {
     public class CategoryDAO : IDataAccessObject<Category>
     {
-        private readonly string SQL_STORE_PROC_CATEGORY_SELECT = "";
-        private readonly string SQL_STORE_PROC_CATEGORY_INSERT = "";
+        private readonly string SQL_STORE_PROC_CATEGORY_SELECT = "select * from Categories";
+
+        //required @Name
+        private readonly string SQL_STORE_PROC_CATEGORY_INSERT = "InsertCategory";//return Id this Category if insert successfully
+                                                                                  //return -1 if this Category already existed
+
         private readonly string SQL_STORE_PROC_CATEGORY_UPDATE = "";
-        private readonly string SQL_STORE_PROC_CATEGORY_DELETE = "";
+
+        //required @CategoryID
+        private readonly string SQL_STORE_PROC_CATEGORY_DELETE = "DeleteCategoryByID";//return -1 if this category already reference by the others
+                                                                                      //return 0 if this category does not exists
+                                                                                      //return 1 if this category deleted successfully
         private DataProvider _dataProvider;
         private static CategoryDAO _instance;
         private CategoryDAO()
