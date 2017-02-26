@@ -19,7 +19,7 @@ namespace Service
 
         public int Delete(int loanDetailId)
         {
-            throw new NotImplementedException();
+            _loanDetailDAO.Delete(loanDetailId);
         }
 
         public DataTable GetAll()
