@@ -4,7 +4,7 @@ using System.Data;
 
 namespace Service
 {
-    class BookService : ICommonService<Book>
+    public class BookService : ICommonService<Book>
     {
         private BookDAO _bookDAO;
         public BookService()

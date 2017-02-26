@@ -16,5 +16,12 @@ namespace LibraryMaragementClient
         {
             InitializeComponent();
         }
+
+        private void tsbtBook_Click(object sender, EventArgs e)
+        {
+            FormBook frmBook = FormBook.Instance;
+            frmBook.MdiParent = this;
+            frmBook.Show();
+        }
     }
 }
