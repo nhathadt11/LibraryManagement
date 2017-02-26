@@ -7,19 +7,19 @@ namespace BussinessLogic.DatabaseAccessObjects
 {
     public class LoanDAO : IDataAccessObject<Loan>
     {
-        private readonly string SQL_STORE_PROC_LOAN_SELECT = "select * from Loans";
+        private readonly string SQL_LOAN_SELECT = "SELECT * FROM Loans";
 
         //optional @IssueDate
         //optional @Limit
         //required @MemberId
         //required @LibrarianId
-        private readonly string SQL_STORE_PROC_LOAN_INSERT = "InsertLoan";//return -1 if member Id not valid
+        private readonly string SQL_LOAN_INSERT = "InsertLoan";//return -1 if member Id not valid
                                                                           //return -2 if LibrarianId not valid
                                                                           //return 1 if insert successfully
-        private readonly string SQL_STORE_PROC_LOAN_UPDATE = "";
+        private readonly string SQL_LOAN_UPDATE = "";
 
         //requied @LoanId
-        private readonly string SQL_STORE_PROC_LOAN_DELETE = "";//return -1 if this has already reference by the others
+        private readonly string SQL_LOAN_DELETE = "";//return -1 if this has already reference by the others
                                                                 //return 0 if this Id does not exists
                                                                 //return 1 if deleted successfully
         private DataProvider _dataProvider;
@@ -42,13 +42,13 @@ namespace BussinessLogic.DatabaseAccessObjects
 
         public DataTable GetAll()
         {
-            return _dataProvider.ExecuteQuery(SQL_STORE_PROC_LOAN_SELECT,
+            return _dataProvider.ExecuteQuery(SQL_LOAN_SELECT,
                                               CommandType.Text);
         }
 
         public int Add(Loan loan)
         {
-            return _dataProvider.ExecuteNonQuery(SQL_STORE_PROC_LOAN_INSERT,
+            return _dataProvider.ExecuteNonQuery(SQL_LOAN_INSERT,
                                                  CommandType.StoredProcedure,
                                                  new SqlParameter("@IssueDate", loan.IssueDate),
                                                  new SqlParameter("@LimitDay", loan.LimitDate),
@@ -58,7 +58,7 @@ namespace BussinessLogic.DatabaseAccessObjects
 
         public int Update(Loan loan)
         {
-            return _dataProvider.ExecuteNonQuery(SQL_STORE_PROC_LOAN_UPDATE,
+            return _dataProvider.ExecuteNonQuery(SQL_LOAN_UPDATE,
                                                  CommandType.StoredProcedure,
                                                  new SqlParameter("@IssueDate", loan.IssueDate),
                                                  new SqlParameter("@LimitDay", loan.LimitDate),
@@ -69,7 +69,7 @@ namespace BussinessLogic.DatabaseAccessObjects
 
         public int Delete(int loanId)
         {
-            return _dataProvider.ExecuteNonQuery(SQL_STORE_PROC_LOAN_DELETE,
+            return _dataProvider.ExecuteNonQuery(SQL_LOAN_DELETE,
                                                  CommandType.StoredProcedure,
                                                  new SqlParameter("@LoanId", loanId));
         }

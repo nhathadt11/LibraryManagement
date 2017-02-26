@@ -7,15 +7,15 @@ namespace BussinessLogic.DatabaseAccessObjects
 {
     public class RoleDAO : IDataAccessObject<Role>
     {
-        private readonly string SQL_STORE_PROC_ROLE_SELECT = "select * from Roles";
+        private readonly string SQL_ROLE_SELECT = "SELECT * FROM Roles";
 
         //required @Name
-        private readonly string SQL_STORE_PROC_ROLE_INSERT = "InsertRole";//return -1 if this name already existed
+        private readonly string SQL_ROLE_INSERT = "InsertRole";//return -1 if this name already existed
                                                                           //return RoleId if insert successfully
-        private readonly string SQL_STORE_PROC_ROLE_UPDATE = "";
+        private readonly string SQL_ROLE_UPDATE = "";
 
         //required @RoleID
-        private readonly string SQL_STORE_PROC_ROLE_DELETE = "DeleteRoleByID";//return -1 if this has already reference by the others
+        private readonly string SQL_ROLE_DELETE = "DeleteRoleByID";//return -1 if this has already reference by the others
                                                                               //return 0 if this id not exist
                                                                               //return 1 if delete successfully
         private DataProvider _dataProvider;
@@ -38,20 +38,20 @@ namespace BussinessLogic.DatabaseAccessObjects
 
         public DataTable GetAll()
         {
-            return _dataProvider.ExecuteQuery(SQL_STORE_PROC_ROLE_SELECT,
+            return _dataProvider.ExecuteQuery(SQL_ROLE_SELECT,
                                               CommandType.Text);
         }
 
         public int Add(Role role)
         {
-            return _dataProvider.ExecuteNonQuery(SQL_STORE_PROC_ROLE_INSERT,
+            return _dataProvider.ExecuteNonQuery(SQL_ROLE_INSERT,
                                                  CommandType.StoredProcedure,
                                                  new SqlParameter("@Name", role.Name));
         }
 
         public int Update(Role role)
         {
-            return _dataProvider.ExecuteNonQuery(SQL_STORE_PROC_ROLE_INSERT,
+            return _dataProvider.ExecuteNonQuery(SQL_ROLE_INSERT,
                                                  CommandType.StoredProcedure,
                                                  new SqlParameter("@Name", role.Name),
                                                  new SqlParameter("@RoleId", role.RoleId));
@@ -59,7 +59,7 @@ namespace BussinessLogic.DatabaseAccessObjects
 
         public int Delete(int rolerId)
         {
-            return _dataProvider.ExecuteNonQuery(SQL_STORE_PROC_ROLE_DELETE,
+            return _dataProvider.ExecuteNonQuery(SQL_ROLE_DELETE,
                                                  CommandType.StoredProcedure,
                                                  new SqlParameter("@RoleId", rolerId));
         }

@@ -7,16 +7,16 @@ namespace BussinessLogic.DatabaseAccessObjects
 {
     public class PublisherDAO : IDataAccessObject<Publisher>
     {
-        private readonly string SQL_STORE_PROC_PUBLISHER_SELECT = "select * from Publishers";
+        private readonly string SQL_PUBLISHER_SELECT = "SELECT * FROM Publishers";
 
         //required @Name nvarchar(300),
         //optional @Contact nvarchar(1000) = null,
         //optional @Address nvarchar(300) = null,
         //opntinal @Description nvarchar(MAX) = null
-        private readonly string SQL_STORE_PROC_PUBLISHER_INSERT = "InserPublisher";//return publisherId if insert successfully
-        private readonly string SQL_STORE_PROC_PUBLISHER_UPDATE = "";
+        private readonly string SQL_PUBLISHER_INSERT = "InserPublisher";//return publisherId if insert successfully
+        private readonly string SQL_PUBLISHER_UPDATE = "";
         //required @PublisherId
-        private readonly string SQL_STORE_PROC_PUBLISHER_DELETE = "DeletePublisherByID";//return -1 if has been reference by the other
+        private readonly string SQL_PUBLISHER_DELETE = "DeletePublisherByID";//return -1 if has been reference by the other
                                                                                         //return 0 if not exists this Id
                                                                                         //return 1 if insert successfully
         private DataProvider _dataProvider;
@@ -39,13 +39,13 @@ namespace BussinessLogic.DatabaseAccessObjects
 
         public DataTable GetAll()
         {
-            return _dataProvider.ExecuteQuery(SQL_STORE_PROC_PUBLISHER_SELECT,
+            return _dataProvider.ExecuteQuery(SQL_PUBLISHER_SELECT,
                                               CommandType.Text);
         }
 
         public int Add(Publisher publisher)
         {
-            return _dataProvider.ExecuteNonQuery(SQL_STORE_PROC_PUBLISHER_INSERT,
+            return _dataProvider.ExecuteNonQuery(SQL_PUBLISHER_INSERT,
                                                  CommandType.StoredProcedure,
                                                  new SqlParameter("@Name", publisher.Name),
                                                  new SqlParameter("@Contact", publisher.Contact),
@@ -55,7 +55,7 @@ namespace BussinessLogic.DatabaseAccessObjects
 
         public int Update(Publisher publisher)
         {
-            return _dataProvider.ExecuteNonQuery(SQL_STORE_PROC_PUBLISHER_UPDATE,
+            return _dataProvider.ExecuteNonQuery(SQL_PUBLISHER_UPDATE,
                                                  CommandType.StoredProcedure,
                                                  new SqlParameter("@Name", publisher.Name),
                                                  new SqlParameter("@Contact", publisher.Contact),
@@ -66,7 +66,7 @@ namespace BussinessLogic.DatabaseAccessObjects
 
         public int Delete(int publisherId)
         {
-            return _dataProvider.ExecuteNonQuery(SQL_STORE_PROC_PUBLISHER_DELETE,
+            return _dataProvider.ExecuteNonQuery(SQL_PUBLISHER_DELETE,
                                                  CommandType.StoredProcedure,
                                                  new SqlParameter("@PublisherId", publisherId));
         }
