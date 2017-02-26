@@ -410,12 +410,42 @@ Limit int DEFAULT 5,
 MemberId int foreign key references Users(UserId) not null,
 LibrarianId int foreign key references Users(UserId) not null,
 )
-create procedure InsertLoan
+create procedure InsertLoan(
+@IssueDate datetime = getdate,
+@Limit int = 5,
+@MemberId int,
+@LibrarianId int
+) as
+begin
+	if not exists (select * from Users where UserId = @MemberId) return -1;
+	if not exists (select * from Users where UserId = @LibrarianId) return -2;
+	insert into Loans values(@IssueDate, @Limit, @MemberId, @LibrarianId);
+	return @@ROWCOUNT;
+end
 ------------------------------------------------
 drop table LoanDetails
 create table LoanDetails(
+LoanDetailId int primary key,
 CopyId int foreign key references Copies(CopyId),
 LoanId int foreign key references Loans(LoanId),
 ReturnDate date DEFAULT null
 )
+use [LibraryManagementV2]
+
+drop procedure InsertLoanDetail
+
+create procedure InsertLoanDetail(
+@CopyId int,
+@LoanId int,
+@ReturnDate date
+) as
+begin
+	if not exists (select * from Copies where CopyId = @LoanId ) return -1;
+	if not exists (select * from Loans where LoanId = @LoanId) return -2;
+
+	insert into LoanDetails values(@CopyId, @LoanId, @ReturnDate);
+	update Copies set IsAvalable = 0 where CopyId = @CopyId;
+
+	return SCOPE_IDENTITY();
+end
 ------------------------------------------------

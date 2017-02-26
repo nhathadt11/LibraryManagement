@@ -7,10 +7,14 @@ namespace BussinessLogic.DatabaseAccessObjects
 {
     public class AuthorDAO : IDataAccessObject<Author>
     {
-        private readonly string SQL_STORE_PROC_AUTHOR_SELECT = "";
-        private readonly string SQL_STORE_PROC_AUTHOR_INSERT = "";
+        private readonly string SQL_STORE_PROC_AUTHOR_SELECT = "Select * from Authors";
+        private readonly string SQL_STORE_PROC_AUTHOR_INSERT = "InsertAuthor"; //return Author ID 
+                                                                               //@FullName - required
+                                                                               //@Contact - optional
+                                                                               //@Address - optional
+                                                                               //@Bio - opntional
         private readonly string SQL_STORE_PROC_AUTHOR_UPDATE = "";
-        private readonly string SQL_STORE_PROC_AUTHOR_DELETE = "";
+        private readonly string SQL_STORE_PROC_AUTHOR_DELETE = "DeleteAuthorByID";//accept @AuthorId and return -1|0|1
         private DataProvider _dataProvider;
         private static AuthorDAO _instance;
         private AuthorDAO()
