@@ -7,14 +7,14 @@ namespace LibraryMaragementClient
     public partial class FormCategory : Form
     {
         private CategoryService _service;
-        private FormCategory _instance;
+        private static FormCategory _instance;
 
         private FormCategory()
         {
             InitializeComponent();
             _service = new CategoryService();
         }
-        public FormCategory Instance
+        public static FormCategory Instance
         {
             get
             {

@@ -7,13 +7,13 @@ namespace LibraryMaragementClient
     public partial class FormLoan : Form
     {
         private LoanService _service;
-        private FormLoan _instance;
+        private static FormLoan _instance;
         private FormLoan()
         {
             InitializeComponent();
             _service = new LoanService();
         }
-        public FormLoan Instance
+        public static FormLoan Instance
         {
             get{
                 if (_instance == null || _instance.IsDisposed)

@@ -7,13 +7,13 @@ namespace LibraryMaragementClient
     public partial class FormPublisher : Form
     {
         private PublisherService _service;
-        private FormPublisher _instance;
+        private static FormPublisher _instance;
         private FormPublisher()
         {
             InitializeComponent();
             _service = new PublisherService();
         }
-        public FormPublisher Instance
+        public static FormPublisher Instance
         {
             get
             {

@@ -7,13 +7,13 @@ namespace LibraryMaragementClient
     public partial class FormUser : Form
     {
         private UserService _service;
-        private FormUser _instance;
+        private static FormUser _instance;
         private FormUser()
         {
             InitializeComponent();
             _service = new UserService();
         }
-        public FormUser Instance
+        public static FormUser Instance
         {
             get
             {

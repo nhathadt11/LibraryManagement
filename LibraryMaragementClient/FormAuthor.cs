@@ -6,13 +6,13 @@ namespace LibraryMaragementClient
     public partial class FormAuthor : Form
     {
         private AuthorService _service;
-        private FormAuthor _instance;
+        private static FormAuthor _instance;
         private FormAuthor()
         {
             InitializeComponent();
             _service = new AuthorService();
         }
-        public FormAuthor Instance
+        public static FormAuthor Instance
         {
             get
             {

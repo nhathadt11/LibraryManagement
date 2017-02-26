@@ -5,14 +5,14 @@ namespace LibraryMaragementClient
 {
     public partial class FormBookCopy : Form
     {
-        private FormBookCopy _instance;
         private BookCopyService _service;
+        private static FormBookCopy _instance;
         private FormBookCopy()
         {
             InitializeComponent();
             _service = new BookCopyService();
         }
-        private FormBookCopy Instance {
+        public static FormBookCopy Instance {
             get
             {
                 if (_instance == null || _instance.IsDisposed)
