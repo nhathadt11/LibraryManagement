@@ -4,7 +4,7 @@ using BussinessLogic.DataTransferObjects;
 
 namespace Service
 {
-    class CategoryService : ICommonService<Category>
+    public class CategoryService : ICommonService<Category>
     {
         private CategoryDAO _categoryDAO;
         public CategoryService()

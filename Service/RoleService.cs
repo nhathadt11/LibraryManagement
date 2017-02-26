@@ -4,7 +4,7 @@ using BussinessLogic.DatabaseAccessObjects;
 
 namespace Service
 {
-    class RoleService : ICommonService<Role>
+    public class RoleService : ICommonService<Role>
     {
         private RoleDAO _roleDAO;
         public RoleService()

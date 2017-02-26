@@ -4,7 +4,7 @@ using System.Data;
 
 namespace Service
 {
-    class PublisherService : ICommonService<Publisher>
+    public class PublisherService : ICommonService<Publisher>
     {
         private PublisherDAO _publisherDAO;
         public PublisherService()

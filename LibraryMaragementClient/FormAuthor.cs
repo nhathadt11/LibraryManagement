@@ -7,11 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Service;
 namespace LibraryMaragementClient
 {
     public partial class FormAuthor : Form
     {
+        private Service. _authorService;
         public FormAuthor()
         {
             InitializeComponent();
@@ -19,7 +20,6 @@ namespace LibraryMaragementClient
 
         private void FormAuthor_Load(object sender, EventArgs e)
         {
-
         }
     }
 }

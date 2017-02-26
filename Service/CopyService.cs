@@ -4,7 +4,7 @@ using System.Data;
 
 namespace Service
 {
-    class CopyService : ICommonService<Copy>
+    public class CopyService : ICommonService<Copy>
     {
         private CopyDAO _copyDAO;
         public CopyService()
