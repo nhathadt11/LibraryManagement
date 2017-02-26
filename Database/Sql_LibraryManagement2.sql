@@ -412,6 +412,37 @@ CategoryId int foreign key references Categories(CategoryId),
 PublisherId int foreign key references Publishers(PublisherId),
 Discontinued bit default 0
 )
+create procedure UpdateBookById(
+@BookId int,
+@Isbn nvarchar(MAX),
+@Title nvarchar(MAX),
+@Description nvarchar(MAX),
+@CoverImageUrl nvarchar(MAX),
+@PageNumber int,
+@PublishedDate date,
+@AuthorId int,
+@CategoryId int,
+@PublisherId int,
+@Discontinued bit
+) as
+begin
+	if not exists (select * from Books where BookId = @BookId) return 0;
+	if not exists (select * from Authors where AuthorId = @AuthorId) return -1;
+	if not exists (select * from Categories where CategoryId = @CategoryId) return -2;
+	if not exists (select * from Publishers where PublisherId = @PublisherId) return -3;
+	update Books set
+	Isbn = @Isbn,
+	Title = @Title,
+	Description = @Description,
+	CoverImageUrl = @CoverImageUrl,
+	PageNumber = @PageNumber,
+	PublishedDate = @PublishedDate,
+	AuthorId = @AuthorId,
+	CategoryId = @CategoryId,
+	PublisherId = @PublisherId,
+	Discontinued = @Discontinued
+	where BookId = @BookId;
+end
 drop procedure InsertBook
 create procedure InsertBook(
 @Isbn nvarchar(MAX) = N'N/A',

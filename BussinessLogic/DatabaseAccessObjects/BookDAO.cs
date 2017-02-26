@@ -20,9 +20,9 @@ namespace BussinessLogic.DatabaseAccessObjects
         //required - @PublisherId int,
         //opntional - @Discontinued bit = 0
         private readonly string SQL_BOOK_INSERT = "InsertBook";//return -1 if AuthorId not valid
-                                                                        //return -2 if PublisherId not valid
-                                                                        //return -3 if CategoryId not valid
-                                                                        //return BookId if insert successfully
+                                                                //return -2 if PublisherId not valid
+                                                                //return -3 if CategoryId not valid
+                                                                //return BookId if insert successfully
 
         private readonly string SQL_BOOK_UPDATE = "";
 
@@ -47,6 +47,7 @@ namespace BussinessLogic.DatabaseAccessObjects
                 return _instance;
             }
         }
+
         public DataTable GetAll()
         {
             return _dataProvider.ExecuteQuery(SQL_BOOK_SELECT,
