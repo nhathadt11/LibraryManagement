@@ -101,8 +101,8 @@
             this.tsbtCopy.Image = ((System.Drawing.Image)(resources.GetObject("tsbtCopy.Image")));
             this.tsbtCopy.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtCopy.Name = "tsbtCopy";
-            this.tsbtCopy.Size = new System.Drawing.Size(82, 97);
-            this.tsbtCopy.Text = "Copy";
+            this.tsbtCopy.Size = new System.Drawing.Size(128, 97);
+            this.tsbtCopy.Text = "Book Copy";
             this.tsbtCopy.Click += new System.EventHandler(this.tsbtCopy_Click);
             // 
             // tsbtPublisher
@@ -112,6 +112,7 @@
             this.tsbtPublisher.Name = "tsbtPublisher";
             this.tsbtPublisher.Size = new System.Drawing.Size(112, 97);
             this.tsbtPublisher.Text = "Publisher";
+            this.tsbtPublisher.Click += new System.EventHandler(this.tsbtPublisher_Click);
             // 
             // tsbtLoan
             // 
@@ -120,6 +121,7 @@
             this.tsbtLoan.Name = "tsbtLoan";
             this.tsbtLoan.Size = new System.Drawing.Size(78, 97);
             this.tsbtLoan.Text = "Loan";
+            this.tsbtLoan.Click += new System.EventHandler(this.tsbtLoan_Click);
             // 
             // tsbtMember
             // 
@@ -128,6 +130,7 @@
             this.tsbtMember.Name = "tsbtMember";
             this.tsbtMember.Size = new System.Drawing.Size(107, 97);
             this.tsbtMember.Text = "Member";
+            this.tsbtMember.Click += new System.EventHandler(this.tsbtMember_Click);
             // 
             // FormMain
             // 

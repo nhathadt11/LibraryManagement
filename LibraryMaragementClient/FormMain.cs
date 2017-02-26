@@ -40,7 +40,30 @@ namespace LibraryMaragementClient
 
         private void tsbtCopy_Click(object sender, EventArgs e)
         {
+            FormCopy frmCopy = FormCopy.Instance;
+            frmCopy.MdiParent = this;
+            frmCopy.Show();
+        }
 
+        private void tsbtPublisher_Click(object sender, EventArgs e)
+        {
+            FormPublisher frmPublisher = FormPublisher.Instance;
+            frmPublisher.MdiParent = this;
+            frmPublisher.Show();
+        }
+
+        private void tsbtLoan_Click(object sender, EventArgs e)
+        {
+            FormLoan frmLoan = FormLoan.Instance;
+            frmLoan.MdiParent = this;
+            frmLoan.Show();
+        }
+
+        private void tsbtMember_Click(object sender, EventArgs e)
+        {
+            FormUser frmUser = FormUser.Instance;
+            frmUser.MdiParent = this;
+            frmUser.Show();
         }
     }
 }
