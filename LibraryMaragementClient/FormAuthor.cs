@@ -12,7 +12,6 @@ namespace LibraryMaragementClient
 {
     public partial class FormAuthor : Form
     {
-        private Service. _authorService;
         public FormAuthor()
         {
             InitializeComponent();
