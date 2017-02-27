@@ -55,7 +55,7 @@ namespace BussinessLogic.DatabaseAccessObjects
 
         public int Update(Role role)
         {
-            return _dataProvider.ExecuteNonQuery(SQL_ROLE_INSERT,
+            return _dataProvider.ExecuteNonQuery(SQL_ROLE_UPDATE,
                                                  CommandType.StoredProcedure,
                                                  new SqlParameter("@Name", role.Name),
                                                  new SqlParameter("@RoleId", role.RoleId));

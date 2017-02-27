@@ -28,14 +28,14 @@ namespace BussinessLogic.DatabaseAccessObjects
         //return 0 if user not eixts
         //return -1 if new role not valid
         //return 1 if successfully
-        private readonly string SQL_STORE_PROC_USER_UPDATE = "UpdateUserById";
+        private readonly string SQL_USER_UPDATE = "UpdateUserById";
 
         //required @UserId int
         //return 0 if user id not exists
         //return -1 if has been reference as Member in Loans
         //return -2 if has been reference as Libraryan in Loans
         //return 1 if deleted successfully
-        private readonly string SQL_STORE_PROC_USER_DELETE = "DeleteUserById";
+        private readonly string SQL_USER_DELETE = "DeleteUserById";
 
         private DataProvider _dataProvider;
         private static UserDAO _instance;
@@ -88,7 +88,7 @@ namespace BussinessLogic.DatabaseAccessObjects
 
         public int Delete(int userId)
         {
-            return _dataProvider.ExecuteNonQuery(SQL_USER_SELECT,
+            return _dataProvider.ExecuteNonQuery(SQL_USER_DELETE,
                                                  CommandType.StoredProcedure,
                                                  new SqlParameter("@UserId", userId));
         }
