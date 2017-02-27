@@ -56,8 +56,7 @@
             this.tsbtMember});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
-            this.toolStrip1.Size = new System.Drawing.Size(1498, 100);
+            this.toolStrip1.Size = new System.Drawing.Size(999, 65);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -66,7 +65,7 @@
             this.tsbtNew.Image = ((System.Drawing.Image)(resources.GetObject("tsbtNew.Image")));
             this.tsbtNew.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtNew.Name = "tsbtNew";
-            this.tsbtNew.Size = new System.Drawing.Size(75, 97);
+            this.tsbtNew.Size = new System.Drawing.Size(59, 62);
             this.tsbtNew.Text = "New";
             // 
             // tsbtBook
@@ -74,7 +73,7 @@
             this.tsbtBook.Image = ((System.Drawing.Image)(resources.GetObject("tsbtBook.Image")));
             this.tsbtBook.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtBook.Name = "tsbtBook";
-            this.tsbtBook.Size = new System.Drawing.Size(81, 97);
+            this.tsbtBook.Size = new System.Drawing.Size(62, 62);
             this.tsbtBook.Text = "Book";
             this.tsbtBook.Click += new System.EventHandler(this.tsbtBook_Click);
             // 
@@ -83,7 +82,7 @@
             this.tsbtAuthor.Image = ((System.Drawing.Image)(resources.GetObject("tsbtAuthor.Image")));
             this.tsbtAuthor.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtAuthor.Name = "tsbtAuthor";
-            this.tsbtAuthor.Size = new System.Drawing.Size(95, 97);
+            this.tsbtAuthor.Size = new System.Drawing.Size(72, 62);
             this.tsbtAuthor.Text = "Author";
             this.tsbtAuthor.Click += new System.EventHandler(this.tsbtAuthor_Click);
             // 
@@ -92,7 +91,7 @@
             this.tsbtCategory.Image = ((System.Drawing.Image)(resources.GetObject("tsbtCategory.Image")));
             this.tsbtCategory.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtCategory.Name = "tsbtCategory";
-            this.tsbtCategory.Size = new System.Drawing.Size(112, 97);
+            this.tsbtCategory.Size = new System.Drawing.Size(83, 62);
             this.tsbtCategory.Text = "Category";
             this.tsbtCategory.Click += new System.EventHandler(this.tsbtCategory_Click);
             // 
@@ -101,7 +100,7 @@
             this.tsbtCopy.Image = ((System.Drawing.Image)(resources.GetObject("tsbtCopy.Image")));
             this.tsbtCopy.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtCopy.Name = "tsbtCopy";
-            this.tsbtCopy.Size = new System.Drawing.Size(128, 97);
+            this.tsbtCopy.Size = new System.Drawing.Size(93, 62);
             this.tsbtCopy.Text = "Book Copy";
             this.tsbtCopy.Click += new System.EventHandler(this.tsbtCopy_Click);
             // 
@@ -110,7 +109,7 @@
             this.tsbtPublisher.Image = ((System.Drawing.Image)(resources.GetObject("tsbtPublisher.Image")));
             this.tsbtPublisher.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtPublisher.Name = "tsbtPublisher";
-            this.tsbtPublisher.Size = new System.Drawing.Size(112, 97);
+            this.tsbtPublisher.Size = new System.Drawing.Size(84, 62);
             this.tsbtPublisher.Text = "Publisher";
             this.tsbtPublisher.Click += new System.EventHandler(this.tsbtPublisher_Click);
             // 
@@ -119,7 +118,7 @@
             this.tsbtLoan.Image = ((System.Drawing.Image)(resources.GetObject("tsbtLoan.Image")));
             this.tsbtLoan.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtLoan.Name = "tsbtLoan";
-            this.tsbtLoan.Size = new System.Drawing.Size(78, 97);
+            this.tsbtLoan.Size = new System.Drawing.Size(61, 62);
             this.tsbtLoan.Text = "Loan";
             this.tsbtLoan.Click += new System.EventHandler(this.tsbtLoan_Click);
             // 
@@ -128,18 +127,17 @@
             this.tsbtMember.Image = ((System.Drawing.Image)(resources.GetObject("tsbtMember.Image")));
             this.tsbtMember.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtMember.Name = "tsbtMember";
-            this.tsbtMember.Size = new System.Drawing.Size(107, 97);
+            this.tsbtMember.Size = new System.Drawing.Size(80, 62);
             this.tsbtMember.Text = "Member";
             this.tsbtMember.Click += new System.EventHandler(this.tsbtMember_Click);
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1498, 782);
+            this.ClientSize = new System.Drawing.Size(999, 508);
             this.Controls.Add(this.toolStrip1);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormMain";
             this.Text = "Library Management Client";
             this.toolStrip1.ResumeLayout(false);
