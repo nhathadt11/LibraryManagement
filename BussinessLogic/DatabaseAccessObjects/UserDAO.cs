@@ -75,7 +75,7 @@ namespace BussinessLogic.DatabaseAccessObjects
 
         public int Update(User user)
         {
-            return _dataProvider.ExecuteNonQuery(SQL_STORE_PROC_USER_UPDATE,
+            return _dataProvider.ExecuteNonQuery(SQL_USER_UPDATE,
                                               CommandType.StoredProcedure,
                                               new SqlParameter("@Username", user.Username),
                                               new SqlParameter("@Password", user.Password),
