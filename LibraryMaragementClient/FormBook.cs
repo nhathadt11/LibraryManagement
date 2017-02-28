@@ -1,5 +1,6 @@
 ﻿using Service;
 using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace LibraryMaragementClient
@@ -7,9 +8,19 @@ namespace LibraryMaragementClient
     public partial class FormBook : Form
     {
         private static FormBook _instance;
+        private DataTable _data;
+        private BookService _bookService;
+        public DataRow CurrentSelectedDataRow
+        {
+            get
+            {
+                return _data.Rows[dgvBooks.CurrentRow.Index];
+            }
+        }
         private FormBook()
         {
             InitializeComponent();
+            _bookService = new BookService();
         }
         public static FormBook Instance
         {
@@ -25,8 +36,8 @@ namespace LibraryMaragementClient
 
         private void FormBook_Load(object sender, EventArgs e)
         {
-            BookService bookService = new BookService();
-            dgvBooks.DataSource = bookService.GetAll();
+            _data = _bookService.GetAll();
+            dgvBooks.DataSource = _data;
         }
     }
 }

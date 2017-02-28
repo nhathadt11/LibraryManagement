@@ -31,6 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsbtNew = new System.Windows.Forms.ToolStripButton();
+            this.tsbtEdit = new System.Windows.Forms.ToolStripButton();
+            this.tsbtDelete = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbtBook = new System.Windows.Forms.ToolStripButton();
             this.tsbtAuthor = new System.Windows.Forms.ToolStripButton();
             this.tsbtCategory = new System.Windows.Forms.ToolStripButton();
@@ -47,6 +50,9 @@
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbtNew,
+            this.tsbtEdit,
+            this.tsbtDelete,
+            this.toolStripSeparator1,
             this.tsbtBook,
             this.tsbtAuthor,
             this.tsbtCategory,
@@ -67,6 +73,30 @@
             this.tsbtNew.Name = "tsbtNew";
             this.tsbtNew.Size = new System.Drawing.Size(59, 62);
             this.tsbtNew.Text = "New";
+            this.tsbtNew.Click += new System.EventHandler(this.tsbtNew_Click);
+            // 
+            // tsbtEdit
+            // 
+            this.tsbtEdit.Image = ((System.Drawing.Image)(resources.GetObject("tsbtEdit.Image")));
+            this.tsbtEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtEdit.Name = "tsbtEdit";
+            this.tsbtEdit.Size = new System.Drawing.Size(55, 62);
+            this.tsbtEdit.Text = "Edit";
+            this.tsbtEdit.Click += new System.EventHandler(this.tsbtEdit_Click);
+            // 
+            // tsbtDelete
+            // 
+            this.tsbtDelete.Image = ((System.Drawing.Image)(resources.GetObject("tsbtDelete.Image")));
+            this.tsbtDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtDelete.Name = "tsbtDelete";
+            this.tsbtDelete.Size = new System.Drawing.Size(68, 62);
+            this.tsbtDelete.Text = "Delete";
+            this.tsbtDelete.Click += new System.EventHandler(this.tsbtDelete_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 65);
             // 
             // tsbtBook
             // 
@@ -157,6 +187,9 @@
         private System.Windows.Forms.ToolStripButton tsbtPublisher;
         private System.Windows.Forms.ToolStripButton tsbtLoan;
         private System.Windows.Forms.ToolStripButton tsbtMember;
+        private System.Windows.Forms.ToolStripButton tsbtEdit;
+        private System.Windows.Forms.ToolStripButton tsbtDelete;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }
 

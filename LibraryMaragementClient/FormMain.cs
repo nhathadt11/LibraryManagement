@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryMaragementClient.Dialogs;
+using System;
 using System.Windows.Forms;
 
 namespace LibraryMaragementClient
@@ -65,5 +66,61 @@ namespace LibraryMaragementClient
             frmUser.Show();
             frmUser.Activate();
         }
+
+        private void tsbtNew_Click(object sender, EventArgs e)
+        {
+            TakeUserAction(ActionType.Add);
+        }
+
+        private void tsbtEdit_Click(object sender, EventArgs e)
+        {
+            TakeUserAction(ActionType.Edit);
+        }
+
+        private void tsbtDelete_Click(object sender, EventArgs e)
+        {
+            TakeUserAction(ActionType.Delete);
+        }
+        private void TakeUserAction(ActionType type)
+        {
+            Form activeForm = this.ActiveMdiChild;
+            if (activeForm is FormBook)
+            {
+                // form book
+                FormBook frmBook = activeForm as FormBook;
+                BookDialog dlgBook = ActionType.Edit == type
+                    ? new BookDialog(frmBook.CurrentSelectedDataRow, type)
+                    : new BookDialog();
+                dlgBook.ShowDialog();
+            }
+            else if (activeForm is FormAuthor)
+            {
+                // form author
+            }
+            else if (activeForm is FormCategory)
+            {
+                // form category
+            }
+            else if (activeForm is FormCopy)
+            {
+                // form copy
+            }
+            else if (activeForm is FormLoan)
+            {
+                // form loan
+            }
+            else if (activeForm is FormPublisher)
+            {
+                // form publisher
+            }
+            else if (activeForm is FormUser)
+            {
+                // form user
+            }
+        }
+    }
+
+    public enum ActionType {
+        Add, Edit, Delete
     }
 }

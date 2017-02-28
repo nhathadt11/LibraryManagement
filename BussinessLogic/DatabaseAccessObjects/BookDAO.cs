@@ -7,7 +7,7 @@ namespace BussinessLogic.DatabaseAccessObjects
 {
     public class BookDAO : IDataAccessObject<Book>
     {
-        private readonly string SQL_BOOK_SELECT = "SELECT * FROM vBooks";
+        private readonly string SQL_BOOK_SELECT = "SELECT * FROM Books";//alternative vBooks
 
         //optional - @Isbn nvarchar(MAX) = N'N/A'
         //required - @Title nvarchar(MAX) 

@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dialogs\AuthorDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\AuthorDialog.Designer.cs">
+      <DependentUpon>AuthorDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\BookDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\BookDialog.Designer.cs">
+      <DependentUpon>BookDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAuthor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +108,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Dialogs\AuthorDialog.resx">
+      <DependentUpon>AuthorDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\BookDialog.resx">
+      <DependentUpon>BookDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAuthor.resx">
       <DependentUpon>FormAuthor.cs</DependentUpon>
     </EmbeddedResource>
@@ -143,6 +161,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BussinessLogic\BussinessLogic.csproj">
+      <Project>{71F01686-B9B3-4D8F-BA72-6EEB1960C891}</Project>
+      <Name>BussinessLogic</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Service\Service.csproj">
       <Project>{e7ff4113-68da-49c2-ae61-cd711d454e5a}</Project>
       <Name>Service</Name>
