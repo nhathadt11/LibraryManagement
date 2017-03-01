@@ -58,11 +58,23 @@
     <Compile Include="Dialogs\BookDialog.Designer.cs">
       <DependentUpon>BookDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dialogs\ConfirmDialog.cs">
+    <Compile Include="Dialogs\CategoryDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dialogs\ConfirmDialog.Designer.cs">
-      <DependentUpon>ConfirmDialog.cs</DependentUpon>
+    <Compile Include="Dialogs\CategoryDialog.Designer.cs">
+      <DependentUpon>CategoryDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\CopyDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\CopyDialog.Designer.cs">
+      <DependentUpon>CopyDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\PublisherDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\PublisherDialog.Designer.cs">
+      <DependentUpon>PublisherDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="FormAuthor.cs">
       <SubType>Form</SubType>
@@ -119,9 +131,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\BookDialog.resx">
       <DependentUpon>BookDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\ConfirmDialog.resx">
-      <DependentUpon>ConfirmDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAuthor.resx">
       <DependentUpon>FormAuthor.cs</DependentUpon>

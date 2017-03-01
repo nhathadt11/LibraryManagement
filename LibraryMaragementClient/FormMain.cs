@@ -94,6 +94,8 @@ namespace LibraryMaragementClient
             else if (activeForm is FormAuthor)
             {
                 // form author
+                FormAuthor frmAuthor = activeForm as FormAuthor;
+                AddUpdateOrDeleteAuthor(frmAuthor, action);
             }
             else if (activeForm is FormCategory)
             {
@@ -136,9 +138,38 @@ namespace LibraryMaragementClient
                     }
                     break;
                 case ActionType.Delete:
-                    if (new ConfirmDialog().ShowDialog() == DialogResult.OK)
+                    if (MessageBox.Show("Are you sure?", "Confirm Dialog", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         frmBook.DeleteFromDataTable();
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+        private void AddUpdateOrDeleteAuthor(FormAuthor frmAuthor, ActionType action)
+        {
+            AuthorDialog dlgAuthor;
+            switch (action)
+            {
+                case ActionType.Add:
+                    dlgAuthor = new AuthorDialog();
+                    if (dlgAuthor.ShowDialog() == DialogResult.OK)
+                    {
+                        frmAuthor.AddToDataTable(dlgAuthor.Author);
+                    }
+                    break;
+                case ActionType.Edit:
+                    dlgAuthor = new AuthorDialog(frmAuthor.CurrentSelectedDataRow);
+                    if (dlgAuthor.ShowDialog() == DialogResult.OK)
+                    {
+                        frmAuthor.UpdateToDataTable(dlgAuthor.Author);
+                    }
+                    break;
+                case ActionType.Delete:
+                    if (MessageBox.Show("Are you sure?", "Confirm Dialog", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        frmAuthor.DeleteFromDataTable();
                     }
                     break;
                 default:

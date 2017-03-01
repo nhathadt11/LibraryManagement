@@ -356,8 +356,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtBookId);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "BookDialog";
-            this.Text = "BookDialog";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Book details Dialog";
             this.Load += new System.EventHandler(this.BookDialog_Load);
             ((System.ComponentModel.ISupportInitialize)(this.epvBookIsbn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epvBookTitle)).EndInit();

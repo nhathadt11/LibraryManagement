@@ -110,12 +110,12 @@ namespace LibraryMaragementClient.Dialogs
             bool result = true;
             if (txtBookTitle.Text.Equals(string.Empty))
             {
-                epvBookTitle.SetError(txtBookTitle, "Cannot be empty");
+                epvBookTitle.SetError(txtBookTitle, "Required");
                 result = false;
             }
             if (txtBookIsbn.Text.Equals(string.Empty))
             {
-                epvBookIsbn.SetError(txtBookIsbn, "Cannot be empty");
+                epvBookIsbn.SetError(txtBookIsbn, "Required");
                 result = false;
             }
             else if (!Regex.IsMatch(txtBookIsbn.Text, @"\d{13}"))
@@ -125,7 +125,7 @@ namespace LibraryMaragementClient.Dialogs
             }
             if (!Regex.IsMatch(txtBookPageNumber.Text, @"\d+"))
             {
-                epvBookPageNumber.SetError(txtBookPageNumber, "Cannot be empty and must be a number");
+                epvBookPageNumber.SetError(txtBookPageNumber, "Required and must be a number");
                 result = false;
             }
             if (dtpBookPublishedDate.Value.CompareTo(DateTime.Today) >= 0)

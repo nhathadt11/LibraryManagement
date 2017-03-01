@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LibraryMaragementClient.Dialogs
 {
-    public partial class ConfirmDialog : Form
+    public partial class CategoryDialog : Form
     {
-        public ConfirmDialog()
+        public CategoryDialog()
         {
             InitializeComponent();
         }

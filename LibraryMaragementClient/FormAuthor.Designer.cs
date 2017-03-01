@@ -34,21 +34,31 @@
             // 
             // dgvAuthors
             // 
+            this.dgvAuthors.AllowUserToAddRows = false;
+            this.dgvAuthors.AllowUserToDeleteRows = false;
+            this.dgvAuthors.AllowUserToResizeRows = false;
+            this.dgvAuthors.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvAuthors.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAuthors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAuthors.Location = new System.Drawing.Point(11, 11);
-            this.dgvAuthors.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvAuthors.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvAuthors.MultiSelect = false;
             this.dgvAuthors.Name = "dgvAuthors";
+            this.dgvAuthors.ReadOnly = true;
             this.dgvAuthors.RowTemplate.Height = 28;
-            this.dgvAuthors.Size = new System.Drawing.Size(781, 454);
+            this.dgvAuthors.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvAuthors.Size = new System.Drawing.Size(547, 454);
             this.dgvAuthors.TabIndex = 0;
             // 
             // FormAuthor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(803, 476);
+            this.ClientSize = new System.Drawing.Size(570, 476);
             this.Controls.Add(this.dgvAuthors);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormAuthor";
             this.Text = "FormAuthor";
             this.Load += new System.EventHandler(this.FormAuthor_Load);
