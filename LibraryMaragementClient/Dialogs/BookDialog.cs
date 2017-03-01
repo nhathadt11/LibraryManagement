@@ -13,6 +13,21 @@ namespace LibraryMaragementClient.Dialogs
         private AuthorService _authorService;
         private PublisherService _publisherService;
         private CategoryService _categoryService;
+        private Book _book;
+        public Book Book
+        {
+            get { return _book; }
+            set { _book = value; }
+        }
+        private ActionType _action;
+        public ActionType Action
+        {
+            get
+            {
+                return _action;
+            }
+        }
+
         public BookDialog()
         {
             InitializeComponent();
@@ -20,8 +35,9 @@ namespace LibraryMaragementClient.Dialogs
             _authorService = new AuthorService();
             _publisherService = new PublisherService();
             _categoryService = new CategoryService();
+            _action = ActionType.Add;
         }
-        public BookDialog(DataRow row, ActionType type) : this()
+        public BookDialog(DataRow row) : this()
         {
             txtBookId.Text = Convert.ToString(row.ItemArray[0]);
             txtBookIsbn.Text = Convert.ToString(row.ItemArray[1]);
@@ -34,6 +50,7 @@ namespace LibraryMaragementClient.Dialogs
             cbxBookCategory.SelectedValue = Convert.ToInt32(row.ItemArray[8]);
             cbxBookPublisher.SelectedValue = Convert.ToInt32(row.ItemArray[9]);
             rbtBookDiscontinuedYes.Checked = Convert.ToBoolean(row.ItemArray[10]);
+            _action = ActionType.Edit;
         }
 
         private void btnBookOK_Click(object sender, EventArgs e)
@@ -44,7 +61,7 @@ namespace LibraryMaragementClient.Dialogs
             }
             else
             {
-                Book book = new Book
+                _book = new Book
                 {
                     Title = txtBookTitle.Text,
                     Isbn = txtBookIsbn.Text,
@@ -57,16 +74,33 @@ namespace LibraryMaragementClient.Dialogs
                     PageNumber = Convert.ToInt32(txtBookPageNumber.Text),
                     Description = rtxtBookDescription.Text
                 };
-                book.BookId = _bookService.Add(book);
-                if (book.BookId > 0)
+
+                if (_action == ActionType.Add)// insert book
                 {
-                    MessageBox.Show("Successfully added " + book.Title + "!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.DialogResult = DialogResult.OK;
+                    _book.BookId = _bookService.Add(_book);
+                    if (_book.BookId > 0) // success
+                    {
+                        MessageBox.Show("Successfully added " + _book.Title + "!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.DialogResult = DialogResult.OK;
+                    }
+                    else // fail
+                    {
+                        MessageBox.Show("Could not add " + _book.Title + "!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        this.DialogResult = DialogResult.None;
+                    }
                 }
-                else
+                else // update book
                 {
-                    MessageBox.Show("Could not added " + book.Title + "!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    this.DialogResult = DialogResult.None;
+                    if (_bookService.Update(_book) > 0) // success
+                    {
+                        MessageBox.Show("Successfully updated " + _book.Title + "!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.DialogResult = DialogResult.OK;
+                    }
+                    else // fail
+                    {
+                        MessageBox.Show("Could not update " + _book.Title + "!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        this.DialogResult = DialogResult.None;
+                    }
                 }
             }
         }
@@ -94,7 +128,7 @@ namespace LibraryMaragementClient.Dialogs
                 epvBookPageNumber.SetError(txtBookPageNumber, "Cannot be empty and must be a number");
                 result = false;
             }
-            if (dtpBookPublishedDate.Value.CompareTo(DateTime.Today) > 0)
+            if (dtpBookPublishedDate.Value.CompareTo(DateTime.Today) >= 0)
             {
                 epvBookPublishedDate.SetError(dtpBookPublishedDate, "Cannot be later than today");
                 result = false;
@@ -104,7 +138,7 @@ namespace LibraryMaragementClient.Dialogs
 
         private void BookDialog_Load(object sender, EventArgs e)
         {
-            cbxBookAuthor.DataSource = _authorService.GetAll().DefaultView;
+            cbxBookAuthor.DataSource = _authorService.GetAll();
             cbxBookAuthor.ValueMember = "AuthorId";
             cbxBookAuthor.DisplayMember = "FullName";
 

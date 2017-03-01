@@ -1,4 +1,5 @@
-﻿using LibraryMaragementClient.Dialogs;
+﻿using BussinessLogic.DataTransferObjects;
+using LibraryMaragementClient.Dialogs;
 using System;
 using System.Windows.Forms;
 
@@ -81,17 +82,14 @@ namespace LibraryMaragementClient
         {
             TakeUserAction(ActionType.Delete);
         }
-        private void TakeUserAction(ActionType type)
+        private void TakeUserAction(ActionType action)
         {
             Form activeForm = this.ActiveMdiChild;
             if (activeForm is FormBook)
             {
                 // form book
                 FormBook frmBook = activeForm as FormBook;
-                BookDialog dlgBook = ActionType.Edit == type
-                    ? new BookDialog(frmBook.CurrentSelectedDataRow, type)
-                    : new BookDialog();
-                dlgBook.ShowDialog();
+                AddUpdateOrDeleteBook(frmBook, action);
             }
             else if (activeForm is FormAuthor)
             {
@@ -116,6 +114,35 @@ namespace LibraryMaragementClient
             else if (activeForm is FormUser)
             {
                 // form user
+            }
+        }
+        private void AddUpdateOrDeleteBook(FormBook frmBook, ActionType action)
+        {
+            BookDialog dlgBook;
+            switch (action)
+            {
+                case ActionType.Add:
+                    dlgBook = new BookDialog();
+                    if (dlgBook.ShowDialog() == DialogResult.OK)
+                    {
+                        frmBook.AddToDataTable(dlgBook.Book);
+                    }
+                    break;
+                case ActionType.Edit:
+                    dlgBook = new BookDialog(frmBook.CurrentSelectedDataRow);
+                    if (dlgBook.ShowDialog() == DialogResult.OK)
+                    {
+                        frmBook.UpdateToDataTable(dlgBook.Book);
+                    }
+                    break;
+                case ActionType.Delete:
+                    if (new ConfirmDialog().ShowDialog() == DialogResult.OK)
+                    {
+                        frmBook.DeleteFromDataTable();
+                    }
+                    break;
+                default:
+                    break;
             }
         }
     }
