@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace LibraryMaragementClient
 {
-    public partial class FormBook : Form
+    public partial class FormBook : Form, IMaintainDataTable<DataTranseferObject>
     {
         private static FormBook _instance;
         private DataTable _data;
@@ -78,6 +78,40 @@ namespace LibraryMaragementClient
             {
                 MessageBox.Show("Could not delete " + row["Title"] + "!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        public DataRow GetCurrentSelectedDataRow()
+        {
+            return _data.Rows[dgvBooks.CurrentRow.Index];
+        }
+
+        public void AddToDataTable(DataTranseferObject obj)
+        {
+            Book book = obj as Book;
+            _data.RejectChanges();
+            _data.Rows.Add(book.BookId, book.Isbn, book.Title,
+                           book.Description, book.CoverImageUrl,
+                           book.PageNumber, book.PublishedDate,
+                           book.AuthorId, book.CategoryId,
+                           book.PublisherId, book.Discontinued);
+            _data.AcceptChanges();
+        }
+
+        public void UpdateToDataTable(DataTranseferObject obj)
+        {
+            Book book = obj as Book;
+            DataRow row = _data.Rows.Find(book.BookId);
+            row["Isbn"] = book.Isbn;
+            row["Title"] = book.Title;
+            row["Description"] = book.Description;
+            row["CoverImageUrl"] = book.CoverImageUrl;
+            row["PageNumber"] = book.PageNumber;
+            row["PublishedDate"] = book.PublishedDate;
+            row["AuthorId"] = book.AuthorId;
+            row["CategoryId"] = book.CategoryId;
+            row["PublisherId"] = book.PublisherId;
+            row["Discontinued"] = book.Discontinued;
+            dgvBooks.Refresh();
         }
     }
 }

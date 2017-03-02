@@ -1,10 +1,12 @@
-﻿using Service;
+﻿using BussinessLogic.DataTransferObjects;
+using Service;
 using System;
 using System.Windows.Forms;
+using System.Data;
 
 namespace LibraryMaragementClient
 {
-    public partial class FormPublisher : Form
+    public partial class FormPublisher : Form, IMaintainDataTable<DataTranseferObject>
     {
         private PublisherService _service;
         private static FormPublisher _instance;
@@ -29,6 +31,26 @@ namespace LibraryMaragementClient
         {
             dgvPublishers.DataSource = _service.GetAll();
 
+        }
+
+        public DataRow GetCurrentSelectedDataRow()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddToDataTable(DataTranseferObject obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateToDataTable(DataTranseferObject obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteFromDataTable()
+        {
+            throw new NotImplementedException();
         }
     }
 }

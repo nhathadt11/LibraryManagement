@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BussinessLogic.DataTransferObjects
 {
-    public class Category
+    public class Category : DataTranseferObject
     {
         private int _categoryId;
 

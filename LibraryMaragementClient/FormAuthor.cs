@@ -5,7 +5,7 @@ using BussinessLogic.DataTransferObjects;
 using Service;
 namespace LibraryMaragementClient
 {
-    public partial class FormAuthor : Form
+    public partial class FormAuthor : Form, IMaintainDataTable<DataTranseferObject>
     {
         private static FormAuthor _instance;
         private AuthorService _authorService;
@@ -27,14 +27,6 @@ namespace LibraryMaragementClient
             }
         }
 
-        public DataRow CurrentSelectedDataRow
-        {
-            get
-            {
-                return _data.Rows[dgvAuthors.CurrentRow.Index];
-            }
-        }
-
         private void FormAuthor_Load(object sender, EventArgs e)
         {
             _data = _authorService.GetAll();
@@ -42,26 +34,7 @@ namespace LibraryMaragementClient
             dgvAuthors.DataSource = _data;
         }
 
-        internal void AddToDataTable(Author author)
-        {
-            _data.RejectChanges();
-            _data.Rows.Add(author.AuthorId, author.FullName,
-                           author.Contact, author.Address,
-                           author.Bio);
-            _data.AcceptChanges();
-        }
-
-        internal void UpdateToDataTable(Author author)
-        {
-            DataRow row = _data.Rows.Find(author.AuthorId);
-            row["FullName"] = author.FullName;
-            row["Contact"] = author.Contact;
-            row["Address"] = author.Address;
-            row["Bio"] = author.Bio;
-            dgvAuthors.Refresh();
-        }
-
-        internal void DeleteFromDataTable()
+        public void DeleteFromDataTable()
         {
             DataRow row = _data.Rows[dgvAuthors.CurrentRow.Index];
             if (_authorService.Delete(Convert.ToInt32(row["AuthorId"])) > 0)
@@ -73,6 +46,32 @@ namespace LibraryMaragementClient
             {
                 MessageBox.Show("Could not delete " + row["FullName"] + "!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        public DataRow GetCurrentSelectedDataRow()
+        {
+            return _data.Rows[dgvAuthors.CurrentRow.Index];
+        }
+
+        public void AddToDataTable(DataTranseferObject obj)
+        {
+            Author author = obj as Author;
+            _data.RejectChanges();
+            _data.Rows.Add(author.AuthorId, author.FullName,
+                           author.Contact, author.Address,
+                           author.Bio);
+            _data.AcceptChanges();
+        }
+
+        public void UpdateToDataTable(DataTranseferObject obj)
+        {
+            Author author = obj as Author;
+            DataRow row = _data.Rows.Find(author.AuthorId);
+            row["FullName"] = author.FullName;
+            row["Contact"] = author.Contact;
+            row["Address"] = author.Address;
+            row["Bio"] = author.Bio;
+            dgvAuthors.Refresh();
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace LibraryMaragementClient.Dialogs
 {
-    public partial class BookDialog : Form
+    public partial class BookDialog : Form, IDetailsDialog<DataTranseferObject>
     {
         private BookService _bookService;
         private AuthorService _authorService;
@@ -149,6 +149,11 @@ namespace LibraryMaragementClient.Dialogs
             cbxBookPublisher.DataSource = _publisherService.GetAll();
             cbxBookPublisher.ValueMember = "PublisherId";
             cbxBookPublisher.DisplayMember = "Name";
+        }
+
+        public DataTranseferObject GetCurrentObject()
+        {
+            return _book;
         }
     }
 }

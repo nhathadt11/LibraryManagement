@@ -1,8 +1,9 @@
-﻿using System;
+﻿using BussinessLogic.DataTransferObjects;
+using System;
 
 namespace BussinessLogic.DataTransferObjects
 {
-    public class Book
+    public class Book : DataTranseferObject
     {
         private int _bookId;
 

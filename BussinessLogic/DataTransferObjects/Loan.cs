@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BussinessLogic.DataTransferObjects
 {
-    public class Loan
+    public class Loan : DataTranseferObject
     {
         private int _loanId;
 

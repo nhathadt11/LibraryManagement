@@ -85,91 +85,60 @@ namespace LibraryMaragementClient
         private void TakeUserAction(ActionType action)
         {
             Form activeForm = this.ActiveMdiChild;
+            IMaintainDataTable<DataTranseferObject> frmMaintain;
             if (activeForm is FormBook)
             {
-                // form book
-                FormBook frmBook = activeForm as FormBook;
-                AddUpdateOrDeleteBook(frmBook, action);
+                frmMaintain = activeForm as FormBook;
             }
             else if (activeForm is FormAuthor)
             {
-                // form author
-                FormAuthor frmAuthor = activeForm as FormAuthor;
-                AddUpdateOrDeleteAuthor(frmAuthor, action);
+                frmMaintain = activeForm as FormAuthor;
             }
             else if (activeForm is FormCategory)
             {
-                // form category
+                frmMaintain = activeForm as FormCategory;
             }
             else if (activeForm is FormCopy)
             {
-                // form copy
+                frmMaintain = activeForm as FormCopy;
             }
             else if (activeForm is FormLoan)
             {
-                // form loan
+                frmMaintain = activeForm as FormLoan;
             }
             else if (activeForm is FormPublisher)
             {
-                // form publisher
+                frmMaintain = activeForm as FormPublisher;
             }
-            else if (activeForm is FormUser)
+            else
             {
-                // form user
+                frmMaintain = activeForm as FormUser;
             }
+            AddUpdateOrDelete(frmMaintain, action);
         }
-        private void AddUpdateOrDeleteBook(FormBook frmBook, ActionType action)
+        private void AddUpdateOrDelete(IMaintainDataTable<DataTranseferObject> form, ActionType action)
         {
-            BookDialog dlgBook;
+            IDetailsDialog<DataTranseferObject> detailDialog;
             switch (action)
             {
                 case ActionType.Add:
-                    dlgBook = new BookDialog();
-                    if (dlgBook.ShowDialog() == DialogResult.OK)
+                    detailDialog = new BookDialog();
+                    if (detailDialog.ShowDialog() == DialogResult.OK)
                     {
-                        frmBook.AddToDataTable(dlgBook.Book);
+                        form.AddToDataTable(detailDialog.GetCurrentObject());
                     }
                     break;
                 case ActionType.Edit:
-                    dlgBook = new BookDialog(frmBook.CurrentSelectedDataRow);
-                    if (dlgBook.ShowDialog() == DialogResult.OK)
+                    detailDialog = new BookDialog(form.GetCurrentSelectedDataRow());
+                    if (detailDialog.ShowDialog() == DialogResult.OK)
                     {
-                        frmBook.UpdateToDataTable(dlgBook.Book);
+                        form.UpdateToDataTable(detailDialog.GetCurrentObject() as Book);
                     }
                     break;
                 case ActionType.Delete:
                     if (MessageBox.Show("Are you sure?", "Confirm Dialog", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        frmBook.DeleteFromDataTable();
-                    }
-                    break;
-                default:
-                    break;
-            }
-        }
-        private void AddUpdateOrDeleteAuthor(FormAuthor frmAuthor, ActionType action)
-        {
-            AuthorDialog dlgAuthor;
-            switch (action)
-            {
-                case ActionType.Add:
-                    dlgAuthor = new AuthorDialog();
-                    if (dlgAuthor.ShowDialog() == DialogResult.OK)
-                    {
-                        frmAuthor.AddToDataTable(dlgAuthor.Author);
-                    }
-                    break;
-                case ActionType.Edit:
-                    dlgAuthor = new AuthorDialog(frmAuthor.CurrentSelectedDataRow);
-                    if (dlgAuthor.ShowDialog() == DialogResult.OK)
-                    {
-                        frmAuthor.UpdateToDataTable(dlgAuthor.Author);
-                    }
-                    break;
-                case ActionType.Delete:
-                    if (MessageBox.Show("Are you sure?", "Confirm Dialog", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        frmAuthor.DeleteFromDataTable();
+                        form.DeleteFromDataTable();
                     }
                     break;
                 default:

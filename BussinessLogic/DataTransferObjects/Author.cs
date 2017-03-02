@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BussinessLogic.DataTransferObjects
 {
-    public class Author
+    public class Author : DataTranseferObject
     {
         private int _authorId;
 

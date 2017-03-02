@@ -60,6 +60,7 @@
     <Compile Include="DataTransferObjects\Book.cs" />
     <Compile Include="DataTransferObjects\Category.cs" />
     <Compile Include="DataTransferObjects\Copy.cs" />
+    <Compile Include="DataTransferObjects\DataTranseferObject.cs" />
     <Compile Include="DataTransferObjects\Loan.cs" />
     <Compile Include="DataTransferObjects\LoanDetail.cs" />
     <Compile Include="DataTransferObjects\Publisher.cs" />

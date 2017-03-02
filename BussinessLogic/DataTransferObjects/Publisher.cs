@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BussinessLogic.DataTransferObjects
 {
-    public class Publisher
+    public class Publisher : DataTranseferObject
     {
         private int _publisherId;
 

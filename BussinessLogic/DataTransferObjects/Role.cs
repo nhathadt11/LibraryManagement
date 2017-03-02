@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BussinessLogic.DataTransferObjects
 {
-    public class Role
+    public class Role : DataTranseferObject
     {
         private int _roleId;
 
