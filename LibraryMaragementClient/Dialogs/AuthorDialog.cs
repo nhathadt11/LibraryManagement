@@ -1,30 +1,16 @@
 ﻿using BussinessLogic.DataTransferObjects;
 using Service;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LibraryMaragementClient.Dialogs
 {
-    public partial class AuthorDialog : Form
+    public partial class AuthorDialog : Form, IDetailsDialog<DataTranseferObject>
     {
         private AuthorService _authorService;
         private ActionType _action;
         private Author _author;
-
-        public Author Author
-        {
-            get { return _author; }
-            set { _author = value; }
-        }
-
         public AuthorDialog()
         {
             InitializeComponent();
@@ -105,6 +91,11 @@ namespace LibraryMaragementClient.Dialogs
                 valid = false;
             }
             return valid;
+        }
+
+        public DataTranseferObject GetCurrentObject()
+        {
+            return _author;
         }
     }
 }

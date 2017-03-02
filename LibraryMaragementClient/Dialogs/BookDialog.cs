@@ -14,20 +14,7 @@ namespace LibraryMaragementClient.Dialogs
         private PublisherService _publisherService;
         private CategoryService _categoryService;
         private Book _book;
-        public Book Book
-        {
-            get { return _book; }
-            set { _book = value; }
-        }
         private ActionType _action;
-        public ActionType Action
-        {
-            get
-            {
-                return _action;
-            }
-        }
-
         public BookDialog()
         {
             InitializeComponent();

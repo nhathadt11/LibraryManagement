@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BussinessLogic.DataTransferObjects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,9 +8,9 @@ using System.Windows.Forms;
 
 namespace LibraryMaragementClient.Dialogs
 {
-    interface IDetailsDialog<IcommonDTO>
+    interface IDetailsDialog<T> where T : DataTranseferObject
     {
         DialogResult ShowDialog();
-        IcommonDTO GetCurrentObject();
+        T GetCurrentObject();
     }
 }

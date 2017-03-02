@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BussinessLogic.DataTransferObjects;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,20 @@ using System.Windows.Forms;
 
 namespace LibraryMaragementClient.Dialogs
 {
-    public partial class LoanDialog : Form
+    public partial class LoanDialog : Form, IDetailsDialog<DataTranseferObject>
     {
         public LoanDialog()
         {
             InitializeComponent();
+        }
+        public LoanDialog(DataRow row) : this()
+        {
+
+        }
+
+        public DataTranseferObject GetCurrentObject()
+        {
+            throw new NotImplementedException();
         }
     }
 }

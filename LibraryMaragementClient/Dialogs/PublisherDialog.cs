@@ -21,6 +21,10 @@ namespace LibraryMaragementClient.Dialogs
             InitializeComponent();
             _publisherService = new PublisherService();
         }
+        public PublisherDialog(DataRow row) : this()
+        {
+
+        }
 
         public DataTranseferObject GetCurrentObject()
         {

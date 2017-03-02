@@ -86,59 +86,78 @@ namespace LibraryMaragementClient
         {
             Form activeForm = this.ActiveMdiChild;
             IMaintainDataTable<DataTranseferObject> frmMaintain;
+            IDetailsDialog<DataTranseferObject> dlgDetails;
             if (activeForm is FormBook)
             {
                 frmMaintain = activeForm as FormBook;
+                dlgDetails = action == ActionType.Add
+                           ? new BookDialog()
+                           : new BookDialog(frmMaintain.GetCurrentSelectedDataRow());
             }
             else if (activeForm is FormAuthor)
             {
                 frmMaintain = activeForm as FormAuthor;
+                dlgDetails = action == ActionType.Add
+                           ? new AuthorDialog()
+                           : new AuthorDialog(frmMaintain.GetCurrentSelectedDataRow());
             }
             else if (activeForm is FormCategory)
             {
                 frmMaintain = activeForm as FormCategory;
+                dlgDetails = action == ActionType.Add
+                           ? new CategoryDialog()
+                           : new CategoryDialog(frmMaintain.GetCurrentSelectedDataRow());
             }
             else if (activeForm is FormCopy)
             {
                 frmMaintain = activeForm as FormCopy;
+                dlgDetails = action == ActionType.Add
+                           ? new CopyDialog()
+                           : new CopyDialog(frmMaintain.GetCurrentSelectedDataRow());
             }
             else if (activeForm is FormLoan)
             {
                 frmMaintain = activeForm as FormLoan;
+                dlgDetails = action == ActionType.Add
+                           ? new LoanDialog()
+                           : new LoanDialog(frmMaintain.GetCurrentSelectedDataRow());
             }
             else if (activeForm is FormPublisher)
             {
                 frmMaintain = activeForm as FormPublisher;
+                dlgDetails = action == ActionType.Add
+                           ? new PublisherDialog()
+                           : new PublisherDialog(frmMaintain.GetCurrentSelectedDataRow());
             }
             else
             {
                 frmMaintain = activeForm as FormUser;
+                dlgDetails = action == ActionType.Add
+                           ? new UserDialog()
+                           : new UserDialog(frmMaintain.GetCurrentSelectedDataRow());
             }
-            AddUpdateOrDelete(frmMaintain, action);
+            AddUpdateOrDelete(frmMaintain, dlgDetails, action);
         }
-        private void AddUpdateOrDelete(IMaintainDataTable<DataTranseferObject> form, ActionType action)
+        private void AddUpdateOrDelete(IMaintainDataTable<DataTranseferObject> frmMaintain, IDetailsDialog<DataTranseferObject> dlgDetails,ActionType action)
         {
-            IDetailsDialog<DataTranseferObject> detailDialog;
             switch (action)
             {
                 case ActionType.Add:
-                    detailDialog = new BookDialog();
-                    if (detailDialog.ShowDialog() == DialogResult.OK)
+                    if (dlgDetails.ShowDialog() == DialogResult.OK)
                     {
-                        form.AddToDataTable(detailDialog.GetCurrentObject());
+                        frmMaintain.AddToDataTable(dlgDetails.GetCurrentObject());
                     }
                     break;
                 case ActionType.Edit:
-                    detailDialog = new BookDialog(form.GetCurrentSelectedDataRow());
-                    if (detailDialog.ShowDialog() == DialogResult.OK)
+                    if (dlgDetails.ShowDialog() == DialogResult.OK)
                     {
-                        form.UpdateToDataTable(detailDialog.GetCurrentObject() as Book);
+                        frmMaintain.UpdateToDataTable(dlgDetails.GetCurrentObject() as Book);
                     }
                     break;
                 case ActionType.Delete:
                     if (MessageBox.Show("Are you sure?", "Confirm Dialog", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        form.DeleteFromDataTable();
+                        frmMaintain.DeleteFromDataTable();
                     }
                     break;
                 default:
