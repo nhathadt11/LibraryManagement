@@ -149,6 +149,15 @@
     <EmbeddedResource Include="Dialogs\CategoryDialog.resx">
       <DependentUpon>CategoryDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\CopyDialog.resx">
+      <DependentUpon>CopyDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\PublisherDialog.resx">
+      <DependentUpon>PublisherDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\UserDialog.resx">
+      <DependentUpon>UserDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAuthor.resx">
       <DependentUpon>FormAuthor.cs</DependentUpon>
     </EmbeddedResource>

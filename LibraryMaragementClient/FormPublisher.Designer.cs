@@ -34,11 +34,20 @@
             // 
             // dgvPublishers
             // 
+            this.dgvPublishers.AllowUserToAddRows = false;
+            this.dgvPublishers.AllowUserToDeleteRows = false;
+            this.dgvPublishers.AllowUserToResizeRows = false;
+            this.dgvPublishers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvPublishers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPublishers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPublishers.Location = new System.Drawing.Point(11, 11);
-            this.dgvPublishers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvPublishers.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvPublishers.MultiSelect = false;
             this.dgvPublishers.Name = "dgvPublishers";
             this.dgvPublishers.RowTemplate.Height = 28;
+            this.dgvPublishers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPublishers.Size = new System.Drawing.Size(745, 454);
             this.dgvPublishers.TabIndex = 0;
             // 
@@ -48,7 +57,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(767, 476);
             this.Controls.Add(this.dgvPublishers);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormPublisher";
             this.Text = "FormPublisher";
             this.Load += new System.EventHandler(this.FormPublisher_Load);

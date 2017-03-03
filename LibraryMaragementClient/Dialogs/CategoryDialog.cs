@@ -44,6 +44,10 @@ namespace LibraryMaragementClient.Dialogs
             }
             else
             {
+                _category = new Category
+                {
+                    Name = txtCategoryName.Text
+                };
                 if (_action == ActionType.Add) // insert
                 {
                     _category.CategoryId = _categoryService.Add(_category);

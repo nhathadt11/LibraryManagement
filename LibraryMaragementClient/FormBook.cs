@@ -11,13 +11,6 @@ namespace LibraryMaragementClient
         private static FormBook _instance;
         private DataTable _data;
         private BookService _bookService;
-        public DataRow CurrentSelectedDataRow
-        {
-            get
-            {
-                return _data.Rows[dgvBooks.CurrentRow.Index];
-            }
-        }
         private FormBook()
         {
             InitializeComponent();

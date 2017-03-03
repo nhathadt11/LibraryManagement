@@ -13,7 +13,7 @@ namespace BussinessLogic.DatabaseAccessObjects
         //optional @Contact nvarchar(1000) = null,
         //optional @Address nvarchar(300) = null,
         //opntinal @Description nvarchar(MAX) = null
-        private readonly string SQL_PUBLISHER_INSERT = "InserPublisher";//return publisherId if insert successfully
+        private readonly string SQL_PUBLISHER_INSERT = "InsertPublisher";//return publisherId if insert successfully
 
         //@PublisherId int,
         //@Name nvarchar(300),

@@ -34,21 +34,30 @@
             // 
             // dgvCategorys
             // 
+            this.dgvCategorys.AllowUserToAddRows = false;
+            this.dgvCategorys.AllowUserToDeleteRows = false;
+            this.dgvCategorys.AllowUserToResizeRows = false;
+            this.dgvCategorys.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvCategorys.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCategorys.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCategorys.Location = new System.Drawing.Point(11, 11);
-            this.dgvCategorys.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvCategorys.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvCategorys.MultiSelect = false;
             this.dgvCategorys.Name = "dgvCategorys";
             this.dgvCategorys.RowTemplate.Height = 28;
-            this.dgvCategorys.Size = new System.Drawing.Size(775, 438);
+            this.dgvCategorys.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCategorys.Size = new System.Drawing.Size(445, 467);
             this.dgvCategorys.TabIndex = 0;
             // 
             // FormCategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(797, 460);
+            this.ClientSize = new System.Drawing.Size(467, 489);
             this.Controls.Add(this.dgvCategorys);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormCategory";
             this.Text = "FormCategory";
             this.Load += new System.EventHandler(this.FormCategory_Load);

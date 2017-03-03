@@ -2,9 +2,9 @@
 {
     public class Copy : DataTranseferObject
     {
-        private string _copyCode;
+        private int _copyCode;
 
-        public string CopyCode
+        public int CopyCode
         {
             get { return _copyCode; }
             set { _copyCode = value; }

@@ -34,19 +34,29 @@
             // 
             // dgvLoans
             // 
+            this.dgvLoans.AllowUserToAddRows = false;
+            this.dgvLoans.AllowUserToDeleteRows = false;
+            this.dgvLoans.AllowUserToResizeRows = false;
+            this.dgvLoans.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvLoans.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvLoans.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLoans.Location = new System.Drawing.Point(13, 13);
+            this.dgvLoans.Location = new System.Drawing.Point(9, 8);
+            this.dgvLoans.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvLoans.Name = "dgvLoans";
             this.dgvLoans.RowTemplate.Height = 28;
-            this.dgvLoans.Size = new System.Drawing.Size(1168, 782);
+            this.dgvLoans.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvLoans.Size = new System.Drawing.Size(779, 508);
             this.dgvLoans.TabIndex = 0;
             // 
             // FormLoan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1193, 817);
+            this.ClientSize = new System.Drawing.Size(795, 482);
             this.Controls.Add(this.dgvLoans);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormLoan";
             this.Text = "FormLoan";
             this.Load += new System.EventHandler(this.FormLoan_Load);

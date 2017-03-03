@@ -9,20 +9,13 @@ namespace LibraryMaragementClient
     public partial class FormCategory : Form, IMaintainDataTable<DataTranseferObject>
     {
         private static FormCategory _instance;
-        private CategoryService _service;
+        private CategoryService _categoryService;
         private DataTable _data;
-        public DataRow CurrentSelectedDataRow
-        {
-            get
-            {
-                return _data.Rows[dgvCategorys.CurrentRow.Index];
-            }
-        }
 
         private FormCategory()
         {
             InitializeComponent();
-            _service = new CategoryService();
+            _categoryService = new CategoryService();
         }
         public static FormCategory Instance
         {
@@ -38,13 +31,23 @@ namespace LibraryMaragementClient
 
         private void FormCategory_Load(object sender, EventArgs e)
         {
-            _data = _service.GetAll();
+            _data = _categoryService.GetAll();
+            _data.PrimaryKey = new DataColumn[] { _data.Columns["CategoryId"] };
             dgvCategorys.DataSource = _data;
         }
 
         public void DeleteFromDataTable()
         {
-            throw new NotImplementedException();
+            DataRow row = _data.Rows[dgvCategorys.CurrentRow.Index];
+            if (_categoryService.Delete(Convert.ToInt32(row["CategoryId"])) > 0)
+            {
+                MessageBox.Show("Successfully deleted " + row["Name"] + "!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _data.Rows.Remove(row);
+            }
+            else
+            {
+                MessageBox.Show("Could not delete " + row["Name"] + "!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public DataRow GetCurrentSelectedDataRow()
@@ -54,12 +57,19 @@ namespace LibraryMaragementClient
 
         public void AddToDataTable(DataTranseferObject obj)
         {
-            throw new NotImplementedException();
+            Category category = obj as Category;
+            _data.RejectChanges();
+            _data.Rows.Add(category.CategoryId,
+                           category.Name);
+            _data.AcceptChanges();
         }
 
         public void UpdateToDataTable(DataTranseferObject obj)
         {
-            throw new NotImplementedException();
+            Category category = obj as Category;
+            DataRow row = _data.Rows.Find(category.CategoryId);
+            row["Name"] = category.Name;
+            dgvCategorys.Refresh();
         }
     }
 }

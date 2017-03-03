@@ -26,17 +26,17 @@ namespace LibraryMaragementClient.Dialogs
         }
         public BookDialog(DataRow row) : this()
         {
-            txtBookId.Text = Convert.ToString(row.ItemArray[0]);
-            txtBookIsbn.Text = Convert.ToString(row.ItemArray[1]);
-            txtBookTitle.Text = Convert.ToString(row.ItemArray[2]);
-            rtxtBookDescription.Text = Convert.ToString(row.ItemArray[3]);
-            txtBookImageUrl.Text = Convert.ToString(row.ItemArray[4]);
-            txtBookPageNumber.Text = Convert.ToString(row.ItemArray[5]);
-            dtpBookPublishedDate.Value = Convert.ToDateTime(row.ItemArray[6]);
-            cbxBookAuthor.SelectedValue = Convert.ToInt32(row.ItemArray[7]);
-            cbxBookCategory.SelectedValue = Convert.ToInt32(row.ItemArray[8]);
-            cbxBookPublisher.SelectedValue = Convert.ToInt32(row.ItemArray[9]);
-            rbtBookDiscontinuedYes.Checked = Convert.ToBoolean(row.ItemArray[10]);
+            txtBookId.Text = Convert.ToString(row["BookId"]);
+            txtBookIsbn.Text = Convert.ToString(row["Isbn"]);
+            txtBookTitle.Text = Convert.ToString(row["Title"]);
+            rtxtBookDescription.Text = Convert.ToString(row["Description"]);
+            txtBookImageUrl.Text = Convert.ToString(row["CoverImageUrl"]);
+            txtBookPageNumber.Text = Convert.ToString(row["PageNumber"]);
+            dtpBookPublishedDate.Value = Convert.ToDateTime(row["PublishedDate"]);
+            cbxBookAuthor.SelectedValue = Convert.ToInt32(row["AuthorId"]);
+            cbxBookCategory.SelectedValue = Convert.ToInt32(row["CategoryId"]);
+            cbxBookPublisher.SelectedValue = Convert.ToInt32(row["PublisherId"]);
+            rbtBookDiscontinuedYes.Checked = Convert.ToBoolean(row["Discontinued"]);
             _action = ActionType.Edit;
         }
 

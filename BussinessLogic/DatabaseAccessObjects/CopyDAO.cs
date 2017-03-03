@@ -8,7 +8,7 @@ namespace BussinessLogic.DatabaseAccessObjects
 {
     public class CopyDAO : IDataAccessObject<Copy>
     {
-        private readonly string SQL_COPY_SELECT = "SELECT * FROM vCopies";
+        private readonly string SQL_COPY_SELECT = "SELECT * FROM Copies";
 
         //required @BookId
         private readonly string SQL_COPY_INSERT = "InsertCopy";//return -1 if BookId not exists in Books
@@ -61,7 +61,7 @@ namespace BussinessLogic.DatabaseAccessObjects
         {
             return _dataProvider.ExecuteNonQuery(SQL_COPY_DELETE,
                                                 CommandType.StoredProcedure,
-                                                new SqlParameter("@BookId", copyCode));
+                                                new SqlParameter("@CopyCode", copyCode));
         }
     }
 }

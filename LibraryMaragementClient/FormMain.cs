@@ -138,7 +138,9 @@ namespace LibraryMaragementClient
             }
             AddUpdateOrDelete(frmMaintain, dlgDetails, action);
         }
-        private void AddUpdateOrDelete(IMaintainDataTable<DataTranseferObject> frmMaintain, IDetailsDialog<DataTranseferObject> dlgDetails,ActionType action)
+        private void AddUpdateOrDelete(IMaintainDataTable<DataTranseferObject> frmMaintain,
+                                       IDetailsDialog<DataTranseferObject> dlgDetails,
+                                       ActionType action)
         {
             switch (action)
             {
@@ -151,7 +153,7 @@ namespace LibraryMaragementClient
                 case ActionType.Edit:
                     if (dlgDetails.ShowDialog() == DialogResult.OK)
                     {
-                        frmMaintain.UpdateToDataTable(dlgDetails.GetCurrentObject() as Book);
+                        frmMaintain.UpdateToDataTable(dlgDetails.GetCurrentObject());
                     }
                     break;
                 case ActionType.Delete:
@@ -166,7 +168,7 @@ namespace LibraryMaragementClient
         }
     }
 
-    public enum ActionType {
+    enum ActionType {
         Add, Edit, Delete
     }
 }
