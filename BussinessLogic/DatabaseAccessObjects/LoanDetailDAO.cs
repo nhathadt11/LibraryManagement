@@ -14,8 +14,8 @@ namespace BussinessLogic.DatabaseAccessObjects
         //required - @LoanId
         //required - @ReturnDate
         private readonly string SQL_LOAN_DETAILS_INSERT = "InsertLoanDetail";//return -1 if CopyId not valid
-                                                                            //return -2 if LoanId not valid
-                                                                            //return this Id if insert successfully
+                                                                             //return -2 if LoanId not valid
+                                                                             //return this Id if insert successfully
         private readonly string SQL_LOAN_DETAILS_UPDATE = "";
         private readonly string SQL_LOAN_DETAILS_DELETE = "";
         private DataProvider _dataProvider;
