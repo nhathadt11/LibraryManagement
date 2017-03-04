@@ -47,18 +47,35 @@ namespace LibraryMaragementClient
         {
             User u = obj as User;
             _data.RejectChanges();
-            _data.Rows.Add(u.);
+            _data.Rows.Add(u.UserId,u.Username,u.Password,u.PhoneNumber,u.Address,u.Email);
             _data.AcceptChanges();
         }
 
         public void UpdateToDataTable(DataTranseferObject obj)
         {
-            throw new NotImplementedException();
+            User u = obj as User;
+            DataRow row = _data.Rows.Find(u.UserId);
+            row["UserId"] = u.UserId;
+            row["Username"] = u.Username;
+            row["Password"] = u.Password;
+            row["PhoneNumber"] = u.PhoneNumber;
+            row["Address"] = u.Address;
+            row["Email"] = u.Email;
+            dgvUsers.Refresh();
         }
 
         public void DeleteFromDataTable()
         {
-            throw new NotImplementedException();
+            DataRow row = GetCurrentSelectedDataRow();
+            if(_service.Delete(Convert.ToInt32(row["UserId"])) > 0)
+            {
+                MessageBox.Show("Successfully deleted " + row["Username"] + "!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _data.Rows.Remove(row);
+            }
+            else
+            {
+                MessageBox.Show("Could not delete " + row["Username"] + "!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

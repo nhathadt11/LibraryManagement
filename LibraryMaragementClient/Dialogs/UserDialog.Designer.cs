@@ -146,6 +146,7 @@
             // 
             // cbRole
             // 
+            this.cbRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbRole.FormattingEnabled = true;
             this.cbRole.Location = new System.Drawing.Point(145, 429);
             this.cbRole.Name = "cbRole";
@@ -154,6 +155,7 @@
             // 
             // btnOk
             // 
+            this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnOk.Location = new System.Drawing.Point(220, 555);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(104, 37);
@@ -164,6 +166,7 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Location = new System.Drawing.Point(441, 555);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(98, 37);
