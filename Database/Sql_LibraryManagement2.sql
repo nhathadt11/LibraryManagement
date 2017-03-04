@@ -368,12 +368,18 @@ begin
 	where PublisherId = @PublisherId;
 	return @@ROWCOUNT;
 end
+--test procedure
+select * from Publishers
+declare @status int
+EXEC UpdatePublisherById @PublisherId = 10, @Name='test',@Contact='test',@Address='test',@Description='test';
+
+
 --*procedure InserPublisher*--
 --param @Name, @PublisherId required--
 --params @Contact, @Address, @Description are optional--
 --return @PublisherId
-drop procedure InserPublisher
-create procedure InserPublisher(
+drop procedure InsertPublisher
+create procedure InsertPublisher(
 @Name nvarchar(300),
 @Contact nvarchar(1000) = null,
 @Address nvarchar(300) = null,
@@ -383,6 +389,8 @@ begin
 	insert into Publishers values(@Name, @Contact, @Address, @Description);
 	return SCOPE_IDENTITY();
 end
+
+--test procedure update
 --*procedure DeletePublisherByID*--
 drop procedure DeletePublisherByID
 create procedure DeletePublisherByID(
@@ -606,3 +614,5 @@ select *
 select * 
   from information_schema.routines 
  where routine_type = 'PROCEDURE' order by SPECIFIC_NAME
+
+ 
