@@ -129,12 +129,16 @@ namespace LibraryMaragementClient
                            ? new PublisherDialog()
                            : new PublisherDialog(frmMaintain.GetCurrentSelectedDataRow());
             }
-            else
+            else if(activeForm is FormUser)
             {
                 frmMaintain = activeForm as FormUser;
                 dlgDetails = action == ActionType.Add
                            ? new UserDialog()
                            : new UserDialog(frmMaintain.GetCurrentSelectedDataRow());
+            }else
+            {
+                MessageBox.Show("Please Choose a form!!", "Alert", MessageBoxButtons.OK);
+                return;
             }
             AddUpdateOrDelete(frmMaintain, dlgDetails, action);
         }
@@ -166,6 +170,8 @@ namespace LibraryMaragementClient
                     break;
             }
         }
+
+
     }
 
     enum ActionType {

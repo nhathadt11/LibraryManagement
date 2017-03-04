@@ -9,6 +9,7 @@ namespace LibraryMaragementClient
     public partial class FormUser : Form, IMaintainDataTable<DataTranseferObject>
     {
         private UserService _service;
+        private DataTable _data;
         private static FormUser _instance;
         private FormUser()
         {
@@ -29,17 +30,25 @@ namespace LibraryMaragementClient
 
         private void FormUser_Load(object sender, EventArgs e)
         {
-            dgvUsers.DataSource = _service.GetAll();
+            _data = _service.GetAll();
+            _data.PrimaryKey = new DataColumn[] { _data.Columns["UserId"] };
+            dgvUsers.DataSource = _data;
+            dgvUsers.Columns[0].Visible = false;
+            dgvUsers.Columns[2].Visible = false;
+            dgvUsers.Columns[0].Visible = false;
         }
 
         public DataRow GetCurrentSelectedDataRow()
         {
-            throw new NotImplementedException();
+            return _data.Rows[dgvUsers.CurrentRow.Index];
         }
 
         public void AddToDataTable(DataTranseferObject obj)
         {
-            throw new NotImplementedException();
+            User u = obj as User;
+            _data.RejectChanges();
+            _data.Rows.Add(u.);
+            _data.AcceptChanges();
         }
 
         public void UpdateToDataTable(DataTranseferObject obj)

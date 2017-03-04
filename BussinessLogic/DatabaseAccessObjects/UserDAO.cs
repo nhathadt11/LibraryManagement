@@ -92,5 +92,11 @@ namespace BussinessLogic.DatabaseAccessObjects
                                                  CommandType.StoredProcedure,
                                                  new SqlParameter("@UserId", userId));
         }
+        public int IsExisted(string Username)
+        {
+            return _dataProvider.ExecuteNonQuery("IsUserExists",
+                CommandType.StoredProcedure,
+                new SqlParameter[0] { });
+        }
     }
 }

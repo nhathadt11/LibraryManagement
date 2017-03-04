@@ -30,5 +30,9 @@ namespace Service
         {
             return _userDAO.Update(user);
         }
+        public int IsExisted(string Username)
+        {
+           return _userDAO.IsExisted(Username);
+        }
     }
 }
