@@ -3,13 +3,14 @@ using System.Data;
 using BussinessLogic.DataTransferObjects;
 using DatabaseAccess;
 using System.Data.SqlClient;
+using System.Collections.Generic;
 
 namespace BussinessLogic.DatabaseAccessObjects
 {
     public class LoanDetailDAO : IDataAccessObject<LoanDetail>
     {
-        private readonly string SQL_LOAN_DETAILS_SELECT = "SELECT * FROM LoanDetails";
-
+        private readonly string SQL_LOAN_DETAILS_SELECT_ALL = "SELECT * FROM LoanDetails";
+        private readonly string SQL_LOAN_DETAILS_SELECT_BY_LOAN_ID = "SELECT * FROM LoanDetails WHERE LoanId = @LoanId";
         //required - @CopyId
         //required - @LoanId
         //required - @ReturnDate
@@ -38,7 +39,7 @@ namespace BussinessLogic.DatabaseAccessObjects
 
         public DataTable GetAll()
         {
-            return _dataProvider.ExecuteQuery(SQL_LOAN_DETAILS_SELECT,
+            return _dataProvider.ExecuteQuery(SQL_LOAN_DETAILS_SELECT_ALL,
                                               CommandType.Text);
         }
 
@@ -46,7 +47,7 @@ namespace BussinessLogic.DatabaseAccessObjects
         {
             return _dataProvider.ExecuteNonQuery(SQL_LOAN_DETAILS_INSERT,
                                                  CommandType.StoredProcedure,
-                                                 new SqlParameter("@CopyCode", loanDetail.CopyCode),
+                                                 new SqlParameter("@CopyCode", loanDetail.CopyId),
                                                  new SqlParameter("@LoanId", loanDetail.LoanId));
         }
 
@@ -54,7 +55,7 @@ namespace BussinessLogic.DatabaseAccessObjects
         {
             return _dataProvider.ExecuteNonQuery(SQL_LOAN_DETAILS_UPDATE,
                                                  CommandType.StoredProcedure,
-                                                 new SqlParameter("@CopyCode", loanDetail.CopyCode),
+                                                 new SqlParameter("@CopyCode", loanDetail.CopyId),
                                                  new SqlParameter("@LoanId", loanDetail.LoanId),
                                                  new SqlParameter("@ReturnDate", loanDetail.ReturnDate));
         }
@@ -62,6 +63,12 @@ namespace BussinessLogic.DatabaseAccessObjects
         public int Delete(int loanDetailId)
         {
             throw new NotImplementedException();
+        }
+        public DataTable GetLoanDetailsByLoanId(int loanId)
+        {
+            return _dataProvider.ExecuteQuery(SQL_LOAN_DETAILS_SELECT_BY_LOAN_ID,
+                                                 CommandType.Text,
+                                                 new SqlParameter("@LoanId", loanId));
         }
     }
 }

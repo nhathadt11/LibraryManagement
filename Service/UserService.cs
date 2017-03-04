@@ -30,5 +30,13 @@ namespace Service
         {
             return _userDAO.Update(user);
         }
+        public int CheckUserById(int userId)
+        {
+            return _userDAO.CheckUserById(userId);
+        }
+        public DataTable GetAllLibrarians()
+        {
+            return _userDAO.GetAllLibrarians();
+        }
     }
 }

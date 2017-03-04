@@ -8,6 +8,8 @@ namespace BussinessLogic.DatabaseAccessObjects
     public class UserDAO : IDataAccessObject<User>
     {
         private readonly string SQL_USER_SELECT = "SELECT * FROM Users";
+        private readonly string SQL_USER_SELECT_SINGLE = "SELECT * FROM Users WHERE UserId = @UserId";
+        private readonly string SQL_LIBRARIAN_SELECT_ALL = "SELECT * FROM Users WHERE RoleId IN (SELECT RoleId FROM Roles WHERE Name = 'librarian')";
 
         //required @Username nvarchar(300),
         //required @Password nvarchar(60),
@@ -92,6 +94,17 @@ namespace BussinessLogic.DatabaseAccessObjects
             return _dataProvider.ExecuteNonQuery(SQL_USER_DELETE,
                                                  CommandType.StoredProcedure,
                                                  new SqlParameter("@UserId", userId));
+        }
+        public int CheckUserById(int userId)
+        {
+            return _dataProvider.ExecuteNonQuery(SQL_USER_SELECT_SINGLE,
+                                                 CommandType.Text,
+                                                 new SqlParameter("@UserId", userId));
+        }
+        public DataTable GetAllLibrarians()
+        {
+            return _dataProvider.ExecuteQuery(SQL_LIBRARIAN_SELECT_ALL,
+                                              CommandType.Text);
         }
     }
 }

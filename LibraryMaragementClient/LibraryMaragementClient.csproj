@@ -71,12 +71,6 @@
       <DependentUpon>CopyDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Dialogs\IDetailsDialog.cs" />
-    <Compile Include="Dialogs\LoanDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dialogs\LoanDialog.Designer.cs">
-      <DependentUpon>LoanDialog.cs</DependentUpon>
-    </Compile>
     <Compile Include="Dialogs\PublisherDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +132,12 @@
       <DependentUpon>FormUser.cs</DependentUpon>
     </Compile>
     <Compile Include="IMaintainDataTable.cs" />
+    <Compile Include="Dialogs\LoanDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\LoanDialog.Designer.cs">
+      <DependentUpon>LoanDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Dialogs\AuthorDialog.resx">
@@ -181,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormUser.resx">
       <DependentUpon>FormUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\LoanDialog.resx">
+      <DependentUpon>LoanDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

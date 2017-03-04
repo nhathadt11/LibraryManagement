@@ -3,6 +3,9 @@ using BussinessLogic.DataTransferObjects;
 using DatabaseAccess;
 using System.Data.SqlClient;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System;
+using System.Windows.Forms;
 
 namespace BussinessLogic.DatabaseAccessObjects
 {
@@ -74,7 +77,7 @@ namespace BussinessLogic.DatabaseAccessObjects
                                                  CommandType.StoredProcedure,
                                                  new SqlParameter("@LoanId", loanId));
         }
-        public int Add(Loan loan, List<LoanDetail> loadnDetail)
+        public int Add(Loan loan, List<LoanDetail> loanDetailList)
         {
             DataProvider provider = DataProvider.Instance;
             using (SqlConnection connection = new SqlConnection(provider.ConnectionString))
@@ -90,19 +93,32 @@ namespace BussinessLogic.DatabaseAccessObjects
                 command.Parameters.AddWithValue("@MemberId", loan.MemberId);
                 command.Parameters.AddWithValue("@LibrarianId", loan.LibrarianId);
 
-                if (connection.State == ConnectionState.Closed) { connection.Open(); }
-                int loanId = command.ExecuteNonQuery();
-                if (loanId > 0)
+                try
                 {
+                    if (connection.State == ConnectionState.Closed) { connection.Open(); }
+                    int loanId = Convert.ToInt32(command.ExecuteScalar());
+                    if (loanId > 0)
+                    {
                     
-                    command.CommandText = "INSERT LoanDetails (CopyId, LoanId) "
-                                                  + "VALUES(@CopyId, @LoanId)";
-                    command.Parameters.Add("@CopyId", SqlDbType.Int);
-                    command.Parameters.Add("@LoanId", SqlDbType.Int);
+                        command.CommandText = "INSERT LoanDetails (CopyId, LoanId) VALUES(@CopyId, @LoanId)";
+                        command.Parameters.Add("@CopyId", SqlDbType.Int);
+                        command.Parameters.Add("@LoanId", SqlDbType.Int);
+                        foreach (var loanDetail in loanDetailList)
+                        {
+                            command.Parameters["@CopyId"].Value = loanDetail.CopyId;
+                            command.Parameters["@LoanId"].Value = loanDetail.LoanId;
+                        }
+                    }
+                    transaction.Commit();
+                    return loanId;
+                }
+                catch (Exception)
+                {
+                    transaction.Rollback();
+                    MessageBox.Show("Transaction failed and has been rolled back!");
+                    return -100;
                 }
             }
-
-            return 0;
         }
     }
 }
