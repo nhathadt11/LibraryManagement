@@ -42,20 +42,22 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvBooks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBooks.Location = new System.Drawing.Point(12, 12);
+            this.dgvBooks.Location = new System.Drawing.Point(18, 18);
+            this.dgvBooks.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvBooks.MultiSelect = false;
             this.dgvBooks.Name = "dgvBooks";
             this.dgvBooks.ReadOnly = true;
             this.dgvBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBooks.Size = new System.Drawing.Size(868, 441);
+            this.dgvBooks.Size = new System.Drawing.Size(1302, 678);
             this.dgvBooks.TabIndex = 0;
             // 
             // FormBook
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(892, 465);
+            this.ClientSize = new System.Drawing.Size(1338, 715);
             this.Controls.Add(this.dgvBooks);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormBook";
             this.Text = "FormBook";
             this.Load += new System.EventHandler(this.FormBook_Load);

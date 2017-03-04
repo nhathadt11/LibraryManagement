@@ -9,6 +9,7 @@ namespace LibraryMaragementClient
     public partial class FormUser : Form, IMaintainDataTable<DataTranseferObject>
     {
         private UserService _service;
+        private DataTable _data;
         private static FormUser _instance;
         private FormUser()
         {
@@ -29,27 +30,53 @@ namespace LibraryMaragementClient
 
         private void FormUser_Load(object sender, EventArgs e)
         {
-            dgvUsers.DataSource = _service.GetAll();
+            _data = _service.GetAll();
+            _data.PrimaryKey = new DataColumn[] { _data.Columns["UserId"] };
+            dgvUsers.DataSource = _data;
+            dgvUsers.Columns[1].Visible = false;
+            dgvUsers.Columns[2].Visible = false;
         }
 
         public DataRow GetCurrentSelectedDataRow()
         {
-            throw new NotImplementedException();
+            return _data.Rows[dgvUsers.CurrentRow.Index];
         }
 
         public void AddToDataTable(DataTranseferObject obj)
         {
-            throw new NotImplementedException();
+            User u = obj as User;
+            _data.RejectChanges();
+            _data.Rows.Add(u.UserId,u.Username,u.Password,u.FullName,u.PhoneNumber,u.Address,u.Email,u.RoleId);
+            _data.AcceptChanges();
         }
 
         public void UpdateToDataTable(DataTranseferObject obj)
         {
-            throw new NotImplementedException();
+            User u = obj as User;
+            DataRow row = _data.Rows.Find(u.UserId);
+            row["UserId"] = u.UserId;
+            row["Username"] = u.Username;
+            row["Password"] = u.Password;
+            row["PhoneNumber"] = u.PhoneNumber;
+            row["Address"] = u.Address;
+            row["Email"] = u.Email;
+            row["FullName"] = u.FullName;
+            row["RoleId"] = u.RoleId;
+            dgvUsers.Refresh();
         }
 
         public void DeleteFromDataTable()
         {
-            throw new NotImplementedException();
+            DataRow row = GetCurrentSelectedDataRow();
+            if(_service.Delete(Convert.ToInt32(row["UserId"])) > 0)
+            {
+                MessageBox.Show("Successfully deleted " + row["Username"] + "!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _data.Rows.Remove(row);
+            }
+            else
+            {
+                MessageBox.Show("Could not delete " + row["Username"] + "!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

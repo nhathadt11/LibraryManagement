@@ -143,5 +143,7 @@ namespace LibraryMaragementClient.Dialogs
         {
             return _book;
         }
+
+
     }
 }

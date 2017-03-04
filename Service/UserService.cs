@@ -38,5 +38,9 @@ namespace Service
         {
             return _userDAO.GetAllLibrarians();
         }
+        public int IsExisted(string Username)
+        {
+           return _userDAO.IsExisted(Username);
+        }
     }
 }

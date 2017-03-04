@@ -86,6 +86,7 @@ namespace BussinessLogic.DatabaseAccessObjects
                                               new SqlParameter("@Address", user.Address),
                                               new SqlParameter("@Email", user.Email),
                                               new SqlParameter("@RoleId", user.RoleId),
+                                              new SqlParameter("@FullName", user.FullName),
                                               new SqlParameter("@UserId", user.UserId));
         }
 
@@ -94,6 +95,12 @@ namespace BussinessLogic.DatabaseAccessObjects
             return _dataProvider.ExecuteNonQuery(SQL_USER_DELETE,
                                                  CommandType.StoredProcedure,
                                                  new SqlParameter("@UserId", userId));
+        }
+        public int IsExisted(string Username)
+        {
+            return _dataProvider.ExecuteNonQuery("IsUserExisting",
+                CommandType.StoredProcedure,
+                new SqlParameter[1] {new SqlParameter("@Username",Username) });
         }
         public int CheckUserById(int userId)
         {

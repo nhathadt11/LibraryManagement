@@ -34,31 +34,7 @@ namespace LibraryMaragementClient
             _data.PrimaryKey = new DataColumn[] { _data.Columns["BookId"] };
             dgvBooks.DataSource = _data;
         }
-        public void AddToDataTable(Book book)
-        {
-            _data.RejectChanges();
-            _data.Rows.Add(book.BookId, book.Isbn, book.Title,
-                           book.Description, book.CoverImageUrl, 
-                           book.PageNumber, book.PublishedDate, 
-                           book.AuthorId, book.CategoryId,
-                           book.PublisherId, book.Discontinued);
-            _data.AcceptChanges();
-        }
-        public void UpdateToDataTable(Book book)
-        {
-            DataRow row = _data.Rows.Find(book.BookId);
-            row["Isbn"] = book.Isbn;
-            row["Title"] = book.Title;
-            row["Description"] = book.Description;
-            row["CoverImageUrl"] = book.CoverImageUrl;
-            row["PageNumber"] = book.PageNumber;
-            row["PublishedDate"] = book.PublishedDate;
-            row["AuthorId"] = book.AuthorId;
-            row["CategoryId"] = book.CategoryId;
-            row["PublisherId"] = book.PublisherId;
-            row["Discontinued"] = book.Discontinued;
-            dgvBooks.Refresh();
-        }
+     
         public void DeleteFromDataTable()
         {
             DataRow row = _data.Rows[dgvBooks.CurrentRow.Index];
