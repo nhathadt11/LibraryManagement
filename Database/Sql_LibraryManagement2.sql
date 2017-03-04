@@ -298,6 +298,7 @@ begin
 	where AuthorId = @AuthorId;
 	return @@ROWCOUNT;
 end
+
 --*procedure InsertAuthor*--
 --param @FullName required--
 --params @Contact, @address, @Bio are optional--
@@ -595,3 +596,13 @@ begin
 	return SCOPE_IDENTITY();
 end
 ------------------------------------------------
+
+select * 
+  from DatabaseName.information_schema.routines 
+ where routine_type = 'PROCEDURE'
+
+ 
+--view all procedure
+select * 
+  from information_schema.routines 
+ where routine_type = 'PROCEDURE' order by SPECIFIC_NAME
