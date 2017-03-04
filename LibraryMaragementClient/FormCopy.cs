@@ -43,7 +43,7 @@ namespace LibraryMaragementClient
         {
             Copy copy = obj as Copy;
             _data.RejectChanges();
-            _data.Rows.Add(copy.CopyCode,
+            _data.Rows.Add(copy.CopyId,
                            copy.BookId,
                            copy.IsAvailable);
             _data.AcceptChanges();
@@ -52,7 +52,7 @@ namespace LibraryMaragementClient
         public void UpdateToDataTable(DataTranseferObject obj)
         {
             Copy copy = obj as Copy;
-            DataRow row = _data.Rows.Find(copy.CopyCode);
+            DataRow row = _data.Rows.Find(copy.CopyId);
             row["BookId"] = copy.BookId;
             row["IsAvailable"] = copy.IsAvailable;
         }

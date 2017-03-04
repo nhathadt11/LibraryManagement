@@ -67,6 +67,7 @@ namespace BussinessLogic.DatabaseAccessObjects
                                               CommandType.StoredProcedure,
                                               new SqlParameter("@Username", user.Username),
                                               new SqlParameter("@Password", user.Password),
+                                              new SqlParameter("@FullName", user.FullName),
                                               new SqlParameter("@PhoneNumber", user.PhoneNumber),
                                               new SqlParameter("@Address", user.Address),
                                               new SqlParameter("@Email", user.Email),

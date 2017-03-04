@@ -78,6 +78,7 @@ namespace LibraryMaragementClient.Dialogs
                 }
                 else // update book
                 {
+                    _book.BookId = Convert.ToInt32(txtBookId.Text);
                     if (_bookService.Update(_book) > 0) // success
                     {
                         MessageBox.Show("Successfully updated " + _book.Title + "!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
