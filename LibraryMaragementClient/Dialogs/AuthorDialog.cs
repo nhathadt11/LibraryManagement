@@ -58,14 +58,15 @@ namespace LibraryMaragementClient.Dialogs
                 }
                 else // update author
                 {
-                    if (_authorService.Update(_author) > 0) // success
+                    int result;
+                    if ((result = _authorService.Update(_author)) > 0) // success
                     {
                         MessageBox.Show("Successfully updated " + _author.FullName + "!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.DialogResult = DialogResult.OK;
                     }
                     else // fail
                     {
-                        MessageBox.Show("Could not update " + _author.FullName + "!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Could not update " + _author.FullName + "! Error code: " + result, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         this.DialogResult = DialogResult.None;
                     }
                 }

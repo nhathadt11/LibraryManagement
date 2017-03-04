@@ -45,7 +45,7 @@ namespace BussinessLogic.DatabaseAccessObjects
         {
             return _dataProvider.ExecuteNonQuery(SQL_COPY_INSERT,
                                                 CommandType.StoredProcedure,
-                                                new SqlParameter("@CopyCode", copy.CopyCode),
+                                                new SqlParameter("@CopyCode", copy.CopyId),
                                                 new SqlParameter("@BookId", copy.BookId),
                                                 new SqlParameter("@IsAvailable", copy.IsAvailable));
         }
@@ -55,13 +55,13 @@ namespace BussinessLogic.DatabaseAccessObjects
                                                 CommandType.StoredProcedure,
                                                 new SqlParameter("@BookId", copy.BookId),
                                                 new SqlParameter("@IsAvailable", copy.IsAvailable),
-                                                new SqlParameter("@CopyCode", copy.CopyCode));
+                                                new SqlParameter("@CopyCode", copy.CopyId));
         }
-        public int Delete(int copyCode)
+        public int Delete(int CopyId)
         {
             return _dataProvider.ExecuteNonQuery(SQL_COPY_DELETE,
                                                 CommandType.StoredProcedure,
-                                                new SqlParameter("@CopyCode", copyCode));
+                                                new SqlParameter("@CopyCode", CopyId));
         }
     }
 }

@@ -24,7 +24,7 @@ namespace BussinessLogic.DatabaseAccessObjects
                                                                 //return -3 if CategoryId not valid
                                                                 //return BookId if insert successfully
 
-        private readonly string SQL_BOOK_UPDATE = "";
+        private readonly string SQL_BOOK_UPDATE = "UpdateBookById";
 
         //required - @BookId
         private readonly string SQL_BOOK_DELETE = "DeleteBookById";//return -1 if this Book already reference by the other

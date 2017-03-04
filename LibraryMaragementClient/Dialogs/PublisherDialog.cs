@@ -1,14 +1,7 @@
 ﻿using BussinessLogic.DataTransferObjects;
 using Service;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LibraryMaragementClient.Dialogs
@@ -30,6 +23,7 @@ namespace LibraryMaragementClient.Dialogs
             txtPublisherName.Text = Convert.ToString(row["Name"]);
             txtPublisherContact.Text = Convert.ToString(row["Contact"]);
             txtPublisherAddress.Text = Convert.ToString(row["Address"]);
+            rtxtPublisherDescription.Text = Convert.ToString(row["Description"]);
             _action = ActionType.Edit;
         }
 
@@ -89,6 +83,7 @@ namespace LibraryMaragementClient.Dialogs
                 }
                 else // update
                 {
+                    _publisher.PublisherId = Convert.ToInt32(txtPublisherId.Text);
                     if (_publisherService.Update(_publisher) > 0)
                     {
                         MessageBox.Show("Successfully updated " + _publisher.Name + "!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.txtCopyCode = new System.Windows.Forms.TextBox();
+            this.txtCopyId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.rbtCopyAvailableYes = new System.Windows.Forms.RadioButton();
@@ -44,16 +44,16 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(42, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 13);
+            this.label1.Size = new System.Drawing.Size(18, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Code";
+            this.label1.Text = "ID";
             // 
-            // txtCopyCode
+            // txtCopyId
             // 
-            this.txtCopyCode.Location = new System.Drawing.Point(94, 26);
-            this.txtCopyCode.Name = "txtCopyCode";
-            this.txtCopyCode.Size = new System.Drawing.Size(147, 20);
-            this.txtCopyCode.TabIndex = 1;
+            this.txtCopyId.Location = new System.Drawing.Point(94, 26);
+            this.txtCopyId.Name = "txtCopyId";
+            this.txtCopyId.Size = new System.Drawing.Size(147, 20);
+            this.txtCopyId.TabIndex = 1;
             // 
             // label2
             // 
@@ -136,7 +136,7 @@
             this.Controls.Add(this.rbtCopyAvailableYes);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtCopyCode);
+            this.Controls.Add(this.txtCopyId);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -151,7 +151,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtCopyCode;
+        private System.Windows.Forms.TextBox txtCopyId;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RadioButton rbtCopyAvailableYes;

@@ -2,6 +2,7 @@
 using BussinessLogic.DataTransferObjects;
 using DatabaseAccess;
 using System.Data.SqlClient;
+using System.Collections.Generic;
 
 namespace BussinessLogic.DatabaseAccessObjects
 {
@@ -72,6 +73,36 @@ namespace BussinessLogic.DatabaseAccessObjects
             return _dataProvider.ExecuteNonQuery(SQL_LOAN_DELETE,
                                                  CommandType.StoredProcedure,
                                                  new SqlParameter("@LoanId", loanId));
+        }
+        public int Add(Loan loan, List<LoanDetail> loadnDetail)
+        {
+            DataProvider provider = DataProvider.Instance;
+            using (SqlConnection connection = new SqlConnection(provider.ConnectionString))
+            {
+                SqlTransaction transaction = connection.BeginTransaction();
+                SqlCommand command = connection.CreateCommand();
+                command.Transaction = transaction;
+                command.CommandText = "INSERT Loans (IssueDate, LimitDay, MemberId, LibrarianId) "
+                                    + "VALUES(@IssueDate, @LimitDay, @MemberId, @LibrarianId); "
+                                    + "SELECT SCOPE_IDENTITY()";
+                command.Parameters.AddWithValue("@IssueDate", loan.IssueDate);
+                command.Parameters.AddWithValue("@LimitDay", loan.LimitDate);
+                command.Parameters.AddWithValue("@MemberId", loan.MemberId);
+                command.Parameters.AddWithValue("@LibrarianId", loan.LibrarianId);
+
+                if (connection.State == ConnectionState.Closed) { connection.Open(); }
+                int loanId = command.ExecuteNonQuery();
+                if (loanId > 0)
+                {
+                    
+                    command.CommandText = "INSERT LoanDetails (CopyId, LoanId) "
+                                                  + "VALUES(@CopyId, @LoanId)";
+                    command.Parameters.Add("@CopyId", SqlDbType.Int);
+                    command.Parameters.Add("@LoanId", SqlDbType.Int);
+                }
+            }
+
+            return 0;
         }
     }
 }

@@ -10,6 +10,13 @@ namespace DatabaseAccess
         private readonly string CONNECTION_STRING
             = Properties.Settings.Default.LibraryManagementConnectionString;
         private static DataProvider _instance;
+        public string ConnectionString
+        {
+            get
+            {
+                return CONNECTION_STRING;
+            }
+        }
         private DataProvider() { }
         public static DataProvider Instance
         {

@@ -64,6 +64,7 @@ namespace LibraryMaragementClient.Dialogs
                 }
                 else // update
                 {
+                    _category.CategoryId = Convert.ToInt32(txtCategoryId.Text);
                     if (_categoryService.Update(_category) > 0) // success
                     {
                         MessageBox.Show("Successfully updated " + _category.Name + "!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -21,7 +21,7 @@ namespace LibraryMaragementClient.Dialogs
         }
         public CopyDialog(DataRow row ) : this()
         {
-            txtCopyCode.Text = Convert.ToString(row["CopyCode"]);
+            txtCopyId.Text = Convert.ToString(row["CopyId"]);
             rbtCopyAvailableYes.Checked = Convert.ToBoolean(row["IsAvailable"]);
             _action = ActionType.Edit;
         }
@@ -53,28 +53,29 @@ namespace LibraryMaragementClient.Dialogs
                 };
                 if (_action == ActionType.Add) // insert
                 {
-                    _copy.CopyCode = _copyService.Add(_copy);
-                    if (_copy.CopyCode > 0) // success
+                    _copy.CopyId = _copyService.Add(_copy);
+                    if (_copy.CopyId > 0) // success
                     {
-                        MessageBox.Show("Successfully added " + _copy.CopyCode + "!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Successfully added " + _copy.CopyId + "!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.DialogResult = DialogResult.OK;
                     }
                     else // fail
                     {
-                        MessageBox.Show("Could not add " + _copy.CopyCode + "!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Could not add " + _copy.CopyId + "!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         this.DialogResult = DialogResult.None;
                     }
                 }
                 else // update
                 {
+                    _copy.CopyId = Convert.ToInt32(txtCopyId);
                     if (_copyService.Update(_copy) > 0) // success
                     {
-                        MessageBox.Show("Successfully updated " + _copy.CopyCode + "!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Successfully updated " + _copy.CopyId + "!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.DialogResult = DialogResult.OK;
                     }
                     else // fail
                     {
-                        MessageBox.Show("Could not update " + _copy.CopyCode + "!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Could not update " + _copy.CopyId + "!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         this.DialogResult = DialogResult.None;
                     }
                 }

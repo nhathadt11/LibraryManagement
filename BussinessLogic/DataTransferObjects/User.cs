@@ -29,6 +29,14 @@ namespace BussinessLogic.DataTransferObjects
             get { return _password; }
             set { _password = value; }
         }
+        private string _fullName;
+
+        public string FullName
+        {
+            get { return _fullName; }
+            set { _fullName = value; }
+        }
+
         private string _phoneNumber;
 
         public string PhoneNumber
