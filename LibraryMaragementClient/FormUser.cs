@@ -33,9 +33,8 @@ namespace LibraryMaragementClient
             _data = _service.GetAll();
             _data.PrimaryKey = new DataColumn[] { _data.Columns["UserId"] };
             dgvUsers.DataSource = _data;
-            dgvUsers.Columns[0].Visible = false;
+            dgvUsers.Columns[1].Visible = false;
             dgvUsers.Columns[2].Visible = false;
-            dgvUsers.Columns[0].Visible = false;
         }
 
         public DataRow GetCurrentSelectedDataRow()
@@ -47,7 +46,7 @@ namespace LibraryMaragementClient
         {
             User u = obj as User;
             _data.RejectChanges();
-            _data.Rows.Add(u.UserId,u.Username,u.Password,u.PhoneNumber,u.Address,u.Email);
+            _data.Rows.Add(u.UserId,u.Username,u.Password,u.FullName,u.PhoneNumber,u.Address,u.Email,u.RoleId);
             _data.AcceptChanges();
         }
 
@@ -61,6 +60,8 @@ namespace LibraryMaragementClient
             row["PhoneNumber"] = u.PhoneNumber;
             row["Address"] = u.Address;
             row["Email"] = u.Email;
+            row["FullName"] = u.FullName;
+            row["RoleId"] = u.RoleId;
             dgvUsers.Refresh();
         }
 

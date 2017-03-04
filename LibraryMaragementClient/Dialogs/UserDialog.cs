@@ -19,17 +19,18 @@ namespace LibraryMaragementClient.Dialogs
             _roleService = new RoleService();
             _userService = new UserService();
             _actionType = ActionType.Add;
-            _user = new User();
+
         }
         public UserDialog(DataRow row) : this()
         {
-            _user.UserId = Convert.ToInt32(row["UserId"]);
-            txtUsername.Text = _user.Username=Convert.ToString(row["Username"]);
-            txtPassword.Text =_user.Password= Convert.ToString(row["Password"]);
-            txtPhoneNumber.Text =_user.PhoneNumber= Convert.ToString(row["PhoneNumber"]);
-            txtAddress.Text =_user.Address =Convert.ToString(row["Address"]);
-            txtEmail.Text = _user.Email=Convert.ToString(row["Email"]);
-            cbRole.SelectedValue =_user.RoleId= Convert.ToInt32(row["RoleId"]);
+            txtId.Text = Convert.ToString(row["UserId"]);
+            txtUsername.Text = Convert.ToString(row["Username"]);
+            txtPassword.Text = Convert.ToString(row["Password"]);
+            txtPhoneNumber.Text = Convert.ToString(row["PhoneNumber"]);
+            txtAddress.Text = Convert.ToString(row["Address"]);
+            txtEmail.Text = Convert.ToString(row["Email"]);
+            cbRole.SelectedValue = Convert.ToInt32(row["RoleId"]);
+            txtFullName.Text = Convert.ToString(row["FullName"]);
             _actionType = ActionType.Edit;
         }
 
@@ -44,19 +45,21 @@ namespace LibraryMaragementClient.Dialogs
             {
                 this.DialogResult = DialogResult.None;
 
-            }else {
-                
+            }
+            else
+            {
+                _user = new User()
+                {
+                    Username = txtUsername.Text,
+                    Password = txtPassword.Text,
+                    PhoneNumber = txtPhoneNumber.Text,
+                    Address = txtAddress.Text,
+                    FullName = txtFullName.Text,
+                    Email = txtEmail.Text,
+                    RoleId = Convert.ToInt32(cbRole.SelectedValue)
+                };
                 if (_actionType == ActionType.Add)
                 {
-                    _user = new User()
-                    {
-                        Username = txtUsername.Text,
-                        Password = txtPassword.Text,
-                        PhoneNumber = txtPhoneNumber.Text,
-                        Address = txtAddress.Text,
-                        Email = txtEmail.Text,
-                        RoleId = Convert.ToInt32(cbRole.SelectedValue)
-                    };
                     _user.UserId = _userService.Add(_user);
                     if (_user.UserId > 0) // success
                     {
@@ -83,7 +86,7 @@ namespace LibraryMaragementClient.Dialogs
                     }
                 }
             }
-            
+
         }
         private bool IsValid(ActionType actionType)
         {
@@ -93,11 +96,14 @@ namespace LibraryMaragementClient.Dialogs
             {
                 epvUsername.SetError(txtUsername, "Required!!");
                 result = false;
-            } else if (!Regex.IsMatch(txtUsername.Text, @"\w{10,50}")){
+            }
+            else if (!Regex.IsMatch(txtUsername.Text, @"\w{10,50}"))
+            {
                 epvUsername.SetError(txtUsername, "User name must from 10 to 50 character!!");
                 result = false;
             }
-            else if (actionType==ActionType.Add&&_userService.IsExisted(txtUsername.Text) == 1) {
+            else if (actionType == ActionType.Add && _userService.IsExisted(txtUsername.Text) == 1)
+            {
                 epvUsername.SetError(txtUsername, "User name existed!!");
                 result = false;
             }
@@ -106,7 +112,8 @@ namespace LibraryMaragementClient.Dialogs
             {
                 epvPassword.SetError(txtPassword, "Required!!");
                 result = false;
-            } else if (!Regex.IsMatch(txtPassword.Text, @"\w{10,50}"))
+            }
+            else if (!Regex.IsMatch(txtPassword.Text, @"\w{10,50}"))
             {
                 epvPassword.SetError(txtPassword, "Password must from 10 to 50 character!!");
                 result = false;
@@ -116,12 +123,15 @@ namespace LibraryMaragementClient.Dialogs
             {
                 epvPhoneNumber.SetError(txtPhoneNumber, "Required!!");
                 result = false;
-            } else if (!Regex.IsMatch(txtPhoneNumber.Text, @"\d{10,11}")){
+            }
+            else if (!Regex.IsMatch(txtPhoneNumber.Text, @"\d{10,11}"))
+            {
                 epvPhoneNumber.SetError(txtPhoneNumber, "Phone Number must from 10 to 11 digit!!");
                 result = false;
             }
             //check address
-            if (txtAddress.Text.Equals(string.Empty)){
+            if (txtAddress.Text.Equals(string.Empty))
+            {
                 epvAddress.SetError(txtAddress, "Required!!");
                 result = false;
             }
@@ -130,9 +140,16 @@ namespace LibraryMaragementClient.Dialogs
             {
                 epvEmail.SetError(txtEmail, "Requred!!");
                 result = false;
-            }else if(!Regex.IsMatch(txtEmail.Text, @"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"))
+            }
+            else if (!Regex.IsMatch(txtEmail.Text, @"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"))
             {
                 epvEmail.SetError(txtEmail, "Email invalid");
+                result = false;
+            }
+            //check full name
+            if (txtFullName.Text.Equals(string.Empty))
+            {
+                epvFullName.SetError(txtFullName, "Required!!");
                 result = false;
             }
             return result;

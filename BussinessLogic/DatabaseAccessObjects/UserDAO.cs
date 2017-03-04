@@ -84,6 +84,7 @@ namespace BussinessLogic.DatabaseAccessObjects
                                               new SqlParameter("@Address", user.Address),
                                               new SqlParameter("@Email", user.Email),
                                               new SqlParameter("@RoleId", user.RoleId),
+                                              new SqlParameter("@FullName", user.FullName),
                                               new SqlParameter("@UserId", user.UserId));
         }
 
@@ -95,7 +96,7 @@ namespace BussinessLogic.DatabaseAccessObjects
         }
         public int IsExisted(string Username)
         {
-            return _dataProvider.ExecuteNonQuery("IsUserExists",
+            return _dataProvider.ExecuteNonQuery("IsUserExisting",
                 CommandType.StoredProcedure,
                 new SqlParameter[1] {new SqlParameter("@Username",Username) });
         }
