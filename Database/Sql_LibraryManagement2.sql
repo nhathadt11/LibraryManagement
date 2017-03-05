@@ -106,7 +106,15 @@ Address nvarchar(600) default N'N/A',
 Email nvarchar(50) default N'N/A',
 RoleId int foreign key references Roles(RoleId),
 )
-
+--procedure check user exists 
+use [LibraryManagementV2]
+create procedure IsUserExists(
+@Username nvarchar(300)
+) as
+begin
+	if exists( select * from Users where Username = @Username) return 1;
+	return 0;
+end
 --procedure update users
 drop procedure UpdateUserById
 create procedure UpdateUserById(
@@ -369,9 +377,11 @@ begin
 	return @@ROWCOUNT;
 end
 --test procedure
-select * from Publishers
+
 declare @status int
-EXEC UpdatePublisherById @PublisherId = 10, @Name='test',@Contact='test',@Address='test',@Description='test';
+
+select * from Publishers
+EXEC UpdatePublisherById @PublisherId = 10, @Name='test2',@Contact='test2',@Address='test2',@Description='test2';
 
 
 --*procedure InserPublisher*--
