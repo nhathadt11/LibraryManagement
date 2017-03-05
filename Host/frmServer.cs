@@ -17,7 +17,7 @@ namespace Host
         public frmServer()
         {
             InitializeComponent();
-            authorService = new ServiceHost(typeof(Service.AuthorService));
+            //authorService = new ServiceHost(typeof(Service.AuthorService));
         }
 
         private void btnStart_Click(object sender, EventArgs e)
