@@ -1,4 +1,4 @@
-﻿namespace BussinessLogic.DataTransferObjects
+﻿namespace DatabaseAccess.DataTransferObjects
 {
     public abstract class DataTranseferObject
     {

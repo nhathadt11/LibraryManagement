@@ -1,13 +1,11 @@
 ﻿using System.Data;
-using BussinessLogic.DataTransferObjects;
-using DatabaseAccess;
+using DatabaseAccess.DataTransferObjects;
 using System.Data.SqlClient;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System;
 using System.Windows.Forms;
 
-namespace BussinessLogic.DatabaseAccessObjects
+namespace DatabaseAccess.DatabaseAccessObjects
 {
     public class LoanDAO : IDataAccessObject<Loan>
     {
@@ -18,14 +16,15 @@ namespace BussinessLogic.DatabaseAccessObjects
         //required @MemberId
         //required @LibrarianId
         private readonly string SQL_LOAN_INSERT = "InsertLoan";//return -1 if member Id not valid
-                                                                          //return -2 if LibrarianId not valid
-                                                                          //return 1 if insert successfully
-        private readonly string SQL_LOAN_UPDATE = "";
+                                                               //return -2 if LibrarianId not valid
+                                                               //return 1 if insert successfully
+        private readonly string SQL_LOAN_UPDATE = "UpdateLoanById";
 
         //requied @LoanId
         private readonly string SQL_LOAN_DELETE = "";//return -1 if this has already reference by the others
-                                                                //return 0 if this Id does not exists
-                                                                //return 1 if deleted successfully
+
+        //return 0 if this Id does not exists
+        //return 1 if deleted successfully
         private DataProvider _dataProvider;
         private static LoanDAO _instance;
         private LoanDAO()
@@ -55,7 +54,7 @@ namespace BussinessLogic.DatabaseAccessObjects
             return _dataProvider.ExecuteNonQuery(SQL_LOAN_INSERT,
                                                  CommandType.StoredProcedure,
                                                  new SqlParameter("@IssueDate", loan.IssueDate),
-                                                 new SqlParameter("@LimitDay", loan.LimitDate),
+                                                 new SqlParameter("@LimitDay", loan.LimitDay),
                                                  new SqlParameter("@MemberId", loan.MemberId),
                                                  new SqlParameter("@LibrarianId", loan.LibrarianId));
         }
@@ -65,7 +64,7 @@ namespace BussinessLogic.DatabaseAccessObjects
             return _dataProvider.ExecuteNonQuery(SQL_LOAN_UPDATE,
                                                  CommandType.StoredProcedure,
                                                  new SqlParameter("@IssueDate", loan.IssueDate),
-                                                 new SqlParameter("@LimitDay", loan.LimitDate),
+                                                 new SqlParameter("@LimitDay", loan.LimitDay),
                                                  new SqlParameter("@MemberId", loan.MemberId),
                                                  new SqlParameter("@LibrarianId", loan.LibrarianId),
                                                  new SqlParameter("@LoanId", loan.LoanId));
@@ -82,6 +81,7 @@ namespace BussinessLogic.DatabaseAccessObjects
             DataProvider provider = DataProvider.Instance;
             using (SqlConnection connection = new SqlConnection(provider.ConnectionString))
             {
+                if (connection.State == ConnectionState.Closed) { connection.Open(); }
                 SqlTransaction transaction = connection.BeginTransaction();
                 SqlCommand command = connection.CreateCommand();
                 command.Transaction = transaction;
@@ -89,7 +89,7 @@ namespace BussinessLogic.DatabaseAccessObjects
                                     + "VALUES(@IssueDate, @LimitDay, @MemberId, @LibrarianId); "
                                     + "SELECT SCOPE_IDENTITY()";
                 command.Parameters.AddWithValue("@IssueDate", loan.IssueDate);
-                command.Parameters.AddWithValue("@LimitDay", loan.LimitDate);
+                command.Parameters.AddWithValue("@LimitDay", loan.LimitDay);
                 command.Parameters.AddWithValue("@MemberId", loan.MemberId);
                 command.Parameters.AddWithValue("@LibrarianId", loan.LibrarianId);
 
@@ -99,20 +99,28 @@ namespace BussinessLogic.DatabaseAccessObjects
                     int loanId = Convert.ToInt32(command.ExecuteScalar());
                     if (loanId > 0)
                     {
-                    
                         command.CommandText = "INSERT LoanDetails (CopyId, LoanId) VALUES(@CopyId, @LoanId)";
+                        command.Parameters.Clear();
                         command.Parameters.Add("@CopyId", SqlDbType.Int);
-                        command.Parameters.Add("@LoanId", SqlDbType.Int);
+                        command.Parameters.AddWithValue("@LoanId", loanId);
                         foreach (var loanDetail in loanDetailList)
                         {
                             command.Parameters["@CopyId"].Value = loanDetail.CopyId;
-                            command.Parameters["@LoanId"].Value = loanDetail.LoanId;
+                            command.ExecuteNonQuery();
+                        }
+                        command.CommandText = "UPDATE Copies SET IsAvailable = 0 WHERE CopyId = @CopyId";
+                        command.Parameters.Clear();
+                        command.Parameters.Add("@CopyId", SqlDbType.Int);
+                        foreach (var loanDetail in loanDetailList)
+                        {
+                            command.Parameters["@CopyId"].Value = loanDetail.CopyId;
+                            command.ExecuteNonQuery();
                         }
                     }
                     transaction.Commit();
                     return loanId;
                 }
-                catch (Exception)
+                    catch (Exception)
                 {
                     transaction.Rollback();
                     MessageBox.Show("Transaction failed and has been rolled back!");

@@ -1,4 +1,4 @@
-﻿using BussinessLogic.DataTransferObjects;
+﻿using DatabaseAccess.DataTransferObjects;
 using LibraryMaragementClient.Dialogs;
 using System;
 using System.Windows.Forms;

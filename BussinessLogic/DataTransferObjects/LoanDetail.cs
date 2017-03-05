@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BussinessLogic.DataTransferObjects
+namespace DatabaseAccess.DataTransferObjects
 {
     public class LoanDetail : DataTranseferObject
     {

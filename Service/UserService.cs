@@ -1,6 +1,6 @@
 ﻿using System.Data;
-using BussinessLogic.DataTransferObjects;
-using BussinessLogic.DatabaseAccessObjects;
+using DatabaseAccess.DataTransferObjects;
+using DatabaseAccess.DatabaseAccessObjects;
 
 namespace Service
 {
@@ -38,9 +38,9 @@ namespace Service
         {
             return _userDAO.GetAllLibrarians();
         }
-        public int IsExisted(string Username)
+        public int HasExisted(string Username)
         {
-           return _userDAO.IsExisted(Username);
+           return _userDAO.HasExisted(Username);
         }
     }
 }

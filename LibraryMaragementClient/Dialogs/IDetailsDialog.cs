@@ -1,4 +1,4 @@
-﻿using BussinessLogic.DataTransferObjects;
+﻿using DatabaseAccess.DataTransferObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;

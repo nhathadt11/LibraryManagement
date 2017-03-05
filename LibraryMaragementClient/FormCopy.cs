@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using Service;
-using BussinessLogic.DataTransferObjects;
+using DatabaseAccess.DataTransferObjects;
 using System.Data;
 
 namespace LibraryMaragementClient
@@ -62,12 +62,18 @@ namespace LibraryMaragementClient
             DataRow row = _data.Rows[dgvBookCopies.CurrentRow.Index];
             if (_copyService.Delete(Convert.ToInt32(row["CopyCode"])) > 0)
             {
-                MessageBox.Show("Successfully deleted " + row["CopyCode"] + "!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Successfully deleted " + row["CopyCode"] + "!",
+                                "Success",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
                 _data.Rows.Remove(row);
             }
             else
             {
-                MessageBox.Show("Could not delete " + row["CopyCode"] + "!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Could not delete " + row["CopyCode"] + "!",
+                                "Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
             }
         }
     }

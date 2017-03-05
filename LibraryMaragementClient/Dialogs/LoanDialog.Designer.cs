@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -52,8 +53,24 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btnLoanOk = new System.Windows.Forms.Button();
             this.btnLoanCancel = new System.Windows.Forms.Button();
+            this.epvLoanMemberId = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epvLoanIssueDate = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epvLoanLimitDay = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epvLoanCopyId1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epvLoanCopyId2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epvLoanCopyId3 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epvLoanCopyId4 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epvLoanCopyId5 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epvLoanMemberId)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epvLoanIssueDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epvLoanLimitDay)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epvLoanCopyId1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epvLoanCopyId2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epvLoanCopyId3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epvLoanCopyId4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epvLoanCopyId5)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -122,6 +139,7 @@
             // 
             this.txtLoanId.Location = new System.Drawing.Point(73, 23);
             this.txtLoanId.Name = "txtLoanId";
+            this.txtLoanId.ReadOnly = true;
             this.txtLoanId.Size = new System.Drawing.Size(100, 20);
             this.txtLoanId.TabIndex = 12;
             // 
@@ -178,7 +196,7 @@
             // 
             // txtLoanCopyId5
             // 
-            this.txtLoanCopyId5.Location = new System.Drawing.Point(52, 128);
+            this.txtLoanCopyId5.Location = new System.Drawing.Point(100, 123);
             this.txtLoanCopyId5.Name = "txtLoanCopyId5";
             this.txtLoanCopyId5.Size = new System.Drawing.Size(133, 20);
             this.txtLoanCopyId5.TabIndex = 17;
@@ -186,7 +204,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(11, 131);
+            this.label10.Location = new System.Drawing.Point(59, 126);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(27, 13);
             this.label10.TabIndex = 16;
@@ -194,7 +212,7 @@
             // 
             // txtLoanCopyId4
             // 
-            this.txtLoanCopyId4.Location = new System.Drawing.Point(52, 102);
+            this.txtLoanCopyId4.Location = new System.Drawing.Point(100, 97);
             this.txtLoanCopyId4.Name = "txtLoanCopyId4";
             this.txtLoanCopyId4.Size = new System.Drawing.Size(133, 20);
             this.txtLoanCopyId4.TabIndex = 15;
@@ -202,7 +220,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(11, 105);
+            this.label9.Location = new System.Drawing.Point(59, 100);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(27, 13);
             this.label9.TabIndex = 14;
@@ -210,7 +228,7 @@
             // 
             // txtLoanCopyId3
             // 
-            this.txtLoanCopyId3.Location = new System.Drawing.Point(52, 76);
+            this.txtLoanCopyId3.Location = new System.Drawing.Point(100, 71);
             this.txtLoanCopyId3.Name = "txtLoanCopyId3";
             this.txtLoanCopyId3.Size = new System.Drawing.Size(133, 20);
             this.txtLoanCopyId3.TabIndex = 13;
@@ -218,7 +236,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(11, 79);
+            this.label8.Location = new System.Drawing.Point(59, 74);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(27, 13);
             this.label8.TabIndex = 12;
@@ -226,7 +244,7 @@
             // 
             // txtLoanCopyId2
             // 
-            this.txtLoanCopyId2.Location = new System.Drawing.Point(52, 50);
+            this.txtLoanCopyId2.Location = new System.Drawing.Point(100, 45);
             this.txtLoanCopyId2.Name = "txtLoanCopyId2";
             this.txtLoanCopyId2.Size = new System.Drawing.Size(133, 20);
             this.txtLoanCopyId2.TabIndex = 11;
@@ -234,7 +252,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(11, 53);
+            this.label7.Location = new System.Drawing.Point(59, 48);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(27, 13);
             this.label7.TabIndex = 10;
@@ -242,7 +260,7 @@
             // 
             // txtLoanCopyId1
             // 
-            this.txtLoanCopyId1.Location = new System.Drawing.Point(52, 24);
+            this.txtLoanCopyId1.Location = new System.Drawing.Point(100, 19);
             this.txtLoanCopyId1.Name = "txtLoanCopyId1";
             this.txtLoanCopyId1.Size = new System.Drawing.Size(133, 20);
             this.txtLoanCopyId1.TabIndex = 9;
@@ -250,7 +268,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(11, 27);
+            this.label6.Location = new System.Drawing.Point(59, 22);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(27, 13);
             this.label6.TabIndex = 8;
@@ -277,6 +295,38 @@
             this.btnLoanCancel.Text = "Cancel";
             this.btnLoanCancel.UseVisualStyleBackColor = true;
             // 
+            // epvLoanMemberId
+            // 
+            this.epvLoanMemberId.ContainerControl = this;
+            // 
+            // epvLoanIssueDate
+            // 
+            this.epvLoanIssueDate.ContainerControl = this;
+            // 
+            // epvLoanLimitDay
+            // 
+            this.epvLoanLimitDay.ContainerControl = this;
+            // 
+            // epvLoanCopyId1
+            // 
+            this.epvLoanCopyId1.ContainerControl = this;
+            // 
+            // epvLoanCopyId2
+            // 
+            this.epvLoanCopyId2.ContainerControl = this;
+            // 
+            // epvLoanCopyId3
+            // 
+            this.epvLoanCopyId3.ContainerControl = this;
+            // 
+            // epvLoanCopyId4
+            // 
+            this.epvLoanCopyId4.ContainerControl = this;
+            // 
+            // epvLoanCopyId5
+            // 
+            this.epvLoanCopyId5.ContainerControl = this;
+            // 
             // LoanDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -295,6 +345,14 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epvLoanMemberId)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epvLoanIssueDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epvLoanLimitDay)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epvLoanCopyId1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epvLoanCopyId2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epvLoanCopyId3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epvLoanCopyId4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epvLoanCopyId5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -324,5 +382,13 @@
         private System.Windows.Forms.Button btnLoanOk;
         private System.Windows.Forms.Button btnLoanCancel;
         private System.Windows.Forms.TextBox txtLoanMemberId;
+        private System.Windows.Forms.ErrorProvider epvLoanMemberId;
+        private System.Windows.Forms.ErrorProvider epvLoanIssueDate;
+        private System.Windows.Forms.ErrorProvider epvLoanLimitDay;
+        private System.Windows.Forms.ErrorProvider epvLoanCopyId1;
+        private System.Windows.Forms.ErrorProvider epvLoanCopyId2;
+        private System.Windows.Forms.ErrorProvider epvLoanCopyId3;
+        private System.Windows.Forms.ErrorProvider epvLoanCopyId4;
+        private System.Windows.Forms.ErrorProvider epvLoanCopyId5;
     }
 }

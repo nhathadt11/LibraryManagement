@@ -1,9 +1,8 @@
-﻿using BussinessLogic.DataTransferObjects;
-using DatabaseAccess;
+﻿using DatabaseAccess.DataTransferObjects;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace BussinessLogic.DatabaseAccessObjects
+namespace DatabaseAccess.DatabaseAccessObjects
 {
     public class AuthorDAO : IDataAccessObject<Author>
     {
@@ -23,7 +22,7 @@ namespace BussinessLogic.DatabaseAccessObjects
                                                                         //return > 0 if update successfully
 
 
-        private readonly string SQL_AUTHOR_DELETE = "DeleteAuthorByID";//accept @AuthorId and return -1|0|1
+        private readonly string SQL_AUTHOR_DELETE = "DeleteAuthorById";//accept @AuthorId and return -1|0|1
                                                                                   // -1 if already reference by the others
                                                                                   // 0 if this ID does not exist
                                                                                   // 1 if successfully

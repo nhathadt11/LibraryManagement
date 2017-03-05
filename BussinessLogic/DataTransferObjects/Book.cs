@@ -1,7 +1,7 @@
-﻿using BussinessLogic.DataTransferObjects;
+﻿using DatabaseAccess.DataTransferObjects;
 using System;
 
-namespace BussinessLogic.DataTransferObjects
+namespace DatabaseAccess.DataTransferObjects
 {
     public class Book : DataTranseferObject
     {

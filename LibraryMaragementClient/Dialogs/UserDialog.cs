@@ -1,4 +1,4 @@
-﻿using BussinessLogic.DataTransferObjects;
+﻿using DatabaseAccess.DataTransferObjects;
 using Service;
 using System;
 using System.Data;
@@ -11,14 +11,14 @@ namespace LibraryMaragementClient.Dialogs
     {
         private RoleService _roleService;
         private UserService _userService;
-        private ActionType _actionType;
+        private ActionType _action;
         private User _user;
         public UserDialog()
         {
             InitializeComponent();
             _roleService = new RoleService();
             _userService = new UserService();
-            _actionType = ActionType.Add;
+            _action = ActionType.Add;
 
         }
         public UserDialog(DataRow row) : this()
@@ -29,9 +29,9 @@ namespace LibraryMaragementClient.Dialogs
             txtPhoneNumber.Text = Convert.ToString(row["PhoneNumber"]);
             txtAddress.Text = Convert.ToString(row["Address"]);
             txtEmail.Text = Convert.ToString(row["Email"]);
-            cbRole.SelectedValue = Convert.ToInt32(row["RoleId"]);
+            cbxRole.SelectedValue = Convert.ToInt32(row["RoleId"]);
             txtFullName.Text = Convert.ToString(row["FullName"]);
-            _actionType = ActionType.Edit;
+            _action = ActionType.Edit;
         }
 
         public DataTranseferObject GetCurrentObject()
@@ -41,7 +41,7 @@ namespace LibraryMaragementClient.Dialogs
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            if (!IsValid(_actionType))
+            if (!IsValid(_action))
             {
                 this.DialogResult = DialogResult.None;
 
@@ -56,32 +56,45 @@ namespace LibraryMaragementClient.Dialogs
                     Address = txtAddress.Text,
                     FullName = txtFullName.Text,
                     Email = txtEmail.Text,
-                    RoleId = Convert.ToInt32(cbRole.SelectedValue)
+                    RoleId = Convert.ToInt32(cbxRole.SelectedValue)
                 };
-                if (_actionType == ActionType.Add)
+                if (_action == ActionType.Add)
                 {
                     _user.UserId = _userService.Add(_user);
                     if (_user.UserId > 0) // success
                     {
-                        MessageBox.Show("Successfully added " + _user.Username + "!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Successfully added " + _user.Username + "!",
+                                        "Success",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information);
                         this.DialogResult = DialogResult.OK;
                     }
                     else // fail
                     {
-                        MessageBox.Show("Could not add " + _user.Username + "!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Could not add " + _user.Username + "!",
+                                        "Error",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Error);
                         this.DialogResult = DialogResult.None;
                     }
                 }
                 else
                 {
+                    _user.UserId = Convert.ToInt32(txtId.Text);
                     if (_userService.Update(_user) > 0) // success
                     {
-                        MessageBox.Show("Successfully updated " + _user.Username + "!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Successfully updated " + _user.Username + "!",
+                                        "Success",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information);
                         this.DialogResult = DialogResult.OK;
                     }
                     else // fail
                     {
-                        MessageBox.Show("Could not update " + _user.Username + "!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Could not update " + _user.Username + "!",
+                                        "Error",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Error);
                         this.DialogResult = DialogResult.None;
                     }
                 }
@@ -94,62 +107,62 @@ namespace LibraryMaragementClient.Dialogs
             //check Username
             if (txtUsername.Text.Equals(string.Empty))
             {
-                epvUsername.SetError(txtUsername, "Required!!");
+                epvUsername.SetError(txtUsername, "Required!");
                 result = false;
             }
-            else if (!Regex.IsMatch(txtUsername.Text, @"\w{10,50}"))
+            else if (!Regex.IsMatch(txtUsername.Text, @"\w{6,50}"))
             {
-                epvUsername.SetError(txtUsername, "User name must from 10 to 50 character!!");
+                epvUsername.SetError(txtUsername, "Must contain 6-50 characters!");
                 result = false;
             }
-            else if (actionType == ActionType.Add && _userService.IsExisted(txtUsername.Text) == 1)
+            else if (actionType == ActionType.Add && _userService.HasExisted(txtUsername.Text) == 1)
             {
-                epvUsername.SetError(txtUsername, "User name existed!!");
+                epvUsername.SetError(txtUsername, "Username has already existed!");
                 result = false;
             }
             //check Password
             if (txtPassword.Text.Equals(string.Empty))
             {
-                epvPassword.SetError(txtPassword, "Required!!");
+                epvPassword.SetError(txtPassword, "Required!");
                 result = false;
             }
-            else if (!Regex.IsMatch(txtPassword.Text, @"\w{10,50}"))
+            else if (!Regex.IsMatch(txtPassword.Text, @"\w{8,50}"))
             {
-                epvPassword.SetError(txtPassword, "Password must from 10 to 50 character!!");
+                epvPassword.SetError(txtPassword, "Must contains 8-50 characters!");
                 result = false;
             }
             //check phone number
             if (txtPhoneNumber.Equals(string.Empty))
             {
-                epvPhoneNumber.SetError(txtPhoneNumber, "Required!!");
+                epvPhoneNumber.SetError(txtPhoneNumber, "Required!");
                 result = false;
             }
             else if (!Regex.IsMatch(txtPhoneNumber.Text, @"\d{10,11}"))
             {
-                epvPhoneNumber.SetError(txtPhoneNumber, "Phone Number must from 10 to 11 digit!!");
+                epvPhoneNumber.SetError(txtPhoneNumber, "Must contain 10-10 digits!");
                 result = false;
             }
             //check address
             if (txtAddress.Text.Equals(string.Empty))
             {
-                epvAddress.SetError(txtAddress, "Required!!");
+                epvAddress.SetError(txtAddress, "Required!");
                 result = false;
             }
             //check email
             if (txtEmail.Text.Equals(string.Empty))
             {
-                epvEmail.SetError(txtEmail, "Requred!!");
+                epvEmail.SetError(txtEmail, "Requred!");
                 result = false;
             }
             else if (!Regex.IsMatch(txtEmail.Text, @"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"))
             {
-                epvEmail.SetError(txtEmail, "Email invalid");
+                epvEmail.SetError(txtEmail, "Invalid!");
                 result = false;
             }
             //check full name
             if (txtFullName.Text.Equals(string.Empty))
             {
-                epvFullName.SetError(txtFullName, "Required!!");
+                epvFullName.SetError(txtFullName, "Required!");
                 result = false;
             }
             return result;
@@ -157,9 +170,9 @@ namespace LibraryMaragementClient.Dialogs
 
         private void UserDialog_Load(object sender, EventArgs e)
         {
-            cbRole.DataSource = _roleService.GetAll();
-            cbRole.ValueMember = "RoleId";
-            cbRole.DisplayMember = "Name";
+            cbxRole.DataSource = _roleService.GetAll();
+            cbxRole.ValueMember = "RoleId";
+            cbxRole.DisplayMember = "Name";
         }
     }
 }

@@ -42,19 +42,20 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvLoans.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvLoans.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLoans.Location = new System.Drawing.Point(9, 8);
+            this.dgvLoans.Location = new System.Drawing.Point(11, 11);
             this.dgvLoans.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvLoans.MultiSelect = false;
             this.dgvLoans.Name = "dgvLoans";
             this.dgvLoans.RowTemplate.Height = 28;
             this.dgvLoans.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLoans.Size = new System.Drawing.Size(779, 508);
+            this.dgvLoans.Size = new System.Drawing.Size(525, 417);
             this.dgvLoans.TabIndex = 0;
             // 
             // FormLoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(795, 482);
+            this.ClientSize = new System.Drawing.Size(547, 439);
             this.Controls.Add(this.dgvLoans);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormLoan";

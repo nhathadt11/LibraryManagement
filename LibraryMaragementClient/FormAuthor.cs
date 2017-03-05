@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
-using BussinessLogic.DataTransferObjects;
+using DatabaseAccess.DataTransferObjects;
 using Service;
 namespace LibraryMaragementClient
 {
@@ -39,12 +39,18 @@ namespace LibraryMaragementClient
             DataRow row = _data.Rows[dgvAuthors.CurrentRow.Index];
             if (_authorService.Delete(Convert.ToInt32(row["AuthorId"])) > 0)
             {
-                MessageBox.Show("Successfully deleted " + row["FullName"] + "!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Successfully deleted " + row["FullName"] + "!",
+                                "Success",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
                 _data.Rows.Remove(row);
             }
             else
             {
-                MessageBox.Show("Could not delete " + row["FullName"] + "!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Could not delete " + row["FullName"] + "!",
+                                "Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
             }
         }
 

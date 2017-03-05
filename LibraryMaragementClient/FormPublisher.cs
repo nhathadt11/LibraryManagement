@@ -1,4 +1,4 @@
-﻿using BussinessLogic.DataTransferObjects;
+﻿using DatabaseAccess.DataTransferObjects;
 using Service;
 using System;
 using System.Windows.Forms;
@@ -68,12 +68,18 @@ namespace LibraryMaragementClient
             DataRow row = _data.Rows[dgvPublishers.CurrentRow.Index];
             if (_publisherService.Delete(Convert.ToInt32(row["PublisherId"])) > 0)
             {
-                MessageBox.Show("Successfully deleted " + row["Name"] + "!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Successfully deleted " + row["Name"] + "!",
+                                "Success",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
                 _data.Rows.Remove(row);
             }
             else
             {
-                MessageBox.Show("Could not delete " + row["Name"] + "!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Could not delete " + row["Name"] + "!",
+                                "Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
             }
         }
     }

@@ -1,9 +1,8 @@
-﻿using BussinessLogic.DataTransferObjects;
-using DatabaseAccess;
+﻿using DatabaseAccess.DataTransferObjects;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace BussinessLogic.DatabaseAccessObjects
+namespace DatabaseAccess.DatabaseAccessObjects
 {
     public class RoleDAO : IDataAccessObject<Role>
     {
@@ -19,7 +18,7 @@ namespace BussinessLogic.DatabaseAccessObjects
                                                                    //
 
         //required @RoleID
-        private readonly string SQL_ROLE_DELETE = "DeleteRoleByID";//return -1 if this has already reference by the others
+        private readonly string SQL_ROLE_DELETE = "DeleteRoleById";//return -1 if this has already reference by the others
                                                                               //return 0 if this id not exist
                                                                               //return 1 if delete successfully
         private DataProvider _dataProvider;

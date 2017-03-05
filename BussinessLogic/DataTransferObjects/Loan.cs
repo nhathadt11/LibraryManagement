@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BussinessLogic.DataTransferObjects
+namespace DatabaseAccess.DataTransferObjects
 {
     public class Loan : DataTranseferObject
     {
@@ -22,12 +22,12 @@ namespace BussinessLogic.DataTransferObjects
             get { return _issueDate; }
             set { _issueDate = value; }
         }
-        private int _limitDate;
+        private int _limitDay;
 
-        public int LimitDate
+        public int LimitDay
         {
-            get { return _limitDate; }
-            set { _limitDate = value; }
+            get { return _limitDay; }
+            set { _limitDay = value; }
         }
         private int _memberId;
 
@@ -43,6 +43,5 @@ namespace BussinessLogic.DataTransferObjects
             get { return _librarianId; }
             set { _librarianId = value; }
         }
-
     }
 }

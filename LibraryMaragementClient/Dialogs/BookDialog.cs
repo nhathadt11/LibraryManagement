@@ -1,4 +1,4 @@
-﻿using BussinessLogic.DataTransferObjects;
+﻿using DatabaseAccess.DataTransferObjects;
 using Service;
 using System;
 using System.Data;
@@ -67,12 +67,18 @@ namespace LibraryMaragementClient.Dialogs
                     _book.BookId = _bookService.Add(_book);
                     if (_book.BookId > 0) // success
                     {
-                        MessageBox.Show("Successfully added " + _book.Title + "!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Successfully added " + _book.Title + "!",
+                                        "Success",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information);
                         this.DialogResult = DialogResult.OK;
                     }
                     else // fail
                     {
-                        MessageBox.Show("Could not add " + _book.Title + "!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Could not add " + _book.Title + "!",
+                                        "Error",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Error);
                         this.DialogResult = DialogResult.None;
                     }
                 }
@@ -81,12 +87,18 @@ namespace LibraryMaragementClient.Dialogs
                     _book.BookId = Convert.ToInt32(txtBookId.Text);
                     if (_bookService.Update(_book) > 0) // success
                     {
-                        MessageBox.Show("Successfully updated " + _book.Title + "!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Successfully updated " + _book.Title + "!",
+                                        "Success",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information);
                         this.DialogResult = DialogResult.OK;
                     }
                     else // fail
                     {
-                        MessageBox.Show("Could not update " + _book.Title + "!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Could not update " + _book.Title + "!",
+                                        "Error",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Error);
                         this.DialogResult = DialogResult.None;
                     }
                 }

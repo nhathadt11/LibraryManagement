@@ -2,7 +2,7 @@
 using System;
 using System.Data;
 using System.Windows.Forms;
-using BussinessLogic.DataTransferObjects;
+using DatabaseAccess.DataTransferObjects;
 
 namespace LibraryMaragementClient
 {
@@ -41,12 +41,18 @@ namespace LibraryMaragementClient
             DataRow row = _data.Rows[dgvCategorys.CurrentRow.Index];
             if (_categoryService.Delete(Convert.ToInt32(row["CategoryId"])) > 0)
             {
-                MessageBox.Show("Successfully deleted " + row["Name"] + "!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Successfully deleted " + row["Name"] + "!",
+                                "Success",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
                 _data.Rows.Remove(row);
             }
             else
             {
-                MessageBox.Show("Could not delete " + row["Name"] + "!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Could not delete " + row["Name"] + "!",
+                                "Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
             }
         }
 

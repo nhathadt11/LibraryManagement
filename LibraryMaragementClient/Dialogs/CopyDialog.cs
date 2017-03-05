@@ -1,4 +1,4 @@
-﻿using BussinessLogic.DataTransferObjects;
+﻿using DatabaseAccess.DataTransferObjects;
 using Service;
 using System;
 using System.Data;
@@ -56,12 +56,18 @@ namespace LibraryMaragementClient.Dialogs
                     _copy.CopyId = _copyService.Add(_copy);
                     if (_copy.CopyId > 0) // success
                     {
-                        MessageBox.Show("Successfully added " + _copy.CopyId + "!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Successfully added copy with ID: " + _copy.CopyId + "!",
+                                        "Success",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information);
                         this.DialogResult = DialogResult.OK;
                     }
                     else // fail
                     {
-                        MessageBox.Show("Could not add " + _copy.CopyId + "!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Could not add copy with ID: " + _copy.CopyId + "!",
+                                        "Error",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Error);
                         this.DialogResult = DialogResult.None;
                     }
                 }
@@ -70,12 +76,18 @@ namespace LibraryMaragementClient.Dialogs
                     _copy.CopyId = Convert.ToInt32(txtCopyId);
                     if (_copyService.Update(_copy) > 0) // success
                     {
-                        MessageBox.Show("Successfully updated " + _copy.CopyId + "!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Successfully updated copy with ID: " + _copy.CopyId + "!",
+                                        "Success",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information);
                         this.DialogResult = DialogResult.OK;
                     }
                     else // fail
                     {
-                        MessageBox.Show("Could not update " + _copy.CopyId + "!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Could not update copy with ID: " + _copy.CopyId + "!",
+                                        "Error",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Error);
                         this.DialogResult = DialogResult.None;
                     }
                 }

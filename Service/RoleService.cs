@@ -1,6 +1,6 @@
-﻿using BussinessLogic.DataTransferObjects;
+﻿using DatabaseAccess.DataTransferObjects;
 using System.Data;
-using BussinessLogic.DatabaseAccessObjects;
+using DatabaseAccess.DatabaseAccessObjects;
 
 namespace Service
 {

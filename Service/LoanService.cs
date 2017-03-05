@@ -1,6 +1,7 @@
 ﻿using System.Data;
-using BussinessLogic.DatabaseAccessObjects;
-using BussinessLogic.DataTransferObjects;
+using DatabaseAccess.DatabaseAccessObjects;
+using DatabaseAccess.DataTransferObjects;
+using System.Collections.Generic;
 
 namespace Service
 {
@@ -30,6 +31,10 @@ namespace Service
         public int Update(Loan loan)
         {
             return _loanDAO.Update(loan);
+        }
+        public int Add(Loan loan, List<LoanDetail> loanDetails)
+        {
+            return _loanDAO.Add(loan, loanDetails);
         }
     }
 }

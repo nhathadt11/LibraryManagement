@@ -1,6 +1,6 @@
 ﻿using System.Data;
 
-namespace BussinessLogic.DatabaseAccessObjects
+namespace DatabaseAccess.DatabaseAccessObjects
 {
     interface IDataAccessObject<T>
     {

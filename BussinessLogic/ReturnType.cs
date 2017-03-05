@@ -1,4 +1,4 @@
-﻿namespace BussinessLogic
+﻿namespace DatabaseAccess
 {
     public enum ReturnType
     {

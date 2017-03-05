@@ -1,4 +1,4 @@
-﻿using BussinessLogic.DataTransferObjects;
+﻿using DatabaseAccess.DataTransferObjects;
 using Service;
 using System;
 using System.Data;
@@ -53,12 +53,18 @@ namespace LibraryMaragementClient.Dialogs
                     _category.CategoryId = _categoryService.Add(_category);
                     if (_category.CategoryId > 0) // success
                     {
-                        MessageBox.Show("Successfully added " + _category.Name + "!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Successfully added " + _category.Name + "!",
+                                        "Success",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information);
                         this.DialogResult = DialogResult.OK;
                     }
                     else // fail
                     {
-                        MessageBox.Show("Could not add " + _category.Name + "!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Could not add " + _category.Name + "!",
+                                        "Error",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Error);
                         this.DialogResult = DialogResult.None;
                     }
                 }
@@ -67,12 +73,18 @@ namespace LibraryMaragementClient.Dialogs
                     _category.CategoryId = Convert.ToInt32(txtCategoryId.Text);
                     if (_categoryService.Update(_category) > 0) // success
                     {
-                        MessageBox.Show("Successfully updated " + _category.Name + "!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Successfully updated " + _category.Name + "!",
+                                        "Success",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information);
                         this.DialogResult = DialogResult.OK;
                     }
                     else // fail
                     {
-                        MessageBox.Show("Could not update " + _category.Name + "!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Could not update " + _category.Name + "!",
+                                        "Error",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Error);
                         this.DialogResult = DialogResult.None;
                     }
                 }

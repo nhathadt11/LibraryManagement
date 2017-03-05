@@ -1,9 +1,8 @@
-﻿using BussinessLogic.DataTransferObjects;
-using DatabaseAccess;
+﻿using DatabaseAccess.DataTransferObjects;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace BussinessLogic.DatabaseAccessObjects
+namespace DatabaseAccess.DatabaseAccessObjects
 {
     public class BookDAO : IDataAccessObject<Book>
     {

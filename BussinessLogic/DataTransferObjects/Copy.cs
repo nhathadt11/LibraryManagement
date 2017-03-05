@@ -1,4 +1,4 @@
-﻿namespace BussinessLogic.DataTransferObjects
+﻿namespace DatabaseAccess.DataTransferObjects
 {
     public class Copy : DataTranseferObject
     {

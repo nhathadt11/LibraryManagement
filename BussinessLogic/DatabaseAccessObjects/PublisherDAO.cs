@@ -1,9 +1,8 @@
-﻿using BussinessLogic.DataTransferObjects;
-using DatabaseAccess;
+﻿using DatabaseAccess.DataTransferObjects;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace BussinessLogic.DatabaseAccessObjects
+namespace DatabaseAccess.DatabaseAccessObjects
 {
     public class PublisherDAO : IDataAccessObject<Publisher>
     {
@@ -23,7 +22,7 @@ namespace BussinessLogic.DatabaseAccessObjects
         private readonly string SQL_PUBLISHER_UPDATE = "UpdatePublisherById"; //return 0 if this Id does not exists
                                                                               //return > 0 if Update Successfully
         //required @PublisherId
-        private readonly string SQL_PUBLISHER_DELETE = "DeletePublisherByID";//return -1 if has been reference by the other
+        private readonly string SQL_PUBLISHER_DELETE = "DeletePublisherById";//return -1 if has been reference by the other
                                                                                         //return 0 if not exists this Id
                                                                                         //return 1 if insert successfully
         private DataProvider _dataProvider;

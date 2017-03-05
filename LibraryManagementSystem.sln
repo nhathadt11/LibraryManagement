@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseAccess", "DatabaseAccess\DatabaseAccess.csproj", "{884B5806-9FE8-4D9C-80B5-E5EC4692F6F9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseUtility", "DatabaseAccess\DatabaseUtility.csproj", "{884B5806-9FE8-4D9C-80B5-E5EC4692F6F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BussinessLogic", "BussinessLogic\BussinessLogic.csproj", "{71F01686-B9B3-4D8F-BA72-6EEB1960C891}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseAccess", "BussinessLogic\DatabaseAccess.csproj", "{71F01686-B9B3-4D8F-BA72-6EEB1960C891}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{E7FF4113-68DA-49C2-AE61-CD711D454E5A}"
 EndProject

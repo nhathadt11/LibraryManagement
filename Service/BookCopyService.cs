@@ -1,6 +1,7 @@
-﻿using BussinessLogic.DatabaseAccessObjects;
-using BussinessLogic.DataTransferObjects;
+﻿using DatabaseAccess.DatabaseAccessObjects;
+using DatabaseAccess.DataTransferObjects;
 using System.Data;
+using System;
 
 namespace Service
 {
@@ -30,6 +31,11 @@ namespace Service
         public int Update(Copy copy)
         {
             return _copyDAO.Update(copy);
+        }
+
+        public bool CheckValidCopyId(int copyId)
+        {
+            return _copyDAO.CheckValidCopyId(copyId);
         }
     }
 }

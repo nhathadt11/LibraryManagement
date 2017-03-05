@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Data;
-using BussinessLogic.DataTransferObjects;
-using DatabaseAccess;
+using DatabaseAccess.DataTransferObjects;
 using System.Data.SqlClient;
-using System.Collections.Generic;
 
-namespace BussinessLogic.DatabaseAccessObjects
+namespace DatabaseAccess.DatabaseAccessObjects
 {
     public class LoanDetailDAO : IDataAccessObject<LoanDetail>
     {
@@ -67,8 +65,8 @@ namespace BussinessLogic.DatabaseAccessObjects
         public DataTable GetLoanDetailsByLoanId(int loanId)
         {
             return _dataProvider.ExecuteQuery(SQL_LOAN_DETAILS_SELECT_BY_LOAN_ID,
-                                                 CommandType.Text,
-                                                 new SqlParameter("@LoanId", loanId));
+                                              CommandType.Text,
+                                              new SqlParameter("@LoanId", loanId));
         }
     }
 }

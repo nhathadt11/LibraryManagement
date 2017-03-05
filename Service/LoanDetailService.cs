@@ -1,6 +1,6 @@
 ﻿using System.Data;
-using BussinessLogic.DataTransferObjects;
-using BussinessLogic.DatabaseAccessObjects;
+using DatabaseAccess.DataTransferObjects;
+using DatabaseAccess.DatabaseAccessObjects;
 using System.Collections.Generic;
 using System;
 
@@ -41,7 +41,7 @@ namespace Service
                 details.Add(new LoanDetail {
                     CopyId = Convert.ToInt32(row["CopyId"]),
                     LoanId = loanId,
-                    ReturnDate = Convert.ToDateTime(row["ReturnDate"])
+                    ReturnDate = Convert.ToDateTime(row["ReturnDate"] == DBNull.Value ? null : row["ReturnDate"])
                 });
             }
             return details;

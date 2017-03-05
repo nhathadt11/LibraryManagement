@@ -1,14 +1,14 @@
-﻿using BussinessLogic.DataTransferObjects;
-using DatabaseAccess;
+﻿using DatabaseAccess.DataTransferObjects;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace BussinessLogic.DatabaseAccessObjects
+namespace DatabaseAccess.DatabaseAccessObjects
 {
     public class UserDAO : IDataAccessObject<User>
     {
         private readonly string SQL_USER_SELECT = "SELECT * FROM Users";
         private readonly string SQL_USER_SELECT_SINGLE = "SELECT * FROM Users WHERE UserId = @UserId";
+        private readonly string SQL_USER_HAS_EXISTED = "HasExisted";
         private readonly string SQL_LIBRARIAN_SELECT_ALL = "SELECT * FROM Users WHERE RoleId IN (SELECT RoleId FROM Roles WHERE Name = 'librarian')";
 
         //required @Username nvarchar(300),
@@ -66,28 +66,28 @@ namespace BussinessLogic.DatabaseAccessObjects
         public int Add(User user)
         {
             return _dataProvider.ExecuteNonQuery(SQL_USER_INSERT,
-                                              CommandType.StoredProcedure,
-                                              new SqlParameter("@Username", user.Username),
-                                              new SqlParameter("@Password", user.Password),
-                                              new SqlParameter("@FullName", user.FullName),
-                                              new SqlParameter("@PhoneNumber", user.PhoneNumber),
-                                              new SqlParameter("@Address", user.Address),
-                                              new SqlParameter("@Email", user.Email),
-                                              new SqlParameter("@RoleId", user.RoleId));
+                                                 CommandType.StoredProcedure,
+                                                 new SqlParameter("@Username", user.Username),
+                                                 new SqlParameter("@Password", user.Password),
+                                                 new SqlParameter("@FullName", user.FullName),
+                                                 new SqlParameter("@PhoneNumber", user.PhoneNumber),
+                                                 new SqlParameter("@Address", user.Address),
+                                                 new SqlParameter("@Email", user.Email),
+                                                 new SqlParameter("@RoleId", user.RoleId));
         }
 
         public int Update(User user)
         {
             return _dataProvider.ExecuteNonQuery(SQL_USER_UPDATE,
-                                              CommandType.StoredProcedure,
-                                              new SqlParameter("@Username", user.Username),
-                                              new SqlParameter("@Password", user.Password),
-                                              new SqlParameter("@PhoneNumber", user.PhoneNumber),
-                                              new SqlParameter("@Address", user.Address),
-                                              new SqlParameter("@Email", user.Email),
-                                              new SqlParameter("@RoleId", user.RoleId),
-                                              new SqlParameter("@FullName", user.FullName),
-                                              new SqlParameter("@UserId", user.UserId));
+                                                 CommandType.StoredProcedure,
+                                                 new SqlParameter("@Username", user.Username),
+                                                 new SqlParameter("@Password", user.Password),
+                                                 new SqlParameter("@PhoneNumber", user.PhoneNumber),
+                                                 new SqlParameter("@Address", user.Address),
+                                                 new SqlParameter("@Email", user.Email),
+                                                 new SqlParameter("@RoleId", user.RoleId),
+                                                 new SqlParameter("@FullName", user.FullName),
+                                                 new SqlParameter("@UserId", user.UserId));
         }
 
         public int Delete(int userId)
@@ -96,17 +96,18 @@ namespace BussinessLogic.DatabaseAccessObjects
                                                  CommandType.StoredProcedure,
                                                  new SqlParameter("@UserId", userId));
         }
-        public int IsExisted(string Username)
+        public int HasExisted(string Username)
         {
-            return _dataProvider.ExecuteNonQuery("IsUserExisting",
-                CommandType.StoredProcedure,
-                new SqlParameter[1] {new SqlParameter("@Username",Username) });
+            return _dataProvider.ExecuteQuery(SQL_USER_HAS_EXISTED,
+                                                 CommandType.StoredProcedure,
+                                                 new SqlParameter[1] {new SqlParameter("@Username",Username) })
+                                                 .Rows.Count;
         }
         public int CheckUserById(int userId)
         {
-            return _dataProvider.ExecuteNonQuery(SQL_USER_SELECT_SINGLE,
+            return _dataProvider.ExecuteQuery(SQL_USER_SELECT_SINGLE,
                                                  CommandType.Text,
-                                                 new SqlParameter("@UserId", userId));
+                                                 new SqlParameter("@UserId", userId)).Rows.Count;
         }
         public DataTable GetAllLibrarians()
         {

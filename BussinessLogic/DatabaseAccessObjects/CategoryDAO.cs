@@ -1,9 +1,8 @@
-﻿using BussinessLogic.DataTransferObjects;
+﻿using DatabaseAccess.DataTransferObjects;
 using System.Data;
-using DatabaseAccess;
 using System.Data.SqlClient;
 
-namespace BussinessLogic.DatabaseAccessObjects
+namespace DatabaseAccess.DatabaseAccessObjects
 {
     public class CategoryDAO : IDataAccessObject<Category>
     {
@@ -16,7 +15,7 @@ namespace BussinessLogic.DatabaseAccessObjects
         private readonly string SQL_CATEGORY_UPDATE = "";
 
         //required @CategoryID
-        private readonly string SQL_CATEGORY_DELETE = "DeleteCategoryByID";//return -1 if this category already reference by the others
+        private readonly string SQL_CATEGORY_DELETE = "DeleteCategoryById";//return -1 if this category already reference by the others
                                                                                       //return 0 if this category does not exists
                                                                                       //return 1 if this category deleted successfully
         private DataProvider _dataProvider;

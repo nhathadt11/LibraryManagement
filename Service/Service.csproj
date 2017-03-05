@@ -62,9 +62,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BussinessLogic\BussinessLogic.csproj">
+    <ProjectReference Include="..\BussinessLogic\DatabaseAccess.csproj">
       <Project>{71f01686-b9b3-4d8f-ba72-6eeb1960c891}</Project>
-      <Name>BussinessLogic</Name>
+      <Name>DatabaseAccess</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

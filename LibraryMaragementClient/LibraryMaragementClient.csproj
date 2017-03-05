@@ -208,9 +208,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BussinessLogic\BussinessLogic.csproj">
+    <ProjectReference Include="..\BussinessLogic\DatabaseAccess.csproj">
       <Project>{71F01686-B9B3-4D8F-BA72-6EEB1960C891}</Project>
-      <Name>BussinessLogic</Name>
+      <Name>DatabaseAccess</Name>
     </ProjectReference>
     <ProjectReference Include="..\Service\Service.csproj">
       <Project>{e7ff4113-68da-49c2-ae61-cd711d454e5a}</Project>

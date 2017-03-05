@@ -1,4 +1,4 @@
-﻿using BussinessLogic.DataTransferObjects;
+﻿using DatabaseAccess.DataTransferObjects;
 using Service;
 using System;
 using System.Data;
@@ -47,26 +47,37 @@ namespace LibraryMaragementClient.Dialogs
                     _author.AuthorId = _authorService.Add(_author);
                     if (_author.AuthorId > 0) // success
                     {
-                        MessageBox.Show("Successfully added " + _author.FullName + "!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Successfully added " + _author.FullName + "!",
+                                        "Success",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information);
                         this.DialogResult = DialogResult.OK;
                     }
                     else // fail
                     {
-                        MessageBox.Show("Could not add " + _author.FullName + "!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Could not add " + _author.FullName + "!",
+                                        "Error",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Error);
                         this.DialogResult = DialogResult.None;
                     }
                 }
                 else // update author
                 {
-                    int result;
-                    if ((result = _authorService.Update(_author)) > 0) // success
+                    if (_authorService.Update(_author) > 0) // success
                     {
-                        MessageBox.Show("Successfully updated " + _author.FullName + "!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Successfully updated " + _author.FullName + "!",
+                                        "Success",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information);
                         this.DialogResult = DialogResult.OK;
                     }
                     else // fail
                     {
-                        MessageBox.Show("Could not update " + _author.FullName + "! Error code: " + result, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Could not update " + _author.FullName + "!",
+                                        "Error",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Error);
                         this.DialogResult = DialogResult.None;
                     }
                 }
