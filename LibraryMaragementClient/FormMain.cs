@@ -161,7 +161,18 @@ namespace LibraryMaragementClient
                     }
                     break;
                 case ActionType.Delete:
-                    if (MessageBox.Show("Are you sure?", "Confirm Dialog", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (frmMaintain is FormLoan)
+                    {
+                        MessageBox.Show("Cannot delete loan once it was added!",
+                            "Error",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                        break;
+                    }
+                    if (MessageBox.Show("Are you sure?",
+                                        "Confirm Dialog",
+                                        MessageBoxButtons.YesNo,
+                                        MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         frmMaintain.DeleteFromDataTable();
                     }

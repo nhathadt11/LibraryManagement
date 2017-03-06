@@ -64,10 +64,7 @@ namespace LibraryMaragementClient
 
         public void DeleteFromDataTable()
         {
-            MessageBox.Show("Cannot delete loan once it was added!",
-                            "Error",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
+            throw new Exception("Function not supported");
         }
     }
 }
