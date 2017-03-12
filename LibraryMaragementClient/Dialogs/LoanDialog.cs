@@ -55,6 +55,7 @@ namespace LibraryMaragementClient
             cbxLibrarian.DataSource = _librarianData;
             cbxLibrarian.DisplayMember = "FullName";
             cbxLibrarian.ValueMember = "UserId";
+            
         }
         private void btnLoanOk_Click(object sender, EventArgs e)
         {
@@ -192,6 +193,36 @@ namespace LibraryMaragementClient
         private bool CheckValidUserId()
         {
             return _userService.CheckUserById(Convert.ToInt32(txtLoanMemberId.Text)) > 0;
+        }
+
+        private void txtLoanMemberId_TextChanged(object sender, EventArgs e)
+        {
+            txtLoanMemberId.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtLoanMemberId.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            AutoCompleteStringCollection col = new AutoCompleteStringCollection();
+            DataTable table = _userService.GetAll();
+            foreach (DataRow row in table.Rows)
+            {
+                col.Add(row["UserId"].ToString());
+            }
+            txtLoanMemberId.AutoCompleteCustomSource = col;
+        }
+        private void suggest(TextBox t)
+        {
+            t.AutoCompleteMode = AutoCompleteMode.Suggest;
+            t.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            AutoCompleteStringCollection col = new AutoCompleteStringCollection();
+            DataTable table = _copyService.GetAll();
+            foreach (DataRow row in table.Rows)
+            {
+                col.Add(row["CopyId"].ToString());
+            }
+            t.AutoCompleteCustomSource = col;
+        }
+        private void txtLoanCopyId5_Enter(object sender, EventArgs e)
+        {
+            TextBox t = (TextBox)sender;
+            suggest(t);
         }
     }
 }
