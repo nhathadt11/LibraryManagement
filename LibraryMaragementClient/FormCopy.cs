@@ -30,7 +30,7 @@ namespace LibraryMaragementClient
         private void FormBookCopy_Load(object sender, EventArgs e)
         {
             _data = _copyService.GetAll();
-            _data.PrimaryKey = new DataColumn[] { _data.Columns["CopyCode"] };
+            _data.PrimaryKey = new DataColumn[] { _data.Columns["CopyId"] };
             dgvBookCopies.DataSource = _data;
         }
 

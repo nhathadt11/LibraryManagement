@@ -88,5 +88,13 @@ namespace LibraryMaragementClient
             row["Discontinued"] = book.Discontinued;
             dgvBooks.Refresh();
         }
+
+        private void txtBookFilter_TextChanged(object sender, EventArgs e)
+        {
+            _data.DefaultView.RowFilter = (rbtBookTitle.Checked
+                                          ? "Title "
+                                          : "Convert(BookId, 'System.String') ")
+                                          + "LIKE '%" + txtBookFilter.Text + "%'";
+        }
     }
 }

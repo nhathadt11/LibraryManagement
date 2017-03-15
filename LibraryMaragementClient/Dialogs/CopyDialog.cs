@@ -73,7 +73,7 @@ namespace LibraryMaragementClient.Dialogs
                 }
                 else // update
                 {
-                    _copy.CopyId = Convert.ToInt32(txtCopyId);
+                    _copy.CopyId = Convert.ToInt32(txtCopyId.Text);
                     if (_copyService.Update(_copy) > 0) // success
                     {
                         MessageBox.Show("Successfully updated copy with ID: " + _copy.CopyId + "!",

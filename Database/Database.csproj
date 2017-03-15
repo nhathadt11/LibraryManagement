@@ -68,6 +68,7 @@
   <ItemGroup>
     <Content Include="db10.sql" />
     <Content Include="db11.sql" />
+    <Content Include="db12.sql" />
     <Content Include="db2.sql" />
     <Content Include="db4.sql" />
     <Content Include="db5.sql" />
