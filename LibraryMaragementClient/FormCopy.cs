@@ -76,5 +76,10 @@ namespace LibraryMaragementClient
                                 MessageBoxIcon.Error);
             }
         }
+
+        private void txtCopyFilterById_TextChanged(object sender, EventArgs e)
+        {
+            _data.DefaultView.RowFilter = "Convert(CopyId,'System.String') LIKE '%" + txtCopyFilterById.Text + "%'";
+        }
     }
 }

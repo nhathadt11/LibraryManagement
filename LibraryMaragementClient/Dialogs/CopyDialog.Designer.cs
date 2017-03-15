@@ -76,18 +76,18 @@
             // rbtCopyAvailableYes
             // 
             this.rbtCopyAvailableYes.AutoSize = true;
-            this.rbtCopyAvailableYes.Location = new System.Drawing.Point(116, 98);
+            this.rbtCopyAvailableYes.Location = new System.Drawing.Point(125, 100);
             this.rbtCopyAvailableYes.Name = "rbtCopyAvailableYes";
             this.rbtCopyAvailableYes.Size = new System.Drawing.Size(43, 17);
             this.rbtCopyAvailableYes.TabIndex = 5;
-            this.rbtCopyAvailableYes.TabStop = true;
             this.rbtCopyAvailableYes.Text = "Yes";
             this.rbtCopyAvailableYes.UseVisualStyleBackColor = true;
             // 
             // rbtCopyAvailableNo
             // 
             this.rbtCopyAvailableNo.AutoSize = true;
-            this.rbtCopyAvailableNo.Location = new System.Drawing.Point(183, 98);
+            this.rbtCopyAvailableNo.Checked = true;
+            this.rbtCopyAvailableNo.Location = new System.Drawing.Point(192, 100);
             this.rbtCopyAvailableNo.Name = "rbtCopyAvailableNo";
             this.rbtCopyAvailableNo.Size = new System.Drawing.Size(39, 17);
             this.rbtCopyAvailableNo.TabIndex = 6;
@@ -129,11 +129,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(417, 179);
+            this.Controls.Add(this.rbtCopyAvailableYes);
+            this.Controls.Add(this.rbtCopyAvailableNo);
             this.Controls.Add(this.cbxBookTitle);
             this.Controls.Add(this.btnCopyCancel);
             this.Controls.Add(this.btnCopyOK);
-            this.Controls.Add(this.rbtCopyAvailableNo);
-            this.Controls.Add(this.rbtCopyAvailableYes);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtCopyId);
