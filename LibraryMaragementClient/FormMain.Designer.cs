@@ -72,8 +72,7 @@
             this.tsbtNew.Image = ((System.Drawing.Image)(resources.GetObject("tsbtNew.Image")));
             this.tsbtNew.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtNew.Name = "tsbtNew";
-            this.tsbtNew.Size = new System.Drawing.Size(71, 97);
-            this.tsbtNew.Text = "New";
+            this.tsbtNew.Size = new System.Drawing.Size(28, 97);
             this.tsbtNew.Click += new System.EventHandler(this.tsbtNew_Click);
             // 
             // tsbtEdit
