@@ -87,7 +87,7 @@ namespace LibraryMaragementClient.Dialogs
         private bool IsValid()
         {
             bool valid = true;
-            if (txtAuthorFullName.Text.Equals(string.Empty))
+            if (string.IsNullOrEmpty(txtAuthorFullName.Text))
             {
                 epvAuthorFullName.SetError(txtAuthorFullName, "Required");
                 valid = false;

@@ -89,8 +89,6 @@ namespace DatabaseAccess
                 {
                     throw new Exception("DataProvider - error: " + e.Message);
                 }
-                DataTable dt = new DataTable();
-                List<DataRow> rows = dt.Rows.Cast<DataRow>().ToList();
             }
         }
     }

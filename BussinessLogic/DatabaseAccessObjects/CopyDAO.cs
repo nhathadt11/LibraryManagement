@@ -12,7 +12,7 @@ namespace DatabaseAccess.DatabaseAccessObjects
         //required @BookId
         private readonly string SQL_COPY_INSERT = "InsertCopy";//return -1 if BookId not exists in Books
                                                                           //return 1 if Insert Successfully
-        private readonly string SQL_COPY_UPDATE = "";
+        private readonly string SQL_COPY_UPDATE = "UpdateCopyById";
 
         //required @CopyId
         private readonly string SQL_COPY_DELETE = "DeleteCopiesById";//return -1 if this Copy adlready reference by the other
@@ -45,7 +45,7 @@ namespace DatabaseAccess.DatabaseAccessObjects
         {
             return _dataProvider.ExecuteNonQuery(SQL_COPY_INSERT,
                                                 CommandType.StoredProcedure,
-                                                new SqlParameter("@CopyCode", copy.CopyId),
+                                                new SqlParameter("@CopyId", copy.CopyId),
                                                 new SqlParameter("@BookId", copy.BookId),
                                                 new SqlParameter("@IsAvailable", copy.IsAvailable));
         }
@@ -55,7 +55,7 @@ namespace DatabaseAccess.DatabaseAccessObjects
                                                 CommandType.StoredProcedure,
                                                 new SqlParameter("@BookId", copy.BookId),
                                                 new SqlParameter("@IsAvailable", copy.IsAvailable),
-                                                new SqlParameter("@CopyCode", copy.CopyId));
+                                                new SqlParameter("@CopyId", copy.CopyId));
         }
         public int Delete(int CopyId)
         {

@@ -37,7 +37,8 @@ namespace LibraryMaragementClient
 
         public DataRow GetCurrentSelectedDataRow()
         {
-            return _data.Rows[dgvPublishers.CurrentRow.Index];
+            int key = Convert.ToInt32(dgvPublishers.CurrentRow.Cells["PublisherId"].Value);
+            return _data.Rows.Find(key);
         }
 
         public void AddToDataTable(DataTranseferObject obj)
@@ -65,7 +66,7 @@ namespace LibraryMaragementClient
 
         public void DeleteFromDataTable()
         {
-            DataRow row = _data.Rows[dgvPublishers.CurrentRow.Index];
+            DataRow row = GetCurrentSelectedDataRow();
             if (_publisherService.Delete(Convert.ToInt32(row["PublisherId"])) > 0)
             {
                 MessageBox.Show("Successfully deleted " + row["Name"] + "!",
@@ -81,6 +82,11 @@ namespace LibraryMaragementClient
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
             }
+        }
+
+        private void txtPublisherNameFilter_TextChanged(object sender, EventArgs e)
+        {
+            _data.DefaultView.RowFilter = "Name LIKE '%" + txtPublisherNameFilter.Text + "%'";
         }
     }
 }

@@ -30,13 +30,14 @@ namespace LibraryMaragementClient
         private void FormBookCopy_Load(object sender, EventArgs e)
         {
             _data = _copyService.GetAll();
-            _data.PrimaryKey = new DataColumn[] { _data.Columns["CopyCode"] };
+            _data.PrimaryKey = new DataColumn[] { _data.Columns["CopyId"] };
             dgvBookCopies.DataSource = _data;
         }
 
         public DataRow GetCurrentSelectedDataRow()
         {
-            return _data.Rows[dgvBookCopies.CurrentRow.Index];
+            int key = Convert.ToInt32(dgvBookCopies.CurrentRow.Cells["CopyId"].Value);
+            return _data.Rows.Find(key);
         }
 
         public void AddToDataTable(DataTranseferObject obj)
@@ -59,10 +60,10 @@ namespace LibraryMaragementClient
 
         public void DeleteFromDataTable()
         {
-            DataRow row = _data.Rows[dgvBookCopies.CurrentRow.Index];
-            if (_copyService.Delete(Convert.ToInt32(row["CopyCode"])) > 0)
+            DataRow row = GetCurrentSelectedDataRow();
+            if (_copyService.Delete(Convert.ToInt32(row["CopyId"])) > 0)
             {
-                MessageBox.Show("Successfully deleted " + row["CopyCode"] + "!",
+                MessageBox.Show("Successfully deleted " + row["CopyId"] + "!",
                                 "Success",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Information);
@@ -70,11 +71,16 @@ namespace LibraryMaragementClient
             }
             else
             {
-                MessageBox.Show("Could not delete " + row["CopyCode"] + "!",
+                MessageBox.Show("Could not delete " + row["CopyId"] + "!",
                                 "Error",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
             }
+        }
+
+        private void txtCopyFilterById_TextChanged(object sender, EventArgs e)
+        {
+            _data.DefaultView.RowFilter = "Convert(CopyId,'System.String') LIKE '%" + txtCopyFilterById.Text + "%'";
         }
     }
 }

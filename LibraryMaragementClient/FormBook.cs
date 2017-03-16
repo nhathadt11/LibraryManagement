@@ -37,7 +37,7 @@ namespace LibraryMaragementClient
      
         public void DeleteFromDataTable()
         {
-            DataRow row = _data.Rows[dgvBooks.CurrentRow.Index];
+            DataRow row = GetCurrentSelectedDataRow();
             if (_bookService.Delete(Convert.ToInt32(row["BookId"])) > 0)
             {
                 MessageBox.Show("Successfully deleted " + row["Title"] + "!",
@@ -57,7 +57,8 @@ namespace LibraryMaragementClient
 
         public DataRow GetCurrentSelectedDataRow()
         {
-            return _data.Rows[dgvBooks.CurrentRow.Index];
+            int key = Convert.ToInt32(dgvBooks.CurrentRow.Cells["BookId"].Value);
+            return _data.Rows.Find(key);
         }
 
         public void AddToDataTable(DataTranseferObject obj)
@@ -87,6 +88,14 @@ namespace LibraryMaragementClient
             row["PublisherId"] = book.PublisherId;
             row["Discontinued"] = book.Discontinued;
             dgvBooks.Refresh();
+        }
+
+        private void txtBookFilter_TextChanged(object sender, EventArgs e)
+        {
+            _data.DefaultView.RowFilter = (rbtBookTitle.Checked
+                                          ? "Title "
+                                          : "Convert(BookId, 'System.String') ")
+                                          + "LIKE '%" + txtBookFilter.Text + "%'";
         }
     }
 }

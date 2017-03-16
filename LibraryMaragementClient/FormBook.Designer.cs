@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.dgvBooks = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtBookFilter = new System.Windows.Forms.TextBox();
+            this.rtbBookId = new System.Windows.Forms.RadioButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.rbtBookTitle = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,32 +47,90 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvBooks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBooks.Location = new System.Drawing.Point(18, 18);
-            this.dgvBooks.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvBooks.Location = new System.Drawing.Point(12, 12);
             this.dgvBooks.MultiSelect = false;
             this.dgvBooks.Name = "dgvBooks";
             this.dgvBooks.ReadOnly = true;
             this.dgvBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBooks.Size = new System.Drawing.Size(1302, 678);
+            this.dgvBooks.Size = new System.Drawing.Size(868, 397);
             this.dgvBooks.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(37, 431);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Filter";
+            // 
+            // txtBookFilter
+            // 
+            this.txtBookFilter.Location = new System.Drawing.Point(90, 428);
+            this.txtBookFilter.Name = "txtBookFilter";
+            this.txtBookFilter.Size = new System.Drawing.Size(245, 20);
+            this.txtBookFilter.TabIndex = 2;
+            this.txtBookFilter.TextChanged += new System.EventHandler(this.txtBookFilter_TextChanged);
+            // 
+            // rtbBookId
+            // 
+            this.rtbBookId.AutoSize = true;
+            this.rtbBookId.Checked = true;
+            this.rtbBookId.Location = new System.Drawing.Point(423, 429);
+            this.rtbBookId.Name = "rtbBookId";
+            this.rtbBookId.Size = new System.Drawing.Size(36, 17);
+            this.rtbBookId.TabIndex = 3;
+            this.rtbBookId.TabStop = true;
+            this.rtbBookId.Text = "ID";
+            this.rtbBookId.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(374, 431);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(18, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "by";
+            // 
+            // rbtBookTitle
+            // 
+            this.rbtBookTitle.AutoSize = true;
+            this.rbtBookTitle.Location = new System.Drawing.Point(480, 429);
+            this.rbtBookTitle.Name = "rbtBookTitle";
+            this.rbtBookTitle.Size = new System.Drawing.Size(45, 17);
+            this.rbtBookTitle.TabIndex = 5;
+            this.rbtBookTitle.TabStop = true;
+            this.rbtBookTitle.Text = "Title";
+            this.rbtBookTitle.UseVisualStyleBackColor = true;
             // 
             // FormBook
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1338, 715);
+            this.ClientSize = new System.Drawing.Size(892, 465);
+            this.Controls.Add(this.rbtBookTitle);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.rtbBookId);
+            this.Controls.Add(this.txtBookFilter);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvBooks);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormBook";
             this.Text = "FormBook";
             this.Load += new System.EventHandler(this.FormBook_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView dgvBooks;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtBookFilter;
+        private System.Windows.Forms.RadioButton rtbBookId;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.RadioButton rbtBookTitle;
     }
 }

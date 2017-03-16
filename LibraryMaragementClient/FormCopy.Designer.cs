@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.dgvBookCopies = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtCopyFilterById = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBookCopies)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,14 +49,33 @@
             this.dgvBookCopies.Name = "dgvBookCopies";
             this.dgvBookCopies.RowTemplate.Height = 28;
             this.dgvBookCopies.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBookCopies.Size = new System.Drawing.Size(772, 454);
+            this.dgvBookCopies.Size = new System.Drawing.Size(772, 414);
             this.dgvBookCopies.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(36, 441);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Filter by ID";
+            // 
+            // txtCopyFilterById
+            // 
+            this.txtCopyFilterById.Location = new System.Drawing.Point(99, 438);
+            this.txtCopyFilterById.Name = "txtCopyFilterById";
+            this.txtCopyFilterById.Size = new System.Drawing.Size(195, 20);
+            this.txtCopyFilterById.TabIndex = 2;
+            this.txtCopyFilterById.TextChanged += new System.EventHandler(this.txtCopyFilterById_TextChanged);
             // 
             // FormCopy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(794, 476);
+            this.Controls.Add(this.txtCopyFilterById);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvBookCopies);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormCopy";
@@ -62,11 +83,14 @@
             this.Load += new System.EventHandler(this.FormBookCopy_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBookCopies)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView dgvBookCopies;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtCopyFilterById;
     }
 }
