@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.dgvAuthors = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtAuthorNameFilter = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAuthors)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,14 +51,33 @@
             this.dgvAuthors.ReadOnly = true;
             this.dgvAuthors.RowTemplate.Height = 28;
             this.dgvAuthors.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAuthors.Size = new System.Drawing.Size(547, 454);
+            this.dgvAuthors.Size = new System.Drawing.Size(547, 419);
             this.dgvAuthors.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(71, 451);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Filter by Name";
+            // 
+            // txtAuthorNameFilter
+            // 
+            this.txtAuthorNameFilter.Location = new System.Drawing.Point(160, 448);
+            this.txtAuthorNameFilter.Name = "txtAuthorNameFilter";
+            this.txtAuthorNameFilter.Size = new System.Drawing.Size(218, 20);
+            this.txtAuthorNameFilter.TabIndex = 2;
+            this.txtAuthorNameFilter.TextChanged += new System.EventHandler(this.txtAuthorNameFilter_TextChanged);
             // 
             // FormAuthor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(570, 476);
+            this.Controls.Add(this.txtAuthorNameFilter);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvAuthors);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormAuthor";
@@ -64,11 +85,14 @@
             this.Load += new System.EventHandler(this.FormAuthor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAuthors)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView dgvAuthors;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtAuthorNameFilter;
     }
 }

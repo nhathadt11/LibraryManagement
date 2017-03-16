@@ -39,7 +39,8 @@ namespace LibraryMaragementClient
 
         public DataRow GetCurrentSelectedDataRow()
         {
-            return _data.Rows[dgvUsers.CurrentRow.Index];
+            int key = Convert.ToInt32(dgvUsers.CurrentRow.Cells["UserId"].Value);
+            return _data.Rows.Find(key);
         }
 
         public void AddToDataTable(DataTranseferObject obj)
@@ -83,6 +84,12 @@ namespace LibraryMaragementClient
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
             }
+        }
+
+        private void txtUserFilter_TextChanged(object sender, EventArgs e)
+        {
+            _data.DefaultView.RowFilter = (rbtUserId.Checked ? "Convert(UserId,'System.String')" : "FullName")
+                                        + " LIKE '%" + txtUserFilter.Text + "%'";
         }
     }
 }

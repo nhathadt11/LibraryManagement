@@ -38,7 +38,7 @@ namespace LibraryMaragementClient
 
         public void DeleteFromDataTable()
         {
-            DataRow row = _data.Rows[dgvCategorys.CurrentRow.Index];
+            DataRow row = GetCurrentSelectedDataRow();
             if (_categoryService.Delete(Convert.ToInt32(row["CategoryId"])) > 0)
             {
                 MessageBox.Show("Successfully deleted " + row["Name"] + "!",
@@ -58,7 +58,8 @@ namespace LibraryMaragementClient
 
         public DataRow GetCurrentSelectedDataRow()
         {
-            return _data.Rows[dgvCategorys.CurrentRow.Index];
+            int key = Convert.ToInt32(dgvCategorys.CurrentRow.Cells["CategoryId"].Value);
+            return _data.Rows.Find(key);
         }
 
         public void AddToDataTable(DataTranseferObject obj)
@@ -76,6 +77,11 @@ namespace LibraryMaragementClient
             DataRow row = _data.Rows.Find(category.CategoryId);
             row["Name"] = category.Name;
             dgvCategorys.Refresh();
+        }
+
+        private void txtCategoryNameFilter_TextChanged(object sender, EventArgs e)
+        {
+            _data.DefaultView.RowFilter = "Name LIKE '%" + txtCategoryNameFilter.Text + "%'";
         }
     }
 }

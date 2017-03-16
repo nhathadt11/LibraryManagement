@@ -26,6 +26,18 @@ namespace LibraryMaragementClient.Dialogs
         }
         public BookDialog(DataRow row) : this()
         {
+            cbxBookAuthor.DataSource = _authorService.GetAll();
+            cbxBookAuthor.ValueMember = "AuthorId";
+            cbxBookAuthor.DisplayMember = "FullName";
+
+            cbxBookCategory.DataSource = _categoryService.GetAll();
+            cbxBookCategory.ValueMember = "CategoryId";
+            cbxBookCategory.DisplayMember = "Name";
+
+            cbxBookPublisher.DataSource = _publisherService.GetAll();
+            cbxBookPublisher.ValueMember = "PublisherId";
+            cbxBookPublisher.DisplayMember = "Name";
+            
             txtBookId.Text = Convert.ToString(row["BookId"]);
             txtBookIsbn.Text = Convert.ToString(row["Isbn"]);
             txtBookTitle.Text = Convert.ToString(row["Title"]);
@@ -134,21 +146,6 @@ namespace LibraryMaragementClient.Dialogs
                 result = false;
             }
             return result;
-        }
-
-        private void BookDialog_Load(object sender, EventArgs e)
-        {
-            cbxBookAuthor.DataSource = _authorService.GetAll();
-            cbxBookAuthor.ValueMember = "AuthorId";
-            cbxBookAuthor.DisplayMember = "FullName";
-
-            cbxBookCategory.DataSource = _categoryService.GetAll();
-            cbxBookCategory.ValueMember = "CategoryId";
-            cbxBookCategory.DisplayMember = "Name";
-
-            cbxBookPublisher.DataSource = _publisherService.GetAll();
-            cbxBookPublisher.ValueMember = "PublisherId";
-            cbxBookPublisher.DisplayMember = "Name";
         }
 
         public DataTranseferObject GetCurrentObject()

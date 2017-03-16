@@ -36,7 +36,8 @@ namespace LibraryMaragementClient
 
         public DataRow GetCurrentSelectedDataRow()
         {
-            return _data.Rows[dgvLoans.CurrentRow.Index];
+            int key = Convert.ToInt32(dgvLoans.CurrentRow.Cells["LoanId"].Value);
+            return _data.Rows.Find(key);
         }
 
         public void AddToDataTable(DataTranseferObject obj)
@@ -54,7 +55,7 @@ namespace LibraryMaragementClient
         public void UpdateToDataTable(DataTranseferObject obj)
         {
             Loan loan = obj as Loan;
-            DataRow row = _data.Rows.Find(loan.LoanId);
+            DataRow row = GetCurrentSelectedDataRow();
             row["MemberId"] = loan.MemberId;
             row["IssueDate"] = loan.IssueDate;
             row["LimitDay"] = loan.LimitDay;
@@ -65,6 +66,13 @@ namespace LibraryMaragementClient
         public void DeleteFromDataTable()
         {
             throw new Exception("Function not supported");
+        }
+
+        private void txtLoanFilter_TextChanged(object sender, EventArgs e)
+        {
+            string criteria = rbtLoanId.Checked ? "LoanId" : "MemberId";
+            _data.DefaultView.RowFilter = "Convert("+ criteria + ",'System.String')"
+                                        + " LIKE '%" + txtLoanFilter.Text + "%'";
         }
     }
 }

@@ -74,168 +74,150 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(64, 48);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(43, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(26, 20);
+            this.label1.Size = new System.Drawing.Size(18, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "ID";
             // 
             // txtBookId
             // 
-            this.txtBookId.Location = new System.Drawing.Point(189, 43);
-            this.txtBookId.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtBookId.Location = new System.Drawing.Point(126, 28);
             this.txtBookId.Name = "txtBookId";
             this.txtBookId.ReadOnly = true;
-            this.txtBookId.Size = new System.Drawing.Size(148, 26);
+            this.txtBookId.Size = new System.Drawing.Size(100, 20);
             this.txtBookId.TabIndex = 1;
             // 
             // txtBookIsbn
             // 
-            this.txtBookIsbn.Location = new System.Drawing.Point(189, 83);
-            this.txtBookIsbn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtBookIsbn.Location = new System.Drawing.Point(126, 54);
             this.txtBookIsbn.Name = "txtBookIsbn";
-            this.txtBookIsbn.Size = new System.Drawing.Size(260, 26);
+            this.txtBookIsbn.Size = new System.Drawing.Size(175, 20);
             this.txtBookIsbn.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(64, 88);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(43, 57);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 20);
+            this.label2.Size = new System.Drawing.Size(32, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "ISBN";
             // 
             // txtBookPageNumber
             // 
-            this.txtBookPageNumber.Location = new System.Drawing.Point(189, 331);
-            this.txtBookPageNumber.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtBookPageNumber.Location = new System.Drawing.Point(126, 215);
             this.txtBookPageNumber.Name = "txtBookPageNumber";
-            this.txtBookPageNumber.Size = new System.Drawing.Size(148, 26);
+            this.txtBookPageNumber.Size = new System.Drawing.Size(100, 20);
             this.txtBookPageNumber.TabIndex = 7;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(64, 171);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(43, 111);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 20);
+            this.label3.Size = new System.Drawing.Size(50, 13);
             this.label3.TabIndex = 6;
             this.label3.Text = "Publisher";
             // 
             // txtBookTitle
             // 
-            this.txtBookTitle.Location = new System.Drawing.Point(189, 126);
-            this.txtBookTitle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtBookTitle.Location = new System.Drawing.Point(126, 82);
             this.txtBookTitle.Name = "txtBookTitle";
-            this.txtBookTitle.Size = new System.Drawing.Size(410, 26);
+            this.txtBookTitle.Size = new System.Drawing.Size(275, 20);
             this.txtBookTitle.TabIndex = 5;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(64, 131);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(43, 85);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 20);
+            this.label4.Size = new System.Drawing.Size(27, 13);
             this.label4.TabIndex = 4;
             this.label4.Text = "Title";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(64, 300);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(43, 195);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(99, 20);
+            this.label5.Size = new System.Drawing.Size(67, 13);
             this.label5.TabIndex = 8;
             this.label5.Text = "Publish Date";
             // 
             // dtpBookPublishedDate
             // 
-            this.dtpBookPublishedDate.Location = new System.Drawing.Point(189, 291);
-            this.dtpBookPublishedDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dtpBookPublishedDate.Location = new System.Drawing.Point(126, 189);
             this.dtpBookPublishedDate.Name = "dtpBookPublishedDate";
-            this.dtpBookPublishedDate.Size = new System.Drawing.Size(298, 26);
+            this.dtpBookPublishedDate.Size = new System.Drawing.Size(200, 20);
             this.dtpBookPublishedDate.TabIndex = 9;
             // 
             // cbxBookPublisher
             // 
             this.cbxBookPublisher.FormattingEnabled = true;
-            this.cbxBookPublisher.Location = new System.Drawing.Point(189, 166);
-            this.cbxBookPublisher.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbxBookPublisher.Location = new System.Drawing.Point(126, 108);
             this.cbxBookPublisher.Name = "cbxBookPublisher";
-            this.cbxBookPublisher.Size = new System.Drawing.Size(298, 28);
+            this.cbxBookPublisher.Size = new System.Drawing.Size(200, 21);
             this.cbxBookPublisher.TabIndex = 10;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(64, 335);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(43, 218);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(106, 20);
+            this.label6.Size = new System.Drawing.Size(72, 13);
             this.label6.TabIndex = 11;
             this.label6.Text = "Page Number";
             // 
             // cbxBookCategory
             // 
             this.cbxBookCategory.FormattingEnabled = true;
-            this.cbxBookCategory.Location = new System.Drawing.Point(189, 249);
-            this.cbxBookCategory.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbxBookCategory.Location = new System.Drawing.Point(126, 162);
             this.cbxBookCategory.Name = "cbxBookCategory";
-            this.cbxBookCategory.Size = new System.Drawing.Size(298, 28);
+            this.cbxBookCategory.Size = new System.Drawing.Size(200, 21);
             this.cbxBookCategory.TabIndex = 12;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(64, 254);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(43, 165);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 20);
+            this.label7.Size = new System.Drawing.Size(49, 13);
             this.label7.TabIndex = 13;
             this.label7.Text = "Category";
             // 
             // cbxBookAuthor
             // 
             this.cbxBookAuthor.FormattingEnabled = true;
-            this.cbxBookAuthor.Location = new System.Drawing.Point(189, 208);
-            this.cbxBookAuthor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbxBookAuthor.Location = new System.Drawing.Point(126, 135);
             this.cbxBookAuthor.Name = "cbxBookAuthor";
-            this.cbxBookAuthor.Size = new System.Drawing.Size(298, 28);
+            this.cbxBookAuthor.Size = new System.Drawing.Size(200, 21);
             this.cbxBookAuthor.TabIndex = 15;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(64, 212);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(43, 138);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(57, 20);
+            this.label8.Size = new System.Drawing.Size(38, 13);
             this.label8.TabIndex = 14;
             this.label8.Text = "Author";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(64, 380);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(43, 247);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(102, 20);
+            this.label9.Size = new System.Drawing.Size(69, 13);
             this.label9.TabIndex = 16;
             this.label9.Text = "Discontinued";
             // 
             // rbtBookDiscontinuedYes
             // 
             this.rbtBookDiscontinuedYes.AutoSize = true;
-            this.rbtBookDiscontinuedYes.Location = new System.Drawing.Point(189, 377);
-            this.rbtBookDiscontinuedYes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.rbtBookDiscontinuedYes.Location = new System.Drawing.Point(126, 245);
             this.rbtBookDiscontinuedYes.Name = "rbtBookDiscontinuedYes";
-            this.rbtBookDiscontinuedYes.Size = new System.Drawing.Size(61, 24);
+            this.rbtBookDiscontinuedYes.Size = new System.Drawing.Size(43, 17);
             this.rbtBookDiscontinuedYes.TabIndex = 17;
             this.rbtBookDiscontinuedYes.Text = "Yes";
             this.rbtBookDiscontinuedYes.UseVisualStyleBackColor = true;
@@ -244,10 +226,9 @@
             // 
             this.rbtBookDiscontinuedNo.AutoSize = true;
             this.rbtBookDiscontinuedNo.Checked = true;
-            this.rbtBookDiscontinuedNo.Location = new System.Drawing.Point(326, 377);
-            this.rbtBookDiscontinuedNo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.rbtBookDiscontinuedNo.Location = new System.Drawing.Point(217, 245);
             this.rbtBookDiscontinuedNo.Name = "rbtBookDiscontinuedNo";
-            this.rbtBookDiscontinuedNo.Size = new System.Drawing.Size(53, 24);
+            this.rbtBookDiscontinuedNo.Size = new System.Drawing.Size(39, 17);
             this.rbtBookDiscontinuedNo.TabIndex = 18;
             this.rbtBookDiscontinuedNo.TabStop = true;
             this.rbtBookDiscontinuedNo.Text = "No";
@@ -256,27 +237,24 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(64, 422);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(43, 274);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(99, 20);
+            this.label10.Size = new System.Drawing.Size(67, 13);
             this.label10.TabIndex = 19;
             this.label10.Text = "Cover Image";
             // 
             // txtBookImageUrl
             // 
-            this.txtBookImageUrl.Location = new System.Drawing.Point(189, 417);
-            this.txtBookImageUrl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtBookImageUrl.Location = new System.Drawing.Point(126, 271);
             this.txtBookImageUrl.Name = "txtBookImageUrl";
-            this.txtBookImageUrl.Size = new System.Drawing.Size(298, 26);
+            this.txtBookImageUrl.Size = new System.Drawing.Size(200, 20);
             this.txtBookImageUrl.TabIndex = 20;
             // 
             // btnBookCoverImage
             // 
-            this.btnBookCoverImage.Location = new System.Drawing.Point(498, 414);
-            this.btnBookCoverImage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnBookCoverImage.Location = new System.Drawing.Point(332, 269);
             this.btnBookCoverImage.Name = "btnBookCoverImage";
-            this.btnBookCoverImage.Size = new System.Drawing.Size(112, 35);
+            this.btnBookCoverImage.Size = new System.Drawing.Size(75, 23);
             this.btnBookCoverImage.TabIndex = 21;
             this.btnBookCoverImage.Text = "Browse";
             this.btnBookCoverImage.UseVisualStyleBackColor = true;
@@ -284,29 +262,26 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(64, 458);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Location = new System.Drawing.Point(43, 298);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(89, 20);
+            this.label11.Size = new System.Drawing.Size(60, 13);
             this.label11.TabIndex = 22;
             this.label11.Text = "Description";
             // 
             // rtxtBookDescription
             // 
-            this.rtxtBookDescription.Location = new System.Drawing.Point(68, 483);
-            this.rtxtBookDescription.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.rtxtBookDescription.Location = new System.Drawing.Point(45, 314);
             this.rtxtBookDescription.Name = "rtxtBookDescription";
-            this.rtxtBookDescription.Size = new System.Drawing.Size(541, 186);
+            this.rtxtBookDescription.Size = new System.Drawing.Size(362, 122);
             this.rtxtBookDescription.TabIndex = 23;
             this.rtxtBookDescription.Text = "";
             // 
             // btnBookOK
             // 
             this.btnBookOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnBookOK.Location = new System.Drawing.Point(189, 698);
-            this.btnBookOK.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnBookOK.Location = new System.Drawing.Point(126, 454);
             this.btnBookOK.Name = "btnBookOK";
-            this.btnBookOK.Size = new System.Drawing.Size(112, 35);
+            this.btnBookOK.Size = new System.Drawing.Size(75, 23);
             this.btnBookOK.TabIndex = 24;
             this.btnBookOK.Text = "OK";
             this.btnBookOK.UseVisualStyleBackColor = true;
@@ -315,10 +290,9 @@
             // btnBookCancel
             // 
             this.btnBookCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnBookCancel.Location = new System.Drawing.Point(339, 698);
-            this.btnBookCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnBookCancel.Location = new System.Drawing.Point(226, 454);
             this.btnBookCancel.Name = "btnBookCancel";
-            this.btnBookCancel.Size = new System.Drawing.Size(112, 35);
+            this.btnBookCancel.Size = new System.Drawing.Size(75, 23);
             this.btnBookCancel.TabIndex = 25;
             this.btnBookCancel.Text = "Cancel";
             this.btnBookCancel.UseVisualStyleBackColor = true;
@@ -353,9 +327,9 @@
             // 
             // BookDialog
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(676, 765);
+            this.ClientSize = new System.Drawing.Size(451, 482);
             this.Controls.Add(this.btnBookCancel);
             this.Controls.Add(this.btnBookOK);
             this.Controls.Add(this.rtxtBookDescription);
@@ -383,13 +357,11 @@
             this.Controls.Add(this.txtBookId);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "BookDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Book details Dialog";
-            this.Load += new System.EventHandler(this.BookDialog_Load);
             ((System.ComponentModel.ISupportInitialize)(this.epvBookIsbn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epvBookTitle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epvBookPublisher)).EndInit();

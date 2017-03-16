@@ -36,7 +36,7 @@ namespace LibraryMaragementClient
 
         public void DeleteFromDataTable()
         {
-            DataRow row = _data.Rows[dgvAuthors.CurrentRow.Index];
+            DataRow row = GetCurrentSelectedDataRow();
             if (_authorService.Delete(Convert.ToInt32(row["AuthorId"])) > 0)
             {
                 MessageBox.Show("Successfully deleted " + row["FullName"] + "!",
@@ -56,7 +56,8 @@ namespace LibraryMaragementClient
 
         public DataRow GetCurrentSelectedDataRow()
         {
-            return _data.Rows[dgvAuthors.CurrentRow.Index];
+            int key = Convert.ToInt32(dgvAuthors.CurrentRow.Cells["AuthorId"].Value);
+            return _data.Rows.Find(key);
         }
 
         public void AddToDataTable(DataTranseferObject obj)
@@ -78,6 +79,11 @@ namespace LibraryMaragementClient
             row["Address"] = author.Address;
             row["Bio"] = author.Bio;
             dgvAuthors.Refresh();
+        }
+
+        private void txtAuthorNameFilter_TextChanged(object sender, EventArgs e)
+        {
+            _data.DefaultView.RowFilter = "FullName LIKE '%" + txtAuthorNameFilter.Text + "%'";
         }
     }
 }
