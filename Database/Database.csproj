@@ -77,6 +77,16 @@
     <Content Include="db7.sql" />
     <Content Include="db8.sql" />
     <Content Include="db9.sql" />
+    <Content Include="Image\001-head-with-members-hierarchy.png" />
+    <Content Include="Image\002-delivery-cart.png" />
+    <Content Include="Image\003-pub-file-format-symbol.png" />
+    <Content Include="Image\004-library.png" />
+    <Content Include="Image\005-category.png" />
+    <Content Include="Image\006-policeman.png" />
+    <Content Include="Image\007-agenda.png" />
+    <Content Include="Image\008-rubbish-bin.png" />
+    <Content Include="Image\009-edit.png" />
+    <Content Include="Image\plus.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
