@@ -13,8 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryMaragementClient", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "Database\Database.csproj", "{BE35939E-60FF-4789-B91C-23B85AD9FC2D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerService", "ServerService\ServerService.csproj", "{89FFE97A-C11D-47EB-B31B-EB2B069BD9A1}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server\Server.csproj", "{214E0C4F-9CB6-4AF8-A222-23856229612C}"
 EndProject
 Global
@@ -43,10 +41,6 @@ Global
 		{BE35939E-60FF-4789-B91C-23B85AD9FC2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE35939E-60FF-4789-B91C-23B85AD9FC2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE35939E-60FF-4789-B91C-23B85AD9FC2D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{89FFE97A-C11D-47EB-B31B-EB2B069BD9A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{89FFE97A-C11D-47EB-B31B-EB2B069BD9A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{89FFE97A-C11D-47EB-B31B-EB2B069BD9A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{89FFE97A-C11D-47EB-B31B-EB2B069BD9A1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{214E0C4F-9CB6-4AF8-A222-23856229612C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{214E0C4F-9CB6-4AF8-A222-23856229612C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{214E0C4F-9CB6-4AF8-A222-23856229612C}.Release|Any CPU.ActiveCfg = Release|Any CPU
