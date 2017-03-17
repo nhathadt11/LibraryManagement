@@ -11,11 +11,11 @@ namespace DatabaseAccess.DatabaseAccessObjects
 
         //required @BookId
         private readonly string SQL_COPY_INSERT = "InsertCopy";//return -1 if BookId not exists in Books
-                                                                          //return 1 if Insert Successfully
+                                                                          //return id if Insert Successfully
         private readonly string SQL_COPY_UPDATE = "UpdateCopyById";
 
         //required @CopyId
-        private readonly string SQL_COPY_DELETE = "DeleteCopiesById";//return -1 if this Copy adlready reference by the other
+        private readonly string SQL_COPY_DELETE = "DeleteCopyById";//return -1 if this Copy adlready reference by the other
 
         //return 0 if this Id not exists
         //return 1 if delete successfully
@@ -45,7 +45,6 @@ namespace DatabaseAccess.DatabaseAccessObjects
         {
             return _dataProvider.ExecuteNonQuery(SQL_COPY_INSERT,
                                                 CommandType.StoredProcedure,
-                                                new SqlParameter("@CopyId", copy.CopyId),
                                                 new SqlParameter("@BookId", copy.BookId),
                                                 new SqlParameter("@IsAvailable", copy.IsAvailable));
         }
@@ -61,11 +60,11 @@ namespace DatabaseAccess.DatabaseAccessObjects
         {
             return _dataProvider.ExecuteNonQuery(SQL_COPY_DELETE,
                                                 CommandType.StoredProcedure,
-                                                new SqlParameter("@CopyCode", CopyId));
+                                                new SqlParameter("@CopyId", CopyId));
         }
         public bool CheckValidCopyId(int copyId)
         {
-            return _dataProvider.ExecuteQuery("SELECT * FROM Copies WHERE CopyId = @CopyId",
+            return _dataProvider.ExecuteQuery("SELECT * FROM Copies WHERE CopyId = @CopyId AND IsAvailable = 1",
                                                CommandType.Text,
                                                new SqlParameter("@CopyId", copyId)).Rows.Count > 0;
         }

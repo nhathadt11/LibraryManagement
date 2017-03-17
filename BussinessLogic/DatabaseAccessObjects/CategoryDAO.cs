@@ -12,7 +12,7 @@ namespace DatabaseAccess.DatabaseAccessObjects
         private readonly string SQL_CATEGORY_INSERT = "InsertCategory";//return Id this Category if insert successfully
                                                                                   //return -1 if this Category already existed
 
-        private readonly string SQL_CATEGORY_UPDATE = "";
+        private readonly string SQL_CATEGORY_UPDATE = "UpdateCategoryById";
 
         //required @CategoryID
         private readonly string SQL_CATEGORY_DELETE = "DeleteCategoryById";//return -1 if this category already reference by the others

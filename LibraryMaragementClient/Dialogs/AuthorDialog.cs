@@ -64,6 +64,7 @@ namespace LibraryMaragementClient.Dialogs
                 }
                 else // update author
                 {
+                    _author.AuthorId = Convert.ToInt32(txtAuthorId.Text);
                     if (_authorService.Update(_author) > 0) // success
                     {
                         MessageBox.Show("Successfully updated " + _author.FullName + "!",

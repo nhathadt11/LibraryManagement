@@ -163,7 +163,7 @@ namespace LibraryMaragementClient
                     if (Regex.IsMatch(_textBoxes[i].Text, @"\d+") &&
                         !_copyService.CheckValidCopyId(Convert.ToInt32(_textBoxes[i].Text)))
                     {
-                        errors[i].SetError(_textBoxes[i], "Copy ID not found!");
+                        errors[i].SetError(_textBoxes[i], "Copy ID not found or currently not available!");
                         valid = false;
                     }
                     else
@@ -209,20 +209,20 @@ namespace LibraryMaragementClient
         }
         private void suggest(TextBox t)
         {
-            t.AutoCompleteMode = AutoCompleteMode.Suggest;
-            t.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            AutoCompleteStringCollection col = new AutoCompleteStringCollection();
-            DataTable table = _copyService.GetAll();
-            foreach (DataRow row in table.Rows)
-            {
-                col.Add(row["CopyId"].ToString());
-            }
-            t.AutoCompleteCustomSource = col;
+            //t.AutoCompleteMode = AutoCompleteMode.Suggest;
+            //t.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            //AutoCompleteStringCollection col = new AutoCompleteStringCollection();
+            //DataTable table = _copyService.GetAll();
+            //foreach (DataRow row in table.Rows)
+            //{
+            //    col.Add(row["CopyId"].ToString());
+            //}
+            //t.AutoCompleteCustomSource = col;
         }
         private void txtLoanCopyId5_Enter(object sender, EventArgs e)
         {
-            TextBox t = (TextBox)sender;
-            suggest(t);
+            //TextBox t = (TextBox)sender;
+            //suggest(t);
         }
     }
 }

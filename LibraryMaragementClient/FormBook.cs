@@ -10,13 +10,11 @@ namespace LibraryMaragementClient
     {
         private static FormBook _instance;
         private DataTable _data;
-        //private BookService.BookServiceClient  _bookService;
         private Service.BookService _bookService;
         private FormBook()
         {
             InitializeComponent();
             _bookService = new Service.BookService();
-            //_bookService = new BookService.BookServiceClient("MetadataExchangeHttpBinding_IBookService");
         }
         public static FormBook Instance
         {

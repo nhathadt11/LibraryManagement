@@ -30,13 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.lb1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -44,7 +42,6 @@
             this.btnOk = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.epvUsername = new System.Windows.Forms.ErrorProvider(this.components);
-            this.epvPassword = new System.Windows.Forms.ErrorProvider(this.components);
             this.epvPhoneNumber = new System.Windows.Forms.ErrorProvider(this.components);
             this.epvAddress = new System.Windows.Forms.ErrorProvider(this.components);
             this.epvEmail = new System.Windows.Forms.ErrorProvider(this.components);
@@ -53,12 +50,15 @@
             this.epvFullName = new System.Windows.Forms.ErrorProvider(this.components);
             this.label7 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.epvPassword = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.epvUsername)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epvPassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epvPhoneNumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epvAddress)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epvEmail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epvFullName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epvPassword)).BeginInit();
             this.SuspendLayout();
             // 
             // lb1
@@ -70,16 +70,6 @@
             this.lb1.Size = new System.Drawing.Size(60, 13);
             this.lb1.TabIndex = 0;
             this.lb1.Text = "User Name";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 107);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Password";
             // 
             // label3
             // 
@@ -128,14 +118,6 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(184, 20);
             this.txtUsername.TabIndex = 6;
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(107, 103);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(184, 20);
-            this.txtPassword.TabIndex = 7;
             // 
             // txtPhoneNumber
             // 
@@ -198,10 +180,6 @@
             // 
             this.epvUsername.ContainerControl = this;
             // 
-            // epvPassword
-            // 
-            this.epvPassword.ContainerControl = this;
-            // 
             // epvPhoneNumber
             // 
             this.epvPhoneNumber.ContainerControl = this;
@@ -255,6 +233,28 @@
             this.txtId.Size = new System.Drawing.Size(121, 20);
             this.txtId.TabIndex = 17;
             // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(107, 103);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(184, 20);
+            this.txtPassword.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(22, 107);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Password";
+            // 
+            // epvPassword
+            // 
+            this.epvPassword.ContainerControl = this;
+            // 
             // UserDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -282,11 +282,11 @@
             this.Text = "UserDialog";
             this.Load += new System.EventHandler(this.UserDialog_Load);
             ((System.ComponentModel.ISupportInitialize)(this.epvUsername)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epvPassword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epvPhoneNumber)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epvAddress)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epvEmail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epvFullName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epvPassword)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -295,13 +295,11 @@
         #endregion
 
         private System.Windows.Forms.Label lb1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtUsername;
-        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtPhoneNumber;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtEmail;
@@ -309,7 +307,6 @@
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.ErrorProvider epvUsername;
-        private System.Windows.Forms.ErrorProvider epvPassword;
         private System.Windows.Forms.ErrorProvider epvPhoneNumber;
         private System.Windows.Forms.ErrorProvider epvAddress;
         private System.Windows.Forms.ErrorProvider epvEmail;
@@ -318,5 +315,8 @@
         private System.Windows.Forms.ErrorProvider epvFullName;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ErrorProvider epvPassword;
     }
 }
