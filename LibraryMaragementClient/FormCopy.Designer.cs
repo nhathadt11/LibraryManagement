@@ -54,8 +54,9 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(36, 441);
+            this.label1.Location = new System.Drawing.Point(55, 447);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 1;
@@ -63,7 +64,8 @@
             // 
             // txtCopyFilterById
             // 
-            this.txtCopyFilterById.Location = new System.Drawing.Point(99, 438);
+            this.txtCopyFilterById.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtCopyFilterById.Location = new System.Drawing.Point(118, 444);
             this.txtCopyFilterById.Name = "txtCopyFilterById";
             this.txtCopyFilterById.Size = new System.Drawing.Size(195, 20);
             this.txtCopyFilterById.TabIndex = 2;

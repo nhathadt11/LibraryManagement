@@ -52,13 +52,14 @@
             this.dgvBooks.Name = "dgvBooks";
             this.dgvBooks.ReadOnly = true;
             this.dgvBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBooks.Size = new System.Drawing.Size(868, 397);
+            this.dgvBooks.Size = new System.Drawing.Size(868, 404);
             this.dgvBooks.TabIndex = 0;
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 431);
+            this.label1.Location = new System.Drawing.Point(55, 436);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 13);
             this.label1.TabIndex = 1;
@@ -66,7 +67,8 @@
             // 
             // txtBookFilter
             // 
-            this.txtBookFilter.Location = new System.Drawing.Point(90, 428);
+            this.txtBookFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtBookFilter.Location = new System.Drawing.Point(90, 433);
             this.txtBookFilter.Name = "txtBookFilter";
             this.txtBookFilter.Size = new System.Drawing.Size(245, 20);
             this.txtBookFilter.TabIndex = 2;
@@ -74,9 +76,10 @@
             // 
             // rtbBookId
             // 
+            this.rtbBookId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.rtbBookId.AutoSize = true;
             this.rtbBookId.Checked = true;
-            this.rtbBookId.Location = new System.Drawing.Point(423, 429);
+            this.rtbBookId.Location = new System.Drawing.Point(365, 434);
             this.rtbBookId.Name = "rtbBookId";
             this.rtbBookId.Size = new System.Drawing.Size(36, 17);
             this.rtbBookId.TabIndex = 3;
@@ -86,8 +89,9 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(374, 431);
+            this.label2.Location = new System.Drawing.Point(341, 436);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(18, 13);
             this.label2.TabIndex = 4;
@@ -95,8 +99,9 @@
             // 
             // rbtBookTitle
             // 
+            this.rbtBookTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.rbtBookTitle.AutoSize = true;
-            this.rbtBookTitle.Location = new System.Drawing.Point(480, 429);
+            this.rbtBookTitle.Location = new System.Drawing.Point(407, 434);
             this.rbtBookTitle.Name = "rbtBookTitle";
             this.rbtBookTitle.Size = new System.Drawing.Size(45, 17);
             this.rbtBookTitle.TabIndex = 5;

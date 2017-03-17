@@ -50,13 +50,14 @@
             this.dgvCategorys.Name = "dgvCategorys";
             this.dgvCategorys.RowTemplate.Height = 28;
             this.dgvCategorys.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCategorys.Size = new System.Drawing.Size(445, 414);
+            this.dgvCategorys.Size = new System.Drawing.Size(445, 428);
             this.dgvCategorys.TabIndex = 0;
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(41, 450);
+            this.label1.Location = new System.Drawing.Point(41, 460);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 13);
             this.label1.TabIndex = 1;
@@ -64,7 +65,8 @@
             // 
             // txtCategoryNameFilter
             // 
-            this.txtCategoryNameFilter.Location = new System.Drawing.Point(121, 447);
+            this.txtCategoryNameFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtCategoryNameFilter.Location = new System.Drawing.Point(121, 457);
             this.txtCategoryNameFilter.Name = "txtCategoryNameFilter";
             this.txtCategoryNameFilter.Size = new System.Drawing.Size(208, 20);
             this.txtCategoryNameFilter.TabIndex = 2;

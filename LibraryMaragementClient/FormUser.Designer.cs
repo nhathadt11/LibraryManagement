@@ -48,7 +48,7 @@
             this.dgvUsers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsers.Location = new System.Drawing.Point(11, 11);
-            this.dgvUsers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvUsers.Margin = new System.Windows.Forms.Padding(2);
             this.dgvUsers.MultiSelect = false;
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.RowTemplate.Height = 28;
@@ -58,6 +58,7 @@
             // 
             // txtUserFilter
             // 
+            this.txtUserFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtUserFilter.Location = new System.Drawing.Point(106, 441);
             this.txtUserFilter.Name = "txtUserFilter";
             this.txtUserFilter.Size = new System.Drawing.Size(189, 20);
@@ -66,6 +67,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(71, 444);
             this.label1.Name = "label1";
@@ -75,6 +77,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(301, 444);
             this.label2.Name = "label2";
@@ -84,6 +87,7 @@
             // 
             // rbtUserId
             // 
+            this.rbtUserId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.rbtUserId.AutoSize = true;
             this.rbtUserId.Location = new System.Drawing.Point(326, 443);
             this.rbtUserId.Name = "rbtUserId";
@@ -95,6 +99,7 @@
             // 
             // rbtFullName
             // 
+            this.rbtFullName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.rbtFullName.AutoSize = true;
             this.rbtFullName.Checked = true;
             this.rbtFullName.Location = new System.Drawing.Point(368, 443);
@@ -116,7 +121,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtUserFilter);
             this.Controls.Add(this.dgvUsers);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormUser";
             this.Text = "FormUser";
             this.Load += new System.EventHandler(this.FormUser_Load);

@@ -55,8 +55,9 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(103, 451);
+            this.label1.Location = new System.Drawing.Point(90, 447);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 13);
             this.label1.TabIndex = 1;
@@ -64,7 +65,8 @@
             // 
             // txtPublisherNameFilter
             // 
-            this.txtPublisherNameFilter.Location = new System.Drawing.Point(196, 448);
+            this.txtPublisherNameFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtPublisherNameFilter.Location = new System.Drawing.Point(183, 444);
             this.txtPublisherNameFilter.Name = "txtPublisherNameFilter";
             this.txtPublisherNameFilter.Size = new System.Drawing.Size(224, 20);
             this.txtPublisherNameFilter.TabIndex = 2;
