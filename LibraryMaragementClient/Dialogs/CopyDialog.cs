@@ -16,7 +16,6 @@ namespace LibraryMaragementClient.Dialogs
         {
             InitializeComponent();
             _copyService = new BookCopyService();
-            _bookService = new BookService();
             _action = ActionType.Add;
         }
         public CopyDialog(DataRow row ) : this()
