@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BE35939E-60FF-4789-B91C-23B85AD9FC2D}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{89FFE97A-C11D-47EB-B31B-EB2B069BD9A1}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Database</RootNamespace>
-    <AssemblyName>Database</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <RootNamespace>ServerService</RootNamespace>
+    <AssemblyName>ServerService</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -35,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,50 +41,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </Compile>
+    <Compile Include="AuthorService_Server.cs" />
+    <Compile Include="IAuthorServer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="DataSet1.xsc">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet1.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DataSet1.xss">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="db10.sql" />
-    <Content Include="db11.sql" />
-    <Content Include="db12.sql" />
-    <Content Include="db13.sql" />
-    <Content Include="db2.sql" />
-    <Content Include="db4.sql" />
-    <Content Include="db5.sql" />
-    <Content Include="db6.sql" />
-    <Content Include="db7.sql" />
-    <Content Include="db8.sql" />
-    <Content Include="db9.sql" />
-    <Content Include="Image\001-head-with-members-hierarchy.png" />
-    <Content Include="Image\002-delivery-cart.png" />
-    <Content Include="Image\003-pub-file-format-symbol.png" />
-    <Content Include="Image\004-library.png" />
-    <Content Include="Image\005-category.png" />
-    <Content Include="Image\006-policeman.png" />
-    <Content Include="Image\007-agenda.png" />
-    <Content Include="Image\008-rubbish-bin.png" />
-    <Content Include="Image\009-edit.png" />
-    <Content Include="Image\plus.png" />
+    <ProjectReference Include="..\BussinessLogic\DatabaseAccess.csproj">
+      <Project>{71f01686-b9b3-4d8f-ba72-6eeb1960c891}</Project>
+      <Name>DatabaseAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Service\Service.csproj">
+      <Project>{e7ff4113-68da-49c2-ae61-cd711d454e5a}</Project>
+      <Name>Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

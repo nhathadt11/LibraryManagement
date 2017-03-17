@@ -63,102 +63,112 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
-            this.toolStrip1.Size = new System.Drawing.Size(1498, 100);
+            this.toolStrip1.Size = new System.Drawing.Size(1498, 80);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // tsbtNew
             // 
+            this.tsbtNew.AutoSize = false;
             this.tsbtNew.Image = ((System.Drawing.Image)(resources.GetObject("tsbtNew.Image")));
             this.tsbtNew.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtNew.Name = "tsbtNew";
-            this.tsbtNew.Size = new System.Drawing.Size(71, 97);
-            this.tsbtNew.Text = "New";
+            this.tsbtNew.Size = new System.Drawing.Size(100, 80);
+            this.tsbtNew.Text = "Add";
             this.tsbtNew.Click += new System.EventHandler(this.tsbtNew_Click);
             // 
             // tsbtEdit
             // 
+            this.tsbtEdit.AutoSize = false;
             this.tsbtEdit.Image = ((System.Drawing.Image)(resources.GetObject("tsbtEdit.Image")));
             this.tsbtEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtEdit.Name = "tsbtEdit";
-            this.tsbtEdit.Size = new System.Drawing.Size(67, 97);
+            this.tsbtEdit.Size = new System.Drawing.Size(100, 80);
             this.tsbtEdit.Text = "Edit";
             this.tsbtEdit.Click += new System.EventHandler(this.tsbtEdit_Click);
             // 
             // tsbtDelete
             // 
+            this.tsbtDelete.AutoSize = false;
             this.tsbtDelete.Image = ((System.Drawing.Image)(resources.GetObject("tsbtDelete.Image")));
             this.tsbtDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtDelete.Name = "tsbtDelete";
-            this.tsbtDelete.Size = new System.Drawing.Size(87, 97);
+            this.tsbtDelete.Size = new System.Drawing.Size(100, 80);
             this.tsbtDelete.Text = "Delete";
             this.tsbtDelete.Click += new System.EventHandler(this.tsbtDelete_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 100);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 80);
             // 
             // tsbtBook
             // 
+            this.tsbtBook.AutoSize = false;
             this.tsbtBook.Image = ((System.Drawing.Image)(resources.GetObject("tsbtBook.Image")));
             this.tsbtBook.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtBook.Name = "tsbtBook";
-            this.tsbtBook.Size = new System.Drawing.Size(74, 97);
+            this.tsbtBook.Size = new System.Drawing.Size(120, 80);
             this.tsbtBook.Text = "Book";
             this.tsbtBook.Click += new System.EventHandler(this.tsbtBook_Click);
             // 
             // tsbtAuthor
             // 
+            this.tsbtAuthor.AutoSize = false;
             this.tsbtAuthor.Image = ((System.Drawing.Image)(resources.GetObject("tsbtAuthor.Image")));
             this.tsbtAuthor.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtAuthor.Name = "tsbtAuthor";
-            this.tsbtAuthor.Size = new System.Drawing.Size(88, 97);
+            this.tsbtAuthor.Size = new System.Drawing.Size(120, 80);
             this.tsbtAuthor.Text = "Author";
             this.tsbtAuthor.Click += new System.EventHandler(this.tsbtAuthor_Click);
             // 
             // tsbtCategory
             // 
+            this.tsbtCategory.AutoSize = false;
             this.tsbtCategory.Image = ((System.Drawing.Image)(resources.GetObject("tsbtCategory.Image")));
             this.tsbtCategory.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtCategory.Name = "tsbtCategory";
-            this.tsbtCategory.Size = new System.Drawing.Size(104, 97);
+            this.tsbtCategory.Size = new System.Drawing.Size(120, 80);
             this.tsbtCategory.Text = "Category";
             this.tsbtCategory.Click += new System.EventHandler(this.tsbtCategory_Click);
             // 
             // tsbtCopy
             // 
+            this.tsbtCopy.AutoSize = false;
             this.tsbtCopy.Image = ((System.Drawing.Image)(resources.GetObject("tsbtCopy.Image")));
             this.tsbtCopy.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtCopy.Name = "tsbtCopy";
-            this.tsbtCopy.Size = new System.Drawing.Size(115, 97);
+            this.tsbtCopy.Size = new System.Drawing.Size(120, 80);
             this.tsbtCopy.Text = "Book Copy";
             this.tsbtCopy.Click += new System.EventHandler(this.tsbtCopy_Click);
             // 
             // tsbtPublisher
             // 
+            this.tsbtPublisher.AutoSize = false;
             this.tsbtPublisher.Image = ((System.Drawing.Image)(resources.GetObject("tsbtPublisher.Image")));
             this.tsbtPublisher.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtPublisher.Name = "tsbtPublisher";
-            this.tsbtPublisher.Size = new System.Drawing.Size(105, 97);
+            this.tsbtPublisher.Size = new System.Drawing.Size(120, 80);
             this.tsbtPublisher.Text = "Publisher";
             this.tsbtPublisher.Click += new System.EventHandler(this.tsbtPublisher_Click);
             // 
             // tsbtLoan
             // 
+            this.tsbtLoan.AutoSize = false;
             this.tsbtLoan.Image = ((System.Drawing.Image)(resources.GetObject("tsbtLoan.Image")));
             this.tsbtLoan.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtLoan.Name = "tsbtLoan";
-            this.tsbtLoan.Size = new System.Drawing.Size(73, 97);
+            this.tsbtLoan.Size = new System.Drawing.Size(120, 80);
             this.tsbtLoan.Text = "Loan";
             this.tsbtLoan.Click += new System.EventHandler(this.tsbtLoan_Click);
             // 
             // tsbtMember
             // 
+            this.tsbtMember.AutoSize = false;
             this.tsbtMember.Image = ((System.Drawing.Image)(resources.GetObject("tsbtMember.Image")));
             this.tsbtMember.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtMember.Name = "tsbtMember";
-            this.tsbtMember.Size = new System.Drawing.Size(98, 97);
+            this.tsbtMember.Size = new System.Drawing.Size(120, 80);
             this.tsbtMember.Text = "Member";
             this.tsbtMember.Click += new System.EventHandler(this.tsbtMember_Click);
             // 

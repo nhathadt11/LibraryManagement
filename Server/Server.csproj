@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BE35939E-60FF-4789-B91C-23B85AD9FC2D}</ProjectGuid>
+    <ProjectGuid>{214E0C4F-9CB6-4AF8-A222-23856229612C}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Database</RootNamespace>
-    <AssemblyName>Database</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <RootNamespace>Server</RootNamespace>
+    <AssemblyName>Server</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
@@ -43,50 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="DataSet1.xsc">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet1.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DataSet1.xss">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="db10.sql" />
-    <Content Include="db11.sql" />
-    <Content Include="db12.sql" />
-    <Content Include="db13.sql" />
-    <Content Include="db2.sql" />
-    <Content Include="db4.sql" />
-    <Content Include="db5.sql" />
-    <Content Include="db6.sql" />
-    <Content Include="db7.sql" />
-    <Content Include="db8.sql" />
-    <Content Include="db9.sql" />
-    <Content Include="Image\001-head-with-members-hierarchy.png" />
-    <Content Include="Image\002-delivery-cart.png" />
-    <Content Include="Image\003-pub-file-format-symbol.png" />
-    <Content Include="Image\004-library.png" />
-    <Content Include="Image\005-category.png" />
-    <Content Include="Image\006-policeman.png" />
-    <Content Include="Image\007-agenda.png" />
-    <Content Include="Image\008-rubbish-bin.png" />
-    <Content Include="Image\009-edit.png" />
-    <Content Include="Image\plus.png" />
+    <ProjectReference Include="..\ServerService\ServerService.csproj">
+      <Project>{89ffe97a-c11d-47eb-b31b-eb2b069bd9a1}</Project>
+      <Name>ServerService</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
