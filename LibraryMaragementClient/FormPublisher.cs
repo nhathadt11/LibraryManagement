@@ -9,12 +9,12 @@ namespace LibraryMaragementClient
     public partial class FormPublisher : Form, IMaintainDataTable<DataTranseferObject>
     {
         private static FormPublisher _instance;
-        private PublisherService _publisherService;
+        private PublisherServiceReference.IPublisherService _publisherService;
         private DataTable _data;
         private FormPublisher()
         {
             InitializeComponent();
-            _publisherService = new PublisherService();
+            _publisherService = new PublisherServiceReference.PublisherServiceClient();
         }
         public static FormPublisher Instance
         {
@@ -30,7 +30,17 @@ namespace LibraryMaragementClient
 
         private void FormPublisher_Load(object sender, EventArgs e)
         {
-            _data = _publisherService.GetAll();
+            //_data = _publisherService.GetAll();
+            _data = new DataTable();
+            _data.Columns.Add("PublisherId");
+            _data.Columns.Add("Name");
+            _data.Columns.Add("Contact");
+            _data.Columns.Add("Address");
+            _data.Columns.Add("Description");
+            foreach (var item in _publisherService.getPublishers())
+            {
+                _data.Rows.Add(item.PublisherId,item.Name,item.Contact,item.Address,item.Description);
+            }
             _data.PrimaryKey = new DataColumn[] { _data.Columns["PublisherId"] };
             dgvPublishers.DataSource = _data;
         }
