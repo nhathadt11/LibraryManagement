@@ -3,19 +3,19 @@ using System;
 using System.Data;
 using System.Windows.Forms;
 using DatabaseAccess.DataTransferObjects;
-
+using System.Collections.Generic;
 namespace LibraryMaragementClient
 {
     public partial class FormCategory : Form, IMaintainDataTable<DataTranseferObject>
     {
         private static FormCategory _instance;
-        private CategoryService _categoryService;
+        private CategoryServiceReference.ICategoryService _categoryService;
         private DataTable _data;
 
         private FormCategory()
         {
             InitializeComponent();
-            _categoryService = new CategoryService();
+            _categoryService = new CategoryServiceReference.CategoryServiceClient();
         }
         public static FormCategory Instance
         {
@@ -31,7 +31,17 @@ namespace LibraryMaragementClient
 
         private void FormCategory_Load(object sender, EventArgs e)
         {
-            _data = _categoryService.GetAll();
+            List<Category> list = _categoryService.getCategories();
+            //_data = _categoryService.GetAll();
+            _data = new DataTable();
+            _data.Columns.Add("CategoryId");
+            _data.Columns.Add("Name");
+
+            foreach (var item in list)
+            {
+                _data.Rows.Add(item.CategoryId, item.Name);
+            }
+
             _data.PrimaryKey = new DataColumn[] { _data.Columns["CategoryId"] };
             dgvCategorys.DataSource = _data;
         }

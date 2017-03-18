@@ -147,6 +147,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\BookServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\CategoryServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Dialogs\AuthorDialog.resx">
       <DependentUpon>AuthorDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -202,6 +212,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="Properties\DataSources\DatabaseAccess.DataTransferObjects.Author.datasource" />
+    <None Include="Properties\DataSources\DatabaseAccess.DataTransferObjects.Book.datasource" />
+    <None Include="Properties\DataSources\DatabaseAccess.DataTransferObjects.Category.datasource" />
     <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -225,6 +237,32 @@
     <None Include="Service References\AuthorServiceReference\AuthorService3.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\BookServiceReference\BookService.wsdl" />
+    <None Include="Service References\BookServiceReference\BookService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BookServiceReference\BookService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BookServiceReference\BookService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BookServiceReference\BookService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CategoryServiceReference\CategoryService.wsdl" />
+    <None Include="Service References\CategoryServiceReference\CategoryService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CategoryServiceReference\CategoryService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CategoryServiceReference\CategoryService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CategoryServiceReference\CategoryService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -244,6 +282,8 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\AuthorServiceReference\" />
+    <WCFMetadataStorage Include="Service References\BookServiceReference\" />
+    <WCFMetadataStorage Include="Service References\CategoryServiceReference\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\AuthorServiceReference\AuthorService.disco" />
@@ -256,6 +296,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\AuthorServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BookServiceReference\BookService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BookServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BookServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BookServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CategoryServiceReference\CategoryService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CategoryServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CategoryServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CategoryServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

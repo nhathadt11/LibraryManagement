@@ -49,23 +49,29 @@ namespace Server
 
                 ServiceHost bookCopyHost = new ServiceHost(typeof(Service.BookCopyService), bookCopyAddress);
                 bookCopyHost.AddServiceEndpoint(typeof(Service.IBookCopyService), abc, "");
+                bh = new ServiceMetadataBehavior();
+                bh.HttpGetEnabled = true;
                 bookCopyHost.Description.Behaviors.Add(bh);
                 bookCopyHost.Open();
 
                 ServiceHost bookHost = new ServiceHost(typeof(Service.BookService), bookAddress);
                 bookHost.AddServiceEndpoint(typeof(Service.IBookService), abc, "");
+                bh = new ServiceMetadataBehavior();
+                bh.HttpGetEnabled = true;
                 bookHost.Description.Behaviors.Add(bh);
                 bookHost.Open();
 
                 ServiceHost categoryHost = new ServiceHost(typeof(Service.CategoryService), categoryAddress);
                 categoryHost.AddServiceEndpoint(typeof(Service.ICategoryService), abc, "");
+                bh = new ServiceMetadataBehavior();
+                bh.HttpGetEnabled = true;
                 categoryHost.Description.Behaviors.Add(bh);
                 categoryHost.Open();
 
-                ServiceHost loanDetailHost = new ServiceHost(typeof(Service.LoanDetailService), loanDetailAddress);
-                loanDetailHost.AddServiceEndpoint(typeof(Service.ILoanDetailService), abc, "");
-                loanDetailHost.Description.Behaviors.Add(bh);
-                loanDetailHost.Open();
+                //ServiceHost loanDetailHost = new ServiceHost(typeof(Service.LoanDetailService), loanDetailAddress);
+                //loanDetailHost.AddServiceEndpoint(typeof(Service.ILoanDetailService), abc, "");
+                //loanDetailHost.Description.Behaviors.Add(bh);
+                //loanDetailHost.Open();
 
                 //ServiceHost loanHost = new ServiceHost(typeof(Service.LoanService), loanAddress);
                 //loanHost.AddServiceEndpoint(typeof(Service.ILoanService), abc, "");
@@ -74,16 +80,22 @@ namespace Server
 
                 ServiceHost publisherHost = new ServiceHost(typeof(Service.PublisherService), publisherAddress);
                 publisherHost.AddServiceEndpoint(typeof(Service.IPublisherService), abc, "");
+                bh = new ServiceMetadataBehavior();
+                bh.HttpGetEnabled = true;
                 publisherHost.Description.Behaviors.Add(bh);
                 publisherHost.Open();
 
                 ServiceHost roleHost = new ServiceHost(typeof(Service.RoleService), roleAddress);
                 roleHost.AddServiceEndpoint(typeof(Service.IRoleService), abc, "");
+                bh = new ServiceMetadataBehavior();
+                bh.HttpGetEnabled = true;
                 roleHost.Description.Behaviors.Add(bh);
                 roleHost.Open();
 
                 ServiceHost userHost = new ServiceHost(typeof(Service.UserService), userAddress);
                 userHost.AddServiceEndpoint(typeof(Service.IUserService), abc, "");
+                bh = new ServiceMetadataBehavior();
+                bh.HttpGetEnabled = true;
                 userHost.Description.Behaviors.Add(bh);
                 userHost.Open();
 
