@@ -8,13 +8,13 @@ namespace LibraryMaragementClient
 {
     public partial class FormUser : Form, IMaintainDataTable<DataTranseferObject>
     {
-        private UserService _service;
+        private UserServiceReference.IUserService _service;
         private DataTable _data;
         private static FormUser _instance;
         private FormUser()
         {
             InitializeComponent();
-            _service = new UserService();
+            _service = new UserServiceReference.UserServiceClient();
         }
         public static FormUser Instance
         {
@@ -30,7 +30,23 @@ namespace LibraryMaragementClient
 
         private void FormUser_Load(object sender, EventArgs e)
         {
-            _data = _service.GetAll();
+            // _data = _service.GetAll();
+            _data = new DataTable();
+
+            _data.Columns.Add("UserId");
+            _data.Columns.Add("Username");
+            _data.Columns.Add("Password");
+            _data.Columns.Add("FullName");
+            _data.Columns.Add("PhoneNumber");
+            _data.Columns.Add("Address");
+            _data.Columns.Add("Email");
+            _data.Columns.Add("RoleId");
+
+            foreach (var item in _service.getUsers())
+            {
+                _data.Rows.Add(item.UserId,item.Username,item.Password, item.FullName, item.PhoneNumber, item.Address, item.Email, item.RoleId);
+            }
+
             _data.PrimaryKey = new DataColumn[] { _data.Columns["UserId"] };
             dgvUsers.DataSource = _data;
             dgvUsers.Columns[1].Visible = false;
