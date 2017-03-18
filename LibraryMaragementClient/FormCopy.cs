@@ -8,13 +8,13 @@ namespace LibraryMaragementClient
 {
     public partial class FormCopy : Form, IMaintainDataTable<DataTranseferObject>
     {
-        private BookCopyService _copyService;
+        private BookCopyServiceReference.IBookCopyService _copyService;
         private static FormCopy _instance;
         private DataTable _data;
         private FormCopy()
         {
             InitializeComponent();
-            _copyService = new BookCopyService();
+            _copyService = new BookCopyServiceReference.BookCopyServiceClient();
         }
         public static FormCopy Instance {
             get
@@ -29,7 +29,15 @@ namespace LibraryMaragementClient
 
         private void FormBookCopy_Load(object sender, EventArgs e)
         {
-            _data = _copyService.GetAll();
+            //_data = _copyService.GetAll();
+            _data = new DataTable();
+            _data.Columns.Add("CopyId");
+            _data.Columns.Add("BookId");
+            _data.Columns.Add("IsAvailable");
+            foreach (var item in _copyService.getCopies())
+            {
+                _data.Rows.Add(item.CopyId, item.BookId, item.IsAvailable);
+            }
             _data.PrimaryKey = new DataColumn[] { _data.Columns["CopyId"] };
             dgvBookCopies.DataSource = _data;
         }

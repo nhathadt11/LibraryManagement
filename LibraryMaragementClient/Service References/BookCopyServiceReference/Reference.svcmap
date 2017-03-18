@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="69b42998-aff1-439f-9ab4-57224c0342d3" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8888/BookCopyService" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="BookCopyService.xsd" MetadataType="Schema" ID="f2208078-48bf-4a58-948d-980fb7a3a7ee" SourceId="1" SourceUrl="http://localhost:8888/BookCopyService?xsd=xsd0" />
+    <MetadataFile FileName="BookCopyService1.xsd" MetadataType="Schema" ID="847d4bfc-eaf0-4bd8-8bbe-0df185c8cedf" SourceId="1" SourceUrl="http://localhost:8888/BookCopyService?xsd=xsd1" />
+    <MetadataFile FileName="BookCopyService2.xsd" MetadataType="Schema" ID="b1b4ae99-f3e1-479c-9311-73bd53dfc08e" SourceId="1" SourceUrl="http://localhost:8888/BookCopyService?xsd=xsd2" />
+    <MetadataFile FileName="BookCopyService.disco" MetadataType="Disco" ID="533a13ca-c35f-4c3d-b634-54ce03ae003f" SourceId="1" SourceUrl="http://localhost:8888/BookCopyService?disco" />
+    <MetadataFile FileName="BookCopyService.wsdl" MetadataType="Wsdl" ID="3bd65868-569e-49e0-89d4-c5ff8fb543bc" SourceId="1" SourceUrl="http://localhost:8888/BookCopyService?wsdl" />
+    <MetadataFile FileName="BookCopyService3.xsd" MetadataType="Schema" ID="176916eb-5661-4922-96a8-9793351e9f08" SourceId="1" SourceUrl="http://localhost:8888/BookCopyService?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

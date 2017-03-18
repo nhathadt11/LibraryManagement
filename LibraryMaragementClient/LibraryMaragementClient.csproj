@@ -147,6 +147,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\BookCopyServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\BookServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -214,6 +219,7 @@
     <None Include="Properties\DataSources\DatabaseAccess.DataTransferObjects.Author.datasource" />
     <None Include="Properties\DataSources\DatabaseAccess.DataTransferObjects.Book.datasource" />
     <None Include="Properties\DataSources\DatabaseAccess.DataTransferObjects.Category.datasource" />
+    <None Include="Properties\DataSources\DatabaseAccess.DataTransferObjects.Copy.datasource" />
     <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -235,6 +241,19 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\AuthorServiceReference\AuthorService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BookCopyServiceReference\BookCopyService.wsdl" />
+    <None Include="Service References\BookCopyServiceReference\BookCopyService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BookCopyServiceReference\BookCopyService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BookCopyServiceReference\BookCopyService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BookCopyServiceReference\BookCopyService3.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\BookServiceReference\BookService.wsdl" />
@@ -282,6 +301,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\AuthorServiceReference\" />
+    <WCFMetadataStorage Include="Service References\BookCopyServiceReference\" />
     <WCFMetadataStorage Include="Service References\BookServiceReference\" />
     <WCFMetadataStorage Include="Service References\CategoryServiceReference\" />
   </ItemGroup>
@@ -326,6 +346,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\CategoryServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BookCopyServiceReference\BookCopyService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BookCopyServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BookCopyServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BookCopyServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
