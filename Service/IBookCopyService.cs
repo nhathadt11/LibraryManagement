@@ -10,7 +10,7 @@ using System.Data;
 namespace Service
 {
     [ServiceContract]
-    interface IBookCopyService
+    public interface IBookCopyService
     {
         [OperationContract]
          int Add(Copy copy);

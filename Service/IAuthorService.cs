@@ -10,7 +10,7 @@ using System.Data;
 namespace Service
 {
     [ServiceContract]
-    interface IAuthorService
+    public interface IAuthorService
     {
         [OperationContract]
          int Add(Author author);

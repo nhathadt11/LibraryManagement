@@ -10,7 +10,7 @@ using DatabaseAccess.DataTransferObjects;
 namespace Service
 {
     [ServiceContract]
-    interface IRoleService
+    public interface IRoleService
     {
         [OperationContract]
          int Add(Role role);

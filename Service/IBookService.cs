@@ -10,7 +10,7 @@ using DatabaseAccess.DataTransferObjects;
 namespace Service
 {
     [ServiceContract]
-    interface IBookService
+    public interface IBookService
     {
         [OperationContract]
          DataTable GetAll();

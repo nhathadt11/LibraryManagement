@@ -10,7 +10,7 @@ using System.Data;
 namespace Service
 {
     [ServiceContract]
-    interface IUserService
+    public interface IUserService
     {
         [OperationContract]
          int Add(User user);

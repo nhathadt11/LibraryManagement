@@ -10,7 +10,7 @@ using System.Data;
 namespace Service
 {
     [ServiceContract]
-    interface ICategoryService
+    public interface ICategoryService
     {
         [OperationContract]
          int Add(Category category);

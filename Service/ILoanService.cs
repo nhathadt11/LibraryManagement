@@ -10,7 +10,7 @@ using System.Data;
 namespace Service
 {
     [ServiceContract]
-    interface ILoanService
+    public interface ILoanService
     {
         [OperationContract]
          int Add(Loan loan);

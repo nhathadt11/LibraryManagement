@@ -10,7 +10,7 @@ using DatabaseAccess.DataTransferObjects;
 namespace Service
 {
     [ServiceContract]
-    interface ILoanDetailService
+    public interface ILoanDetailService
     {
         [OperationContract]
          int Add(LoanDetail loanDetail);
