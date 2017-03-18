@@ -14,23 +14,23 @@ namespace Server
         {
             try
             {
-                BasicHttpBinding abc = new BasicHttpBinding();
-                abc.MaxBufferPoolSize = int.MaxValue;
-                abc.MaxBufferSize = int.MaxValue;
-                abc.MaxReceivedMessageSize = int.MaxValue;
-                abc.ReaderQuotas.MaxArrayLength = int.MaxValue;
-                abc.ReaderQuotas.MaxStringContentLength = int.MaxValue;
-                abc.ReaderQuotas.MaxBytesPerRead = int.MaxValue;
-                abc.ReaderQuotas.MaxDepth = int.MaxValue;
-                abc.ReaderQuotas.MaxNameTableCharCount = int.MaxValue;
-                abc.ReaderQuotas.MaxStringContentLength = int.MaxValue;
+                BasicHttpBinding httpBiding = new BasicHttpBinding();
+                httpBiding.MaxBufferPoolSize = int.MaxValue;
+                httpBiding.MaxBufferSize = int.MaxValue;
+                httpBiding.MaxReceivedMessageSize = int.MaxValue;
+                httpBiding.ReaderQuotas.MaxArrayLength = int.MaxValue;
+                httpBiding.ReaderQuotas.MaxStringContentLength = int.MaxValue;
+                httpBiding.ReaderQuotas.MaxBytesPerRead = int.MaxValue;
+                httpBiding.ReaderQuotas.MaxDepth = int.MaxValue;
+                httpBiding.ReaderQuotas.MaxNameTableCharCount = int.MaxValue;
+                httpBiding.ReaderQuotas.MaxStringContentLength = int.MaxValue;
                 TimeSpan tp = TimeSpan.FromMinutes(30);
-                abc.MaxBufferSize = int.MaxValue;
-                abc.ReceiveTimeout = tp;
-                abc.SendTimeout = tp;
+                httpBiding.MaxBufferSize = int.MaxValue;
+                httpBiding.ReceiveTimeout = tp;
+                httpBiding.SendTimeout = tp;
 
-                ServiceMetadataBehavior bh = new ServiceMetadataBehavior();
-                bh.HttpGetEnabled = true;
+                ServiceMetadataBehavior metadataBehavior = new ServiceMetadataBehavior();
+                metadataBehavior.HttpGetEnabled = true;
 
                 Uri authorAddress =       new Uri("http://localhost:8888/AuthorService");
                 Uri bookCopyAddress =     new Uri("http://localhost:8888/BookCopyService");
@@ -43,68 +43,69 @@ namespace Server
                 Uri userAddress =         new Uri("http://localhost:8888/UserService");
 
                 ServiceHost authorHost = new ServiceHost(typeof(Service.AuthorService), authorAddress);
-                authorHost.AddServiceEndpoint(typeof(Service.IAuthorService), abc, "");
-                authorHost.Description.Behaviors.Add(bh);
+                authorHost.AddServiceEndpoint(typeof(Service.IAuthorService), httpBiding, "");
+                authorHost.Description.Behaviors.Add(metadataBehavior);
                 authorHost.Open();
 
                 ServiceHost bookCopyHost = new ServiceHost(typeof(Service.BookCopyService), bookCopyAddress);
-                bookCopyHost.AddServiceEndpoint(typeof(Service.IBookCopyService), abc, "");
-                bh = new ServiceMetadataBehavior();
-                bh.HttpGetEnabled = true;
-                bookCopyHost.Description.Behaviors.Add(bh);
+                bookCopyHost.AddServiceEndpoint(typeof(Service.IBookCopyService), httpBiding, "");
+                metadataBehavior = new ServiceMetadataBehavior();
+                metadataBehavior.HttpGetEnabled = true;
+                bookCopyHost.Description.Behaviors.Add(metadataBehavior);
                 bookCopyHost.Open();
 
                 ServiceHost bookHost = new ServiceHost(typeof(Service.BookService), bookAddress);
-                bookHost.AddServiceEndpoint(typeof(Service.IBookService), abc, "");
-                bh = new ServiceMetadataBehavior();
-                bh.HttpGetEnabled = true;
-                bookHost.Description.Behaviors.Add(bh);
+                bookHost.AddServiceEndpoint(typeof(Service.IBookService), httpBiding, "");
+                metadataBehavior = new ServiceMetadataBehavior();
+                metadataBehavior.HttpGetEnabled = true;
+                bookHost.Description.Behaviors.Add(metadataBehavior);
                 bookHost.Open();
 
                 ServiceHost categoryHost = new ServiceHost(typeof(Service.CategoryService), categoryAddress);
-                categoryHost.AddServiceEndpoint(typeof(Service.ICategoryService), abc, "");
-                bh = new ServiceMetadataBehavior();
-                bh.HttpGetEnabled = true;
-                categoryHost.Description.Behaviors.Add(bh);
+                categoryHost.AddServiceEndpoint(typeof(Service.ICategoryService), httpBiding, "");
+                metadataBehavior = new ServiceMetadataBehavior();
+                metadataBehavior.HttpGetEnabled = true;
+                categoryHost.Description.Behaviors.Add(metadataBehavior);
                 categoryHost.Open();
 
                 //ServiceHost loanDetailHost = new ServiceHost(typeof(Service.LoanDetailService), loanDetailAddress);
-                //loanDetailHost.AddServiceEndpoint(typeof(Service.ILoanDetailService), abc, "");
-                //loanDetailHost.Description.Behaviors.Add(bh);
+                //loanDetailHost.AddServiceEndpoint(typeof(Service.ILoanDetailService), httpBiding, "");
+                //loanDetailHost.Description.Behaviors.Add(metadataBehavior);
                 //loanDetailHost.Open();
 
-                //ServiceHost loanHost = new ServiceHost(typeof(Service.LoanService), loanAddress);
-                //loanHost.AddServiceEndpoint(typeof(Service.ILoanService), abc, "");
-                //loanHost.Description.Behaviors.Add(bh);
-                //loanHost.Open();
+                ServiceHost loanHost = new ServiceHost(typeof(Service.LoanService), loanAddress);
+                loanHost.AddServiceEndpoint(typeof(Service.ILoanService), httpBiding, "");
+                metadataBehavior = new ServiceMetadataBehavior();
+                metadataBehavior.HttpGetEnabled = true;
+                loanHost.Description.Behaviors.Add(metadataBehavior);
+                loanHost.Open();
 
                 ServiceHost publisherHost = new ServiceHost(typeof(Service.PublisherService), publisherAddress);
-                publisherHost.AddServiceEndpoint(typeof(Service.IPublisherService), abc, "");
-                bh = new ServiceMetadataBehavior();
-                bh.HttpGetEnabled = true;
-                publisherHost.Description.Behaviors.Add(bh);
+                publisherHost.AddServiceEndpoint(typeof(Service.IPublisherService), httpBiding, "");
+                metadataBehavior = new ServiceMetadataBehavior();
+                metadataBehavior.HttpGetEnabled = true;
+                publisherHost.Description.Behaviors.Add(metadataBehavior);
                 publisherHost.Open();
 
                 ServiceHost roleHost = new ServiceHost(typeof(Service.RoleService), roleAddress);
-                roleHost.AddServiceEndpoint(typeof(Service.IRoleService), abc, "");
-                bh = new ServiceMetadataBehavior();
-                bh.HttpGetEnabled = true;
-                roleHost.Description.Behaviors.Add(bh);
+                roleHost.AddServiceEndpoint(typeof(Service.IRoleService), httpBiding, "");
+                metadataBehavior = new ServiceMetadataBehavior();
+                metadataBehavior.HttpGetEnabled = true;
+                roleHost.Description.Behaviors.Add(metadataBehavior);
                 roleHost.Open();
 
                 ServiceHost userHost = new ServiceHost(typeof(Service.UserService), userAddress);
-                userHost.AddServiceEndpoint(typeof(Service.IUserService), abc, "");
-                bh = new ServiceMetadataBehavior();
-                bh.HttpGetEnabled = true;
-                userHost.Description.Behaviors.Add(bh);
+                userHost.AddServiceEndpoint(typeof(Service.IUserService), httpBiding, "");
+                metadataBehavior = new ServiceMetadataBehavior();
+                metadataBehavior.HttpGetEnabled = true;
+                userHost.Description.Behaviors.Add(metadataBehavior);
                 userHost.Open();
 
                 Console.WriteLine("Server started...");
                 Console.ReadLine();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
                 throw;
             }
         }

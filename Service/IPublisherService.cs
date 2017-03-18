@@ -21,6 +21,6 @@ namespace Service
         [OperationContract]
         int Update(Publisher publisher);
         [OperationContract]
-        List<Publisher> getPublishers();
+        List<Publisher> GetPublishers();
     }
 }

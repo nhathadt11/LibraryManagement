@@ -13,8 +13,6 @@ namespace Service
     public interface ILoanService
     {
         [OperationContract]
-         int Add(Loan loan);
-        [OperationContract]
         int Delete(int loanId);
         [OperationContract]
         DataTable GetAll();

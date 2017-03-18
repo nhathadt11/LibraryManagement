@@ -37,7 +37,7 @@ namespace LibraryMaragementClient
             _data.Columns.Add("Contact");
             _data.Columns.Add("Address");
             _data.Columns.Add("Description");
-            foreach (var item in _publisherService.getPublishers())
+            foreach (var item in _publisherService.GetPublishers())
             {
                 _data.Rows.Add(item.PublisherId,item.Name,item.Contact,item.Address,item.Description);
             }

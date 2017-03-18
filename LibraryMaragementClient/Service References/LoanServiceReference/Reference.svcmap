@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="de2b5670-665b-4239-85c8-ef38f984d69e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8888/LoanService" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="LoanService.xsd" MetadataType="Schema" ID="8b7324fd-8688-44b5-9d14-a5353f98460f" SourceId="1" SourceUrl="http://localhost:8888/LoanService?xsd=xsd1" />
+    <MetadataFile FileName="LoanService1.xsd" MetadataType="Schema" ID="e6561223-f777-45df-876a-65c8c0d13a6e" SourceId="1" SourceUrl="http://localhost:8888/LoanService?xsd=xsd0" />
+    <MetadataFile FileName="LoanService2.xsd" MetadataType="Schema" ID="665816f7-acf6-4880-9cdc-cd37df3c409e" SourceId="1" SourceUrl="http://localhost:8888/LoanService?xsd=xsd3" />
+    <MetadataFile FileName="LoanService3.xsd" MetadataType="Schema" ID="d7a35a0a-f10a-4cb4-96ff-7a03fbb28865" SourceId="1" SourceUrl="http://localhost:8888/LoanService?xsd=xsd2" />
+    <MetadataFile FileName="LoanService.disco" MetadataType="Disco" ID="a945e44b-ac6a-4f6f-836e-12210e5bb531" SourceId="1" SourceUrl="http://localhost:8888/LoanService?disco" />
+    <MetadataFile FileName="LoanService.wsdl" MetadataType="Wsdl" ID="a3f4ef6a-f016-4156-926c-fce45f5a504e" SourceId="1" SourceUrl="http://localhost:8888/LoanService?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

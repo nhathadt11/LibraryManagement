@@ -39,11 +39,11 @@ namespace LibraryMaragementClient.PublisherServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPublisherService/Update", ReplyAction="http://tempuri.org/IPublisherService/UpdateResponse")]
         System.Threading.Tasks.Task<int> UpdateAsync(DatabaseAccess.DataTransferObjects.Publisher publisher);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPublisherService/getPublishers", ReplyAction="http://tempuri.org/IPublisherService/getPublishersResponse")]
-        System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.Publisher> getPublishers();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPublisherService/GetPublishers", ReplyAction="http://tempuri.org/IPublisherService/GetPublishersResponse")]
+        System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.Publisher> GetPublishers();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPublisherService/getPublishers", ReplyAction="http://tempuri.org/IPublisherService/getPublishersResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.Publisher>> getPublishersAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPublisherService/GetPublishers", ReplyAction="http://tempuri.org/IPublisherService/GetPublishersResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.Publisher>> GetPublishersAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -105,12 +105,12 @@ namespace LibraryMaragementClient.PublisherServiceReference {
             return base.Channel.UpdateAsync(publisher);
         }
         
-        public System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.Publisher> getPublishers() {
-            return base.Channel.getPublishers();
+        public System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.Publisher> GetPublishers() {
+            return base.Channel.GetPublishers();
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.Publisher>> getPublishersAsync() {
-            return base.Channel.getPublishersAsync();
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.Publisher>> GetPublishersAsync() {
+            return base.Channel.GetPublishersAsync();
         }
     }
 }

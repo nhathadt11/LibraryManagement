@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace Service
 {
-    public class LoanService : ICommonService<Loan>,ILoanService
+    public class LoanService : ICommonService<Loan>, ILoanService
     {
         private LoanDAO _loanDAO;
         public LoanService()

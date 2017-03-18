@@ -30,7 +30,7 @@ namespace Service
             return _publisherDAO.GetAll();
         }
 
-        public List<Publisher> getPublishers()
+        public List<Publisher> GetPublishers()
         {
             return _publisherDAO.GetAll().Rows.Cast<DataRow>().Select<DataRow,Publisher>(r=>new Publisher {
                 PublisherId = Convert.ToInt32(r["PublisherId"]),

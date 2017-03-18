@@ -145,30 +145,33 @@ namespace LibraryMaragementClient
             {
                 epvLoanIssueDate.Clear();
             }
-            List<ErrorProvider> errors = new List<ErrorProvider>();
-            errors.AddRange(new ErrorProvider[] { epvLoanCopyId1,
-                                                  epvLoanCopyId2,
-                                                  epvLoanCopyId3,
-                                                  epvLoanCopyId4,
-                                                  epvLoanCopyId5});
-            if (_textBoxes.FindAll(tb => tb.Text == string.Empty).Count == 5)
+            if (_action == ActionType.Add)
             {
-                epvLoanCopyId1.SetError(txtLoanCopyId1, "At least one book copy is required!");
-                valid = false;
-            }
-            else
-            {
-                for (int i = 0; i < _textBoxes.Count; i++)
+                List<ErrorProvider> errors = new List<ErrorProvider>();
+                errors.AddRange(new ErrorProvider[] { epvLoanCopyId1,
+                                                      epvLoanCopyId2,
+                                                      epvLoanCopyId3,
+                                                      epvLoanCopyId4,
+                                                      epvLoanCopyId5});
+                if (_textBoxes.FindAll(tb => tb.Text == string.Empty).Count == 5)
                 {
-                    if (Regex.IsMatch(_textBoxes[i].Text, @"\d+") &&
-                        !_copyService.CheckValidCopyId(Convert.ToInt32(_textBoxes[i].Text)))
+                    epvLoanCopyId1.SetError(txtLoanCopyId1, "At least one book copy is required!");
+                    valid = false;
+                }
+                else
+                {
+                    for (int i = 0; i < _textBoxes.Count; i++)
                     {
-                        errors[i].SetError(_textBoxes[i], "Copy ID not found or currently not available!");
-                        valid = false;
-                    }
-                    else
-                    {
-                        errors[i].Clear();
+                        if (Regex.IsMatch(_textBoxes[i].Text, @"\d+") &&
+                            !_copyService.CheckValidCopyId(Convert.ToInt32(_textBoxes[i].Text)))
+                        {
+                            errors[i].SetError(_textBoxes[i], "Copy ID not found or currently not available!");
+                            valid = false;
+                        }
+                        else
+                        {
+                            errors[i].Clear();
+                        }
                     }
                 }
             }

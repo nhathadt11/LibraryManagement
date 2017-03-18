@@ -162,6 +162,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\LoanServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\PublisherServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -230,6 +235,7 @@
     <None Include="Properties\DataSources\DatabaseAccess.DataTransferObjects.Book.datasource" />
     <None Include="Properties\DataSources\DatabaseAccess.DataTransferObjects.Category.datasource" />
     <None Include="Properties\DataSources\DatabaseAccess.DataTransferObjects.Copy.datasource" />
+    <None Include="Properties\DataSources\DatabaseAccess.DataTransferObjects.Loan.datasource" />
     <None Include="Properties\DataSources\DatabaseAccess.DataTransferObjects.Publisher.datasource" />
     <None Include="Properties\DataSources\DatabaseAccess.DataTransferObjects.User.datasource" />
     <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
@@ -294,6 +300,19 @@
     <None Include="Service References\CategoryServiceReference\CategoryService3.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\LoanServiceReference\LoanService.wsdl" />
+    <None Include="Service References\LoanServiceReference\LoanService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LoanServiceReference\LoanService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LoanServiceReference\LoanService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LoanServiceReference\LoanService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\PublisherServiceReference\PublisherService.wsdl" />
     <None Include="Service References\PublisherServiceReference\PublisherService.xsd">
       <SubType>Designer</SubType>
@@ -342,6 +361,7 @@
     <WCFMetadataStorage Include="Service References\BookCopyServiceReference\" />
     <WCFMetadataStorage Include="Service References\BookServiceReference\" />
     <WCFMetadataStorage Include="Service References\CategoryServiceReference\" />
+    <WCFMetadataStorage Include="Service References\LoanServiceReference\" />
     <WCFMetadataStorage Include="Service References\PublisherServiceReference\" />
     <WCFMetadataStorage Include="Service References\UserServiceReference\" />
   </ItemGroup>
@@ -431,6 +451,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\UserServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LoanServiceReference\LoanService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LoanServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LoanServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LoanServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
