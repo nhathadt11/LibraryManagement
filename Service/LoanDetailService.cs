@@ -3,10 +3,11 @@ using DatabaseAccess.DataTransferObjects;
 using DatabaseAccess.DatabaseAccessObjects;
 using System.Collections.Generic;
 using System;
+using System.Linq;
 
 namespace Service
 {
-    public class LoanDetailService : ICommonService<LoanDetail>
+    public class LoanDetailService : ICommonService<LoanDetail>,ILoanDetailService
     {
         private LoanDetailDAO _loanDetailDAO;
         public LoanDetailService()
@@ -45,6 +46,16 @@ namespace Service
                 });
             }
             return details;
+        }
+
+        public List<LoanDetail> getLoanDetails()
+        {
+            return _loanDetailDAO.GetAll().Rows.Cast<DataRow>().Select<DataRow, LoanDetail>(r => new LoanDetail
+            {
+                CopyId = Convert.ToInt32(r["CopyId"]),
+                LoanId = Convert.ToInt32(r["LoanId"]),
+                ReturnDate = Convert.ToDateTime(r["ReturnDate"])
+            }).ToList();
         }
     }
 }

@@ -1,10 +1,13 @@
 ﻿using System.Data;
 using DatabaseAccess.DataTransferObjects;
 using DatabaseAccess.DatabaseAccessObjects;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Service
 {
-    public class UserService : ICommonService<User>
+    public class UserService : ICommonService<User>,IUserService
     {
         private UserDAO _userDAO;
         public UserService()
@@ -41,6 +44,35 @@ namespace Service
         public int HasExisted(string Username)
         {
            return _userDAO.HasExisted(Username);
+        }
+
+        public List<User> getUsers()
+        {
+            return _userDAO.GetAll().Rows.Cast<DataRow>().Select<DataRow,User>(r=> new User {
+                UserId = Convert.ToInt32(r["UserId"]),
+                Username = Convert.ToString(r["Username"]),
+                Password = Convert.ToString(r["Password"]),
+                FullName = Convert.ToString(r["FullName"]),
+                PhoneNumber = Convert.ToString(r["PhoneNumber"]),
+                Address = Convert.ToString(r["Address"]),
+                Email = Convert.ToString(r["Email"]),
+                RoleId = Convert.ToInt32(r["RoleId"])
+            }).ToList();
+        }
+
+        public List<User> getLibrarians()
+        {
+            return _userDAO.GetAllLibrarians().Rows.Cast<DataRow>().Select<DataRow, User>(r => new User
+            {
+                UserId = Convert.ToInt32(r["UserId"]),
+                Username = Convert.ToString(r["Username"]),
+                Password = Convert.ToString(r["Password"]),
+                FullName = Convert.ToString(r["FullName"]),
+                PhoneNumber = Convert.ToString(r["PhoneNumber"]),
+                Address = Convert.ToString(r["Address"]),
+                Email = Convert.ToString(r["Email"]),
+                RoleId = Convert.ToInt32(r["RoleId"])
+            }).ToList();
         }
     }
 }

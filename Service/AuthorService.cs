@@ -1,10 +1,14 @@
 ﻿using DatabaseAccess.DatabaseAccessObjects;
 using DatabaseAccess.DataTransferObjects;
 using System.Data;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
 
 namespace Service
 {
-    public class AuthorService : ICommonService<Author>
+    public class AuthorService : ICommonService<Author>, IAuthorService
     {
         private AuthorDAO _authorDAO;
         public AuthorService()
@@ -25,6 +29,19 @@ namespace Service
         public DataTable GetAll()
         {
             return _authorDAO.GetAll();
+        }
+
+        public List<Author> getAuthors()
+        {
+            return _authorDAO.GetAll().Rows.Cast<DataRow>()
+                .Select<DataRow, Author>(r => new Author
+                {
+                    AuthorId = Convert.ToInt32(r["AuthorId"]),
+                    FullName = Convert.ToString(r["FullName"]),
+                    Contact = Convert.ToString(r["Contact"]),
+                    Address = Convert.ToString(r["Address"]),
+                    Bio = Convert.ToString(r["Bio"])
+                }).ToList();
         }
 
         public int Update(Author author)

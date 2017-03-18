@@ -53,7 +53,16 @@
     <Compile Include="BookService.cs" />
     <Compile Include="CategoryService.cs" />
     <Compile Include="BookCopyService.cs" />
+    <Compile Include="IAuthorService.cs" />
+    <Compile Include="IBookCopyService.cs" />
+    <Compile Include="IBookService.cs" />
+    <Compile Include="ICategoryService.cs" />
     <Compile Include="ICommonService.cs" />
+    <Compile Include="ILoanDetailService.cs" />
+    <Compile Include="ILoanService.cs" />
+    <Compile Include="IPublisherService.cs" />
+    <Compile Include="IRoleService.cs" />
+    <Compile Include="IUserService.cs" />
     <Compile Include="LoanDetailService.cs" />
     <Compile Include="LoanService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

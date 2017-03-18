@@ -1,10 +1,13 @@
 ﻿using DatabaseAccess.DataTransferObjects;
 using System.Data;
 using DatabaseAccess.DatabaseAccessObjects;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Service
 {
-    public class RoleService : ICommonService<Role>
+    public class RoleService : ICommonService<Role>,IRoleService
     {
         private RoleDAO _roleDAO;
         public RoleService()
@@ -24,6 +27,14 @@ namespace Service
         public DataTable GetAll()
         {
             return _roleDAO.GetAll();
+        }
+
+        public List<Role> getRoles()
+        {
+            return _roleDAO.GetAll().Rows.Cast<DataRow>().Select<DataRow,Role>(r=>new Role {
+                RoleId = Convert.ToInt32(r["RoleId"]),
+                Name = Convert.ToString(r["Name"])
+            }).ToList();
         }
 
         public int Update(Role role)
