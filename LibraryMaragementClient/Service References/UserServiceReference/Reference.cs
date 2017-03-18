@@ -68,6 +68,12 @@ namespace LibraryMaragementClient.UserServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/getLibrarians", ReplyAction="http://tempuri.org/IUserService/getLibrariansResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.User>> getLibrariansAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/CheckLogin", ReplyAction="http://tempuri.org/IUserService/CheckLoginResponse")]
+        DatabaseAccess.DataTransferObjects.User CheckLogin(string username, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/CheckLogin", ReplyAction="http://tempuri.org/IUserService/CheckLoginResponse")]
+        System.Threading.Tasks.Task<DatabaseAccess.DataTransferObjects.User> CheckLoginAsync(string username, string password);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -167,6 +173,14 @@ namespace LibraryMaragementClient.UserServiceReference {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.User>> getLibrariansAsync() {
             return base.Channel.getLibrariansAsync();
+        }
+        
+        public DatabaseAccess.DataTransferObjects.User CheckLogin(string username, string password) {
+            return base.Channel.CheckLogin(username, password);
+        }
+        
+        public System.Threading.Tasks.Task<DatabaseAccess.DataTransferObjects.User> CheckLoginAsync(string username, string password) {
+            return base.Channel.CheckLoginAsync(username, password);
         }
     }
 }

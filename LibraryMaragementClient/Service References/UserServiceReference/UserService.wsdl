@@ -62,6 +62,12 @@
   <wsdl:message name="IUserService_getLibrarians_OutputMessage">
     <wsdl:part name="parameters" element="tns:getLibrariansResponse" />
   </wsdl:message>
+  <wsdl:message name="IUserService_CheckLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckLogin" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_CheckLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckLoginResponse" />
+  </wsdl:message>
   <wsdl:portType name="IUserService">
     <wsdl:operation name="Add">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserService/Add" message="tns:IUserService_Add_InputMessage" />
@@ -98,6 +104,10 @@
     <wsdl:operation name="getLibrarians">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserService/getLibrarians" message="tns:IUserService_getLibrarians_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUserService/getLibrariansResponse" message="tns:IUserService_getLibrarians_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/CheckLogin" message="tns:IUserService_CheckLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/CheckLoginResponse" message="tns:IUserService_CheckLogin_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IUserService" type="tns:IUserService">
@@ -176,6 +186,15 @@
     </wsdl:operation>
     <wsdl:operation name="getLibrarians">
       <soap:operation soapAction="http://tempuri.org/IUserService/getLibrarians" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckLogin">
+      <soap:operation soapAction="http://tempuri.org/IUserService/CheckLogin" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

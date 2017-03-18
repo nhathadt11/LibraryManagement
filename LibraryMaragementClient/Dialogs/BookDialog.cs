@@ -153,6 +153,18 @@ namespace LibraryMaragementClient.Dialogs
             return _book;
         }
 
-
+        private void btnBookCoverImage_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fdlg = new OpenFileDialog();
+            fdlg.Title = "Open File Dialog";
+            fdlg.InitialDirectory = @"d:\";
+            fdlg.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif";
+            fdlg.FilterIndex = 2;
+            fdlg.RestoreDirectory = true;
+            if (fdlg.ShowDialog() == DialogResult.OK)
+            {
+                txtBookImageUrl.Text = fdlg.FileName;
+            }
+        }
     }
 }

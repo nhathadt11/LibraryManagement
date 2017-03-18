@@ -74,5 +74,10 @@ namespace Service
                 RoleId = Convert.ToInt32(r["RoleId"])
             }).ToList();
         }
+        public User CheckLogin(string username, string password)
+        {
+            DataTable data = _userDAO.CheckLogin(username, password);
+            return data.Rows.Count != 0 ? new User { FullName = data.Rows[0].Field<string>("FullName") } : null;
+        }
     }
 }

@@ -41,6 +41,8 @@
             this.tsbtPublisher = new System.Windows.Forms.ToolStripButton();
             this.tsbtLoan = new System.Windows.Forms.ToolStripButton();
             this.tsbtMember = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbLogout = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,11 +61,12 @@
             this.tsbtCopy,
             this.tsbtPublisher,
             this.tsbtLoan,
-            this.tsbtMember});
+            this.tsbtMember,
+            this.toolStripSeparator2,
+            this.tsbLogout});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
-            this.toolStrip1.Size = new System.Drawing.Size(1498, 80);
+            this.toolStrip1.Size = new System.Drawing.Size(908, 52);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -100,7 +103,7 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 80);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 52);
             // 
             // tsbtBook
             // 
@@ -172,17 +175,32 @@
             this.tsbtMember.Text = "Member";
             this.tsbtMember.Click += new System.EventHandler(this.tsbtMember_Click);
             // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 6);
+            // 
+            // tsbLogout
+            // 
+            this.tsbLogout.AutoSize = false;
+            this.tsbLogout.Image = ((System.Drawing.Image)(resources.GetObject("tsbLogout.Image")));
+            this.tsbLogout.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbLogout.Name = "tsbLogout";
+            this.tsbLogout.Size = new System.Drawing.Size(73, 28);
+            this.tsbLogout.Text = "Logout";
+            this.tsbLogout.Click += new System.EventHandler(this.tsbLogout_Click);
+            // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1498, 782);
+            this.ClientSize = new System.Drawing.Size(908, 482);
             this.Controls.Add(this.toolStrip1);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormMain";
             this.Text = "Library Management Client";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMain_FormClosed);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -203,6 +221,8 @@
         private System.Windows.Forms.ToolStripButton tsbtEdit;
         private System.Windows.Forms.ToolStripButton tsbtDelete;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton tsbLogout;
     }
 }
 

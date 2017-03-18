@@ -258,6 +258,7 @@
             this.btnBookCoverImage.TabIndex = 21;
             this.btnBookCoverImage.Text = "Browse";
             this.btnBookCoverImage.UseVisualStyleBackColor = true;
+            this.btnBookCoverImage.Click += new System.EventHandler(this.btnBookCoverImage_Click);
             // 
             // label11
             // 

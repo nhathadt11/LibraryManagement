@@ -30,5 +30,7 @@ namespace Service
         List<User> getUsers();
         [OperationContract]
         List<User> getLibrarians();
+        [OperationContract]
+        User CheckLogin(string username, string password);
     }
 }

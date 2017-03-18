@@ -7,9 +7,15 @@ namespace LibraryMaragementClient
 {
     public partial class FormMain : Form
     {
+        private Form _parent;
         public FormMain()
         {
             InitializeComponent();
+        }
+        public FormMain(Form parent,User user) : this()
+        {
+            _parent = parent;
+            this.Text = "Library Management System - Welcome, " + user.FullName;
         }
 
         private void tsbtBook_Click(object sender, EventArgs e)
@@ -135,9 +141,13 @@ namespace LibraryMaragementClient
                 dlgDetails = action == ActionType.Add
                            ? new UserDialog()
                            : new UserDialog(frmMaintain.GetCurrentSelectedDataRow());
-            }else
+            }
+            else
             {
-                MessageBox.Show("Please Choose a form!!", "Alert", MessageBoxButtons.OK);
+                MessageBox.Show("Please Choose a form!",
+                                "Alert",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
                 return;
             }
             AddUpdateOrDelete(frmMaintain, dlgDetails, action);
@@ -182,7 +192,23 @@ namespace LibraryMaragementClient
             }
         }
 
+        private void tsbLogout_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure to logout?", 
+                                                  "Confirm Dialog",
+                                                  MessageBoxButtons.OKCancel,
+                                                  MessageBoxIcon.Question);
+            if (result == DialogResult.OK)
+            {
+                _parent.Show();
+                this.Dispose();
+            }
+        }
 
+        private void FormMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Environment.Exit(Environment.ExitCode);
+        }
     }
 
     enum ActionType {
