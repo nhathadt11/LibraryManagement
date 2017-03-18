@@ -3,17 +3,19 @@ using System.Data;
 using System.Windows.Forms;
 using DatabaseAccess.DataTransferObjects;
 using Service;
+using System.Collections.Generic;
+
 namespace LibraryMaragementClient
 {
     public partial class FormAuthor : Form, IMaintainDataTable<DataTranseferObject>
     {
         private static FormAuthor _instance;
-        private AuthorService _authorService;
+        private AuthorServiceReference.AuthorServiceClient _authorService;
         private DataTable _data;
         private FormAuthor()
         {
             InitializeComponent();
-            _authorService = new AuthorService();
+            _authorService = new AuthorServiceReference.AuthorServiceClient();
         }
         public static FormAuthor Instance
         {
@@ -29,7 +31,18 @@ namespace LibraryMaragementClient
 
         private void FormAuthor_Load(object sender, EventArgs e)
         {
-            _data = _authorService.GetAll();
+            List<Author> list = (List<Author>)_authorService.getAuthors();
+            _data = new DataTable();
+            _data.Columns.Add("AuthorId");
+            _data.Columns.Add("FullName");
+            _data.Columns.Add("Contact");
+            _data.Columns.Add("Address");
+            _data.Columns.Add("Bio");
+            foreach (var item in list)
+            {
+                _data.Rows.Add(item.AuthorId, item.FullName, item.Contact, item.Address, item.Bio);
+            }
+            //_data = _authorService.GetAll();
             _data.PrimaryKey = new DataColumn[] { _data.Columns["AuthorId"] };
             dgvAuthors.DataSource = _data;
         }

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5f6afb2a-c5d0-4fa0-8074-e4447bb9454c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8888/AuthorService" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AuthorService.xsd" MetadataType="Schema" ID="65c98c74-80c2-43c4-83f2-c4f11a96c3b0" SourceId="1" SourceUrl="http://localhost:8888/AuthorService?xsd=xsd1" />
+    <MetadataFile FileName="AuthorService1.xsd" MetadataType="Schema" ID="34db6545-491c-43e2-bf06-fc33aa154d62" SourceId="1" SourceUrl="http://localhost:8888/AuthorService?xsd=xsd3" />
+    <MetadataFile FileName="AuthorService2.xsd" MetadataType="Schema" ID="ec7f5dc9-7700-495f-92cd-cc17bc020407" SourceId="1" SourceUrl="http://localhost:8888/AuthorService?xsd=xsd0" />
+    <MetadataFile FileName="AuthorService3.xsd" MetadataType="Schema" ID="56425c09-1336-40c4-a5d8-c569c66dcec2" SourceId="1" SourceUrl="http://localhost:8888/AuthorService?xsd=xsd2" />
+    <MetadataFile FileName="AuthorService.wsdl" MetadataType="Wsdl" ID="b80e7951-1ce4-49c2-8bc0-3bfbd8c9e3f5" SourceId="1" SourceUrl="http://localhost:8888/AuthorService?wsdl" />
+    <MetadataFile FileName="AuthorService.disco" MetadataType="Disco" ID="473e3c0b-fbb0-49bc-86bc-8d4a55e76e13" SourceId="1" SourceUrl="http://localhost:8888/AuthorService?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

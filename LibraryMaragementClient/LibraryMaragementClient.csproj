@@ -142,6 +142,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\AuthorServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Dialogs\AuthorDialog.resx">
       <DependentUpon>AuthorDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -196,6 +201,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\DatabaseAccess.DataTransferObjects.Author.datasource" />
     <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -206,6 +212,19 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Service References\AuthorServiceReference\AuthorService.wsdl" />
+    <None Include="Service References\AuthorServiceReference\AuthorService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AuthorServiceReference\AuthorService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AuthorServiceReference\AuthorService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AuthorServiceReference\AuthorService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -219,6 +238,27 @@
       <Project>{e7ff4113-68da-49c2-ae61-cd711d454e5a}</Project>
       <Name>Service</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\AuthorServiceReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AuthorServiceReference\AuthorService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AuthorServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AuthorServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AuthorServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
