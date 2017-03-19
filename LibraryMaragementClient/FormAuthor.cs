@@ -31,7 +31,7 @@ namespace LibraryMaragementClient
 
         private void FormAuthor_Load(object sender, EventArgs e)
         {
-            List<Author> list = (List<Author>)_authorService.getAuthors();
+            List<Author> list = (List<Author>)_authorService.GetAuthors();
             _data = new DataTable();
             _data.Columns.Add("AuthorId");
             _data.Columns.Add("FullName");

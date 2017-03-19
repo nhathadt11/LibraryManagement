@@ -42,7 +42,7 @@ namespace LibraryMaragementClient
             _data.Columns.Add("Email");
             _data.Columns.Add("RoleId");
 
-            foreach (var item in _service.getUsers())
+            foreach (var item in _service.GetUsers())
             {
                 _data.Rows.Add(item.UserId,item.Username,item.Password, item.FullName, item.PhoneNumber, item.Address, item.Email, item.RoleId);
             }

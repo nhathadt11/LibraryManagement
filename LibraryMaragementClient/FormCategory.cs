@@ -31,7 +31,7 @@ namespace LibraryMaragementClient
 
         private void FormCategory_Load(object sender, EventArgs e)
         {
-            List<Category> list = _categoryService.getCategories();
+            List<Category> list = _categoryService.GetCategories();
             //_data = _categoryService.GetAll();
             _data = new DataTable();
             _data.Columns.Add("CategoryId");

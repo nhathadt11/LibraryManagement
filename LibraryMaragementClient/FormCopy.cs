@@ -34,7 +34,7 @@ namespace LibraryMaragementClient
             _data.Columns.Add("CopyId");
             _data.Columns.Add("BookId");
             _data.Columns.Add("IsAvailable");
-            foreach (var item in _copyService.getCopies())
+            foreach (var item in _copyService.GetCopies())
             {
                 _data.Rows.Add(item.CopyId, item.BookId, item.IsAvailable);
             }

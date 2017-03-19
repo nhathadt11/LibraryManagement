@@ -30,7 +30,7 @@ namespace LibraryMaragementClient
 
         private void FormBook_Load(object sender, EventArgs e)
         {
-            List<Book> list = _bookService.getBooks();
+            List<Book> list = _bookService.GetBooks();
 
             //_data = _bookService.GetAll();
             _data = new DataTable();
