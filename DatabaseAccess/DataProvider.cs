@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace DatabaseAccess
     public class DataProvider
     {
         private readonly string CONNECTION_STRING
-            = System.Configuration.ConfigurationManager.ConnectionStrings["LibraryManagementConnectionString"].ConnectionString;
+            = ConfigurationManager.ConnectionStrings["LibraryManagementConnectionString"].ConnectionString;
         private static DataProvider _instance;
         public string ConnectionString
         {
