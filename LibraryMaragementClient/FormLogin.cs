@@ -13,7 +13,25 @@ namespace LibraryMaragementClient
 {
     public partial class FormLogin : Form
     {
-        public FormLogin()
+        private User _currentUser;
+        public User CurrentUser
+        {
+            get { return _currentUser; }
+            set { _currentUser = value; }
+        }
+        private static FormLogin _instance;
+        public static FormLogin Instance
+        {
+            get
+            {
+                if (_instance == null || _instance.IsDisposed)
+                {
+                    _instance = new FormLogin();
+                }
+                return _instance;
+            }
+        }
+        private FormLogin()
         {
             InitializeComponent();
         }
@@ -30,6 +48,7 @@ namespace LibraryMaragementClient
                         User user = client.CheckLogin(txtUsername.Text, txtPassword.Text);
                         if (user != null)
                         {
+                            CurrentUser = user;
                             new FormMain(this, user).Show();
                             this.Hide();
                         }

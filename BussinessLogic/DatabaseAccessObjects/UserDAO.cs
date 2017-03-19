@@ -9,9 +9,9 @@ namespace DatabaseAccess.DatabaseAccessObjects
         private readonly string SQL_USER_SELECT = "SELECT * FROM Users";
         private readonly string SQL_USER_SELECT_SINGLE = "SELECT * FROM Users WHERE UserId = @UserId";
         private readonly string SQL_USER_SELECT_LOGIN = @"SELECT * FROM Users WHERE Username = @Username AND Password = @Password
-                                                        AND RoleId IN (SELECT RoleId FROM Roles WHERE Name = 'librarian')";
+                                                        AND RoleId IN (SELECT RoleId FROM Roles WHERE Name = 'Librarian')";
         private readonly string SQL_USER_HAS_EXISTED = "HasExisted";
-        private readonly string SQL_LIBRARIAN_SELECT_ALL = "SELECT * FROM Users WHERE RoleId IN (SELECT RoleId FROM Roles WHERE Name = 'librarian')";
+        private readonly string SQL_LIBRARIAN_SELECT_ALL = "SELECT * FROM Users WHERE RoleId IN (SELECT RoleId FROM Roles WHERE Name = 'Librarian')";
 
         //required @Username nvarchar(300),
         //required @Password nvarchar(60),

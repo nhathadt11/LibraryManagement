@@ -53,7 +53,10 @@ namespace LibraryMaragementClient
             cbxLibrarian.DataSource = _userService.GetLibrarians();
             cbxLibrarian.DisplayMember = "FullName";
             cbxLibrarian.ValueMember = "UserId";
-            
+            if (_action == ActionType.Add)
+            {
+                cbxLibrarian.SelectedValue = FormLogin.Instance.CurrentUser.UserId;
+            }
         }
         private void btnLoanOk_Click(object sender, EventArgs e)
         {
@@ -134,7 +137,7 @@ namespace LibraryMaragementClient
             {
                 epvLoanMemberId.Clear();
             }
-            if (dtpLoanIssueDate.Value.CompareTo(DateTime.Today) > 0)
+            if (dtpLoanIssueDate.Value.DayOfYear.CompareTo(DateTime.Now.DayOfYear) > 0) // comparison need of update
             {
                 epvLoanIssueDate.SetError(dtpLoanIssueDate, "Issue date cannot be later than today!");
                 valid = false;
@@ -187,8 +190,7 @@ namespace LibraryMaragementClient
             List<LoanDetail> loanDetails = new List<LoanDetail>();
             loanDetails.AddRange(_loanDetailService
                                  .GetLoanDetailsByLoanId(Convert.ToInt32(txtLoanId.Text)));
-            int i;
-            for (i = 0; i < loanDetails.Count; i++)
+            for (int i = 0; i < loanDetails.Count; i++)
             {
                 _textBoxes[i].Text = Convert.ToString(loanDetails[i].CopyId);
             }

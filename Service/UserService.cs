@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace Service
 {
-    public class UserService : ICommonService<User>,IUserService
+    public class UserService : ICommonService<User>, IUserService
     {
         private UserDAO _userDAO;
         public UserService()
@@ -80,7 +80,10 @@ namespace Service
         public User CheckLogin(string username, string password)
         {
             DataTable data = _userDAO.CheckLogin(username, password);
-            return data.Rows.Count != 0 ? new User { FullName = data.Rows[0].Field<string>("FullName") } : null;
+            return data.Rows.Count != 0 ? new User
+                        { UserId = data.Rows[0].Field<int>("UserId"),
+                          FullName = data.Rows[0].Field<string>("FullName")
+                        } : null;
         }
     }
 }

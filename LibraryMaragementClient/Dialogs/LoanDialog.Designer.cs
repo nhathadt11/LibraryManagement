@@ -163,6 +163,7 @@
             // cbxLibrarian
             // 
             this.cbxLibrarian.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxLibrarian.Enabled = false;
             this.cbxLibrarian.FormattingEnabled = true;
             this.cbxLibrarian.Location = new System.Drawing.Point(73, 128);
             this.cbxLibrarian.Name = "cbxLibrarian";
