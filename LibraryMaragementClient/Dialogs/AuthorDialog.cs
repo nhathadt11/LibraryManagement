@@ -1,5 +1,4 @@
 ﻿using DatabaseAccess.DataTransferObjects;
-using Service;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -8,13 +7,13 @@ namespace LibraryMaragementClient.Dialogs
 {
     public partial class AuthorDialog : Form, IDetailsDialog<DataTranseferObject>
     {
-        private AuthorService _authorService;
+        private AuthorServiceReference.IAuthorService _authorService;
         private ActionType _action;
         private Author _author;
         public AuthorDialog()
         {
             InitializeComponent();
-            _authorService = new AuthorService();
+            _authorService = new AuthorServiceReference.AuthorServiceClient();
             _action = ActionType.Add;
         }
         public AuthorDialog(DataRow row) : this()

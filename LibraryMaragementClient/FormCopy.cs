@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using Service;
 using DatabaseAccess.DataTransferObjects;
 using System.Data;
+using System.Collections.Generic;
 
 namespace LibraryMaragementClient
 {
@@ -34,9 +35,13 @@ namespace LibraryMaragementClient
             _data.Columns.Add("CopyId");
             _data.Columns.Add("BookId");
             _data.Columns.Add("IsAvailable");
-            foreach (var item in _copyService.GetCopies())
+
+            List<Copy> copies = _copyService.GetCopies();
+            foreach (var copy in copies)
             {
-                _data.Rows.Add(item.CopyId, item.BookId, item.IsAvailable);
+                _data.Rows.Add(copy.CopyId,
+                               copy.BookId,
+                               copy.IsAvailable);
             }
             _data.PrimaryKey = new DataColumn[] { _data.Columns["CopyId"] };
             dgvBookCopies.DataSource = _data;
@@ -51,7 +56,6 @@ namespace LibraryMaragementClient
         public void AddToDataTable(DataTranseferObject obj)
         {
             Copy copy = obj as Copy;
-            _data.RejectChanges();
             _data.Rows.Add(copy.CopyId,
                            copy.BookId,
                            copy.IsAvailable);

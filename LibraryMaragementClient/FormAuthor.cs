@@ -10,7 +10,7 @@ namespace LibraryMaragementClient
     public partial class FormAuthor : Form, IMaintainDataTable<DataTranseferObject>
     {
         private static FormAuthor _instance;
-        private AuthorServiceReference.AuthorServiceClient _authorService;
+        private AuthorServiceReference.IAuthorService _authorService;
         private DataTable _data;
         private FormAuthor()
         {
@@ -31,18 +31,24 @@ namespace LibraryMaragementClient
 
         private void FormAuthor_Load(object sender, EventArgs e)
         {
-            List<Author> list = (List<Author>)_authorService.GetAuthors();
+            //_data = _authorService.GetAll();
             _data = new DataTable();
             _data.Columns.Add("AuthorId");
             _data.Columns.Add("FullName");
             _data.Columns.Add("Contact");
             _data.Columns.Add("Address");
             _data.Columns.Add("Bio");
-            foreach (var item in list)
+
+            List<Author> athors = _authorService.GetAuthors();
+            foreach (var author in athors)
             {
-                _data.Rows.Add(item.AuthorId, item.FullName, item.Contact, item.Address, item.Bio);
+                _data.Rows.Add(author.AuthorId,
+                               author.FullName,
+                               author.Contact,
+                               author.Address,
+                               author.Bio);
             }
-            //_data = _authorService.GetAll();
+
             _data.PrimaryKey = new DataColumn[] { _data.Columns["AuthorId"] };
             dgvAuthors.DataSource = _data;
         }
@@ -77,8 +83,10 @@ namespace LibraryMaragementClient
         {
             Author author = obj as Author;
             _data.RejectChanges();
-            _data.Rows.Add(author.AuthorId, author.FullName,
-                           author.Contact, author.Address,
+            _data.Rows.Add(author.AuthorId,
+                           author.FullName,
+                           author.Contact,
+                           author.Address,
                            author.Bio);
             _data.AcceptChanges();
         }

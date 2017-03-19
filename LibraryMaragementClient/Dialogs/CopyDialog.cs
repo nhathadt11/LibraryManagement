@@ -8,15 +8,15 @@ namespace LibraryMaragementClient.Dialogs
 {
     public partial class CopyDialog : Form, IDetailsDialog<DataTranseferObject>
     {
-        private BookCopyService _copyService;
-        private BookService _bookService;
+        private BookCopyServiceReference.IBookCopyService _copyService;
+        private BookServiceReference.IBookService _bookService;
         private Copy _copy;
         private ActionType _action;
         public CopyDialog()
         {
             InitializeComponent();
-            _copyService = new BookCopyService();
-            _bookService = new BookService();
+            _copyService = new BookCopyServiceReference.BookCopyServiceClient();
+            _bookService = new BookServiceReference.BookServiceClient();
             _action = ActionType.Add;
         }
         public CopyDialog(DataRow row ) : this()
@@ -33,7 +33,7 @@ namespace LibraryMaragementClient.Dialogs
 
         private void CopyDialog_Load(object sender, EventArgs e)
         {
-            cbxBookTitle.DataSource = _bookService.GetAll();
+            cbxBookTitle.DataSource = _bookService.GetBooks();
             cbxBookTitle.ValueMember = "BookId";
             cbxBookTitle.DisplayMember = "Title";
         }

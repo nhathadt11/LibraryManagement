@@ -11,21 +11,20 @@ namespace LibraryMaragementClient
 {
     public partial class LoanDialog : Form, IDetailsDialog<DataTranseferObject>
     {
-        private LoanService _loanService;
-        private LoanDetailService _loanDetailService;
-        private UserService _userService;
-        private BookCopyService _copyService;
+        private LoanServiceReference.ILoanService _loanService;
+        private LoanDetailServiceReference.ILoanDetailService _loanDetailService;
+        private UserServiceReference.IUserService _userService;
+        private BookCopyServiceReference.IBookCopyService _copyService;
         private Loan _loan;
         private List<TextBox> _textBoxes;
-        private DataTable _librarianData;
         private ActionType _action;
         public LoanDialog()
         {
             InitializeComponent();
-            _loanService = new LoanService();
-            _loanDetailService = new LoanDetailService();
-            _userService = new UserService();
-            _copyService = new BookCopyService();
+            _loanService = new LoanServiceReference.LoanServiceClient();
+            _loanDetailService = new LoanDetailServiceReference.LoanDetailServiceClient();
+            _userService = new UserServiceReference.UserServiceClient();
+            _copyService = new BookCopyServiceReference.BookCopyServiceClient();
             _textBoxes = new List<TextBox>();
             _textBoxes.AddRange(new TextBox[] { txtLoanCopyId1,
                                                 txtLoanCopyId2,
@@ -51,8 +50,7 @@ namespace LibraryMaragementClient
         }
         private void LoanDialog_Load(object sender, EventArgs e)
         {
-            _librarianData = _userService.GetAllLibrarians();
-            cbxLibrarian.DataSource = _librarianData;
+            cbxLibrarian.DataSource = _userService.GetLibrarians();
             cbxLibrarian.DisplayMember = "FullName";
             cbxLibrarian.ValueMember = "UserId";
             
@@ -75,7 +73,7 @@ namespace LibraryMaragementClient
 
                 if (_action == ActionType.Add)// insert
                 {
-                    _loan.LoanId = _loanService.Add(_loan, ToLoanDetailList());
+                    _loan.LoanId = _loanService.Add(_loan, ToLoanDetailList().ToArray());
                     if (_loan.LoanId > 0) // success
                     {
                         MessageBox.Show("Successfully added loan with ID: " + _loan.LoanId + "!",
@@ -186,7 +184,9 @@ namespace LibraryMaragementClient
         }
         private void CopyIdToTextBox()
         {
-            List<LoanDetail> loanDetails = _loanDetailService.GetLoanDetailsByLoanId(Convert.ToInt32(txtLoanId.Text));
+            List<LoanDetail> loanDetails = new List<LoanDetail>();
+            loanDetails.AddRange(_loanDetailService
+                                 .GetLoanDetailsByLoanId(Convert.ToInt32(txtLoanId.Text)));
             int i;
             for (i = 0; i < loanDetails.Count; i++)
             {
@@ -203,29 +203,13 @@ namespace LibraryMaragementClient
             txtLoanMemberId.AutoCompleteMode = AutoCompleteMode.Suggest;
             txtLoanMemberId.AutoCompleteSource = AutoCompleteSource.CustomSource;
             AutoCompleteStringCollection col = new AutoCompleteStringCollection();
-            DataTable table = _userService.GetAll();
-            foreach (DataRow row in table.Rows)
+            List<User> users = _userService.GetUsers();
+            foreach (User user in users)
             {
-                col.Add(row["UserId"].ToString());
+                col.Add(user.UserId.ToString());
             }
             txtLoanMemberId.AutoCompleteCustomSource = col;
         }
-        private void suggest(TextBox t)
-        {
-            //t.AutoCompleteMode = AutoCompleteMode.Suggest;
-            //t.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            //AutoCompleteStringCollection col = new AutoCompleteStringCollection();
-            //DataTable table = _copyService.GetAll();
-            //foreach (DataRow row in table.Rows)
-            //{
-            //    col.Add(row["CopyId"].ToString());
-            //}
-            //t.AutoCompleteCustomSource = col;
-        }
-        private void txtLoanCopyId5_Enter(object sender, EventArgs e)
-        {
-            //TextBox t = (TextBox)sender;
-            //suggest(t);
-        }
+        
     }
 }

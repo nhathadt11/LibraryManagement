@@ -9,14 +9,14 @@ namespace LibraryMaragementClient.Dialogs
 
     public partial class CategoryDialog : Form, IDetailsDialog<DataTranseferObject>
     {
-        private CategoryService _categoryService;
+        private CategoryServiceReference.ICategoryService _categoryService;
         private Category _category;
         private ActionType _action;
 
         public CategoryDialog()
         {
             InitializeComponent();
-            _categoryService = new CategoryService();
+            _categoryService = new CategoryServiceReference.CategoryServiceClient();
             _action = ActionType.Add;
         }
         public CategoryDialog(DataRow row) : this()

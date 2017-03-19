@@ -3,6 +3,7 @@ using Service;
 using System;
 using System.Windows.Forms;
 using System.Data;
+using System.Collections.Generic;
 
 namespace LibraryMaragementClient
 {
@@ -37,10 +38,17 @@ namespace LibraryMaragementClient
             _data.Columns.Add("Contact");
             _data.Columns.Add("Address");
             _data.Columns.Add("Description");
-            foreach (var item in _publisherService.GetPublishers())
+
+            List<Publisher> publishers = _publisherService.GetPublishers();
+            foreach (var publisher in publishers)
             {
-                _data.Rows.Add(item.PublisherId,item.Name,item.Contact,item.Address,item.Description);
+                _data.Rows.Add(publisher.PublisherId,
+                               publisher.Name,
+                               publisher.Contact,
+                               publisher.Address,
+                               publisher.Description);
             }
+
             _data.PrimaryKey = new DataColumn[] { _data.Columns["PublisherId"] };
             dgvPublishers.DataSource = _data;
         }
@@ -54,7 +62,6 @@ namespace LibraryMaragementClient
         public void AddToDataTable(DataTranseferObject obj)
         {
             Publisher publisher = obj as Publisher;
-            _data.RejectChanges();
             _data.Rows.Add(publisher.PublisherId,
                            publisher.Name,
                            publisher.Contact,

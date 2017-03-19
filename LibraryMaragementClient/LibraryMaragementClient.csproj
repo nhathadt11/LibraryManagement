@@ -168,12 +168,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\LoanDetailServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\LoanServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Service References\PublisherServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\RoleServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -245,7 +255,9 @@
     <None Include="Properties\DataSources\DatabaseAccess.DataTransferObjects.Category.datasource" />
     <None Include="Properties\DataSources\DatabaseAccess.DataTransferObjects.Copy.datasource" />
     <None Include="Properties\DataSources\DatabaseAccess.DataTransferObjects.Loan.datasource" />
+    <None Include="Properties\DataSources\DatabaseAccess.DataTransferObjects.LoanDetail.datasource" />
     <None Include="Properties\DataSources\DatabaseAccess.DataTransferObjects.Publisher.datasource" />
+    <None Include="Properties\DataSources\DatabaseAccess.DataTransferObjects.Role.datasource" />
     <None Include="Properties\DataSources\DatabaseAccess.DataTransferObjects.User.datasource" />
     <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
     <None Include="Properties\Settings.settings">
@@ -309,6 +321,19 @@
     <None Include="Service References\CategoryServiceReference\CategoryService3.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\LoanDetailServiceReference\LoanDetailService.wsdl" />
+    <None Include="Service References\LoanDetailServiceReference\LoanDetailService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LoanDetailServiceReference\LoanDetailService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LoanDetailServiceReference\LoanDetailService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LoanDetailServiceReference\LoanDetailService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\LoanServiceReference\LoanService.wsdl" />
     <None Include="Service References\LoanServiceReference\LoanService.xsd">
       <SubType>Designer</SubType>
@@ -335,6 +360,19 @@
     <None Include="Service References\PublisherServiceReference\PublisherService3.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\RoleServiceReference\RoleService.wsdl" />
+    <None Include="Service References\RoleServiceReference\RoleService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RoleServiceReference\RoleService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RoleServiceReference\RoleService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RoleServiceReference\RoleService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\UserServiceReference\UserService.wsdl" />
     <None Include="Service References\UserServiceReference\UserService.xsd">
       <SubType>Designer</SubType>
@@ -354,7 +392,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BussinessLogic\DatabaseAccess.csproj">
-      <Project>{71F01686-B9B3-4D8F-BA72-6EEB1960C891}</Project>
+      <Project>{71f01686-b9b3-4d8f-ba72-6eeb1960c891}</Project>
       <Name>DatabaseAccess</Name>
     </ProjectReference>
     <ProjectReference Include="..\Service\Service.csproj">
@@ -370,8 +408,10 @@
     <WCFMetadataStorage Include="Service References\BookCopyServiceReference\" />
     <WCFMetadataStorage Include="Service References\BookServiceReference\" />
     <WCFMetadataStorage Include="Service References\CategoryServiceReference\" />
+    <WCFMetadataStorage Include="Service References\LoanDetailServiceReference\" />
     <WCFMetadataStorage Include="Service References\LoanServiceReference\" />
     <WCFMetadataStorage Include="Service References\PublisherServiceReference\" />
+    <WCFMetadataStorage Include="Service References\RoleServiceReference\" />
     <WCFMetadataStorage Include="Service References\UserServiceReference\" />
   </ItemGroup>
   <ItemGroup>
@@ -475,6 +515,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\LoanServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LoanDetailServiceReference\LoanDetailService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LoanDetailServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LoanDetailServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LoanDetailServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RoleServiceReference\RoleService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RoleServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RoleServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RoleServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

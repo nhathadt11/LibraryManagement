@@ -101,15 +101,14 @@ namespace DatabaseAccess.DatabaseAccessObjects
         public int HasExisted(string Username)
         {
             return _dataProvider.ExecuteQuery(SQL_USER_HAS_EXISTED,
-                                                 CommandType.StoredProcedure,
-                                                 new SqlParameter[1] {new SqlParameter("@Username",Username) })
-                                                 .Rows.Count;
+                                              CommandType.StoredProcedure,
+                                              new SqlParameter("@Username",Username)).Rows.Count;
         }
         public int CheckUserById(int userId)
         {
             return _dataProvider.ExecuteQuery(SQL_USER_SELECT_SINGLE,
-                                                 CommandType.Text,
-                                                 new SqlParameter("@UserId", userId)).Rows.Count;
+                                              CommandType.Text,
+                                              new SqlParameter("@UserId", userId)).Rows.Count;
         }
         public DataTable GetAllLibrarians()
         {

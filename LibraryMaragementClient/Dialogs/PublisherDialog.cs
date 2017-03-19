@@ -8,13 +8,13 @@ namespace LibraryMaragementClient.Dialogs
 {
     public partial class PublisherDialog : Form, IDetailsDialog<DataTranseferObject>
     {
-        private PublisherService _publisherService;
+        private PublisherServiceReference.IPublisherService _publisherService;
         private Publisher _publisher;
         private ActionType _action;
         public PublisherDialog()
         {
             InitializeComponent();
-            _publisherService = new PublisherService();
+            _publisherService = new PublisherServiceReference.PublisherServiceClient();
             _action = ActionType.Add;
         }
         public PublisherDialog(DataRow row) : this()

@@ -31,15 +31,16 @@ namespace LibraryMaragementClient
 
         private void FormCategory_Load(object sender, EventArgs e)
         {
-            List<Category> list = _categoryService.GetCategories();
             //_data = _categoryService.GetAll();
             _data = new DataTable();
             _data.Columns.Add("CategoryId");
             _data.Columns.Add("Name");
 
-            foreach (var item in list)
+            List<Category> categories = _categoryService.GetCategories();
+            foreach (var category in categories)
             {
-                _data.Rows.Add(item.CategoryId, item.Name);
+                _data.Rows.Add(category.CategoryId,
+                               category.Name);
             }
 
             _data.PrimaryKey = new DataColumn[] { _data.Columns["CategoryId"] };
@@ -75,7 +76,6 @@ namespace LibraryMaragementClient
         public void AddToDataTable(DataTranseferObject obj)
         {
             Category category = obj as Category;
-            _data.RejectChanges();
             _data.Rows.Add(category.CategoryId,
                            category.Name);
             _data.AcceptChanges();

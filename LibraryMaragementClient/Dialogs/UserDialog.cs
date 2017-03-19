@@ -9,15 +9,15 @@ namespace LibraryMaragementClient.Dialogs
 {
     public partial class UserDialog : Form, IDetailsDialog<DataTranseferObject>
     {
-        private RoleService _roleService;
-        private UserService _userService;
+        private RoleServiceReference.IRoleService _roleService;
+        private UserServiceReference.IUserService _userService;
         private ActionType _action;
         private User _user;
         public UserDialog()
         {
             InitializeComponent();
-            _roleService = new RoleService();
-            _userService = new UserService();
+            _roleService = new RoleServiceReference.RoleServiceClient();
+            _userService = new UserServiceReference.UserServiceClient();
             _action = ActionType.Add;
 
         }
@@ -25,6 +25,7 @@ namespace LibraryMaragementClient.Dialogs
         {
             txtId.Text = Convert.ToString(row["UserId"]);
             txtUsername.Text = Convert.ToString(row["Username"]);
+            txtUsername.ReadOnly = true;
             txtPassword.Text = Convert.ToString(row["Password"]);
             txtPhoneNumber.Text = Convert.ToString(row["PhoneNumber"]);
             txtAddress.Text = Convert.ToString(row["Address"]);
@@ -44,7 +45,6 @@ namespace LibraryMaragementClient.Dialogs
             if (!IsValid(_action))
             {
                 this.DialogResult = DialogResult.None;
-
             }
             else
             {
@@ -60,6 +60,15 @@ namespace LibraryMaragementClient.Dialogs
                 };
                 if (_action == ActionType.Add)
                 {
+                    if (_userService.HasExisted(_user.Username) != 0)
+                    {
+                        MessageBox.Show(_user.Username + " already exists!",
+                                        "Error",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Error);
+                        this.DialogResult = DialogResult.None;
+                        return;
+                    }
                     _user.UserId = _userService.Add(_user);
                     if (_user.UserId > 0) // success
                     {
@@ -170,7 +179,7 @@ namespace LibraryMaragementClient.Dialogs
 
         private void UserDialog_Load(object sender, EventArgs e)
         {
-            cbxRole.DataSource = _roleService.GetAll();
+            cbxRole.DataSource = _roleService.GetRoles();
             cbxRole.ValueMember = "RoleId";
             cbxRole.DisplayMember = "Name";
         }

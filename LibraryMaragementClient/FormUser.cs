@@ -3,6 +3,7 @@ using Service;
 using System;
 using System.Windows.Forms;
 using System.Data;
+using System.Collections.Generic;
 
 namespace LibraryMaragementClient
 {
@@ -42,14 +43,21 @@ namespace LibraryMaragementClient
             _data.Columns.Add("Email");
             _data.Columns.Add("RoleId");
 
-            foreach (var item in _service.GetUsers())
+            List<User> users = _service.GetUsers();
+            foreach (var user in users)
             {
-                _data.Rows.Add(item.UserId,item.Username,item.Password, item.FullName, item.PhoneNumber, item.Address, item.Email, item.RoleId);
+                _data.Rows.Add(user.UserId,
+                               user.Username,
+                               user.Password,
+                               user.FullName,
+                               user.PhoneNumber,
+                               user.Address,
+                               user.Email,
+                               user.RoleId);
             }
 
             _data.PrimaryKey = new DataColumn[] { _data.Columns["UserId"] };
             dgvUsers.DataSource = _data;
-            dgvUsers.Columns[1].Visible = false;
             dgvUsers.Columns[2].Visible = false;
         }
 
@@ -61,9 +69,15 @@ namespace LibraryMaragementClient
 
         public void AddToDataTable(DataTranseferObject obj)
         {
-            User u = obj as User;
-            _data.RejectChanges();
-            _data.Rows.Add(u.UserId,u.Username,u.Password,u.FullName,u.PhoneNumber,u.Address,u.Email,u.RoleId);
+            User user = obj as User;
+            _data.Rows.Add(user.UserId,
+                           user.Username,
+                           user.Password,
+                           user.FullName,
+                           user.PhoneNumber,
+                           user.Address,
+                           user.Email,
+                           user.RoleId);
             _data.AcceptChanges();
         }
 
@@ -104,8 +118,10 @@ namespace LibraryMaragementClient
 
         private void txtUserFilter_TextChanged(object sender, EventArgs e)
         {
-            _data.DefaultView.RowFilter = (rbtUserId.Checked ? "Convert(UserId,'System.String')" : "FullName")
-                                        + " LIKE '%" + txtUserFilter.Text + "%'";
+            _data.DefaultView.RowFilter = (rbtUserId.Checked
+                                          ? "Convert(UserId,'System.String')"
+                                          : "FullName")
+                                          + " LIKE '%" + txtUserFilter.Text + "%'";
         }
     }
 }

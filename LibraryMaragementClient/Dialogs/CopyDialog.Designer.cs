@@ -52,6 +52,7 @@
             // 
             this.txtCopyId.Location = new System.Drawing.Point(94, 26);
             this.txtCopyId.Name = "txtCopyId";
+            this.txtCopyId.ReadOnly = true;
             this.txtCopyId.Size = new System.Drawing.Size(147, 20);
             this.txtCopyId.TabIndex = 1;
             // 

@@ -68,10 +68,12 @@ namespace Server
                 categoryHost.Description.Behaviors.Add(metadataBehavior);
                 categoryHost.Open();
 
-                //ServiceHost loanDetailHost = new ServiceHost(typeof(Service.LoanDetailService), loanDetailAddress);
-                //loanDetailHost.AddServiceEndpoint(typeof(Service.ILoanDetailService), httpBiding, "");
-                //loanDetailHost.Description.Behaviors.Add(metadataBehavior);
-                //loanDetailHost.Open();
+                ServiceHost loanDetailHost = new ServiceHost(typeof(Service.LoanDetailService), loanDetailAddress);
+                loanDetailHost.AddServiceEndpoint(typeof(Service.ILoanDetailService), httpBiding, "");
+                metadataBehavior = new ServiceMetadataBehavior();
+                metadataBehavior.HttpGetEnabled = true;
+                loanDetailHost.Description.Behaviors.Add(metadataBehavior);
+                loanDetailHost.Open();
 
                 ServiceHost loanHost = new ServiceHost(typeof(Service.LoanService), loanAddress);
                 loanHost.AddServiceEndpoint(typeof(Service.ILoanService), httpBiding, "");

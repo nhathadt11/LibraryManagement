@@ -9,35 +9,35 @@ namespace LibraryMaragementClient.Dialogs
 {
     public partial class BookDialog : Form, IDetailsDialog<DataTranseferObject>
     {
-        private BookService _bookService;
-        private AuthorService _authorService;
-        private PublisherService _publisherService;
-        private CategoryService _categoryService;
+        private BookServiceReference.IBookService _bookService;
+        private AuthorServiceReference.IAuthorService _authorService;
+        private PublisherServiceReference.IPublisherService _publisherService;
+        private CategoryServiceReference.ICategoryService _categoryService;
         private Book _book;
         private ActionType _action;
         public BookDialog()
         {
             InitializeComponent();
-            _bookService = new BookService();
-            _authorService = new AuthorService();
-            _publisherService = new PublisherService();
-            _categoryService = new CategoryService();
+            _bookService = new BookServiceReference.BookServiceClient();
+            _authorService = new AuthorServiceReference.AuthorServiceClient();
+            _publisherService = new PublisherServiceReference.PublisherServiceClient();
+            _categoryService = new CategoryServiceReference.CategoryServiceClient();
             _action = ActionType.Add;
-        }
-        public BookDialog(DataRow row) : this()
-        {
-            cbxBookAuthor.DataSource = _authorService.GetAll();
+
+            cbxBookAuthor.DataSource = _authorService.GetAuthors();
             cbxBookAuthor.ValueMember = "AuthorId";
             cbxBookAuthor.DisplayMember = "FullName";
 
-            cbxBookCategory.DataSource = _categoryService.GetAll();
+            cbxBookCategory.DataSource = _categoryService.GetCategories();
             cbxBookCategory.ValueMember = "CategoryId";
             cbxBookCategory.DisplayMember = "Name";
 
-            cbxBookPublisher.DataSource = _publisherService.GetAll();
+            cbxBookPublisher.DataSource = _publisherService.GetPublishers();
             cbxBookPublisher.ValueMember = "PublisherId";
             cbxBookPublisher.DisplayMember = "Name";
-            
+        }
+        public BookDialog(DataRow row) : this()
+        {   
             txtBookId.Text = Convert.ToString(row["BookId"]);
             txtBookIsbn.Text = Convert.ToString(row["Isbn"]);
             txtBookTitle.Text = Convert.ToString(row["Title"]);

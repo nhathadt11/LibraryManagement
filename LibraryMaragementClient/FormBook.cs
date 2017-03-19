@@ -30,8 +30,6 @@ namespace LibraryMaragementClient
 
         private void FormBook_Load(object sender, EventArgs e)
         {
-            List<Book> list = _bookService.GetBooks();
-
             //_data = _bookService.GetAll();
             _data = new DataTable();
             _data.Columns.Add("BookId");
@@ -46,22 +44,22 @@ namespace LibraryMaragementClient
             _data.Columns.Add("PublisherId");
             _data.Columns.Add("Discontinued");
 
-            foreach (var item in list)
+            List<Book> books = _bookService.GetBooks();
+            foreach (var book in books)
             {
-                _data.Rows.Add(
-                    item.BookId,
-                    item.Isbn,
-                    item.Title,
-                    item.Description,
-                    item.CoverImageUrl,
-                    item.PageNumber,
-                    item.PublishedDate,
-                    item.AuthorId,
-                    item.CategoryId,
-                    item.PublisherId,
-                    item.Discontinued
-                    );
+                _data.Rows.Add(book.BookId,
+                               book.Isbn,
+                               book.Title,
+                               book.Description,
+                               book.CoverImageUrl,
+                               book.PageNumber,
+                               book.PublishedDate,
+                               book.AuthorId,
+                               book.CategoryId,
+                               book.PublisherId,
+                               book.Discontinued);
             }
+
             _data.PrimaryKey = new DataColumn[] { _data.Columns["BookId"] };
             dgvBooks.DataSource = _data;
         }
@@ -95,12 +93,17 @@ namespace LibraryMaragementClient
         public void AddToDataTable(DataTranseferObject obj)
         {
             Book book = obj as Book;
-            _data.RejectChanges();
-            _data.Rows.Add(book.BookId, book.Isbn, book.Title,
-                           book.Description, book.CoverImageUrl,
-                           book.PageNumber, book.PublishedDate,
-                           book.AuthorId, book.CategoryId,
-                           book.PublisherId, book.Discontinued);
+            _data.Rows.Add(book.BookId,
+                           book.Isbn,
+                           book.Title,
+                           book.Description,
+                           book.CoverImageUrl,
+                           book.PageNumber,
+                           book.PublishedDate,
+                           book.AuthorId,
+                           book.CategoryId,
+                           book.PublisherId,
+                           book.Discontinued);
             _data.AcceptChanges();
         }
 

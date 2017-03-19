@@ -76,40 +76,36 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 122);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(11, 79);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 20);
+            this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "IssueDate";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 162);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(11, 105);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 20);
+            this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "LimitDay";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 82);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(10, 53);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(88, 20);
+            this.label4.Size = new System.Drawing.Size(59, 13);
             this.label4.TabIndex = 3;
             this.label4.Text = "Member ID";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(16, 202);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(11, 131);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 20);
+            this.label5.Size = new System.Drawing.Size(47, 13);
             this.label5.TabIndex = 4;
             this.label5.Text = "Librarian";
             // 
@@ -125,67 +121,59 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(18, 18);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Size = new System.Drawing.Size(441, 257);
+            this.groupBox1.Size = new System.Drawing.Size(294, 167);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Loan Details";
             // 
             // txtLoanMemberId
             // 
-            this.txtLoanMemberId.Location = new System.Drawing.Point(110, 77);
-            this.txtLoanMemberId.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtLoanMemberId.Location = new System.Drawing.Point(73, 50);
             this.txtLoanMemberId.Name = "txtLoanMemberId";
-            this.txtLoanMemberId.Size = new System.Drawing.Size(214, 26);
+            this.txtLoanMemberId.Size = new System.Drawing.Size(144, 20);
             this.txtLoanMemberId.TabIndex = 13;
             this.txtLoanMemberId.TextChanged += new System.EventHandler(this.txtLoanMemberId_TextChanged);
             // 
             // txtLoanId
             // 
-            this.txtLoanId.Location = new System.Drawing.Point(110, 35);
-            this.txtLoanId.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtLoanId.Location = new System.Drawing.Point(73, 23);
             this.txtLoanId.Name = "txtLoanId";
             this.txtLoanId.ReadOnly = true;
-            this.txtLoanId.Size = new System.Drawing.Size(148, 26);
+            this.txtLoanId.Size = new System.Drawing.Size(100, 20);
             this.txtLoanId.TabIndex = 12;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 40);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(11, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(26, 20);
+            this.label1.Size = new System.Drawing.Size(18, 13);
             this.label1.TabIndex = 11;
             this.label1.Text = "ID";
             // 
             // dtpLoanIssueDate
             // 
-            this.dtpLoanIssueDate.Location = new System.Drawing.Point(110, 117);
-            this.dtpLoanIssueDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dtpLoanIssueDate.Location = new System.Drawing.Point(73, 76);
             this.dtpLoanIssueDate.Name = "dtpLoanIssueDate";
-            this.dtpLoanIssueDate.Size = new System.Drawing.Size(298, 26);
+            this.dtpLoanIssueDate.Size = new System.Drawing.Size(200, 20);
             this.dtpLoanIssueDate.TabIndex = 10;
             // 
             // cbxLibrarian
             // 
             this.cbxLibrarian.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxLibrarian.FormattingEnabled = true;
-            this.cbxLibrarian.Location = new System.Drawing.Point(110, 197);
-            this.cbxLibrarian.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbxLibrarian.Location = new System.Drawing.Point(73, 128);
             this.cbxLibrarian.Name = "cbxLibrarian";
-            this.cbxLibrarian.Size = new System.Drawing.Size(296, 28);
+            this.cbxLibrarian.Size = new System.Drawing.Size(199, 21);
             this.cbxLibrarian.TabIndex = 9;
             // 
             // txtLoanLimitDay
             // 
-            this.txtLoanLimitDay.Location = new System.Drawing.Point(110, 157);
-            this.txtLoanLimitDay.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtLoanLimitDay.Location = new System.Drawing.Point(73, 102);
             this.txtLoanLimitDay.Name = "txtLoanLimitDay";
-            this.txtLoanLimitDay.Size = new System.Drawing.Size(148, 26);
+            this.txtLoanLimitDay.Size = new System.Drawing.Size(100, 20);
             this.txtLoanLimitDay.TabIndex = 7;
             // 
             // groupBox2
@@ -200,117 +188,99 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.txtLoanCopyId1);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Location = new System.Drawing.Point(18, 286);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Location = new System.Drawing.Point(12, 186);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox2.Size = new System.Drawing.Size(441, 246);
+            this.groupBox2.Size = new System.Drawing.Size(294, 160);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Copies";
             // 
             // txtLoanCopyId5
             // 
-            this.txtLoanCopyId5.Location = new System.Drawing.Point(150, 189);
-            this.txtLoanCopyId5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtLoanCopyId5.Location = new System.Drawing.Point(100, 123);
             this.txtLoanCopyId5.Name = "txtLoanCopyId5";
-            this.txtLoanCopyId5.Size = new System.Drawing.Size(198, 26);
+            this.txtLoanCopyId5.Size = new System.Drawing.Size(133, 20);
             this.txtLoanCopyId5.TabIndex = 17;
-            this.txtLoanCopyId5.Enter += new System.EventHandler(this.txtLoanCopyId5_Enter);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(88, 194);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(59, 126);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(39, 20);
+            this.label10.Size = new System.Drawing.Size(27, 13);
             this.label10.TabIndex = 16;
             this.label10.Text = "ID 5";
             // 
             // txtLoanCopyId4
             // 
-            this.txtLoanCopyId4.Location = new System.Drawing.Point(150, 149);
-            this.txtLoanCopyId4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtLoanCopyId4.Location = new System.Drawing.Point(100, 97);
             this.txtLoanCopyId4.Name = "txtLoanCopyId4";
-            this.txtLoanCopyId4.Size = new System.Drawing.Size(198, 26);
+            this.txtLoanCopyId4.Size = new System.Drawing.Size(133, 20);
             this.txtLoanCopyId4.TabIndex = 15;
-            this.txtLoanCopyId4.Enter += new System.EventHandler(this.txtLoanCopyId5_Enter);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(88, 154);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(59, 100);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(39, 20);
+            this.label9.Size = new System.Drawing.Size(27, 13);
             this.label9.TabIndex = 14;
             this.label9.Text = "ID 4";
             // 
             // txtLoanCopyId3
             // 
-            this.txtLoanCopyId3.Location = new System.Drawing.Point(150, 109);
-            this.txtLoanCopyId3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtLoanCopyId3.Location = new System.Drawing.Point(100, 71);
             this.txtLoanCopyId3.Name = "txtLoanCopyId3";
-            this.txtLoanCopyId3.Size = new System.Drawing.Size(198, 26);
+            this.txtLoanCopyId3.Size = new System.Drawing.Size(133, 20);
             this.txtLoanCopyId3.TabIndex = 13;
-            this.txtLoanCopyId3.Enter += new System.EventHandler(this.txtLoanCopyId5_Enter);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(88, 114);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(59, 74);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(39, 20);
+            this.label8.Size = new System.Drawing.Size(27, 13);
             this.label8.TabIndex = 12;
             this.label8.Text = "ID 3";
             // 
             // txtLoanCopyId2
             // 
-            this.txtLoanCopyId2.Location = new System.Drawing.Point(150, 69);
-            this.txtLoanCopyId2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtLoanCopyId2.Location = new System.Drawing.Point(100, 45);
             this.txtLoanCopyId2.Name = "txtLoanCopyId2";
-            this.txtLoanCopyId2.Size = new System.Drawing.Size(198, 26);
+            this.txtLoanCopyId2.Size = new System.Drawing.Size(133, 20);
             this.txtLoanCopyId2.TabIndex = 11;
-            this.txtLoanCopyId2.Enter += new System.EventHandler(this.txtLoanCopyId5_Enter);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(88, 74);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(59, 48);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(39, 20);
+            this.label7.Size = new System.Drawing.Size(27, 13);
             this.label7.TabIndex = 10;
             this.label7.Text = "ID 2";
             // 
             // txtLoanCopyId1
             // 
-            this.txtLoanCopyId1.Location = new System.Drawing.Point(150, 29);
-            this.txtLoanCopyId1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtLoanCopyId1.Location = new System.Drawing.Point(100, 19);
             this.txtLoanCopyId1.Name = "txtLoanCopyId1";
-            this.txtLoanCopyId1.Size = new System.Drawing.Size(198, 26);
+            this.txtLoanCopyId1.Size = new System.Drawing.Size(133, 20);
             this.txtLoanCopyId1.TabIndex = 9;
-            this.txtLoanCopyId1.Enter += new System.EventHandler(this.txtLoanCopyId5_Enter);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(88, 34);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(59, 22);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(39, 20);
+            this.label6.Size = new System.Drawing.Size(27, 13);
             this.label6.TabIndex = 8;
             this.label6.Text = "ID 1";
             // 
             // btnLoanOk
             // 
             this.btnLoanOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnLoanOk.Location = new System.Drawing.Point(111, 548);
-            this.btnLoanOk.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnLoanOk.Location = new System.Drawing.Point(74, 356);
             this.btnLoanOk.Name = "btnLoanOk";
-            this.btnLoanOk.Size = new System.Drawing.Size(112, 35);
+            this.btnLoanOk.Size = new System.Drawing.Size(75, 23);
             this.btnLoanOk.TabIndex = 8;
             this.btnLoanOk.Text = "OK";
             this.btnLoanOk.UseVisualStyleBackColor = true;
@@ -319,10 +289,9 @@
             // btnLoanCancel
             // 
             this.btnLoanCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnLoanCancel.Location = new System.Drawing.Point(270, 548);
-            this.btnLoanCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnLoanCancel.Location = new System.Drawing.Point(180, 356);
             this.btnLoanCancel.Name = "btnLoanCancel";
-            this.btnLoanCancel.Size = new System.Drawing.Size(112, 35);
+            this.btnLoanCancel.Size = new System.Drawing.Size(75, 23);
             this.btnLoanCancel.TabIndex = 9;
             this.btnLoanCancel.Text = "Cancel";
             this.btnLoanCancel.UseVisualStyleBackColor = true;
@@ -361,14 +330,13 @@
             // 
             // LoanDialog
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(477, 602);
+            this.ClientSize = new System.Drawing.Size(318, 391);
             this.Controls.Add(this.btnLoanCancel);
             this.Controls.Add(this.btnLoanOk);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "LoanDialog";
