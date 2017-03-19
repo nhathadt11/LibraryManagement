@@ -13,23 +13,23 @@ namespace Service
     public interface IUserService
     {
         [OperationContract]
-         int Add(User user);
+        int Add(User user);
         [OperationContract]
-         int Delete(int userId);
+        int Delete(int userId);
         [OperationContract]
-         DataTable GetAll();
+        DataTable GetAll();
         [OperationContract]
-         int Update(User user);
+        int Update(User user);
         [OperationContract]
-         int CheckUserById(int userId);
+        int CheckUserById(int userId);
         [OperationContract]
-         DataTable GetAllLibrarians();
+        DataTable GetAllLibrarians();
         [OperationContract]
-         int HasExisted(string Username);
+        int HasExisted(string Username);
         [OperationContract]
-        List<User> getUsers();
+        List<User> GetUsers();
         [OperationContract]
-        List<User> getLibrarians();
+        List<User> GetLibrarians();
         [OperationContract]
         User CheckLogin(string username, string password);
     }

@@ -13,7 +13,7 @@ namespace Service
     public interface IRoleService
     {
         [OperationContract]
-         int Add(Role role);
+        int Add(Role role);
         [OperationContract]
         int Delete(int roleId);
         [OperationContract]
@@ -21,6 +21,6 @@ namespace Service
         [OperationContract]
         int Update(Role role);
         [OperationContract]
-        List<Role> getRoles();
+        List<Role> GetRoles();
     }
 }

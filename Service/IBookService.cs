@@ -13,14 +13,14 @@ namespace Service
     public interface IBookService
     {
         [OperationContract]
-         DataTable GetAll();
+        DataTable GetAll();
         [OperationContract]
-         int Add(Book book);
+        int Add(Book book);
         [OperationContract]
-         int Update(Book book);
+        int Update(Book book);
         [OperationContract]
-         int Delete(int bookId);
+        int Delete(int bookId);
         [OperationContract]
-        List<Book> getBooks();
+        List<Book> GetBooks();
     }
 }

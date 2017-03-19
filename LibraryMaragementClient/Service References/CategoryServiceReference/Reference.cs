@@ -39,11 +39,11 @@ namespace LibraryMaragementClient.CategoryServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICategoryService/Update", ReplyAction="http://tempuri.org/ICategoryService/UpdateResponse")]
         System.Threading.Tasks.Task<int> UpdateAsync(DatabaseAccess.DataTransferObjects.Category category);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICategoryService/getCategories", ReplyAction="http://tempuri.org/ICategoryService/getCategoriesResponse")]
-        System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.Category> getCategories();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICategoryService/GetCategories", ReplyAction="http://tempuri.org/ICategoryService/GetCategoriesResponse")]
+        System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.Category> GetCategories();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICategoryService/getCategories", ReplyAction="http://tempuri.org/ICategoryService/getCategoriesResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.Category>> getCategoriesAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICategoryService/GetCategories", ReplyAction="http://tempuri.org/ICategoryService/GetCategoriesResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.Category>> GetCategoriesAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -105,12 +105,12 @@ namespace LibraryMaragementClient.CategoryServiceReference {
             return base.Channel.UpdateAsync(category);
         }
         
-        public System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.Category> getCategories() {
-            return base.Channel.getCategories();
+        public System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.Category> GetCategories() {
+            return base.Channel.GetCategories();
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.Category>> getCategoriesAsync() {
-            return base.Channel.getCategoriesAsync();
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.Category>> GetCategoriesAsync() {
+            return base.Channel.GetCategoriesAsync();
         }
     }
 }

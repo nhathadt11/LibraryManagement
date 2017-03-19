@@ -32,11 +32,11 @@
   <wsdl:message name="IAuthorService_Update_OutputMessage">
     <wsdl:part name="parameters" element="tns:UpdateResponse" />
   </wsdl:message>
-  <wsdl:message name="IAuthorService_getAuthors_InputMessage">
-    <wsdl:part name="parameters" element="tns:getAuthors" />
+  <wsdl:message name="IAuthorService_GetAuthors_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuthors" />
   </wsdl:message>
-  <wsdl:message name="IAuthorService_getAuthors_OutputMessage">
-    <wsdl:part name="parameters" element="tns:getAuthorsResponse" />
+  <wsdl:message name="IAuthorService_GetAuthors_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuthorsResponse" />
   </wsdl:message>
   <wsdl:portType name="IAuthorService">
     <wsdl:operation name="Add">
@@ -55,9 +55,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IAuthorService/Update" message="tns:IAuthorService_Update_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAuthorService/UpdateResponse" message="tns:IAuthorService_Update_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="getAuthors">
-      <wsdl:input wsaw:Action="http://tempuri.org/IAuthorService/getAuthors" message="tns:IAuthorService_getAuthors_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IAuthorService/getAuthorsResponse" message="tns:IAuthorService_getAuthors_OutputMessage" />
+    <wsdl:operation name="GetAuthors">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthorService/GetAuthors" message="tns:IAuthorService_GetAuthors_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthorService/GetAuthorsResponse" message="tns:IAuthorService_GetAuthors_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IAuthorService" type="tns:IAuthorService">
@@ -98,8 +98,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getAuthors">
-      <soap:operation soapAction="http://tempuri.org/IAuthorService/getAuthors" style="document" />
+    <wsdl:operation name="GetAuthors">
+      <soap:operation soapAction="http://tempuri.org/IAuthorService/GetAuthors" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace Service
 {
-    public class BookCopyService : ICommonService<Copy>,IBookCopyService
+    public class BookCopyService : ICommonService<Copy>, IBookCopyService
     {
         private CopyDAO _copyDAO;
         public BookCopyService()
@@ -40,7 +40,7 @@ namespace Service
             return _copyDAO.CheckValidCopyId(copyId);
         }
 
-        public List<Copy> getCopies()
+        public List<Copy> GetCopies()
         {
             return _copyDAO.GetAll().Rows.Cast<DataRow>().Select<DataRow, Copy>(r => new Copy
             {

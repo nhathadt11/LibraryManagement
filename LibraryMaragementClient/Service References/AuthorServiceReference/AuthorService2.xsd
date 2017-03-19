@@ -67,15 +67,15 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="getAuthors">
+  <xs:element name="GetAuthors">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="getAuthorsResponse">
+  <xs:element name="GetAuthorsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DatabaseAccess.DataTransferObjects" minOccurs="0" name="getAuthorsResult" nillable="true" type="q3:ArrayOfAuthor" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DatabaseAccess.DataTransferObjects" minOccurs="0" name="GetAuthorsResult" nillable="true" type="q3:ArrayOfAuthor" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

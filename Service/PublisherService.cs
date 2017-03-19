@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace Service
 {
-    public class PublisherService : ICommonService<Publisher>,IPublisherService
+    public class PublisherService : ICommonService<Publisher>, IPublisherService
     {
         private PublisherDAO _publisherDAO;
         public PublisherService()
@@ -32,13 +32,15 @@ namespace Service
 
         public List<Publisher> GetPublishers()
         {
-            return _publisherDAO.GetAll().Rows.Cast<DataRow>().Select<DataRow,Publisher>(r=>new Publisher {
-                PublisherId = Convert.ToInt32(r["PublisherId"]),
-                Name = Convert.ToString(r["Name"]),
-                Contact = Convert.ToString(r["Contact"]),
-                Address = Convert.ToString(r["Address"]),
-                Description = Convert.ToString(r["Description"])
-            }).ToList();
+            return _publisherDAO.GetAll().Rows.Cast<DataRow>()
+                .Select<DataRow,Publisher>(r => new Publisher
+                {
+                    PublisherId = Convert.ToInt32(r["PublisherId"]),
+                    Name = Convert.ToString(r["Name"]),
+                    Contact = Convert.ToString(r["Contact"]),
+                    Address = Convert.ToString(r["Address"]),
+                    Description = Convert.ToString(r["Description"])
+                }).ToList();
         }
 
         public int Update(Publisher publisher)

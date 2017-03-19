@@ -29,12 +29,14 @@ namespace Service
             return _roleDAO.GetAll();
         }
 
-        public List<Role> getRoles()
+        public List<Role> GetRoles()
         {
-            return _roleDAO.GetAll().Rows.Cast<DataRow>().Select<DataRow,Role>(r=>new Role {
-                RoleId = Convert.ToInt32(r["RoleId"]),
-                Name = Convert.ToString(r["Name"])
-            }).ToList();
+            return _roleDAO.GetAll().Rows.Cast<DataRow>()
+                .Select<DataRow,Role>(r => new Role
+                {
+                    RoleId = Convert.ToInt32(r["RoleId"]),
+                    Name = Convert.ToString(r["Name"])
+                }).ToList();
         }
 
         public int Update(Role role)

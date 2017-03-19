@@ -57,17 +57,17 @@ namespace LibraryMaragementClient.UserServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/HasExisted", ReplyAction="http://tempuri.org/IUserService/HasExistedResponse")]
         System.Threading.Tasks.Task<int> HasExistedAsync(string Username);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/getUsers", ReplyAction="http://tempuri.org/IUserService/getUsersResponse")]
-        System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.User> getUsers();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/GetUsers", ReplyAction="http://tempuri.org/IUserService/GetUsersResponse")]
+        System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.User> GetUsers();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/getUsers", ReplyAction="http://tempuri.org/IUserService/getUsersResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.User>> getUsersAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/GetUsers", ReplyAction="http://tempuri.org/IUserService/GetUsersResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.User>> GetUsersAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/getLibrarians", ReplyAction="http://tempuri.org/IUserService/getLibrariansResponse")]
-        System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.User> getLibrarians();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/GetLibrarians", ReplyAction="http://tempuri.org/IUserService/GetLibrariansResponse")]
+        System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.User> GetLibrarians();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/getLibrarians", ReplyAction="http://tempuri.org/IUserService/getLibrariansResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.User>> getLibrariansAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/GetLibrarians", ReplyAction="http://tempuri.org/IUserService/GetLibrariansResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.User>> GetLibrariansAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/CheckLogin", ReplyAction="http://tempuri.org/IUserService/CheckLoginResponse")]
         DatabaseAccess.DataTransferObjects.User CheckLogin(string username, string password);
@@ -159,20 +159,20 @@ namespace LibraryMaragementClient.UserServiceReference {
             return base.Channel.HasExistedAsync(Username);
         }
         
-        public System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.User> getUsers() {
-            return base.Channel.getUsers();
+        public System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.User> GetUsers() {
+            return base.Channel.GetUsers();
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.User>> getUsersAsync() {
-            return base.Channel.getUsersAsync();
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.User>> GetUsersAsync() {
+            return base.Channel.GetUsersAsync();
         }
         
-        public System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.User> getLibrarians() {
-            return base.Channel.getLibrarians();
+        public System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.User> GetLibrarians() {
+            return base.Channel.GetLibrarians();
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.User>> getLibrariansAsync() {
-            return base.Channel.getLibrariansAsync();
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.User>> GetLibrariansAsync() {
+            return base.Channel.GetLibrariansAsync();
         }
         
         public DatabaseAccess.DataTransferObjects.User CheckLogin(string username, string password) {

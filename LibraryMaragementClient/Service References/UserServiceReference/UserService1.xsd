@@ -119,27 +119,27 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="getUsers">
+  <xs:element name="GetUsers">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="getUsersResponse">
+  <xs:element name="GetUsersResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DatabaseAccess.DataTransferObjects" minOccurs="0" name="getUsersResult" nillable="true" type="q3:ArrayOfUser" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DatabaseAccess.DataTransferObjects" minOccurs="0" name="GetUsersResult" nillable="true" type="q3:ArrayOfUser" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="getLibrarians">
+  <xs:element name="GetLibrarians">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="getLibrariansResponse">
+  <xs:element name="GetLibrariansResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DatabaseAccess.DataTransferObjects" minOccurs="0" name="getLibrariansResult" nillable="true" type="q4:ArrayOfUser" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DatabaseAccess.DataTransferObjects" minOccurs="0" name="GetLibrariansResult" nillable="true" type="q4:ArrayOfUser" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

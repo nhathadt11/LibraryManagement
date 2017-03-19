@@ -81,15 +81,15 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="getCopies">
+  <xs:element name="GetCopies">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="getCopiesResponse">
+  <xs:element name="GetCopiesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DatabaseAccess.DataTransferObjects" minOccurs="0" name="getCopiesResult" nillable="true" type="q3:ArrayOfCopy" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DatabaseAccess.DataTransferObjects" minOccurs="0" name="GetCopiesResult" nillable="true" type="q3:ArrayOfCopy" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

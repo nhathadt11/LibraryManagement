@@ -21,6 +21,6 @@ namespace Service
         [OperationContract]
         int Add(Loan loan, List<LoanDetail> loanDetails);
         [OperationContract]
-        List<Loan> getLoans();
+        List<Loan> GetLoans();
     }
 }

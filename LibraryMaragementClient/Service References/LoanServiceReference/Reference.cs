@@ -39,11 +39,11 @@ namespace LibraryMaragementClient.LoanServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoanService/Add", ReplyAction="http://tempuri.org/ILoanService/AddResponse")]
         System.Threading.Tasks.Task<int> AddAsync(DatabaseAccess.DataTransferObjects.Loan loan, DatabaseAccess.DataTransferObjects.LoanDetail[] loanDetails);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoanService/getLoans", ReplyAction="http://tempuri.org/ILoanService/getLoansResponse")]
-        DatabaseAccess.DataTransferObjects.Loan[] getLoans();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoanService/GetLoans", ReplyAction="http://tempuri.org/ILoanService/GetLoansResponse")]
+        DatabaseAccess.DataTransferObjects.Loan[] GetLoans();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoanService/getLoans", ReplyAction="http://tempuri.org/ILoanService/getLoansResponse")]
-        System.Threading.Tasks.Task<DatabaseAccess.DataTransferObjects.Loan[]> getLoansAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoanService/GetLoans", ReplyAction="http://tempuri.org/ILoanService/GetLoansResponse")]
+        System.Threading.Tasks.Task<DatabaseAccess.DataTransferObjects.Loan[]> GetLoansAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -105,12 +105,12 @@ namespace LibraryMaragementClient.LoanServiceReference {
             return base.Channel.AddAsync(loan, loanDetails);
         }
         
-        public DatabaseAccess.DataTransferObjects.Loan[] getLoans() {
-            return base.Channel.getLoans();
+        public DatabaseAccess.DataTransferObjects.Loan[] GetLoans() {
+            return base.Channel.GetLoans();
         }
         
-        public System.Threading.Tasks.Task<DatabaseAccess.DataTransferObjects.Loan[]> getLoansAsync() {
-            return base.Channel.getLoansAsync();
+        public System.Threading.Tasks.Task<DatabaseAccess.DataTransferObjects.Loan[]> GetLoansAsync() {
+            return base.Channel.GetLoansAsync();
         }
     }
 }

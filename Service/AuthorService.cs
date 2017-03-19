@@ -31,7 +31,7 @@ namespace Service
             return _authorDAO.GetAll();
         }
 
-        public List<Author> getAuthors()
+        public List<Author> GetAuthors()
         {
             return _authorDAO.GetAll().Rows.Cast<DataRow>()
                 .Select<DataRow, Author>(r => new Author

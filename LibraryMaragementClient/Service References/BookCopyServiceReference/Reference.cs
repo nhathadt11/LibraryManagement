@@ -45,11 +45,11 @@ namespace LibraryMaragementClient.BookCopyServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookCopyService/CheckValidCopyId", ReplyAction="http://tempuri.org/IBookCopyService/CheckValidCopyIdResponse")]
         System.Threading.Tasks.Task<bool> CheckValidCopyIdAsync(int copyId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookCopyService/getCopies", ReplyAction="http://tempuri.org/IBookCopyService/getCopiesResponse")]
-        System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.Copy> getCopies();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookCopyService/GetCopies", ReplyAction="http://tempuri.org/IBookCopyService/GetCopiesResponse")]
+        System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.Copy> GetCopies();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookCopyService/getCopies", ReplyAction="http://tempuri.org/IBookCopyService/getCopiesResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.Copy>> getCopiesAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookCopyService/GetCopies", ReplyAction="http://tempuri.org/IBookCopyService/GetCopiesResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.Copy>> GetCopiesAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -119,12 +119,12 @@ namespace LibraryMaragementClient.BookCopyServiceReference {
             return base.Channel.CheckValidCopyIdAsync(copyId);
         }
         
-        public System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.Copy> getCopies() {
-            return base.Channel.getCopies();
+        public System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.Copy> GetCopies() {
+            return base.Channel.GetCopies();
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.Copy>> getCopiesAsync() {
-            return base.Channel.getCopiesAsync();
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.Copy>> GetCopiesAsync() {
+            return base.Channel.GetCopiesAsync();
         }
     }
 }

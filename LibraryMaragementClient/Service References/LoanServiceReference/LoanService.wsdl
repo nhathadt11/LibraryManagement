@@ -32,11 +32,11 @@
   <wsdl:message name="ILoanService_Add_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddResponse" />
   </wsdl:message>
-  <wsdl:message name="ILoanService_getLoans_InputMessage">
-    <wsdl:part name="parameters" element="tns:getLoans" />
+  <wsdl:message name="ILoanService_GetLoans_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoans" />
   </wsdl:message>
-  <wsdl:message name="ILoanService_getLoans_OutputMessage">
-    <wsdl:part name="parameters" element="tns:getLoansResponse" />
+  <wsdl:message name="ILoanService_GetLoans_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoansResponse" />
   </wsdl:message>
   <wsdl:portType name="ILoanService">
     <wsdl:operation name="Delete">
@@ -55,9 +55,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ILoanService/Add" message="tns:ILoanService_Add_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILoanService/AddResponse" message="tns:ILoanService_Add_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="getLoans">
-      <wsdl:input wsaw:Action="http://tempuri.org/ILoanService/getLoans" message="tns:ILoanService_getLoans_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ILoanService/getLoansResponse" message="tns:ILoanService_getLoans_OutputMessage" />
+    <wsdl:operation name="GetLoans">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoanService/GetLoans" message="tns:ILoanService_GetLoans_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoanService/GetLoansResponse" message="tns:ILoanService_GetLoans_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ILoanService" type="tns:ILoanService">
@@ -98,8 +98,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getLoans">
-      <soap:operation soapAction="http://tempuri.org/ILoanService/getLoans" style="document" />
+    <wsdl:operation name="GetLoans">
+      <soap:operation soapAction="http://tempuri.org/ILoanService/GetLoans" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

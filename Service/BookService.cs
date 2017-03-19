@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace Service
 {
-    public class BookService : ICommonService<Book>,IBookService
+    public class BookService : ICommonService<Book>, IBookService
     {
         private BookDAO _bookDAO;
         public BookService()
@@ -31,7 +31,7 @@ namespace Service
             return _bookDAO.Delete(bookId);
         }
 
-        public List<Book> getBooks()
+        public List<Book> GetBooks()
         {
             return _bookDAO.GetAll().Rows.Cast<DataRow>().Select<DataRow, Book>(r => new Book
             {

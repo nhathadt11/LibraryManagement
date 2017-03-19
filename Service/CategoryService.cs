@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace Service
 {
-    public class CategoryService : ICommonService<Category>,ICategoryService
+    public class CategoryService : ICommonService<Category>, ICategoryService
     {
         private CategoryDAO _categoryDAO;
         public CategoryService()
@@ -30,13 +30,14 @@ namespace Service
             return _categoryDAO.GetAll();
         }
 
-        public List<Category> getCategories()
+        public List<Category> GetCategories()
         {
-            return _categoryDAO.GetAll().Rows.Cast<DataRow>().Select<DataRow, Category>(r => new Category
-            {
-                CategoryId = Convert.ToInt32(r["CategoryId"]),
-                Name = Convert.ToString(r["Name"])
-            }).ToList();
+            return _categoryDAO.GetAll().Rows.Cast<DataRow>()
+                .Select<DataRow, Category>(r => new Category
+                {
+                    CategoryId = Convert.ToInt32(r["CategoryId"]),
+                    Name = Convert.ToString(r["Name"])
+                }).ToList();
         }
 
         public int Update(Category category)

@@ -68,15 +68,15 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="getLoans">
+  <xs:element name="GetLoans">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="getLoansResponse">
+  <xs:element name="GetLoansResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DatabaseAccess.DataTransferObjects" minOccurs="0" name="getLoansResult" nillable="true" type="q4:ArrayOfLoan" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DatabaseAccess.DataTransferObjects" minOccurs="0" name="GetLoansResult" nillable="true" type="q4:ArrayOfLoan" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -39,11 +39,11 @@ namespace LibraryMaragementClient.AuthorServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthorService/Update", ReplyAction="http://tempuri.org/IAuthorService/UpdateResponse")]
         System.Threading.Tasks.Task<int> UpdateAsync(DatabaseAccess.DataTransferObjects.Author author);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthorService/getAuthors", ReplyAction="http://tempuri.org/IAuthorService/getAuthorsResponse")]
-        System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.Author> getAuthors();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthorService/GetAuthors", ReplyAction="http://tempuri.org/IAuthorService/GetAuthorsResponse")]
+        System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.Author> GetAuthors();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthorService/getAuthors", ReplyAction="http://tempuri.org/IAuthorService/getAuthorsResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.Author>> getAuthorsAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthorService/GetAuthors", ReplyAction="http://tempuri.org/IAuthorService/GetAuthorsResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.Author>> GetAuthorsAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -105,12 +105,12 @@ namespace LibraryMaragementClient.AuthorServiceReference {
             return base.Channel.UpdateAsync(author);
         }
         
-        public System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.Author> getAuthors() {
-            return base.Channel.getAuthors();
+        public System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.Author> GetAuthors() {
+            return base.Channel.GetAuthors();
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.Author>> getAuthorsAsync() {
-            return base.Channel.getAuthorsAsync();
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.Author>> GetAuthorsAsync() {
+            return base.Channel.GetAuthorsAsync();
         }
     }
 }

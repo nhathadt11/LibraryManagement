@@ -13,7 +13,7 @@ namespace Service
     public interface IPublisherService
     {
         [OperationContract]
-         int Add(Publisher publisher);
+        int Add(Publisher publisher);
         [OperationContract]
         int Delete(int publisherId);
         [OperationContract]

@@ -39,16 +39,17 @@ namespace Service
             return _loanDAO.Add(loan, loanDetails);
         }
 
-        public List<Loan> getLoans()
+        public List<Loan> GetLoans()
         {
-            return _loanDAO.GetAll().Rows.Cast<DataRow>().Select<DataRow, Loan>(r => new Loan
-            {
-                LoanId = Convert.ToInt32(r["LoanId"]),
-                IssueDate = Convert.ToDateTime(r["IssueDate"]),
-                LimitDay = Convert.ToInt32(r["LimitDay"]),
-                MemberId = Convert.ToInt32(r["MemberId"]),
-                LibrarianId = Convert.ToInt32(r["LibrarianId"])
-            }).ToList();
+            return _loanDAO.GetAll().Rows.Cast<DataRow>()
+                .Select<DataRow, Loan>(r => new Loan
+                {
+                    LoanId = Convert.ToInt32(r["LoanId"]),
+                    IssueDate = Convert.ToDateTime(r["IssueDate"]),
+                    LimitDay = Convert.ToInt32(r["LimitDay"]),
+                    MemberId = Convert.ToInt32(r["MemberId"]),
+                    LibrarianId = Convert.ToInt32(r["LibrarianId"])
+                }).ToList();
         }
     }
 }

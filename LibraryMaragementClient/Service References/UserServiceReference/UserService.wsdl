@@ -50,17 +50,17 @@
   <wsdl:message name="IUserService_HasExisted_OutputMessage">
     <wsdl:part name="parameters" element="tns:HasExistedResponse" />
   </wsdl:message>
-  <wsdl:message name="IUserService_getUsers_InputMessage">
-    <wsdl:part name="parameters" element="tns:getUsers" />
+  <wsdl:message name="IUserService_GetUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsers" />
   </wsdl:message>
-  <wsdl:message name="IUserService_getUsers_OutputMessage">
-    <wsdl:part name="parameters" element="tns:getUsersResponse" />
+  <wsdl:message name="IUserService_GetUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersResponse" />
   </wsdl:message>
-  <wsdl:message name="IUserService_getLibrarians_InputMessage">
-    <wsdl:part name="parameters" element="tns:getLibrarians" />
+  <wsdl:message name="IUserService_GetLibrarians_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLibrarians" />
   </wsdl:message>
-  <wsdl:message name="IUserService_getLibrarians_OutputMessage">
-    <wsdl:part name="parameters" element="tns:getLibrariansResponse" />
+  <wsdl:message name="IUserService_GetLibrarians_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLibrariansResponse" />
   </wsdl:message>
   <wsdl:message name="IUserService_CheckLogin_InputMessage">
     <wsdl:part name="parameters" element="tns:CheckLogin" />
@@ -97,13 +97,13 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IUserService/HasExisted" message="tns:IUserService_HasExisted_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUserService/HasExistedResponse" message="tns:IUserService_HasExisted_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="getUsers">
-      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/getUsers" message="tns:IUserService_getUsers_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/getUsersResponse" message="tns:IUserService_getUsers_OutputMessage" />
+    <wsdl:operation name="GetUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/GetUsers" message="tns:IUserService_GetUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/GetUsersResponse" message="tns:IUserService_GetUsers_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="getLibrarians">
-      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/getLibrarians" message="tns:IUserService_getLibrarians_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/getLibrariansResponse" message="tns:IUserService_getLibrarians_OutputMessage" />
+    <wsdl:operation name="GetLibrarians">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/GetLibrarians" message="tns:IUserService_GetLibrarians_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/GetLibrariansResponse" message="tns:IUserService_GetLibrarians_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="CheckLogin">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserService/CheckLogin" message="tns:IUserService_CheckLogin_InputMessage" />
@@ -175,8 +175,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getUsers">
-      <soap:operation soapAction="http://tempuri.org/IUserService/getUsers" style="document" />
+    <wsdl:operation name="GetUsers">
+      <soap:operation soapAction="http://tempuri.org/IUserService/GetUsers" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -184,8 +184,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getLibrarians">
-      <soap:operation soapAction="http://tempuri.org/IUserService/getLibrarians" style="document" />
+    <wsdl:operation name="GetLibrarians">
+      <soap:operation soapAction="http://tempuri.org/IUserService/GetLibrarians" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

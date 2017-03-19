@@ -46,33 +46,36 @@ namespace Service
            return _userDAO.HasExisted(Username);
         }
 
-        public List<User> getUsers()
+        public List<User> GetUsers()
         {
-            return _userDAO.GetAll().Rows.Cast<DataRow>().Select<DataRow,User>(r=> new User {
-                UserId = Convert.ToInt32(r["UserId"]),
-                Username = Convert.ToString(r["Username"]),
-                Password = Convert.ToString(r["Password"]),
-                FullName = Convert.ToString(r["FullName"]),
-                PhoneNumber = Convert.ToString(r["PhoneNumber"]),
-                Address = Convert.ToString(r["Address"]),
-                Email = Convert.ToString(r["Email"]),
-                RoleId = Convert.ToInt32(r["RoleId"])
-            }).ToList();
+            return _userDAO.GetAll().Rows.Cast<DataRow>()
+                .Select<DataRow,User>(r => new User
+                {
+                    UserId = Convert.ToInt32(r["UserId"]),
+                    Username = Convert.ToString(r["Username"]),
+                    Password = Convert.ToString(r["Password"]),
+                    FullName = Convert.ToString(r["FullName"]),
+                    PhoneNumber = Convert.ToString(r["PhoneNumber"]),
+                    Address = Convert.ToString(r["Address"]),
+                    Email = Convert.ToString(r["Email"]),
+                    RoleId = Convert.ToInt32(r["RoleId"])
+                }).ToList();
         }
 
-        public List<User> getLibrarians()
+        public List<User> GetLibrarians()
         {
-            return _userDAO.GetAllLibrarians().Rows.Cast<DataRow>().Select<DataRow, User>(r => new User
-            {
-                UserId = Convert.ToInt32(r["UserId"]),
-                Username = Convert.ToString(r["Username"]),
-                Password = Convert.ToString(r["Password"]),
-                FullName = Convert.ToString(r["FullName"]),
-                PhoneNumber = Convert.ToString(r["PhoneNumber"]),
-                Address = Convert.ToString(r["Address"]),
-                Email = Convert.ToString(r["Email"]),
-                RoleId = Convert.ToInt32(r["RoleId"])
-            }).ToList();
+            return _userDAO.GetAllLibrarians().Rows.Cast<DataRow>()
+                .Select<DataRow, User>(r => new User
+                {
+                    UserId = Convert.ToInt32(r["UserId"]),
+                    Username = Convert.ToString(r["Username"]),
+                    Password = Convert.ToString(r["Password"]),
+                    FullName = Convert.ToString(r["FullName"]),
+                    PhoneNumber = Convert.ToString(r["PhoneNumber"]),
+                    Address = Convert.ToString(r["Address"]),
+                    Email = Convert.ToString(r["Email"]),
+                    RoleId = Convert.ToInt32(r["RoleId"])
+                }).ToList();
         }
         public User CheckLogin(string username, string password)
         {

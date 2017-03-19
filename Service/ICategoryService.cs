@@ -13,14 +13,14 @@ namespace Service
     public interface ICategoryService
     {
         [OperationContract]
-         int Add(Category category);
+        int Add(Category category);
         [OperationContract]
-         int Delete(int categoryId);
+        int Delete(int categoryId);
         [OperationContract]
-         DataTable GetAll();
+        DataTable GetAll();
         [OperationContract]
-         int Update(Category category);
+        int Update(Category category);
         [OperationContract]
-        List<Category> getCategories();
+        List<Category> GetCategories();
     }
 }

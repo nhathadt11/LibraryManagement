@@ -13,7 +13,7 @@ namespace Service
     public interface IBookCopyService
     {
         [OperationContract]
-         int Add(Copy copy);
+        int Add(Copy copy);
         [OperationContract]
         int Delete(int copyCode);
         [OperationContract]
@@ -23,6 +23,6 @@ namespace Service
         [OperationContract]
         bool CheckValidCopyId(int copyId);
         [OperationContract]
-        List<Copy> getCopies();
+        List<Copy> GetCopies();
     }
 }

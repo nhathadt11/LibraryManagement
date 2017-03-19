@@ -13,14 +13,14 @@ namespace Service
     public interface IAuthorService
     {
         [OperationContract]
-         int Add(Author author);
+        int Add(Author author);
         [OperationContract]
-         int Delete(int authorId);
+        int Delete(int authorId);
         [OperationContract]
-         DataTable GetAll();
+        DataTable GetAll();
         [OperationContract]
-         int Update(Author author);
+        int Update(Author author);
         [OperationContract]
-        List<Author> getAuthors();
+        List<Author> GetAuthors();
     }
 }

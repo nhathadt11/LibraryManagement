@@ -38,11 +38,11 @@
   <wsdl:message name="IBookCopyService_CheckValidCopyId_OutputMessage">
     <wsdl:part name="parameters" element="tns:CheckValidCopyIdResponse" />
   </wsdl:message>
-  <wsdl:message name="IBookCopyService_getCopies_InputMessage">
-    <wsdl:part name="parameters" element="tns:getCopies" />
+  <wsdl:message name="IBookCopyService_GetCopies_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCopies" />
   </wsdl:message>
-  <wsdl:message name="IBookCopyService_getCopies_OutputMessage">
-    <wsdl:part name="parameters" element="tns:getCopiesResponse" />
+  <wsdl:message name="IBookCopyService_GetCopies_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCopiesResponse" />
   </wsdl:message>
   <wsdl:portType name="IBookCopyService">
     <wsdl:operation name="Add">
@@ -65,9 +65,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IBookCopyService/CheckValidCopyId" message="tns:IBookCopyService_CheckValidCopyId_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBookCopyService/CheckValidCopyIdResponse" message="tns:IBookCopyService_CheckValidCopyId_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="getCopies">
-      <wsdl:input wsaw:Action="http://tempuri.org/IBookCopyService/getCopies" message="tns:IBookCopyService_getCopies_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IBookCopyService/getCopiesResponse" message="tns:IBookCopyService_getCopies_OutputMessage" />
+    <wsdl:operation name="GetCopies">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBookCopyService/GetCopies" message="tns:IBookCopyService_GetCopies_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBookCopyService/GetCopiesResponse" message="tns:IBookCopyService_GetCopies_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IBookCopyService" type="tns:IBookCopyService">
@@ -117,8 +117,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getCopies">
-      <soap:operation soapAction="http://tempuri.org/IBookCopyService/getCopies" style="document" />
+    <wsdl:operation name="GetCopies">
+      <soap:operation soapAction="http://tempuri.org/IBookCopyService/GetCopies" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

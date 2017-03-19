@@ -13,7 +13,7 @@ namespace Service
     public interface ILoanDetailService
     {
         [OperationContract]
-         int Add(LoanDetail loanDetail);
+        int Add(LoanDetail loanDetail);
         [OperationContract]
         int Delete(int loanDetailId);
         [OperationContract]
@@ -23,6 +23,6 @@ namespace Service
         [OperationContract]
         List<LoanDetail> GetLoanDetailsByLoanId(int loanId);
         [OperationContract]
-        List<LoanDetail> getLoanDetails();
+        List<LoanDetail> GetLoanDetails();
     }
 }

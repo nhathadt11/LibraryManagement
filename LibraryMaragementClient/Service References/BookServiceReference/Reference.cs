@@ -39,11 +39,11 @@ namespace LibraryMaragementClient.BookServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookService/Delete", ReplyAction="http://tempuri.org/IBookService/DeleteResponse")]
         System.Threading.Tasks.Task<int> DeleteAsync(int bookId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookService/getBooks", ReplyAction="http://tempuri.org/IBookService/getBooksResponse")]
-        System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.Book> getBooks();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookService/GetBooks", ReplyAction="http://tempuri.org/IBookService/GetBooksResponse")]
+        System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.Book> GetBooks();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookService/getBooks", ReplyAction="http://tempuri.org/IBookService/getBooksResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.Book>> getBooksAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookService/GetBooks", ReplyAction="http://tempuri.org/IBookService/GetBooksResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.Book>> GetBooksAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -105,12 +105,12 @@ namespace LibraryMaragementClient.BookServiceReference {
             return base.Channel.DeleteAsync(bookId);
         }
         
-        public System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.Book> getBooks() {
-            return base.Channel.getBooks();
+        public System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.Book> GetBooks() {
+            return base.Channel.GetBooks();
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.Book>> getBooksAsync() {
-            return base.Channel.getBooksAsync();
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<DatabaseAccess.DataTransferObjects.Book>> GetBooksAsync() {
+            return base.Channel.GetBooksAsync();
         }
     }
 }
