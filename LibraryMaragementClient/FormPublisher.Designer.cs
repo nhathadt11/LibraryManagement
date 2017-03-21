@@ -48,6 +48,7 @@
             this.dgvPublishers.Margin = new System.Windows.Forms.Padding(2);
             this.dgvPublishers.MultiSelect = false;
             this.dgvPublishers.Name = "dgvPublishers";
+            this.dgvPublishers.ReadOnly = true;
             this.dgvPublishers.RowTemplate.Height = 28;
             this.dgvPublishers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPublishers.Size = new System.Drawing.Size(745, 419);

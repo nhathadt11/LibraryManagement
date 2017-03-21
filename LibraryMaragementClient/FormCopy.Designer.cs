@@ -47,16 +47,17 @@
             this.dgvBookCopies.Location = new System.Drawing.Point(11, 11);
             this.dgvBookCopies.Margin = new System.Windows.Forms.Padding(2);
             this.dgvBookCopies.Name = "dgvBookCopies";
+            this.dgvBookCopies.ReadOnly = true;
             this.dgvBookCopies.RowTemplate.Height = 28;
             this.dgvBookCopies.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBookCopies.Size = new System.Drawing.Size(772, 414);
+            this.dgvBookCopies.Size = new System.Drawing.Size(413, 422);
             this.dgvBookCopies.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(55, 447);
+            this.label1.Location = new System.Drawing.Point(55, 455);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 1;
@@ -65,7 +66,7 @@
             // txtCopyFilterById
             // 
             this.txtCopyFilterById.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtCopyFilterById.Location = new System.Drawing.Point(118, 444);
+            this.txtCopyFilterById.Location = new System.Drawing.Point(118, 452);
             this.txtCopyFilterById.Name = "txtCopyFilterById";
             this.txtCopyFilterById.Size = new System.Drawing.Size(195, 20);
             this.txtCopyFilterById.TabIndex = 2;
@@ -75,7 +76,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(794, 476);
+            this.ClientSize = new System.Drawing.Size(435, 484);
             this.Controls.Add(this.txtCopyFilterById);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvBookCopies);

@@ -102,6 +102,7 @@
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.label1);
             this.Name = "FormLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormLogin";
             ((System.ComponentModel.ISupportInitialize)(this.epvUsername)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epvPassword)).EndInit();

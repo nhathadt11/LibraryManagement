@@ -49,7 +49,7 @@ namespace LibraryMaragementClient
                         if (user != null)
                         {
                             CurrentUser = user;
-                            new FormMain(this, user).Show();
+                            new FormMain().Show();
                             this.Hide();
                         }
                         else

@@ -7,15 +7,11 @@ namespace LibraryMaragementClient
 {
     public partial class FormMain : Form
     {
-        private Form _parent;
         public FormMain()
         {
             InitializeComponent();
-        }
-        public FormMain(Form parent,User user) : this()
-        {
-            _parent = parent;
-            this.Text = "Library Management System - Welcome, " + user.FullName;
+            this.Text = "Library Management System - Welcome, " 
+                      + FormLogin.Instance.CurrentUser.FullName;
         }
 
         private void tsbtBook_Click(object sender, EventArgs e)
@@ -174,9 +170,9 @@ namespace LibraryMaragementClient
                     if (frmMaintain is FormLoan)
                     {
                         MessageBox.Show("Cannot delete loan once it was added!",
-                            "Error",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
+                                        "Error",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Error);
                         break;
                     }
                     if (MessageBox.Show("Are you sure?",
@@ -200,7 +196,7 @@ namespace LibraryMaragementClient
                                                   MessageBoxIcon.Question);
             if (result == DialogResult.OK)
             {
-                _parent.Show();
+                FormLogin.Instance.Show();
                 this.Dispose();
             }
         }

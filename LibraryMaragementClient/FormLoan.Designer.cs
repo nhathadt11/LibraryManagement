@@ -50,6 +50,7 @@
             this.dgvLoans.Margin = new System.Windows.Forms.Padding(2);
             this.dgvLoans.MultiSelect = false;
             this.dgvLoans.Name = "dgvLoans";
+            this.dgvLoans.ReadOnly = true;
             this.dgvLoans.RowTemplate.Height = 28;
             this.dgvLoans.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLoans.Size = new System.Drawing.Size(525, 380);

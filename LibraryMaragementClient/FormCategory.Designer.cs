@@ -48,6 +48,7 @@
             this.dgvCategorys.Margin = new System.Windows.Forms.Padding(2);
             this.dgvCategorys.MultiSelect = false;
             this.dgvCategorys.Name = "dgvCategorys";
+            this.dgvCategorys.ReadOnly = true;
             this.dgvCategorys.RowTemplate.Height = 28;
             this.dgvCategorys.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCategorys.Size = new System.Drawing.Size(445, 428);
