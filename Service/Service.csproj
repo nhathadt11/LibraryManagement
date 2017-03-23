@@ -74,7 +74,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BussinessLogic\DatabaseAccess.csproj">
+    <ProjectReference Include="..\DatabaseAccess\DatabaseAccess.csproj">
       <Project>{71f01686-b9b3-4d8f-ba72-6eeb1960c891}</Project>
       <Name>DatabaseAccess</Name>
     </ProjectReference>
